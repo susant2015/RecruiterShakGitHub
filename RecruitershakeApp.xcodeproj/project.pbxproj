@@ -26,6 +26,7 @@
 		841959A11C8EB71300E8CA79 /* white-notify.png in Resources */ = {isa = PBXBuildFile; fileRef = 841959941C8EB71300E8CA79 /* white-notify.png */; };
 		841959A51C8EC62C00E8CA79 /* ApplicantIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841959A31C8EC62C00E8CA79 /* ApplicantIndexCell.m */; };
 		841959A61C8EC62C00E8CA79 /* ApplicantIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841959A41C8EC62C00E8CA79 /* ApplicantIndexCell.xib */; };
+		842261D81CBCD04A000ED0A8 /* ModelAddEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = 842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */; };
 		842ADE451C998A3D00C9CC49 /* AboutContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ADE431C998A3D00C9CC49 /* AboutContentCell.m */; };
 		842ADE461C998A3D00C9CC49 /* AboutContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842ADE441C998A3D00C9CC49 /* AboutContentCell.xib */; };
 		842C7B4B1C9684FA009B18C5 /* EmployerJobListViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7B491C9684FA009B18C5 /* EmployerJobListViewControllerCell.m */; };
@@ -207,6 +208,8 @@
 		841959A21C8EC62C00E8CA79 /* ApplicantIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicantIndexCell.h; sourceTree = "<group>"; };
 		841959A31C8EC62C00E8CA79 /* ApplicantIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicantIndexCell.m; sourceTree = "<group>"; };
 		841959A41C8EC62C00E8CA79 /* ApplicantIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicantIndexCell.xib; sourceTree = "<group>"; };
+		842261D61CBCD04A000ED0A8 /* ModelAddEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelAddEducation.h; sourceTree = "<group>"; };
+		842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelAddEducation.m; sourceTree = "<group>"; };
 		842ADE421C998A3D00C9CC49 /* AboutContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutContentCell.h; sourceTree = "<group>"; };
 		842ADE431C998A3D00C9CC49 /* AboutContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutContentCell.m; sourceTree = "<group>"; };
 		842ADE441C998A3D00C9CC49 /* AboutContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutContentCell.xib; sourceTree = "<group>"; };
@@ -897,6 +900,8 @@
 				84EE1B011CB65FBB00BF0C6E /* ModelAddJobEmployer.m */,
 				8411E57B1CB7E3EC00AF29E3 /* ModelRegister.h */,
 				8411E57C1CB7E3EC00AF29E3 /* ModelRegister.m */,
+				842261D61CBCD04A000ED0A8 /* ModelAddEducation.h */,
+				842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1165,6 +1170,7 @@
 				841959811C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.m in Sources */,
 				849116551C9172E300CF1967 /* DescriptionCell.m in Sources */,
 				84B0AB8B1C8013190083B773 /* main.m in Sources */,
+				842261D81CBCD04A000ED0A8 /* ModelAddEducation.m in Sources */,
 				845C0C261C89712800168F13 /* RegisterViewController.m in Sources */,
 				84EE1B021CB65FBB00BF0C6E /* ModelAddJobEmployer.m in Sources */,
 				84A808F01C8591BD00043683 /* SigninService.m in Sources */,
