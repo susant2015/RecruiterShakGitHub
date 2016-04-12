@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Aboutcell" id="KGk-i7-Jjw" customClass="Aboutcell">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="118"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ptW-ok-WG1" userLabel="img-back">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="118"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="button-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="TRv-Nl-wpZ" userLabel="txt-about">
+                        <rect key="frame" x="50" y="0.0" width="500" height="100"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ptW-ok-WG1" firstAttribute="height" secondItem="TRv-Nl-wpZ" secondAttribute="height" multiplier="118/100" id="5dL-XG-ZfZ"/>
+                    <constraint firstAttribute="top" secondItem="ptW-ok-WG1" secondAttribute="top" id="TFw-gI-su6"/>
+                    <constraint firstAttribute="bottom" secondItem="ptW-ok-WG1" secondAttribute="bottom" id="VTz-7i-LaU"/>
+                    <constraint firstItem="ptW-ok-WG1" firstAttribute="width" secondItem="TRv-Nl-wpZ" secondAttribute="width" multiplier="600/500" id="Zqk-Og-C9l"/>
+                    <constraint firstItem="ptW-ok-WG1" firstAttribute="top" secondItem="TRv-Nl-wpZ" secondAttribute="top" id="dIf-2P-Crk"/>
+                    <constraint firstItem="ptW-ok-WG1" firstAttribute="centerX" secondItem="TRv-Nl-wpZ" secondAttribute="centerX" id="eda-HA-tBq"/>
+                    <constraint firstAttribute="left" secondItem="ptW-ok-WG1" secondAttribute="left" id="yiw-OI-Znv"/>
+                    <constraint firstAttribute="right" secondItem="ptW-ok-WG1" secondAttribute="right" id="zTW-NU-uSb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="txtAboutPlaceholder" destination="TRv-Nl-wpZ" id="Dqg-ir-Tl9"/>
+            </connections>
+            <point key="canvasLocation" x="398" y="113.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="button-1.png" width="345" height="104"/>
+    </resources>
+</document>

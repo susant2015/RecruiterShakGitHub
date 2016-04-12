@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCellName" rowHeight="55" id="KGk-i7-Jjw" customClass="TextFieldCellName">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="56"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CJT-0h-B1x" userLabel="img-back">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="56"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="17" background="button-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="bTy-bu-Sus" userLabel="txtFirstname">
+                        <rect key="frame" x="50" y="0.0" width="500" height="38"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="CJT-0h-B1x" secondAttribute="bottom" id="1am-uf-vki"/>
+                    <constraint firstItem="CJT-0h-B1x" firstAttribute="width" secondItem="bTy-bu-Sus" secondAttribute="width" multiplier="600/500" id="51J-cX-Unu"/>
+                    <constraint firstAttribute="right" secondItem="CJT-0h-B1x" secondAttribute="right" id="BV4-vA-ZHp"/>
+                    <constraint firstAttribute="left" secondItem="CJT-0h-B1x" secondAttribute="left" id="GG3-vg-J8k"/>
+                    <constraint firstAttribute="top" secondItem="CJT-0h-B1x" secondAttribute="top" id="GdM-Lp-9ND"/>
+                    <constraint firstItem="CJT-0h-B1x" firstAttribute="top" secondItem="bTy-bu-Sus" secondAttribute="top" id="gJc-ao-3I4"/>
+                    <constraint firstItem="CJT-0h-B1x" firstAttribute="height" secondItem="bTy-bu-Sus" secondAttribute="height" multiplier="56/38" id="pGC-rp-pth"/>
+                    <constraint firstItem="bTy-bu-Sus" firstAttribute="centerX" secondItem="CJT-0h-B1x" secondAttribute="centerX" id="qaF-5n-yGM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="txtFielfPlaceHolderName" destination="bTy-bu-Sus" id="aht-1Z-pJe"/>
+            </connections>
+            <point key="canvasLocation" x="665" y="139.5"/>
+        </tableViewCell>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RdE-Zn-B1D">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="143"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="551.5" y="418.5"/>
+        </button>
+    </objects>
+    <resources>
+        <image name="button-1.png" width="345" height="104"/>
+    </resources>
+</document>

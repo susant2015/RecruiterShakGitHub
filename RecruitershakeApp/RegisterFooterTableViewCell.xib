@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RegisterFooterTableViewCell" id="KGk-i7-Jjw" customClass="RegisterFooterTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hcy-D8-kbp" userLabel="imgback">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tu-zg-F3j" userLabel="btn-linkedin">
+                        <rect key="frame" x="130" y="161" width="340" height="38"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <state key="normal" title="SIGNUP WITH LINKEDIN" backgroundImage="registerLIMKEDIN-btn.png">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1c-tv-MZv">
+                        <rect key="frame" x="130" y="115" width="340" height="38"/>
+                        <state key="normal" title="SIGN IN" backgroundImage="button-3.png">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_round.png" translatesAutoresizingMaskIntoConstraints="NO" id="WoT-Vb-aFJ" userLabel="imgor">
+                        <rect key="frame" x="283" y="85" width="35" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emo-8Z-bPW" userLabel="btncheck">
+                        <rect key="frame" x="130" y="0.0" width="20" height="20"/>
+                        <state key="normal" backgroundImage="uncheck-btn.png"/>
+                        <state key="selected" backgroundImage="check_button.png"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have to read and accept,terms use of privecy polieces." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UC0-8Q-DS4">
+                        <rect key="frame" x="170" y="0.0" width="300" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBi-Gn-z1C">
+                        <rect key="frame" x="130" y="42" width="340" height="38"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <state key="normal" title="GET STARTED" backgroundImage="button-3.png">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="centerX" secondItem="WoT-Vb-aFJ" secondAttribute="centerX" id="1c2-Jo-RvJ"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="width" secondItem="UC0-8Q-DS4" secondAttribute="width" multiplier="600/300" id="2iH-eW-UfF"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="centerX" secondItem="N1c-tv-MZv" secondAttribute="centerX" id="44J-SQ-JmZ"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="width" secondItem="dBi-Gn-z1C" secondAttribute="width" multiplier="600/340" id="8L1-F0-72t"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="width" secondItem="8tu-zg-F3j" secondAttribute="width" multiplier="600/340" id="CXp-V3-4VA"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="height" secondItem="WoT-Vb-aFJ" secondAttribute="height" multiplier="199/20" id="DdI-CT-ZjI"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="centerX" secondItem="dBi-Gn-z1C" secondAttribute="centerX" id="F3v-4I-GzF"/>
+                    <constraint firstItem="emo-8Z-bPW" firstAttribute="leading" secondItem="dBi-Gn-z1C" secondAttribute="leading" id="G23-Im-HAh"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="bottom" secondItem="WoT-Vb-aFJ" secondAttribute="bottom" multiplier="1.9" id="LA4-Ze-ajv"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="height" secondItem="dBi-Gn-z1C" secondAttribute="height" multiplier="199/38" id="LnG-Qy-wit"/>
+                    <constraint firstAttribute="bottom" secondItem="hcy-D8-kbp" secondAttribute="bottom" id="M2X-TN-5e8"/>
+                    <constraint firstAttribute="top" secondItem="hcy-D8-kbp" secondAttribute="top" id="MLV-6P-o1X"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="bottom" secondItem="N1c-tv-MZv" secondAttribute="bottom" multiplier="1.3" id="MUt-By-fRL"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="width" secondItem="N1c-tv-MZv" secondAttribute="width" multiplier="600/340" id="UdI-rb-z0R"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="height" secondItem="UC0-8Q-DS4" secondAttribute="height" multiplier="199/20" id="WJO-xG-2Wb"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="height" secondItem="8tu-zg-F3j" secondAttribute="height" multiplier="199/38" id="XUw-Cn-CGA"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="height" secondItem="N1c-tv-MZv" secondAttribute="height" multiplier="199/38" id="Y2j-2Q-c71"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="top" secondItem="emo-8Z-bPW" secondAttribute="top" id="bfD-du-Hmx"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="bottom" secondItem="8tu-zg-F3j" secondAttribute="bottom" id="dFq-ae-Tgg"/>
+                    <constraint firstItem="UC0-8Q-DS4" firstAttribute="trailing" secondItem="dBi-Gn-z1C" secondAttribute="trailing" id="dPg-oa-7tk"/>
+                    <constraint firstAttribute="left" secondItem="hcy-D8-kbp" secondAttribute="left" id="hfK-T8-RB0"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="width" secondItem="emo-8Z-bPW" secondAttribute="width" multiplier="600/20" id="i7A-lw-1xt"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="bottom" secondItem="dBi-Gn-z1C" secondAttribute="bottom" multiplier="2.5" id="jd1-Dr-5jT"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="top" secondItem="UC0-8Q-DS4" secondAttribute="top" id="pfV-v1-LIh"/>
+                    <constraint firstAttribute="right" secondItem="hcy-D8-kbp" secondAttribute="right" id="q6X-GO-UA6"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="centerX" secondItem="8tu-zg-F3j" secondAttribute="centerX" id="snK-g6-2zG"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="height" secondItem="emo-8Z-bPW" secondAttribute="height" multiplier="199/20" id="wAH-Nw-Maw"/>
+                    <constraint firstItem="hcy-D8-kbp" firstAttribute="width" secondItem="WoT-Vb-aFJ" secondAttribute="width" multiplier="600/35" id="wjI-wP-O3g"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="btnAction" destination="dBi-Gn-z1C" id="eJb-jf-maQ"/>
+            </connections>
+            <point key="canvasLocation" x="503" y="167"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="button-3.png" width="897" height="138"/>
+        <image name="check_button.png" width="40" height="40"/>
+        <image name="registerLIMKEDIN-btn.png" width="694" height="106"/>
+        <image name="register_round.png" width="106" height="106"/>
+        <image name="uncheck-btn.png" width="40" height="40"/>
+    </resources>
+</document>

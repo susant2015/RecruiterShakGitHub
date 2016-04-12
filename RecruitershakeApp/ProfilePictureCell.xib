@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfilePictureCell" id="KGk-i7-Jjw" customClass="ProfilePictureCell">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="118"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xhx-eB-VF6" userLabel="img-back">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="118"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="db_pic.png" translatesAutoresizingMaskIntoConstraints="NO" id="BrS-bK-UT5" userLabel="img-picture">
+                        <rect key="frame" x="250" y="0.0" width="100" height="100"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="top" secondItem="Xhx-eB-VF6" secondAttribute="top" id="9fx-Dk-gdB"/>
+                    <constraint firstAttribute="bottom" secondItem="Xhx-eB-VF6" secondAttribute="bottom" id="FId-1a-ZRW"/>
+                    <constraint firstItem="Xhx-eB-VF6" firstAttribute="centerX" secondItem="BrS-bK-UT5" secondAttribute="centerX" id="bR3-QE-mFO"/>
+                    <constraint firstItem="Xhx-eB-VF6" firstAttribute="top" secondItem="BrS-bK-UT5" secondAttribute="top" id="bzg-gt-6I6"/>
+                    <constraint firstAttribute="right" secondItem="Xhx-eB-VF6" secondAttribute="right" id="hXp-IS-KXD"/>
+                    <constraint firstItem="Xhx-eB-VF6" firstAttribute="width" secondItem="BrS-bK-UT5" secondAttribute="width" multiplier="600/100" id="plf-ou-yDi"/>
+                    <constraint firstAttribute="left" secondItem="Xhx-eB-VF6" secondAttribute="left" id="xtb-25-tap"/>
+                    <constraint firstItem="Xhx-eB-VF6" firstAttribute="height" secondItem="BrS-bK-UT5" secondAttribute="height" multiplier="118/100" id="y9b-rQ-RcY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="384" y="118.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="db_pic.png" width="364" height="364"/>
+    </resources>
+</document>
