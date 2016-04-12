@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "ModelLogInEmployer.h"
 #import "ModelAddJobEmployer.h"
+#import "EmployerJobListViewController.h"
 @interface AddJobEmployerViewController ()<UITextFieldDelegate>
 -(void)txtFieldSchool;
 -(void)txtFieldPostion;
@@ -163,5 +164,13 @@
         return NO;
     }
     return YES;
+}
+
+- (IBAction)backButton {
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+   EmployerJobListViewController  *Employerjoblistvc = [sb instantiateViewControllerWithIdentifier:@"EmployerJobListViewController"];
+    
+    [self presentViewController:Employerjoblistvc animated:YES completion:nil];
 }
 @end

@@ -18,4 +18,5 @@
 - (void)btnAddJobSave;
 - (IBAction)add;
 -(BOOL)alertCheck;
+- (IBAction)backButton;
 @end

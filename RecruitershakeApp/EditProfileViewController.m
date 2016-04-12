@@ -158,11 +158,11 @@
     
     if (indexPath.row==0) {
         
-        static NSString *applicantIndexCellIdentifier=@"EditLabelcell";
+        static NSString *applicantIndexCellIdentifier=@"EditProfileViewControllerEditLabelcell";
         EditProfileViewControllerEditLabelcell *cell=(EditProfileViewControllerEditLabelcell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
         
         if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"EditLabelcell" owner:self options:nil]objectAtIndex:0];
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"EditProfileViewControllerEditLabelcell" owner:self options:nil]objectAtIndex:0];
         }
         
             myCell=cell;
@@ -513,7 +513,7 @@
     EditProfileViewControllerHeaderButtonCell *cell = (EditProfileViewControllerHeaderButtonCell *)[tableView dequeueReusableCellWithIdentifier:HeaderIdentifier];
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HeaderButtonCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EditProfileViewControllerHeaderButtonCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     return cell;

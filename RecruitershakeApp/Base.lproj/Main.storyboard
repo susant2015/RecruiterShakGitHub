@@ -1048,7 +1048,7 @@
         <!--Add Job Employer View Controller-->
         <scene sceneID="qtx-5l-xgJ">
             <objects>
-                <viewController id="waE-4Q-YP0" customClass="AddJobEmployerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddJobEmployerViewController" id="waE-4Q-YP0" customClass="AddJobEmployerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4HR-5F-Dpq"/>
                         <viewControllerLayoutGuide type="bottom" id="DG6-hh-uI7"/>
@@ -1068,6 +1068,9 @@
                                 <state key="normal" backgroundImage="back-arrow (2).png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButton" destination="waE-4Q-YP0" eventType="touchUpInside" id="wdi-lu-MUd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Susant Nahak" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeU-kb-ZYw">
                                 <rect key="frame" x="50" y="29" width="320" height="20"/>
@@ -1538,7 +1541,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZw-y5-PjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-460" y="2129"/>
+            <point key="canvasLocation" x="-667" y="2139"/>
         </scene>
         <!--Dash Board Employer View Controller-->
         <scene sceneID="WN2-wE-Djg">
@@ -1960,7 +1963,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsd-Zu-b2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211" y="2091"/>
+            <point key="canvasLocation" x="152" y="2041"/>
         </scene>
         <!--About Applicants View Controller-->
         <scene sceneID="58V-vA-Nbr">
