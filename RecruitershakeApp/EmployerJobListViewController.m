@@ -20,31 +20,40 @@
 @implementation EmployerJobListViewController{
     
     UITableView *tableView;
+     NSMutableArray *mutableArrayJsonData;
    }
 @synthesize dist;
 @synthesize dists;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-  
+   
+
     
     
     
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     
   
    [[EmployerJobListService sharedInstance] employerJobListUserId:modelLogInEmployer.strId withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         
        NSLog(@"The result is:%@",result);
+       NSLog(@"Models: %@", [result allKeys]);
        NSLog(@"The first json object is%@", [result objectForKey:@"0"]);
        NSDictionary *addjsonlistfirst=[result objectForKey:@"0"];
        modelEmployerJobList=[[ModelEmployerJobList alloc]initWithDictionary:addjsonlistfirst];
-       [tableView reloadData];
-       NSLog(@"The created is:%@",modelEmployerJobList.strCreated);
-      
+            
+       mutableArrayJsonData = [[NSMutableArray alloc] init];
+       NSArray * values = [addjsonlistfirst allValues];
+       [mutableArrayJsonData addObject:values];
+       
+       
+       
+    
         if(isError){
-            [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
             if(strMsg.length>0){
                 [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -102,29 +111,22 @@
    
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+ /* - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     CGFloat height=0.0f;
     if (indexPath.row==0) {
         height=120.0f;
     }
-    else if (indexPath.row==1)
-    {
-        height=120.0f;
-    }
-    else if (indexPath.row==2)
-    {
-        height=120.0f;
-    }
+    
 
     return height;
     
-}
+}  */
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return 3;
+    return;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -154,39 +156,28 @@
 {
     UITableViewCell *myCell=nil;
     if (indexPath.row==0) {
-     
-        static NSString *applicantIndexCellIdentifier=@"EmployerjoblistCell";
+         
+        static NSString *applicantIndexCellIdentifier=@"EmployerJobListViewControllerCell";
         EmployerJobListViewControllerCell *cell=(EmployerJobListViewControllerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
         if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerjoblistCell" owner:self options:nil]objectAtIndex:0];
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil]objectAtIndex:0];
         }
-        cell.lblJobId.text=modelEmployerJobList.strCreated;
-        NSLog(@"The created is result for :%@",modelEmployerJobList.strCreated);
+        cell.lblJobId.text=modelEmployerJobList.strJob_Id;
+        cell.lblJobTitle.text=modelEmployerJobList.strTitle;
+        cell.lblPosition.text=modelEmployerJobList.strDesignation;
+        cell.lblEduqualification.text=modelEmployerJobList.strEducational_Qualification;
+        cell.lblSkillRequired.text=modelEmployerJobList.strSkill_required;
+        cell.lblPostDate.text=modelEmployerJobList.strCreated;
+        NSLog(@"The post job uis:%@",modelEmployerJobList.strCreated);
+       // NSLog(@"The mutable arra is:%@",[mutableArrayJsonData objectAtIndex:0]);
+        //cell.lblJobId.text
         myCell=cell;
-    }
-    else if (indexPath.row==1){
-        static NSString *applicantIndexCellIdentifier=@"EmployerjoblistCell";
-        EmployerJobListViewControllerCell *cell=(EmployerJobListViewControllerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerjoblistCell" owner:self options:nil]objectAtIndex:0];
-        }
-        
-        myCell=cell;
-    }
-    else if (indexPath.row==2){
-        static NSString *applicantIndexCellIdentifier=@"EmployerjoblistCell";
-        EmployerJobListViewControllerCell *cell=(EmployerJobListViewControllerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerjoblistCell" owner:self options:nil]objectAtIndex:0];
-        }
        
-        myCell=cell;
-       // [tableView reloadData];
+
     }
-    //[tableView reloadData];
+    [tableView reloadData];
     return myCell;
-   
-}
+   }
 
 
 
