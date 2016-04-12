@@ -21,6 +21,7 @@
     
     UITableView *tableView;
      NSMutableArray *mutableArrayJsonData;
+    NSArray *tempArray;
    }
 @synthesize dist;
 @synthesize dists;
@@ -46,8 +47,13 @@
        modelEmployerJobList=[[ModelEmployerJobList alloc]initWithDictionary:addjsonlistfirst];
             
        mutableArrayJsonData = [[NSMutableArray alloc] init];
-       NSArray * values = [addjsonlistfirst allValues];
+       NSArray * values = [result allValues];
        [mutableArrayJsonData addObject:values];
+       tempArray=[[NSArray alloc] initWithArray:mutableArrayJsonData copyItems:true];
+       for (int i = 0; i < [tempArray count]; i++)
+       {
+           NSLog(@"Item %d = %@", i, [tempArray objectAtIndex:i]);
+       }
        
        
        
@@ -126,7 +132,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return;
+    return mutableArrayJsonData.count;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -155,26 +161,26 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *myCell=nil;
-    if (indexPath.row==0) {
+   
          
         static NSString *applicantIndexCellIdentifier=@"EmployerJobListViewControllerCell";
         EmployerJobListViewControllerCell *cell=(EmployerJobListViewControllerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil]objectAtIndex:0];
         }
-        cell.lblJobId.text=modelEmployerJobList.strJob_Id;
-        cell.lblJobTitle.text=modelEmployerJobList.strTitle;
-        cell.lblPosition.text=modelEmployerJobList.strDesignation;
-        cell.lblEduqualification.text=modelEmployerJobList.strEducational_Qualification;
-        cell.lblSkillRequired.text=modelEmployerJobList.strSkill_required;
-        cell.lblPostDate.text=modelEmployerJobList.strCreated;
+        cell.lblJobId.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+        cell.lblJobTitle.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+        cell.lblPosition.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+        cell.lblEduqualification.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+        cell.lblSkillRequired.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+        cell.lblPostDate.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
         NSLog(@"The post job uis:%@",modelEmployerJobList.strCreated);
        // NSLog(@"The mutable arra is:%@",[mutableArrayJsonData objectAtIndex:0]);
         //cell.lblJobId.text
         myCell=cell;
        
 
-    }
+    
     [tableView reloadData];
     return myCell;
    }
