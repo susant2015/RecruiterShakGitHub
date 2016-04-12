@@ -8,7 +8,7 @@
 
 #import "EmployerJobListViewControllerCell.h"
 
-@implementation EmployerjoblistCell
+@implementation EmployerJobListViewControllerCell
 
 @synthesize lblJobId;
 @synthesize lblJobTitle;

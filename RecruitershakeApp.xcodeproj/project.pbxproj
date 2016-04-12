@@ -27,6 +27,7 @@
 		841959A51C8EC62C00E8CA79 /* ApplicantIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841959A31C8EC62C00E8CA79 /* ApplicantIndexCell.m */; };
 		841959A61C8EC62C00E8CA79 /* ApplicantIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841959A41C8EC62C00E8CA79 /* ApplicantIndexCell.xib */; };
 		842261D81CBCD04A000ED0A8 /* ModelAddEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = 842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */; };
+		842261DE1CBCD3D4000ED0A8 /* EmployerMyApplicantList.m in Sources */ = {isa = PBXBuildFile; fileRef = 842261DD1CBCD3D4000ED0A8 /* EmployerMyApplicantList.m */; };
 		842ADE451C998A3D00C9CC49 /* AboutContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ADE431C998A3D00C9CC49 /* AboutContentCell.m */; };
 		842ADE461C998A3D00C9CC49 /* AboutContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842ADE441C998A3D00C9CC49 /* AboutContentCell.xib */; };
 		842C7B4B1C9684FA009B18C5 /* EmployerJobListViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7B491C9684FA009B18C5 /* EmployerJobListViewControllerCell.m */; };
@@ -210,6 +211,8 @@
 		841959A41C8EC62C00E8CA79 /* ApplicantIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicantIndexCell.xib; sourceTree = "<group>"; };
 		842261D61CBCD04A000ED0A8 /* ModelAddEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelAddEducation.h; sourceTree = "<group>"; };
 		842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelAddEducation.m; sourceTree = "<group>"; };
+		842261DC1CBCD3D4000ED0A8 /* EmployerMyApplicantList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployerMyApplicantList.h; sourceTree = "<group>"; };
+		842261DD1CBCD3D4000ED0A8 /* EmployerMyApplicantList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployerMyApplicantList.m; sourceTree = "<group>"; };
 		842ADE421C998A3D00C9CC49 /* AboutContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutContentCell.h; sourceTree = "<group>"; };
 		842ADE431C998A3D00C9CC49 /* AboutContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutContentCell.m; sourceTree = "<group>"; };
 		842ADE441C998A3D00C9CC49 /* AboutContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutContentCell.xib; sourceTree = "<group>"; };
@@ -532,6 +535,8 @@
 				846A7D6D1C96E13E0058D33B /* AboutApplicantsViewController.m */,
 				84ECB3BC1CAE80B40007794B /* DashBoardRecruiterViewController.h */,
 				84ECB3BD1CAE80B40007794B /* DashBoardRecruiterViewController.m */,
+				842261DC1CBCD3D4000ED0A8 /* EmployerMyApplicantList.h */,
+				842261DD1CBCD3D4000ED0A8 /* EmployerMyApplicantList.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1136,6 +1141,7 @@
 				84EE1AFF1CB6595A00BF0C6E /* AddJobEmployerService.m in Sources */,
 				845C0C2D1C89A28900168F13 /* RegisterHeaderTableViewCell.m in Sources */,
 				84F325081CB5229200CCFE97 /* ModelLogInRecruiter.m in Sources */,
+				842261DE1CBCD3D4000ED0A8 /* EmployerMyApplicantList.m in Sources */,
 				84D815C71CABE7CF00AEF15E /* ForgotPasswordService.m in Sources */,
 				849116501C9168B800CF1967 /* WorkExprienceDegreeSchoolCell.m in Sources */,
 				8491165E1C917C6800CF1967 /* EditProfileViewController.m in Sources */,
