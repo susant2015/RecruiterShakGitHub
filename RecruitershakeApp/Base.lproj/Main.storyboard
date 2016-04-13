@@ -231,6 +231,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" backgroundImage="edit.png"/>
+                                <connections>
+                                    <action selector="btnrecruiterEdit" destination="7WF-0w-giF" eventType="touchUpInside" id="ibc-fn-DiX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Php Consultant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pns-Gi-MBT">
                                 <rect key="frame" x="330" y="194" width="220" height="20"/>
@@ -443,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cr8-ux-eIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3013" y="1546"/>
+            <point key="canvasLocation" x="-3693" y="1430"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="0Cy-Xf-wCd">
@@ -497,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8y-G1-365" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2637" y="1441"/>
+            <point key="canvasLocation" x="-3010" y="1209"/>
         </scene>
         <!--LogInView Controller-->
         <scene sceneID="BAw-iA-tRZ">
@@ -1541,7 +1544,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZw-y5-PjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-667" y="2139"/>
+            <point key="canvasLocation" x="-2036" y="2865"/>
         </scene>
         <!--Dash Board Employer View Controller-->
         <scene sceneID="WN2-wE-Djg">
@@ -1715,6 +1718,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9g-mm-5mV" userLabel="Button-arrow-myapplicants">
                                 <rect key="frame" x="544" y="387" width="16" height="13"/>
                                 <state key="normal" title="Button" backgroundImage="arrow (2).png"/>
+                                <connections>
+                                    <segue destination="Yr9-p5-mn3" kind="show" id="9zj-7t-QYT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-MD-vxI" userLabel="Button-arrow-msg">
                                 <rect key="frame" x="544" y="431" width="16" height="13"/>
@@ -1916,7 +1922,7 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="knh-av-T1D">
             <objects>
-                <viewController id="fVm-Eh-q7s" customClass="EditProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" id="fVm-Eh-q7s" customClass="EditProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gma-dH-vfZ"/>
                         <viewControllerLayoutGuide type="bottom" id="95o-U3-NTe"/>

@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="17" background="button-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="bTy-bu-Sus" userLabel="txtFirstname">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" *" textAlignment="justified" minimumFontSize="17" background="button-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="bTy-bu-Sus" userLabel="txtFirstname">
                         <rect key="frame" x="50" y="0.0" width="500" height="38"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

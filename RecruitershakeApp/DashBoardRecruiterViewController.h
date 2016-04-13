@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblRecruiterAgencyInfo;
 @property (weak, nonatomic) IBOutlet UILabel *lblUrl;
 @property (weak, nonatomic) IBOutlet UIImageView *imgRecruiter;
+- (IBAction)btnrecruiterEdit;
 
 
 @end

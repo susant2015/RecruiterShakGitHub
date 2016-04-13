@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface EditProfileViewControllerHeaderButtonCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblRecruiterFirstName;
+@property (weak, nonatomic) IBOutlet UILabel *lblRecruiterLastName;
 
 @end

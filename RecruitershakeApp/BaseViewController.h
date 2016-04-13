@@ -10,4 +10,5 @@
 
 @interface BaseViewController : UIViewController
 -(id)getSuperviewOfType:(id)superview fromView:(id)myView;
+-(void)showAlertWithTitle:(NSString*)strtitle andMessage:(NSString*)strmessage;
 @end

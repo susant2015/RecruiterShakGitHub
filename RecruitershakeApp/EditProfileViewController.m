@@ -16,6 +16,8 @@
 #import "ProfilePictureCell.h"
 #import "BtnUpdateProfile.h"
 #import "TextFieldCellName.h"
+#import "ModelLogInRecruiter.h"
+#import "Constants.h"
 @interface EditProfileViewController ()<UITextFieldDelegate>
 
 @end
@@ -164,7 +166,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"EditProfileViewControllerEditLabelcell" owner:self options:nil]objectAtIndex:0];
         }
-        
+       
             myCell=cell;
     
     }
@@ -177,11 +179,12 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"TextFieldCellName" owner:self options:nil]objectAtIndex:0];
         }
+        //cell.txtFielfPlaceHolderName.text=modelLogInRecruiter.strFirst_Name;
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *FIRST NAME" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strFirst_Name attributes:@{NSForegroundColorAttributeName: color}];
 
         
         
@@ -199,7 +202,7 @@
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *LAST NAME" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strLast_Name attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
     else if(indexPath.row==3) {
@@ -213,7 +216,7 @@
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *EMAIL NAME" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strEmail attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
     else if(indexPath.row==4) {
@@ -227,7 +230,7 @@
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *USERNAME" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strUser_Name attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
     else if(indexPath.row==5) {
@@ -286,7 +289,7 @@
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *PHONE NUMBER" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strPhone_Number attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
     else if(indexPath.row==9) {
@@ -300,7 +303,7 @@
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *OCCUPATION" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strOccuption attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
     else if(indexPath.row==10) {
@@ -507,15 +510,19 @@
     return myCell;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    static NSString *HeaderIdentifier=@"HeaderButtonCell";
+    static NSString *HeaderIdentifier=@"EditProfileViewControllerHeaderButtonCell";
     
     
-    EditProfileViewControllerHeaderButtonCell *cell = (EditProfileViewControllerHeaderButtonCell *)[tableView dequeueReusableCellWithIdentifier:HeaderIdentifier];
+     EditProfileViewControllerHeaderButtonCell *cell = (EditProfileViewControllerHeaderButtonCell *)[tableView dequeueReusableCellWithIdentifier:HeaderIdentifier];
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EditProfileViewControllerHeaderButtonCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
+    
+    cell.lblRecruiterFirstName.text=modelLogInRecruiter.strFirst_Name;
+    cell.lblRecruiterLastName.text=modelLogInRecruiter.strLast_Name;
     return cell;
     
 }

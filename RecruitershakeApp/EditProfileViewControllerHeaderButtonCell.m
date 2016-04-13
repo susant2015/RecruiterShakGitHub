@@ -10,6 +10,8 @@
 
 @implementation EditProfileViewControllerHeaderButtonCell
 
+@synthesize lblRecruiterFirstName;
+@synthesize lblRecruiterLastName;
 - (void)awakeFromNib {
     // Initialization code
 }

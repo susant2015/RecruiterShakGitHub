@@ -429,18 +429,9 @@ NSString static *strPlaceholders[]={
     strOccupation=[arrtxtFieldValue objectAtIndex:12];
     
     [self alertChecking];
-   // NSLog(@"The First name:%@",strFisrst_Name);
+  
     
- /*   RegisterHeaderTableViewCell *cell=[[RegisterHeaderTableViewCell alloc] init];
-    
-    if ([cell.btnEmployer isSelected]){
-        
-        strButtonValue=@"employer";
-    }
-    if ([cell.btnRecruiter isSelected]){
-        
-        strButtonValue=@"recruiter";
-    }  */
+
     
     [[RegisterService sharedInstance] callRegisterServiceForUserName:strUser_Name password:strPassword group:strButtonValue strEmail:strEmail FirstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number address1:strAddress_Line1 address2:strAddress_Line2 city:strCity country:strCountry state:strState zipcode:strZip_Code occupation:strOccupation withCompletionHandler:^(id result, BOOL isError, NSString *strMsg){
         if(isError){
@@ -470,13 +461,14 @@ NSString static *strPlaceholders[]={
 {
     if (strFisrst_Name.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter your First Name." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+       
+      [ self showAlertWithTitle:@"Error" andMessage:@"Please enter your First Name."];
+        
     }
    else if (strLast_Name.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter the your Last Name." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+        [ self showAlertWithTitle:@"Error" andMessage:@"Please enter the your Last Name."];
     }
   else  if (![self NSStringIsValidEmail:strEmail])
     {
@@ -488,50 +480,52 @@ NSString static *strPlaceholders[]={
     
   else  if (strUser_Name.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter your User Name." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+         [ self showAlertWithTitle:@"Error" andMessage:@"Please enter your User Name."];
     }
     
     
    else if (strPassword.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please re-enter your Phone Number." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+        [ self showAlertWithTitle:@"Error" andMessage:@"Please re-enter your Password."];
+        
     }
   else  if (strAddress_Line1.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please re-enter the AddressLine1." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+        [ self showAlertWithTitle:@"Error" andMessage:@"Please re-enter the AddressLine1."];
     }
   else  if (strAddress_Line2.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please re-enter the AddressLine2." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+        [ self showAlertWithTitle:@"Error" andMessage:@"Please re-enter the AddressLine2."];
     }
   else  if (strCity.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please re-enter your City." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+        
+        [ self showAlertWithTitle:@"Error" andMessage:@"Please re-enter your City."];
     }
   else  if (strState.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please re-enter your State." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+        [ self showAlertWithTitle:@"Error" andMessage:@"Please re-enter your State."];
     }
    else if (strCountry.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please re-enter your Country." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+        [ self showAlertWithTitle:@"Error" andMessage:@"Please re-enter your Country."];
     }
   else  if (strZip_Code.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please re-enter your ZipCode." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+        [ self showAlertWithTitle:@"Error" andMessage:@"Please re-enter your ZipCode."];
     }
    else if (strOccupation.length==0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please re-enter your Occuption." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
+        
+        [ self showAlertWithTitle:@"Error" andMessage:@"Please re-enter your Occuption."];
     }
 
     
@@ -543,6 +537,7 @@ NSString static *strPlaceholders[]={
     [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter a valid email id." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     
     return NO;
+    
 }
 -(BOOL) NSStringIsValidEmail:(NSString *)checkString
 {

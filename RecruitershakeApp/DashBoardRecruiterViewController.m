@@ -10,6 +10,8 @@
 #import "LogInViewController.h"
 #import "ModelLogInRecruiter.h"
 #import "Constants.h"
+#import "EditProfileViewController.h"
+#import "ModelLogInRecruiter.h"
 @interface DashBoardRecruiterViewController ()
 
 @end
@@ -36,4 +38,11 @@
 
 
 
+- (IBAction)btnrecruiterEdit {
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditProfileViewController *Editpvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileViewController"];
+    
+    [self presentViewController:Editpvc animated:YES completion:nil];
+}
 @end
