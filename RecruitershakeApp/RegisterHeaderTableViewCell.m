@@ -16,7 +16,7 @@
 @synthesize btnApplicant;
 @synthesize btnEmployer;
 @synthesize btnRecruiter;
-
+@synthesize btnSeleced;
 - (void)awakeFromNib {
     // Initialization code
 }

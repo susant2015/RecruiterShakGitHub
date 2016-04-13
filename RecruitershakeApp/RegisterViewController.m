@@ -71,7 +71,7 @@ NSString static *strPlaceholders[]={
 {
     NSArray *images;
     UITableView *tableView;
-
+    NSString *strButtonValue;
     
 }
 
@@ -222,26 +222,9 @@ NSString static *strPlaceholders[]={
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RegisterHeaderTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         [cell.btnApplicant addTarget:self action:@selector(btnActionApplicant:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.btnEmployer addTarget:self action:@selector(btnActionApplicant:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.btnRecruiter addTarget:self action:@selector(btnActionApplicant:) forControlEvents:UIControlEventTouchUpInside];
-      /*  if ([cell.btnApplicant isSelected]) {
-            //[cell.btnApplicant isSelected];
-            [cell.btnApplicant setSelected:YES];
-            [cell.btnEmployer setSelected:NO];
-            [cell.btnRecruiter setSelected:NO];
-        }
-      else if ([cell.btnEmployer isSelected]) {
-            //[cell.btnApplicant isSelected];
-            [cell.btnApplicant setSelected:NO];
-            [cell.btnEmployer setSelected:YES];
-            [cell.btnRecruiter setSelected:NO];
-        }
-        else if([cell.btnRecruiter isSelected]) {
-            //[cell.btnApplicant isSelected];
-            [cell.btnApplicant setSelected:NO];
-            [cell.btnEmployer setSelected:NO];
-            [cell.btnRecruiter setSelected:YES];
-        } */
+        [cell.btnEmployer addTarget:self action:@selector(btnActionEmployer:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnRecruiter addTarget:self action:@selector(btnActionRecruiter:) forControlEvents:UIControlEventTouchUpInside];
+      
     }
     
     return cell;
@@ -249,37 +232,40 @@ NSString static *strPlaceholders[]={
 }
 -(IBAction)btnActionApplicant:(UIButton*)sender{
     RegisterHeaderTableViewCell *cell1=[self getSuperviewOfType:[RegisterHeaderTableViewCell class] fromView:sender];
-   //NSIndexPath *indexPath=[tblRegistration indexPathForCell:cell1];
-    if ([cell1.btnApplicant isSelected]) {
-        
-        [cell1.btnApplicant setSelected:YES];
-        [cell1.btnEmployer setSelected:NO];
-        [cell1.btnRecruiter setSelected:NO];
-    }
-}
--(IBAction)btnActionEmployer:(UIButton *)sender{
-    RegisterHeaderTableViewCell *cell1=[self getSuperviewOfType:[RegisterHeaderTableViewCell class] fromView:sender];
-    NSIndexPath *indexPath=[tblRegistration indexPathForCell:cell1];
-    if([cell1.btnEmployer isSelected]){
-    
-        [cell1.btnApplicant setSelected:NO];
-        [cell1.btnEmployer setSelected:YES];
-        [cell1.btnRecruiter setSelected:NO];
-  
-    }
-}
--(IBAction)btnActionRecruiter:(UIButton *)sender{
-    RegisterHeaderTableViewCell *cell1=[self getSuperviewOfType:[RegisterHeaderTableViewCell class] fromView:sender];
-    NSIndexPath *indexPath=[tblRegistration indexPathForCell:cell1];
-    if ([cell1.btnRecruiter isSelected]) {
-        
-        [cell1.btnApplicant setSelected:NO];
-        [cell1.btnEmployer setSelected:NO];
-        [cell1.btnRecruiter setSelected:YES];
+    [cell1.btnApplicant setSelected:NO];
+    [cell1.btnEmployer setSelected:NO];
+    [cell1.btnRecruiter setSelected:NO];
+    [sender setSelected:YES];
+    if (cell1.btnApplicant ==sender) {
+        strButtonValue=@"applicant";
     }
 }
 
+-(IBAction)btnActionRecruiter:(UIButton*)sender{
+    RegisterHeaderTableViewCell *cell1=[self getSuperviewOfType:[RegisterHeaderTableViewCell class] fromView:sender];
+    [cell1.btnApplicant setSelected:NO];
+    [cell1.btnEmployer setSelected:NO];
+    [cell1.btnRecruiter setSelected:NO];
+    [sender setSelected:YES];
+    if (cell1.btnRecruiter ==sender) {
+        strButtonValue=@"recruiter";
+    }
+}
+
+-(IBAction)btnActionEmployer:(UIButton*)sender{
+    RegisterHeaderTableViewCell *cell1=[self getSuperviewOfType:[RegisterHeaderTableViewCell class] fromView:sender];
+    [cell1.btnApplicant setSelected:NO];
+    [cell1.btnEmployer setSelected:NO];
+    [cell1.btnRecruiter setSelected:NO];
+    [sender setSelected:YES];
     
+    if (cell1.btnEmployer==sender) {
+        strButtonValue=@"employer";
+    }
+}
+
+
+
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
@@ -445,7 +431,18 @@ NSString static *strPlaceholders[]={
     [self alertChecking];
    // NSLog(@"The First name:%@",strFisrst_Name);
     
-    [[RegisterService sharedInstance] callRegisterServiceForUserName:strUser_Name password:strPassword group:@"applicant" strEmail:strEmail FirstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number address1:strAddress_Line1 address2:strAddress_Line2 city:strCity country:strCountry state:strState zipcode:strZip_Code occupation:strOccupation withCompletionHandler:^(id result, BOOL isError, NSString *strMsg){
+ /*   RegisterHeaderTableViewCell *cell=[[RegisterHeaderTableViewCell alloc] init];
+    
+    if ([cell.btnEmployer isSelected]){
+        
+        strButtonValue=@"employer";
+    }
+    if ([cell.btnRecruiter isSelected]){
+        
+        strButtonValue=@"recruiter";
+    }  */
+    
+    [[RegisterService sharedInstance] callRegisterServiceForUserName:strUser_Name password:strPassword group:strButtonValue strEmail:strEmail FirstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number address1:strAddress_Line1 address2:strAddress_Line2 city:strCity country:strCountry state:strState zipcode:strZip_Code occupation:strOccupation withCompletionHandler:^(id result, BOOL isError, NSString *strMsg){
         if(isError){
             
             if(strMsg.length>0){

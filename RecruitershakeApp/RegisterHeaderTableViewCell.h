@@ -13,5 +13,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnApplicant;
 @property (weak, nonatomic) IBOutlet UIButton *btnEmployer;
 @property (weak, nonatomic) IBOutlet UIButton *btnRecruiter;
-
+@property(weak,nonatomic) IBOutlet UIButton *btnSeleced;
 @end
