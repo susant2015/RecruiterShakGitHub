@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "ModelLogInEmployer.h"
 #import "EditProfileEmployerViewController.h"
+#import "DashBoardEmployerViewController.h"
 @interface AboutApplicantsViewController ()
 
 @end
@@ -20,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
    }
 
 - (void)didReceiveMemoryWarning {
@@ -53,12 +56,14 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"Employerjoblistheadercell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         cell.btnAddCell.hidden=true;
+        
         cell.BtnAddjobListCell.text=@"About";
         cell.lblEmployerFirstName.text=modelLogInEmployer.strFirst_Name;
         cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
         cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
         cell.imgEmployer.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInEmployer.strPicture]]];
         [cell.btnEditEmployer addTarget:self action:@selector(addJobListEmployer:) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     
     return cell;

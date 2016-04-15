@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgRecruiter;
 - (IBAction)btnrecruiterEdit;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnAboutRecruiter;
+- (IBAction)btnCompanyProfile;
 
 @end

@@ -294,15 +294,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfN-aL-2pw" userLabel="Button-arrow-companyprofile">
-                                <rect key="frame" x="544" y="303" width="16" height="13"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" backgroundImage="arrow (2).png">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoZ-Ib-5Jg" userLabel="Button-arrow-myleads">
                                 <rect key="frame" x="544" y="351" width="16" height="13"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -329,6 +320,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfN-aL-2pw" userLabel="Button-arrow-companyprofile">
+                                <rect key="frame" x="544" y="303" width="16" height="13"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="arrow (2).png">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnCompanyProfile" destination="7WF-0w-giF" eventType="touchUpInside" id="G3q-Uv-P5Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -439,6 +442,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnAboutRecruiter" destination="XfN-aL-2pw" id="6uU-Cy-s0I"/>
                         <outlet property="imgRecruiter" destination="isg-cU-n6c" id="RqE-79-7fL"/>
                         <outlet property="lblRecruiterAgencyInfo" destination="pns-Gi-MBT" id="GNN-Hv-1Ej"/>
                         <outlet property="lblUrl" destination="qrF-PD-ZhQ" id="SG3-fy-ByA"/>
@@ -1280,6 +1284,50 @@
             </objects>
             <point key="canvasLocation" x="-638" y="1995"/>
         </scene>
+        <!--About Recruiter View Controller-->
+        <scene sceneID="7Go-x7-bBx">
+            <objects>
+                <viewController storyboardIdentifier="AboutRecruiterViewController" id="dHK-yW-B2N" customClass="AboutRecruiterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="veP-E1-ewd"/>
+                        <viewControllerLayoutGuide type="bottom" id="wuU-ws-7n0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ief-yr-7PJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="5yR-OC-bPK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IQd-i2-fEd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dHK-yW-B2N" id="MIM-ZO-VZh"/>
+                                    <outlet property="delegate" destination="dHK-yW-B2N" id="8Ah-Qv-kzq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leading" secondItem="IQd-i2-fEd" secondAttribute="leading" id="43z-mb-EtR"/>
+                            <constraint firstItem="wuU-ws-7n0" firstAttribute="top" secondItem="IQd-i2-fEd" secondAttribute="bottom" id="5ak-Wo-5Gk"/>
+                            <constraint firstItem="IQd-i2-fEd" firstAttribute="top" secondItem="ief-yr-7PJ" secondAttribute="top" id="66d-p4-TmD"/>
+                            <constraint firstItem="wuU-ws-7n0" firstAttribute="top" secondItem="5yR-OC-bPK" secondAttribute="bottom" id="Owf-hT-bEA"/>
+                            <constraint firstAttribute="trailing" secondItem="5yR-OC-bPK" secondAttribute="trailing" id="P2b-kR-qeJ"/>
+                            <constraint firstAttribute="leading" secondItem="5yR-OC-bPK" secondAttribute="leading" id="Pyc-FS-Dj2"/>
+                            <constraint firstAttribute="top" secondItem="5yR-OC-bPK" secondAttribute="top" id="mx9-vm-FWn"/>
+                            <constraint firstAttribute="trailing" secondItem="IQd-i2-fEd" secondAttribute="trailing" id="xL0-2w-u5v"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kxa-hh-r1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1773" y="2452"/>
+        </scene>
         <!--Employer Job List View Controller-->
         <scene sceneID="jzY-nI-VDB">
             <objects>
@@ -1725,6 +1773,9 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnEmployerEdit" destination="yCK-hc-Spo" eventType="touchUpInside" id="U5v-co-OHI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Susant" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvX-6e-JRV" userLabel="Label-name">
                                 <rect key="frame" x="50" y="194" width="270" height="20"/>
@@ -1949,6 +2000,7 @@
                     </view>
                     <connections>
                         <outlet property="ImgPicture" destination="0kl-cp-OmS" id="zjd-QD-Hu0"/>
+                        <outlet property="btnAboutEmployer" destination="z3F-dW-dHg" id="3Kz-G3-Ypx"/>
                         <outlet property="lblEmpEmailId" destination="UyF-zz-P0R" id="xXf-Vi-hYm"/>
                         <outlet property="lblEmpFirstName" destination="tvX-6e-JRV" id="cBo-P0-b4U"/>
                         <outlet property="lblEmpLastName" destination="uDZ-UL-4ak" id="2ti-z0-fTm"/>
@@ -2013,7 +2065,7 @@
         <!--Edit Profile Recruiter View Controller-->
         <scene sceneID="knh-av-T1D">
             <objects>
-                <viewController storyboardIdentifier="EditProfileViewController" id="fVm-Eh-q7s" customClass="EditProfileRecruiterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileRecruiterViewController" id="fVm-Eh-q7s" customClass="EditProfileRecruiterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gma-dH-vfZ"/>
                         <viewControllerLayoutGuide type="bottom" id="95o-U3-NTe"/>

@@ -57,6 +57,12 @@
 		843DD7261C8DACC400EE1D36 /* uncheck-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 843DD7221C8DACC400EE1D36 /* uncheck-btn.png */; };
 		8448FE581CC0C74C00FA9AF1 /* EditProfileEmployerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE571CC0C74C00FA9AF1 /* EditProfileEmployerViewController.m */; };
 		8448FE5B1CC0D0BF00FA9AF1 /* EditProfileApplicantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE5A1CC0D0BF00FA9AF1 /* EditProfileApplicantViewController.m */; };
+		8448FE5E1CC0E31C00FA9AF1 /* AboutRecruiterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE5D1CC0E31C00FA9AF1 /* AboutRecruiterViewController.m */; };
+		8448FE651CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE631CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.m */; };
+		8448FE661CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448FE641CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.xib */; };
+		8448FE691CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE681CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.m */; };
+		8448FE6E1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE6C1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.m */; };
+		8448FE6F1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448FE6D1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib */; };
 		8459C6461C8714A700EF5079 /* register_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8459C6451C8714A700EF5079 /* register_bg.jpg */; };
 		845C0C261C89712800168F13 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C0C251C89712800168F13 /* RegisterViewController.m */; };
 		845C0C2A1C899C5E00168F13 /* RegisterHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845C0C291C899C5E00168F13 /* RegisterHeaderTableViewCell.xib */; };
@@ -256,6 +262,16 @@
 		8448FE571CC0C74C00FA9AF1 /* EditProfileEmployerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileEmployerViewController.m; sourceTree = "<group>"; };
 		8448FE591CC0D0BF00FA9AF1 /* EditProfileApplicantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileApplicantViewController.h; sourceTree = "<group>"; };
 		8448FE5A1CC0D0BF00FA9AF1 /* EditProfileApplicantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileApplicantViewController.m; sourceTree = "<group>"; };
+		8448FE5C1CC0E31C00FA9AF1 /* AboutRecruiterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRecruiterViewController.h; sourceTree = "<group>"; };
+		8448FE5D1CC0E31C00FA9AF1 /* AboutRecruiterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRecruiterViewController.m; sourceTree = "<group>"; };
+		8448FE621CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRecruiterHeaderCell.h; sourceTree = "<group>"; };
+		8448FE631CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRecruiterHeaderCell.m; sourceTree = "<group>"; };
+		8448FE641CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutRecruiterHeaderCell.xib; sourceTree = "<group>"; };
+		8448FE671CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecruiterMyLeadsViewController.h; sourceTree = "<group>"; };
+		8448FE681CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecruiterMyLeadsViewController.m; sourceTree = "<group>"; };
+		8448FE6B1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecruiterMyLeadsContentCell.h; sourceTree = "<group>"; };
+		8448FE6C1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecruiterMyLeadsContentCell.m; sourceTree = "<group>"; };
+		8448FE6D1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecruiterMyLeadsContentCell.xib; sourceTree = "<group>"; };
 		8459C6451C8714A700EF5079 /* register_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = register_bg.jpg; path = "../../../Image Set Date wise/register/register_bg.jpg"; sourceTree = "<group>"; };
 		845C0C241C89712800168F13 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		845C0C251C89712800168F13 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -546,8 +562,12 @@
 				842C7B561C96C6E5009B18C5 /* EmployerApplicantListViewController.m */,
 				846A7D6C1C96E13E0058D33B /* AboutApplicantsViewController.h */,
 				846A7D6D1C96E13E0058D33B /* AboutApplicantsViewController.m */,
+				8448FE5C1CC0E31C00FA9AF1 /* AboutRecruiterViewController.h */,
+				8448FE5D1CC0E31C00FA9AF1 /* AboutRecruiterViewController.m */,
 				84ECB3BC1CAE80B40007794B /* DashBoardRecruiterViewController.h */,
 				84ECB3BD1CAE80B40007794B /* DashBoardRecruiterViewController.m */,
+				8448FE671CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.h */,
+				8448FE681CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.m */,
 				842261DC1CBCD3D4000ED0A8 /* EmployerMyApplicantList.h */,
 				842261DD1CBCD3D4000ED0A8 /* EmployerMyApplicantList.m */,
 			);
@@ -560,6 +580,9 @@
 				842ADE421C998A3D00C9CC49 /* AboutContentCell.h */,
 				842ADE431C998A3D00C9CC49 /* AboutContentCell.m */,
 				842ADE441C998A3D00C9CC49 /* AboutContentCell.xib */,
+				8448FE621CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.h */,
+				8448FE631CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.m */,
+				8448FE641CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.xib */,
 			);
 			name = AboutCell;
 			sourceTree = "<group>";
@@ -599,6 +622,16 @@
 				842C7B4A1C9684FA009B18C5 /* EmployerJobListViewControllerCell.xib */,
 			);
 			name = EmployerJobListCell;
+			sourceTree = "<group>";
+		};
+		8448FE6A1CC0F22E00FA9AF1 /* RecruiterCell */ = {
+			isa = PBXGroup;
+			children = (
+				8448FE6B1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.h */,
+				8448FE6C1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.m */,
+				8448FE6D1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib */,
+			);
+			name = RecruiterCell;
 			sourceTree = "<group>";
 		};
 		8459C6441C87141400EF5079 /* register */ = {
@@ -746,6 +779,7 @@
 		84B0AB871C8013190083B773 /* RecruitershakeApp */ = {
 			isa = PBXGroup;
 			children = (
+				8448FE6A1CC0F22E00FA9AF1 /* RecruiterCell */,
 				84EF420F1CB38ACD0033B614 /* Model */,
 				84EF420E1CB38AB30033B614 /* Constants */,
 				84D815C81CABF04400AEF15E /* Main.storyboard */,
@@ -1049,6 +1083,7 @@
 				8491167F1C91A35C00CF1967 /* Aboutcell.xib in Resources */,
 				84C833471C842A39009AD74F /* green-btn.png in Resources */,
 				84C2F3D11C900755001D775B /* chat (2).png in Resources */,
+				8448FE661CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.xib in Resources */,
 				84C8333C1C8422E1009AD74F /* add_edu.jpg in Resources */,
 				84FFD8B81CA9124C00D6F1DA /* opening_page1.png in Resources */,
 				84A809081C86E3E900043683 /* check_button (1).png in Resources */,
@@ -1101,6 +1136,7 @@
 				84B0ABCD1C80843E0083B773 /* forget_email_bg.png in Resources */,
 				84B0AB991C8013190083B773 /* LaunchScreen.xib in Resources */,
 				84C2F3DC1C904A0B001D775B /* add.png in Resources */,
+				8448FE6F1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib in Resources */,
 				84C833331C8410A0009AD74F /* forget_btn.png in Resources */,
 				84A8090B1C86E3E900043683 /* uncheck-btn.png in Resources */,
 				841959A01C8EB71300E8CA79 /* white_tw.png in Resources */,
@@ -1142,6 +1178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B0ABB21C8049B70083B773 /* LogInViewController.m in Sources */,
+				8448FE6E1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.m in Sources */,
 				8491167E1C91A35C00CF1967 /* Aboutcell.m in Sources */,
 				846A7D731C96E1780058D33B /* AboutApplicantsTableViewCell.m in Sources */,
 				8491168D1C91B35600CF1967 /* BtnUpdateProfile.m in Sources */,
@@ -1150,6 +1187,7 @@
 				84EF42161CB38C360033B614 /* ModelLogInEmployer.m in Sources */,
 				842C7B571C96C6E5009B18C5 /* EmployerApplicantListViewController.m in Sources */,
 				846A7D6E1C96E13E0058D33B /* AboutApplicantsViewController.m in Sources */,
+				8448FE651CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.m in Sources */,
 				849116691C9182F100CF1967 /* EditProfileViewControllerEditLabelcell.m in Sources */,
 				849116641C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.m in Sources */,
 				841959A51C8EC62C00E8CA79 /* ApplicantIndexCell.m in Sources */,
@@ -1157,6 +1195,7 @@
 				845C0C2D1C89A28900168F13 /* RegisterHeaderTableViewCell.m in Sources */,
 				84F325081CB5229200CCFE97 /* ModelLogInRecruiter.m in Sources */,
 				842261DE1CBCD3D4000ED0A8 /* EmployerMyApplicantList.m in Sources */,
+				8448FE5E1CC0E31C00FA9AF1 /* AboutRecruiterViewController.m in Sources */,
 				8448FE5B1CC0D0BF00FA9AF1 /* EditProfileApplicantViewController.m in Sources */,
 				84D815C71CABE7CF00AEF15E /* ForgotPasswordService.m in Sources */,
 				849116501C9168B800CF1967 /* WorkExprienceDegreeSchoolCell.m in Sources */,
@@ -1181,6 +1220,7 @@
 				84F3250B1CB544BE00CCFE97 /* ModelEmployerJobList.m in Sources */,
 				84C8334F1C8457AA009AD74F /* DashBoardEmployerViewController.m in Sources */,
 				84C8333F1C8429E7009AD74F /* HomePageViewController.m in Sources */,
+				8448FE691CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.m in Sources */,
 				843DD71D1C8DA91500EE1D36 /* RegisterFooterTableViewCell.m in Sources */,
 				8491164B1C914EC000CF1967 /* WorkExprienceDegreeCell.m in Sources */,
 				849116881C91B02400CF1967 /* ProfilePictureCell.m in Sources */,

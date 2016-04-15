@@ -12,6 +12,7 @@
 #import "ModelLogInEmployer.h"
 #import "EmployerJobListService.h"
 #import "ModelEmployerJobList.h"
+#import "EditProfileEmployerViewController.h"
 @interface DashBoardEmployerViewController ()
 
 @end
@@ -47,4 +48,12 @@
 
 
 
+- (IBAction)btnEmployerEdit {
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditProfileEmployerViewController *EditPEvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileEmployerViewController"];
+    [self presentViewController:EditPEvc animated:YES completion:nil];
+    
+    
+}
 @end

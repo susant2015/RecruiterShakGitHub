@@ -147,7 +147,7 @@
                 <outlet property="lblApplicantOccupation" destination="Fyp-Eq-vsZ" id="8QN-LH-uRk"/>
                 <outlet property="lblApplicantQuates" destination="3Go-UJ-nLG" id="u0R-sh-cDC"/>
             </connections>
-            <point key="canvasLocation" x="592" y="133"/>
+            <point key="canvasLocation" x="764" y="114"/>
         </tableViewCell>
     </objects>
     <resources>
