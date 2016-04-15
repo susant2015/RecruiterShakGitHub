@@ -415,7 +415,7 @@
         cell.txtAboutPlaceholder.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtAboutPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ABOUT" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtAboutPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strAbout attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
     else if(indexPath.row==18) {
@@ -450,6 +450,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"ProfilePictureCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.imgRecruiter.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInRecruiter.strPicture]]];
         myCell=cell;
     }
     else if(indexPath.row==21) {

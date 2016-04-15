@@ -91,6 +91,7 @@
 		849116891C91B02400CF1967 /* ProfilePictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849116871C91B02400CF1967 /* ProfilePictureCell.xib */; };
 		8491168D1C91B35600CF1967 /* BtnUpdateProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491168B1C91B35600CF1967 /* BtnUpdateProfile.m */; };
 		8491168E1C91B35600CF1967 /* BtnUpdateProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8491168C1C91B35600CF1967 /* BtnUpdateProfile.xib */; };
+		849591251CBE836C00A7A6E0 /* ModelLogInApplicant.m in Sources */ = {isa = PBXBuildFile; fileRef = 849591241CBE836C00A7A6E0 /* ModelLogInApplicant.m */; };
 		84A808E41C855A1600043683 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A808E31C855A1600043683 /* BaseViewController.m */; };
 		84A808E71C8570FD00043683 /* button-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A808E51C8570FD00043683 /* button-1.png */; };
 		84A808E81C8570FD00043683 /* button-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A808E61C8570FD00043683 /* button-3.png */; };
@@ -302,6 +303,8 @@
 		8491168A1C91B35600CF1967 /* BtnUpdateProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtnUpdateProfile.h; sourceTree = "<group>"; };
 		8491168B1C91B35600CF1967 /* BtnUpdateProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnUpdateProfile.m; sourceTree = "<group>"; };
 		8491168C1C91B35600CF1967 /* BtnUpdateProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BtnUpdateProfile.xib; sourceTree = "<group>"; };
+		849591231CBE836C00A7A6E0 /* ModelLogInApplicant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLogInApplicant.h; sourceTree = "<group>"; };
+		849591241CBE836C00A7A6E0 /* ModelLogInApplicant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLogInApplicant.m; sourceTree = "<group>"; };
 		84A808E21C855A1600043683 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		84A808E31C855A1600043683 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		84A808E51C8570FD00043683 /* button-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-1.png"; path = "../../../Image Set Date wise/addeducation/button-1.png"; sourceTree = "<group>"; };
@@ -899,6 +902,8 @@
 				84EF42151CB38C360033B614 /* ModelLogInEmployer.m */,
 				84F325061CB5229200CCFE97 /* ModelLogInRecruiter.h */,
 				84F325071CB5229200CCFE97 /* ModelLogInRecruiter.m */,
+				849591231CBE836C00A7A6E0 /* ModelLogInApplicant.h */,
+				849591241CBE836C00A7A6E0 /* ModelLogInApplicant.m */,
 				84F325091CB544BE00CCFE97 /* ModelEmployerJobList.h */,
 				84F3250A1CB544BE00CCFE97 /* ModelEmployerJobList.m */,
 				84EE1B001CB65FBB00BF0C6E /* ModelAddJobEmployer.h */,
@@ -1172,6 +1177,7 @@
 				849116741C9197AA00CF1967 /* TextFieldCellName.m in Sources */,
 				84C8332D1C840F29009AD74F /* ForgotPasswordViewController.m in Sources */,
 				842ADE451C998A3D00C9CC49 /* AboutContentCell.m in Sources */,
+				849591251CBE836C00A7A6E0 /* ModelLogInApplicant.m in Sources */,
 				843B3DA81C92CA020014D05A /* Employerjoblistheadercell.m in Sources */,
 				841959811C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.m in Sources */,
 				849116551C9172E300CF1967 /* DescriptionCell.m in Sources */,

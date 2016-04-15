@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ApplicantHeaderCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imgApplicantHeader;
+@property (weak, nonatomic) IBOutlet UILabel *lblApplicantFirstName;
+@property (weak, nonatomic) IBOutlet UILabel *lblApplicantLastName;
+@property (weak, nonatomic) IBOutlet UILabel *lblApplicantOccupation;
+@property (weak, nonatomic) IBOutlet UILabel *lblApplicantQuates;
 
 @end

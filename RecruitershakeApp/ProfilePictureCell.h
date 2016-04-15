@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfilePictureCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imgRecruiter;
 
 @end

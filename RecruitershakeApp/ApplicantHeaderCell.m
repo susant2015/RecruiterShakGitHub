@@ -10,6 +10,12 @@
 
 @implementation ApplicantHeaderCell
 
+@synthesize imgApplicantHeader;
+@synthesize lblApplicantFirstName;
+@synthesize lblApplicantLastName;
+@synthesize lblApplicantOccupation;
+@synthesize lblApplicantQuates;
+
 - (void)awakeFromNib {
     // Initialization code
 }

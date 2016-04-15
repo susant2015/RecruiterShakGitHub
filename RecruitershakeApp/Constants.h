@@ -9,7 +9,7 @@
 @class ModelLogInRecruiter;
 @class ModelEmployerJobList;
 @class ModelAddJobEmployer;
-
+@class ModelLogInApplicant;
 #ifndef Constants_h
 #define Constants_h
 
@@ -19,3 +19,4 @@ ModelLogInEmployer *modelLogInEmployer;
 ModelLogInRecruiter *modelLogInRecruiter;
 ModelEmployerJobList *modelEmployerJobList;
 ModelAddJobEmployer *modelAddJobEmployer;
+ModelLogInApplicant *modelLogInApplicant;

@@ -15,7 +15,8 @@
 #import "WorkExprienceDegreeSchoolCell.h"
 #import "DescriptionCell.h"
 #import "LoadMoreCell.h"
-
+#import "Constants.h"
+#import "ModelLogInApplicant.h"
 @interface DashBoardApplicantProfileViewController ()
 
 @end
@@ -90,6 +91,11 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ApplicantHeaderCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    cell.imgApplicantHeader.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInApplicant.strPicture]]];
+    cell.lblApplicantFirstName.text=modelLogInApplicant.strFirst_Name;
+    cell.lblApplicantLastName.text=modelLogInApplicant.strLast_Name;
+    cell.lblApplicantOccupation.text=modelLogInApplicant.strOccuption;
+    cell.lblApplicantQuates.text=modelLogInApplicant.strQuotes;
     return cell;
     
 }

@@ -13,6 +13,7 @@
 #import "DashBoardApplicantProfileViewController.h"
 #import "ModelLogInEmployer.h"
 #import "ModelLogInRecruiter.h"
+#import "ModelLogInApplicant.h"
 #import "Constants.h"
 @interface LogInViewController ()<UITextFieldDelegate>
 
@@ -140,6 +141,7 @@
                 {
                     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     DashBoardApplicantProfileViewController *Apvc = [sb instantiateViewControllerWithIdentifier:@"ApplicantProfileViewController"];
+                    modelLogInApplicant=[[ModelLogInApplicant alloc]initWithDictionary:result];
                     
                     [self presentViewController:Apvc animated:YES completion:nil];
                     

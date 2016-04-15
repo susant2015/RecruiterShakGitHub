@@ -10,6 +10,7 @@
 
 @implementation ProfilePictureCell
 
+@synthesize imgRecruiter;
 - (void)awakeFromNib {
     // Initialization code
 }
