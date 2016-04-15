@@ -1,20 +1,15 @@
 //
-//  RecruiterMyLeadsContentCell.m
+//  RecruiterMyLeadsViewContollerCell.m
 //  RecruitershakeApp
 //
 //  Created by admin on 15/04/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
-#import "RecruiterMyLeadsContentCell.h"
+#import "RecruiterMyLeadsViewContollerCell.h"
 
-@implementation RecruiterMyLeadsContentCell
+@implementation RecruiterMyLeadsViewContollerCell
 
-@synthesize lblRecruiterFirstName;
-@synthesize lblRecruiterLastName;
-@synthesize lblRecruiterEmail;
-@synthesize btnRecruiterEdit;
-@synthesize imgRecruiterPicture;
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -24,6 +19,5 @@
 
     // Configure the view for the selected state
 }
-
 
 @end

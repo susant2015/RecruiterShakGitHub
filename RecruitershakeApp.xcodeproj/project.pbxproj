@@ -63,6 +63,8 @@
 		8448FE691CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE681CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.m */; };
 		8448FE6E1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE6C1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.m */; };
 		8448FE6F1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448FE6D1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib */; };
+		8448FE731CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE711CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.m */; };
+		8448FE741CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448FE721CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.xib */; };
 		8459C6461C8714A700EF5079 /* register_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8459C6451C8714A700EF5079 /* register_bg.jpg */; };
 		845C0C261C89712800168F13 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C0C251C89712800168F13 /* RegisterViewController.m */; };
 		845C0C2A1C899C5E00168F13 /* RegisterHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845C0C291C899C5E00168F13 /* RegisterHeaderTableViewCell.xib */; };
@@ -272,6 +274,9 @@
 		8448FE6B1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecruiterMyLeadsContentCell.h; sourceTree = "<group>"; };
 		8448FE6C1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecruiterMyLeadsContentCell.m; sourceTree = "<group>"; };
 		8448FE6D1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecruiterMyLeadsContentCell.xib; sourceTree = "<group>"; };
+		8448FE701CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecruiterMyLeadsViewContollerCell.h; sourceTree = "<group>"; };
+		8448FE711CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecruiterMyLeadsViewContollerCell.m; sourceTree = "<group>"; };
+		8448FE721CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecruiterMyLeadsViewContollerCell.xib; sourceTree = "<group>"; };
 		8459C6451C8714A700EF5079 /* register_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = register_bg.jpg; path = "../../../Image Set Date wise/register/register_bg.jpg"; sourceTree = "<group>"; };
 		845C0C241C89712800168F13 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		845C0C251C89712800168F13 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -630,6 +635,9 @@
 				8448FE6B1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.h */,
 				8448FE6C1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.m */,
 				8448FE6D1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib */,
+				8448FE701CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.h */,
+				8448FE711CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.m */,
+				8448FE721CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.xib */,
 			);
 			name = RecruiterCell;
 			sourceTree = "<group>";
@@ -1136,6 +1144,7 @@
 				84B0ABCD1C80843E0083B773 /* forget_email_bg.png in Resources */,
 				84B0AB991C8013190083B773 /* LaunchScreen.xib in Resources */,
 				84C2F3DC1C904A0B001D775B /* add.png in Resources */,
+				8448FE741CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.xib in Resources */,
 				8448FE6F1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib in Resources */,
 				84C833331C8410A0009AD74F /* forget_btn.png in Resources */,
 				84A8090B1C86E3E900043683 /* uncheck-btn.png in Resources */,
@@ -1216,6 +1225,7 @@
 				842C7B521C96C381009B18C5 /* Employerapplicantlistcell.m in Sources */,
 				84C833391C842168009AD74F /* AddEducationViewController.m in Sources */,
 				84A808ED1C85912400043683 /* WebServiceClass.m in Sources */,
+				8448FE731CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.m in Sources */,
 				8491165A1C91786800CF1967 /* LoadMoreCell.m in Sources */,
 				84F3250B1CB544BE00CCFE97 /* ModelEmployerJobList.m in Sources */,
 				84C8334F1C8457AA009AD74F /* DashBoardEmployerViewController.m in Sources */,

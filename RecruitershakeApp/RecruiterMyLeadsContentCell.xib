@@ -54,7 +54,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w2o-iq-8ed" userLabel="img-profile-border">
                         <rect key="frame" x="25" y="37" width="550" height="121"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic.png" translatesAutoresizingMaskIntoConstraints="NO" id="mQu-0k-zaT" userLabel="img-profile">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mQu-0k-zaT" userLabel="img-profile">
                         <rect key="frame" x="25" y="47" width="130" height="101"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -232,6 +232,7 @@
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="btnRecruiterEdit" destination="jhl-Ie-awe" id="qB3-A9-xA6"/>
+                <outlet property="imgRecruiterPicture" destination="mQu-0k-zaT" id="P4s-aY-3dG"/>
                 <outlet property="lblRecruiterEmail" destination="ucV-ap-PSu" id="cEC-vB-tkp"/>
                 <outlet property="lblRecruiterFirstName" destination="s9X-RZ-ypo" id="GBu-fk-sBC"/>
                 <outlet property="lblRecruiterLastName" destination="Jke-q9-qVl" id="pyB-Kw-cO5"/>
@@ -245,7 +246,6 @@
         <image name="edit.png" width="80" height="80"/>
         <image name="facebook.png" width="80" height="80"/>
         <image name="google.png" width="80" height="80"/>
-        <image name="pic.png" width="238" height="238"/>
         <image name="title_bg.png" width="960" height="106"/>
         <image name="twitter.png" width="80" height="80"/>
         <image name="white-notify.png" width="68" height="54"/>

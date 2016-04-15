@@ -45,6 +45,7 @@
     cell.lblRecruiterFirstName.text=modelLogInRecruiter.strFirst_Name;
     cell.lblRecruiterLastName.text=modelLogInRecruiter.strLast_Name;
     cell.lblRecruiterEmail.text=modelLogInRecruiter.strEmail;
+    cell.imgRecruiterPicture.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInRecruiter.strPicture]]];
     [cell.btnRecruiterEdit addTarget:self action:@selector(btnRecruiterEditProfile:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
     
