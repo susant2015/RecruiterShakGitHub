@@ -10,6 +10,8 @@
 
 @implementation AboutContentCell
 
+@synthesize lblAboutContent;
+
 - (void)awakeFromNib {
     // Initialization code
 }

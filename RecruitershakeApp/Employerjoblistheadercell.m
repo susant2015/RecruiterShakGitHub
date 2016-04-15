@@ -14,6 +14,7 @@
 @synthesize BtnAddjobListCell=_BtnAddjobListCell;
 @synthesize btnAddCell=_btnAddCell;
 
+@synthesize imgEmployer;
 @synthesize lblEmployerFirstName;
 @synthesize lblEmployerLastName;
 @synthesize lblEmployerEmailId;

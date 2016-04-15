@@ -71,7 +71,7 @@
 		849116561C9172E300CF1967 /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849116541C9172E300CF1967 /* DescriptionCell.xib */; };
 		8491165A1C91786800CF1967 /* LoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849116581C91786800CF1967 /* LoadMoreCell.m */; };
 		8491165B1C91786800CF1967 /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849116591C91786800CF1967 /* LoadMoreCell.xib */; };
-		8491165E1C917C6800CF1967 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491165D1C917C6800CF1967 /* EditProfileViewController.m */; };
+		8491165E1C917C6800CF1967 /* EditProfileRecruiterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491165D1C917C6800CF1967 /* EditProfileRecruiterViewController.m */; };
 		849116641C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849116621C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.m */; };
 		849116651C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849116631C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.xib */; };
 		849116691C9182F100CF1967 /* EditProfileViewControllerEditLabelcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849116671C9182F100CF1967 /* EditProfileViewControllerEditLabelcell.m */; };
@@ -274,8 +274,8 @@
 		849116571C91786800CF1967 /* LoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreCell.h; sourceTree = "<group>"; };
 		849116581C91786800CF1967 /* LoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMoreCell.m; sourceTree = "<group>"; };
 		849116591C91786800CF1967 /* LoadMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
-		8491165C1C917C6800CF1967 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
-		8491165D1C917C6800CF1967 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		8491165C1C917C6800CF1967 /* EditProfileRecruiterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileRecruiterViewController.h; sourceTree = "<group>"; };
+		8491165D1C917C6800CF1967 /* EditProfileRecruiterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileRecruiterViewController.m; sourceTree = "<group>"; };
 		849116611C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewControllerHeaderButtonCell.h; sourceTree = "<group>"; };
 		849116621C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewControllerHeaderButtonCell.m; sourceTree = "<group>"; };
 		849116631C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewControllerHeaderButtonCell.xib; sourceTree = "<group>"; };
@@ -528,8 +528,8 @@
 				845C0C251C89712800168F13 /* RegisterViewController.m */,
 				8419597F1C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.h */,
 				841959801C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.m */,
-				8491165C1C917C6800CF1967 /* EditProfileViewController.h */,
-				8491165D1C917C6800CF1967 /* EditProfileViewController.m */,
+				8491165C1C917C6800CF1967 /* EditProfileRecruiterViewController.h */,
+				8491165D1C917C6800CF1967 /* EditProfileRecruiterViewController.m */,
 				843B3DA01C92C5550014D05A /* EmployerJobListViewController.h */,
 				843B3DA11C92C5550014D05A /* EmployerJobListViewController.m */,
 				842C7B551C96C6E5009B18C5 /* EmployerApplicantListViewController.h */,
@@ -1149,7 +1149,7 @@
 				842261DE1CBCD3D4000ED0A8 /* EmployerMyApplicantList.m in Sources */,
 				84D815C71CABE7CF00AEF15E /* ForgotPasswordService.m in Sources */,
 				849116501C9168B800CF1967 /* WorkExprienceDegreeSchoolCell.m in Sources */,
-				8491165E1C917C6800CF1967 /* EditProfileViewController.m in Sources */,
+				8491165E1C917C6800CF1967 /* EditProfileRecruiterViewController.m in Sources */,
 				84EE1AFC1CB624A200BF0C6E /* EmployerJobListService.m in Sources */,
 				84C2F3D51C9036CC001D775B /* EducationBackgroundCell.m in Sources */,
 				8411E57D1CB7E3EC00AF29E3 /* ModelRegister.m in Sources */,

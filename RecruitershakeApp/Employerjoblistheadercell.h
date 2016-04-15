@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblEmployerFirstName;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmployerLastName;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmployerEmailId;
+@property (weak, nonatomic) IBOutlet UIImageView *imgEmployer;
 - (IBAction)showAddBtn;
 
 @end

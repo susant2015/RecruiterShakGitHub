@@ -20,11 +20,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" background="button-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="TRv-Nl-wpZ" userLabel="txt-about">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="button-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="TRv-Nl-wpZ" userLabel="txt-about">
                         <rect key="frame" x="50" y="0.0" width="500" height="100"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <attributedString key="attributedText"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>

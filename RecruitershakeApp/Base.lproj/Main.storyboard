@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1706,6 +1705,9 @@
                                 <rect key="frame" x="544" y="303" width="16" height="13"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" backgroundImage="arrow (2).png"/>
+                                <connections>
+                                    <segue destination="0QH-Ha-mnG" kind="show" id="Cey-nm-bZB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-qO-CAl" userLabel="Button-arrow-jobs">
                                 <rect key="frame" x="544" y="351" width="16" height="13"/>
@@ -1919,10 +1921,10 @@
             </objects>
             <point key="canvasLocation" x="-1352" y="2152"/>
         </scene>
-        <!--Edit Profile View Controller-->
+        <!--Edit Profile Recruiter View Controller-->
         <scene sceneID="knh-av-T1D">
             <objects>
-                <viewController storyboardIdentifier="EditProfileViewController" id="fVm-Eh-q7s" customClass="EditProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" id="fVm-Eh-q7s" customClass="EditProfileRecruiterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gma-dH-vfZ"/>
                         <viewControllerLayoutGuide type="bottom" id="95o-U3-NTe"/>
@@ -2016,7 +2018,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWR-Wm-K3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="2083"/>
+            <point key="canvasLocation" x="-2273" y="1666"/>
         </scene>
         <!--Home Page View Controller-->
         <scene sceneID="Mok-H1-IGZ">

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditProfileViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface EditProfileRecruiterViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

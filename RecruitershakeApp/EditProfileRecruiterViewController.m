@@ -6,7 +6,7 @@
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
-#import "EditProfileViewController.h"
+#import "EditProfileRecruiterViewController.h"
 #import "EditProfileViewControllerHeaderButtonCell.h"
 #import "EditProfileViewControllerEditLabelcell.h"
 #import "RegisterTextFieldTableViewCell.h"
@@ -18,11 +18,11 @@
 #import "TextFieldCellName.h"
 #import "ModelLogInRecruiter.h"
 #import "Constants.h"
-@interface EditProfileViewController ()<UITextFieldDelegate>
+@interface EditProfileRecruiterViewController ()<UITextFieldDelegate>
 
 @end
 
-@implementation EditProfileViewController
+@implementation EditProfileRecruiterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

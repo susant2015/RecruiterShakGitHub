@@ -9,7 +9,8 @@
 #import "AboutApplicantsViewController.h"
 #import "Employerjoblistheadercell.h"
 #import "AboutContentCell.h"
-
+#import "Constants.h"
+#import "ModelLogInEmployer.h"
 @interface AboutApplicantsViewController ()
 
 @end
@@ -54,6 +55,10 @@
         cell = [nib objectAtIndex:0];
         cell.btnAddCell.hidden=true;
         cell.BtnAddjobListCell.text=@"About";
+        cell.lblEmployerFirstName.text=modelLogInEmployer.strFirst_Name;
+        cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
+        cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
+        cell.imgEmployer.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInEmployer.strPicture]]];
     
     }
     
@@ -76,7 +81,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"AboutContentCell" owner:self options:nil]objectAtIndex:0];
         }
-        
+        cell.lblAboutContent.text=modelLogInEmployer.strAbout;
         myCell=cell;
         
     }

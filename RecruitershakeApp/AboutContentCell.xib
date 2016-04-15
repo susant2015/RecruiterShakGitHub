@@ -14,12 +14,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="369"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQs-JQ-9Lv" userLabel="Label-content">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The RecruiterShak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQs-JQ-9Lv" userLabel="Label-content">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="369"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <string key="text">dsfvgfdhjfgjnhgdfhdfshshdbfgksfdjbgfdjkgkl;dgfjk;hfdsk;ghfkgdk;ghdf;lkdf;sgjdf;kdsk;gfdgk;ldfhg;lh;sdfg;khgddjfghj'sgjk;lhdfs'hjgf'dhjfd.</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -31,6 +30,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="lblAboutContent" destination="NQs-JQ-9Lv" id="8EV-oX-Fae"/>
+            </connections>
             <point key="canvasLocation" x="435" y="290"/>
         </tableViewCell>
     </objects>
