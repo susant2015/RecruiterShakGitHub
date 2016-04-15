@@ -11,6 +11,7 @@
 #import "AboutContentCell.h"
 #import "Constants.h"
 #import "ModelLogInEmployer.h"
+#import "EditProfileEmployerViewController.h"
 @interface AboutApplicantsViewController ()
 
 @end
@@ -19,13 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+   }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+    }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -59,7 +58,7 @@
         cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
         cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
         cell.imgEmployer.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInEmployer.strPicture]]];
-    
+        [cell.btnEditEmployer addTarget:self action:@selector(addJobListEmployer:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return cell;
@@ -86,5 +85,12 @@
         
     }
     return myCell;
+}
+
+-(IBAction)addJobListEmployer:(UIButton *)sender{
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditProfileEmployerViewController *Edit_P_Employervc = [sb instantiateViewControllerWithIdentifier:@"EditProfileEmployerViewController"];
+    [self presentViewController:Edit_P_Employervc animated:YES completion:nil];
 }
 @end

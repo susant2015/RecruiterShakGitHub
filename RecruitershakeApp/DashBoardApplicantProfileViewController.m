@@ -7,6 +7,7 @@
 //
 
 #import "DashBoardApplicantProfileViewController.h"
+#import "EditProfileApplicantViewController.h"
 #import "ApplicantHeaderCell.h"
 #import "ApplicantDetailsCell.h"
 #import "ApplicantIndexCell.h"
@@ -91,15 +92,22 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ApplicantHeaderCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    cell.imgApplicantHeader.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInApplicant.strPicture]]];
+    //cell.imgApplicantHeader.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInApplicant.strPicture]]];
     cell.lblApplicantFirstName.text=modelLogInApplicant.strFirst_Name;
     cell.lblApplicantLastName.text=modelLogInApplicant.strLast_Name;
     cell.lblApplicantOccupation.text=modelLogInApplicant.strOccuption;
     cell.lblApplicantQuates.text=modelLogInApplicant.strQuotes;
+    [cell.btnEditApplicant addTarget:self action:@selector(addJobListApplicant:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
     
 }
-
+-(IBAction)addJobListApplicant:(UIButton *)sender{
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditProfileApplicantViewController *editpapplicantvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileApplicantViewController"];
+    [self presentViewController:editpapplicantvc animated:YES completion:nil];
+    
+}
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

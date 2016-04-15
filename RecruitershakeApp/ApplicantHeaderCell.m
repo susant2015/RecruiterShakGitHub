@@ -15,7 +15,7 @@
 @synthesize lblApplicantLastName;
 @synthesize lblApplicantOccupation;
 @synthesize lblApplicantQuates;
-
+@synthesize btnEditApplicant;
 - (void)awakeFromNib {
     // Initialization code
 }

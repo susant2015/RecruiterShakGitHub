@@ -136,11 +136,6 @@
                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VLX-N0-zjG" userLabel="img-camera-border">
-                        <rect key="frame" x="135" y="38" width="330" height="108"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOBS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-zr-3NG">
                         <rect key="frame" x="25" y="146" width="550" height="32"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -168,6 +163,11 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VLX-N0-zjG" userLabel="img-camera-border">
+                        <rect key="frame" x="135" y="38" width="330" height="108"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="right" secondItem="n6l-cA-5FV" secondAttribute="right" id="1gp-eM-G5X"/>
@@ -266,6 +266,7 @@
                 <outlet property="BtnAddjobListCell" destination="LaE-zr-3NG" id="OHz-tC-fL1"/>
                 <outlet property="LblTitlebar" destination="LaE-zr-3NG" id="JL3-Dx-unB"/>
                 <outlet property="btnAddCell" destination="NuH-xe-idU" id="tOd-Wi-oyv"/>
+                <outlet property="btnEditEmployer" destination="nCc-hv-xtB" id="2jL-DK-z6W"/>
                 <outlet property="imgEmployer" destination="T35-Gy-Zmc" id="Rri-xM-ylc"/>
                 <outlet property="lblEmployerEmailId" destination="44k-HO-37G" id="NUP-LQ-4d2"/>
                 <outlet property="lblEmployerFirstName" destination="Phi-qL-U91" id="MSn-BK-ML9"/>

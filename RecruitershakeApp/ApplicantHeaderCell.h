@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblApplicantLastName;
 @property (weak, nonatomic) IBOutlet UILabel *lblApplicantOccupation;
 @property (weak, nonatomic) IBOutlet UILabel *lblApplicantQuates;
+@property (weak, nonatomic) IBOutlet UIButton *btnEditApplicant;
 
 @end

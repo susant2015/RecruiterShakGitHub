@@ -18,6 +18,7 @@
 @synthesize lblEmployerFirstName;
 @synthesize lblEmployerLastName;
 @synthesize lblEmployerEmailId;
+@synthesize btnEditEmployer;
 - (void)awakeFromNib {
     // Initialization code
    // self.btnAddCell.hidden=true;
@@ -31,5 +32,6 @@
 
 - (IBAction)showAddBtn {
     //self.btnAddCell.hidden=true;
+    
 }
 @end

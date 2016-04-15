@@ -70,6 +70,13 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oUH-cr-Fy1" userLabel="img-edit-picture-border">
+                        <rect key="frame" x="195" y="25" width="210" height="100"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APS-cD-GfV" userLabel="Button-edit-picture">
+                        <rect key="frame" x="367" y="41" width="38" height="28"/>
+                        <state key="normal" title="Button" backgroundImage="white_edit.png"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="hK3-vu-qqp" secondAttribute="height" multiplier="249/20" id="1D7-36-EQG"/>
@@ -82,8 +89,10 @@
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="zaQ-Cr-mpm" secondAttribute="height" multiplier="249/130" id="5A3-Wp-xf4"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="4eX-Qz-qRg" secondAttribute="height" multiplier="249/20" id="6A7-7q-tO3"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="fSI-Xv-7Ma" secondAttribute="height" multiplier="249/20" id="81i-Am-NDX"/>
+                    <constraint firstItem="xfW-yJ-aUd" firstAttribute="centerX" secondItem="oUH-cr-Fy1" secondAttribute="centerX" id="87b-Fm-dSL"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="NdA-bt-ceA" secondAttribute="height" multiplier="249/20" id="AKY-bQ-XH9"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="width" secondItem="tdD-6P-nES" secondAttribute="width" multiplier="600/295" id="E84-J1-ccy"/>
+                    <constraint firstItem="oUH-cr-Fy1" firstAttribute="width" secondItem="APS-cD-GfV" secondAttribute="width" multiplier="210/38" id="HkI-zw-HCa"/>
                     <constraint firstAttribute="right" secondItem="xfW-yJ-aUd" secondAttribute="right" id="I3g-N4-mgF"/>
                     <constraint firstItem="c2r-6C-iuF" firstAttribute="top" secondItem="xfW-yJ-aUd" secondAttribute="top" constant="81" id="IGo-CY-vsg"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="centerX" secondItem="zaQ-Cr-mpm" secondAttribute="centerX" id="JNa-yK-4G3"/>
@@ -92,10 +101,13 @@
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="width" secondItem="4eX-Qz-qRg" secondAttribute="width" multiplier="600/295" id="LUM-Tv-nC4"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="c2r-6C-iuF" secondAttribute="height" multiplier="249/20" id="M9S-Zx-tEm"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="bottom" secondItem="3Go-UJ-nLG" secondAttribute="bottom" multiplier="1.05" id="O8B-LH-ACC"/>
+                    <constraint firstItem="oUH-cr-Fy1" firstAttribute="bottom" secondItem="APS-cD-GfV" secondAttribute="bottom" multiplier="1.8" id="Ony-Hc-6oE"/>
                     <constraint firstItem="hK3-vu-qqp" firstAttribute="top" secondItem="xfW-yJ-aUd" secondAttribute="top" constant="8" id="Szh-a9-weI"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="Yam-UY-qxX" secondAttribute="height" multiplier="249/20" id="TLg-K6-a4m"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="width" secondItem="hK3-vu-qqp" secondAttribute="width" multiplier="600/30" id="TrP-iN-6qA"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="width" secondItem="Fyp-Eq-vsZ" secondAttribute="width" multiplier="600/100" id="U8d-hC-3lY"/>
+                    <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="oUH-cr-Fy1" secondAttribute="height" multiplier="249/100" id="XKi-PO-0d4"/>
+                    <constraint firstItem="oUH-cr-Fy1" firstAttribute="trailing" secondItem="APS-cD-GfV" secondAttribute="trailing" id="XOS-DT-ags"/>
                     <constraint firstAttribute="top" secondItem="xfW-yJ-aUd" secondAttribute="top" id="YXX-R7-xMO"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="width" secondItem="fSI-Xv-7Ma" secondAttribute="width" multiplier="600/30" id="Zod-E8-3sS"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="width" secondItem="Yam-UY-qxX" secondAttribute="width" multiplier="600/30" id="a3R-3l-Y8l"/>
@@ -108,11 +120,14 @@
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="3Go-UJ-nLG" secondAttribute="height" multiplier="249/34" id="eWH-4m-sNa"/>
                     <constraint firstItem="NdA-bt-ceA" firstAttribute="top" secondItem="xfW-yJ-aUd" secondAttribute="top" constant="8" id="fl2-mu-tr3"/>
                     <constraint firstItem="Yam-UY-qxX" firstAttribute="top" secondItem="xfW-yJ-aUd" secondAttribute="top" constant="46" id="gEU-so-4FD"/>
+                    <constraint firstItem="oUH-cr-Fy1" firstAttribute="height" secondItem="APS-cD-GfV" secondAttribute="height" multiplier="100/28" id="gTz-hI-nwf"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="trailing" secondItem="c2r-6C-iuF" secondAttribute="trailing" constant="8" id="jwb-gC-Mts"/>
+                    <constraint firstItem="xfW-yJ-aUd" firstAttribute="width" secondItem="oUH-cr-Fy1" secondAttribute="width" multiplier="600/210" id="kge-Eh-JFr"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="bottom" secondItem="Fyp-Eq-vsZ" secondAttribute="bottom" multiplier="1.2" id="lzv-i0-4xQ"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="tdD-6P-nES" secondAttribute="height" multiplier="249/20" id="nEu-ZJ-LE2"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="height" secondItem="Fyp-Eq-vsZ" secondAttribute="height" multiplier="249/20" id="ny6-XM-QcE"/>
                     <constraint firstAttribute="left" secondItem="xfW-yJ-aUd" secondAttribute="left" id="oIw-Th-PO5"/>
+                    <constraint firstItem="xfW-yJ-aUd" firstAttribute="bottom" secondItem="oUH-cr-Fy1" secondAttribute="bottom" multiplier="2" id="p6k-zv-oBx"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="width" secondItem="zaQ-Cr-mpm" secondAttribute="width" multiplier="600/210" id="s6z-Mc-sVd"/>
                     <constraint firstItem="fSI-Xv-7Ma" firstAttribute="top" secondItem="xfW-yJ-aUd" secondAttribute="top" constant="8" id="sZe-cQ-qUp"/>
                     <constraint firstItem="xfW-yJ-aUd" firstAttribute="bottom" secondItem="tdD-6P-nES" secondAttribute="bottom" multiplier="1.37" id="ufG-L8-hUB"/>
@@ -125,6 +140,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="btnEditApplicant" destination="APS-cD-GfV" id="nxQ-l0-LbZ"/>
                 <outlet property="imgApplicantHeader" destination="zaQ-Cr-mpm" id="fG0-Pv-Wjr"/>
                 <outlet property="lblApplicantFirstName" destination="4eX-Qz-qRg" id="VUb-2S-DYB"/>
                 <outlet property="lblApplicantLastName" destination="tdD-6P-nES" id="Lsk-0a-faN"/>
@@ -140,6 +156,7 @@
         <image name="profile_pic.png" width="364" height="364"/>
         <image name="white-notify.png" width="68" height="54"/>
         <image name="white_burger.png" width="56" height="54"/>
+        <image name="white_edit.png" width="80" height="80"/>
         <image name="white_fb.png" width="80" height="80"/>
         <image name="white_gp.png" width="80" height="80"/>
         <image name="white_tw.png" width="80" height="80"/>
