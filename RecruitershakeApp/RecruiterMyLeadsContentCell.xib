@@ -233,6 +233,7 @@
             <connections>
                 <outlet property="btnRecruiterEdit" destination="jhl-Ie-awe" id="qB3-A9-xA6"/>
                 <outlet property="imgRecruiterPicture" destination="mQu-0k-zaT" id="P4s-aY-3dG"/>
+                <outlet property="lblCompanyProfile" destination="Vrb-eo-ADS" id="Sey-HL-MKA"/>
                 <outlet property="lblRecruiterEmail" destination="ucV-ap-PSu" id="cEC-vB-tkp"/>
                 <outlet property="lblRecruiterFirstName" destination="s9X-RZ-ypo" id="GBu-fk-sBC"/>
                 <outlet property="lblRecruiterLastName" destination="Jke-q9-qVl" id="pyB-Kw-cO5"/>

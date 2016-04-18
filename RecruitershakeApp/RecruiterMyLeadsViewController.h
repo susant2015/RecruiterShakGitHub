@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecruiterMyLeadsViewController : UIViewController
+@interface RecruiterMyLeadsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

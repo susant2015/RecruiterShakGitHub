@@ -302,6 +302,9 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="YKO-YQ-Ogz" kind="show" id="0Ty-pZ-4Kx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xks-5n-avl" userLabel="Button-arrow-messages">
                                 <rect key="frame" x="544" y="387" width="16" height="13"/>
@@ -1326,7 +1329,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxa-hh-r1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1773" y="2452"/>
+            <point key="canvasLocation" x="-1412" y="2820"/>
+        </scene>
+        <!--Recruiter My Leads View Controller-->
+        <scene sceneID="TL3-vq-2vU">
+            <objects>
+                <viewController storyboardIdentifier="RecruiterMyLeadsViewController" id="YKO-YQ-Ogz" customClass="RecruiterMyLeadsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Unq-ww-uCf"/>
+                        <viewControllerLayoutGuide type="bottom" id="JqZ-wx-wP7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eKy-RE-f2o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="db_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="xk8-sT-VOO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tik-YI-Uev">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="YKO-YQ-Ogz" id="BBX-r8-t3T"/>
+                                    <outlet property="delegate" destination="YKO-YQ-Ogz" id="gvY-ZW-Lxd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="top" secondItem="tik-YI-Uev" secondAttribute="top" id="Brk-9t-3YB"/>
+                            <constraint firstAttribute="trailing" secondItem="xk8-sT-VOO" secondAttribute="trailing" id="XC7-TV-bfR"/>
+                            <constraint firstItem="JqZ-wx-wP7" firstAttribute="top" secondItem="tik-YI-Uev" secondAttribute="bottom" id="XRS-pe-gnd"/>
+                            <constraint firstItem="JqZ-wx-wP7" firstAttribute="top" secondItem="xk8-sT-VOO" secondAttribute="bottom" id="YJa-40-zfE"/>
+                            <constraint firstAttribute="leading" secondItem="xk8-sT-VOO" secondAttribute="leading" id="ZvF-XV-AgZ"/>
+                            <constraint firstAttribute="leading" secondItem="tik-YI-Uev" secondAttribute="leading" id="caq-Jb-qOE"/>
+                            <constraint firstAttribute="top" secondItem="xk8-sT-VOO" secondAttribute="top" id="pdx-N4-ho2"/>
+                            <constraint firstAttribute="trailing" secondItem="tik-YI-Uev" secondAttribute="trailing" id="tTA-0e-AMe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVp-oF-qlT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2853" y="1903"/>
         </scene>
         <!--Employer Job List View Controller-->
         <scene sceneID="jzY-nI-VDB">

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EmployerMyApplicantList : UIViewController
+@interface EmployerMyApplicantList : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @end

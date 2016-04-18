@@ -15,6 +15,7 @@
 @synthesize lblRecruiterEmail;
 @synthesize btnRecruiterEdit;
 @synthesize imgRecruiterPicture;
+@synthesize lblCompanyProfile;
 - (void)awakeFromNib {
     // Initialization code
 }

@@ -42,7 +42,7 @@
 - (IBAction)btnrecruiterEdit {
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    EditProfileRecruiterViewController *Editpvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileViewController"];
+    EditProfileRecruiterViewController *Editpvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileRecruiterViewController"];
     
     [self presentViewController:Editpvc animated:YES completion:nil];
 }
