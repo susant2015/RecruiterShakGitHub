@@ -2109,10 +2109,10 @@
             </objects>
             <point key="canvasLocation" x="-1352" y="2152"/>
         </scene>
-        <!--Edit Profile Recruiter View Controller-->
+        <!--Edit Profile Recruiter-->
         <scene sceneID="knh-av-T1D">
             <objects>
-                <viewController storyboardIdentifier="EditProfileRecruiterViewController" id="fVm-Eh-q7s" customClass="EditProfileRecruiterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileRecruiter" id="fVm-Eh-q7s" customClass="EditProfileRecruiter" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gma-dH-vfZ"/>
                         <viewControllerLayoutGuide type="bottom" id="95o-U3-NTe"/>
@@ -2156,10 +2156,13 @@
                             <constraint firstItem="xdI-AO-M4s" firstAttribute="leading" secondItem="q6M-rB-Yib" secondAttribute="leading" id="lUV-bb-3H9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editTableViewRecruiter" destination="q6M-rB-Yib" id="EZf-pc-Xt7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsd-Zu-b2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152" y="2041"/>
+            <point key="canvasLocation" x="-5" y="2006"/>
         </scene>
         <!--About Applicants View Controller-->
         <scene sceneID="58V-vA-Nbr">

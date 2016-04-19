@@ -11,7 +11,7 @@
 #import "RecruiterMyLeadsContentCell.h"
 #import "Constants.h"
 #import "ModelLogInRecruiter.h"
-#import "EditProfileRecruiterViewController.h"
+#import "EditProfileRecruiter.h"
 @implementation AboutRecruiterViewController
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,7 +75,7 @@
 -(IBAction)btnRecruiterEditProfile:(UIButton *)sender{
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    EditProfileRecruiterViewController *Edit_P_Recruitervc = [sb instantiateViewControllerWithIdentifier:@"EditProfileRecruiterViewController"];
+    EditProfileRecruiter *Edit_P_Recruitervc = [sb instantiateViewControllerWithIdentifier:@"EditProfileRecruiter"];
     [self presentViewController:Edit_P_Recruitervc animated:YES completion:nil];
 }
 

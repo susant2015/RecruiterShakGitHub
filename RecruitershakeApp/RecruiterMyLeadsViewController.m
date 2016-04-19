@@ -11,7 +11,7 @@
 #import "RecruiterMyLeadsViewContollerCell.h"
 #import "ModelLogInRecruiter.h"
 #import "Constants.h"
-#import "EditProfileRecruiterViewController.h"
+#import "EditProfileRecruiter.h"
 @interface RecruiterMyLeadsViewController ()
 
 @end
@@ -90,7 +90,7 @@
 -(IBAction)btnRecruiterEditProfile:(UIButton *)sender{
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    EditProfileRecruiterViewController *Edit_P_Recruitervc = [sb instantiateViewControllerWithIdentifier:@"EditProfileRecruiterViewController"];
+    EditProfileRecruiter *Edit_P_Recruitervc = [sb instantiateViewControllerWithIdentifier:@"EditProfileRecruiter"];
     [self presentViewController:Edit_P_Recruitervc animated:YES completion:nil];
 }
 @end

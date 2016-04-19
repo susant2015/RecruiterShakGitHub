@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BtnUpdateProfile : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *btnEditUpdate;
 
 @end

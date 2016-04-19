@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, WebService) {
     SIGN_UP,
     FORGOT_PASSWORD,
     Employer_UserId,
+    EditRecruiter,
     
 };
 

@@ -16,7 +16,8 @@ NSString static *strAllservices[]={
     [SIGN_IN]                               =       @"",
     [SIGN_UP]                               =       @"",
     [FORGOT_PASSWORD]                       =       @"",
-    [Employer_UserId]                      =       @"",
+    [Employer_UserId]                         =       @"",
+    [EditRecruiter]               =      @"",
 };
 
 

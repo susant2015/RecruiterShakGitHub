@@ -10,6 +10,8 @@
 
 @implementation BtnUpdateProfile
 
+
+@synthesize btnEditUpdate;
 - (void)awakeFromNib {
     // Initialization code
 }
