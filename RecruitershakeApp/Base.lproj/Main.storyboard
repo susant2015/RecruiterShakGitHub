@@ -197,6 +197,9 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnFacebook" destination="7WF-0w-giF" eventType="touchUpInside" id="eVM-QK-ymL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6R-vY-Nta" userLabel="Button-twitter">
                                 <rect key="frame" x="550" y="100" width="40" height="25"/>
@@ -206,15 +209,21 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnTwitter" destination="7WF-0w-giF" eventType="touchUpInside" id="gB0-OQ-4l9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz6-oB-NJ3" userLabel="Button-google">
                                 <rect key="frame" x="550" y="137" width="40" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Button" backgroundImage="facebook.png">
+                                <state key="normal" backgroundImage="google.png">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnGooglePlus" destination="7WF-0w-giF" eventType="touchUpInside" id="kip-Bv-1mc"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="db_pic.png" translatesAutoresizingMaskIntoConstraints="NO" id="isg-cU-n6c" userLabel="img-picture">
                                 <rect key="frame" x="195" y="68" width="210" height="120"/>
@@ -454,6 +463,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cr8-ux-eIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3693" y="1430"/>
+        </scene>
+        <!--Recruiter Twitter View Controller-->
+        <scene sceneID="nsU-xm-rAc">
+            <objects>
+                <viewController storyboardIdentifier="RecruiterTwitterViewController" id="DB8-2v-T2H" customClass="RecruiterTwitterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aFv-km-D86"/>
+                        <viewControllerLayoutGuide type="bottom" id="mr5-D7-kGI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ybx-wd-whf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-nN-8wv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="top" secondItem="0XP-nN-8wv" secondAttribute="top" id="LPo-60-zIw"/>
+                            <constraint firstItem="mr5-D7-kGI" firstAttribute="top" secondItem="0XP-nN-8wv" secondAttribute="bottom" id="SoQ-li-8Zp"/>
+                            <constraint firstAttribute="trailing" secondItem="0XP-nN-8wv" secondAttribute="trailing" id="a4v-0Q-7nk"/>
+                            <constraint firstAttribute="leading" secondItem="0XP-nN-8wv" secondAttribute="leading" id="bZq-aB-Fo0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="web" destination="0XP-nN-8wv" id="RIt-7L-mxA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h50-89-cNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4315" y="2068"/>
+        </scene>
+        <!--Recruiter Google Plus View Controller-->
+        <scene sceneID="H2Q-rn-85p">
+            <objects>
+                <viewController storyboardIdentifier="RecruiterGooglePlusViewController" id="Uyb-wR-Uid" customClass="RecruiterGooglePlusViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ght-gD-UaI"/>
+                        <viewControllerLayoutGuide type="bottom" id="GyK-zR-rbe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6RB-RO-T0k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cg-GL-tyi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3cg-GL-tyi" secondAttribute="trailing" id="3jq-GT-gpM"/>
+                            <constraint firstAttribute="top" secondItem="3cg-GL-tyi" secondAttribute="top" id="5v5-nr-gmA"/>
+                            <constraint firstAttribute="leading" secondItem="3cg-GL-tyi" secondAttribute="leading" id="Pht-y8-OsO"/>
+                            <constraint firstItem="GyK-zR-rbe" firstAttribute="top" secondItem="3cg-GL-tyi" secondAttribute="bottom" id="WLa-Cs-J8a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="web" destination="3cg-GL-tyi" id="lic-tz-GzP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ndi-eM-QBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4320" y="2714"/>
+        </scene>
+        <!--Recruiter Face Book View Controller-->
+        <scene sceneID="dki-SC-0J6">
+            <objects>
+                <viewController storyboardIdentifier="RecruiterFaceBookViewController" id="Jhd-Ba-Qb2" customClass="RecruiterFaceBookViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EK7-dz-iRM"/>
+                        <viewControllerLayoutGuide type="bottom" id="7aJ-RL-DgG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mi2-Eg-gys">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDi-iw-clu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VDi-iw-clu" secondAttribute="trailing" id="OWP-xC-369"/>
+                            <constraint firstItem="7aJ-RL-DgG" firstAttribute="top" secondItem="VDi-iw-clu" secondAttribute="bottom" id="dhc-4a-gIx"/>
+                            <constraint firstAttribute="top" secondItem="VDi-iw-clu" secondAttribute="top" id="dlz-VW-KqV"/>
+                            <constraint firstAttribute="leading" secondItem="VDi-iw-clu" secondAttribute="leading" id="zzx-kG-Ftz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="web" destination="VDi-iw-clu" id="Rb9-sg-DPZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="suZ-gx-U46" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3690" y="2068"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="0Cy-Xf-wCd">

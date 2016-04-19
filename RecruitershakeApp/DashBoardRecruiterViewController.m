@@ -13,6 +13,9 @@
 #import "EditProfileRecruiter.h"
 #import "ModelLogInRecruiter.h"
 #import "AboutRecruiterViewController.h"
+#import "RecruiterFaceBookViewController.h"
+#import "RecruiterTwitterViewController.h"
+#import "RecruiterGooglePlusViewController.h"
 @interface DashBoardRecruiterViewController ()
 
 @end
@@ -52,5 +55,27 @@
     AboutRecruiterViewController *Aboutpvc = [sb instantiateViewControllerWithIdentifier:@"AboutRecruiterViewController"];
     
     [self presentViewController:Aboutpvc animated:YES completion:nil];
+}
+
+- (IBAction)btnFacebook {
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RecruiterFaceBookViewController *FBvc = [sb instantiateViewControllerWithIdentifier:@"RecruiterFaceBookViewController"];
+    [self presentViewController:FBvc animated:YES completion:nil];
+    
+}
+
+- (IBAction)btnTwitter {
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RecruiterTwitterViewController *Twvc = [sb instantiateViewControllerWithIdentifier:@"RecruiterTwitterViewController"];
+    [self presentViewController:Twvc animated:YES completion:nil];
+}
+
+- (IBAction)btnGooglePlus {
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RecruiterGooglePlusViewController *Twvc = [sb instantiateViewControllerWithIdentifier:@"RecruiterGooglePlusViewController"];
+    [self presentViewController:Twvc animated:YES completion:nil];
 }
 @end

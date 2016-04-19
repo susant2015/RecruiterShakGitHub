@@ -120,6 +120,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"ApplicantDetailsCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
     }
     else if (indexPath.row==1)
@@ -129,6 +130,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"ApplicantIndexCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
         
     }
@@ -139,6 +141,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"EducationBackgroundCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
         
     }
@@ -149,6 +152,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"WorkExprienceDegreeCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
         
     }
@@ -159,6 +163,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"WorkExprienceDegreeSchoolCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
         
     }
@@ -169,6 +174,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"DescriptionCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
         
     }
@@ -179,6 +185,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"LoadMoreCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
         
     }

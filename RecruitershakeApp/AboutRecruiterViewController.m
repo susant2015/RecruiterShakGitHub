@@ -66,10 +66,13 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"AboutContentCell" owner:self options:nil]objectAtIndex:0];
         }
-        
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell.lblAboutContent.textAlignment=NSTextAlignmentLeft;
+        cell.lblAboutContent.text=modelLogInRecruiter.strAbout;
         myCell=cell;
         
     }
+    
     return myCell;
 }
 -(IBAction)btnRecruiterEditProfile:(UIButton *)sender{

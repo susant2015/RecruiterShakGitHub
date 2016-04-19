@@ -34,16 +34,16 @@
     
     
     
-}
--(void)dataLoading{
+
+
     
-    myActivityIndicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [myActivityIndicator setFrame:CGRectMake(140, 170, 40, 40)];
-    [self.view addSubview:myActivityIndicator];
-    [myActivityIndicator startAnimating];
+    //myActivityIndicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+   // [myActivityIndicator setFrame:CGRectMake(140, 170, 40, 40)];
+    //[self.view addSubview:myActivityIndicator];
+    //[myActivityIndicator startAnimating];
     
     [[EmployerJobListService sharedInstance] employerJobListUserId:modelLogInEmployer.strId withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
-        
+       
         /*     NSLog(@"The result is:%@",result);
          NSLog(@"Models: %@", [result allKeys]);
          NSLog(@"The first json object is%@", [result objectForKey:@"0"]);
@@ -65,8 +65,11 @@
             [mutableArrayJsonData addObject:modelEmployerJobList];
             NSLog(@"Yhe firts object is%@",[mutableArrayJsonData objectAtIndex:0]);
                                             }  */
-                                            
-                                            
+        for (NSDictionary* restaurantParameters in result) {
+             modelLogInEmployer = [[ModelLogInEmployer alloc] initWithDictionary:restaurantParameters];
+            [mutableArrayJsonData addObject:modelLogInEmployer];
+        }
+        
                                             
                                             if(isError){
                                                 [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -96,8 +99,8 @@
     
     
       [super viewWillAppear:animated];
-    [self performSelector:@selector(dataLoading) withObject:nil afterDelay:0.0];
-    [myActivityIndicator stopAnimating];
+    //[self performSelector:@selector(dataLoading) withObject:nil afterDelay:0.0];
+   // [myActivityIndicator stopAnimating];
   /*  NSString *post = [[NSString alloc] initWithFormat:@"action=%@&u_id=%@",@"job_listing",modelLogInEmployer.strId];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
@@ -166,6 +169,7 @@
     cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
     cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
     [cell.btnAddCell addTarget:self action:@selector(addJobListEmployer) forControlEvents:UIControlEventTouchUpInside];
+     NSLog(@"The mutable data is:%@",mutableArrayJsonData);
     return cell;
     
 }
@@ -185,6 +189,7 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil]objectAtIndex:0];
         }
+   
         cell.lblJobId.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
         cell.lblJobTitle.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
         cell.lblPosition.text=[mutableArrayJsonData objectAtIndex:indexPath.row];

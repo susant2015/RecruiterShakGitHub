@@ -17,5 +17,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnAboutRecruiter;
 - (IBAction)btnCompanyProfile;
+- (IBAction)btnFacebook;
+- (IBAction)btnTwitter;
+- (IBAction)btnGooglePlus;
+
+
 
 @end

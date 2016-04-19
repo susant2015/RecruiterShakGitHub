@@ -86,6 +86,7 @@
             cell=[[[NSBundle mainBundle] loadNibNamed:@"AboutContentCell" owner:self options:nil]objectAtIndex:0];
         }
         cell.lblAboutContent.text=modelLogInEmployer.strAbout;
+        cell.lblAboutContent.textColor=UITableViewCellSelectionStyleNone;
         myCell=cell;
         
     }

@@ -761,7 +761,16 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==20)
+    if (indexPath.row==23)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strGPlusUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strGPlusUrl atIndex:indexPath.row];
+        
+        
+        
+    }
+    if (indexPath.row==21)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strFbUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -770,21 +779,12 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==21)
-    {
-        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strTwUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strTwUrl atIndex:indexPath.row];
-        
-        
-        
-    }
     
     if (indexPath.row==22)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strGPlusUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strGPlusUrl atIndex:indexPath.row];
+        strTwUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strTwUrl atIndex:indexPath.row];
         
         
         

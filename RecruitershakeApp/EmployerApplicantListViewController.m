@@ -9,6 +9,8 @@
 #import "EmployerApplicantListViewController.h"
 #import "Employerjoblistheadercell.h"
 #import "Employerapplicantlistcell.h"
+#import "ModelLogInEmployer.h"
+#import "Constants.h"
 @interface EmployerApplicantListViewController ()<UITextFieldDelegate>
 
 @end
@@ -74,7 +76,10 @@
     //cell.BtnAddjobListCell.hidden=YES;
     cell.LblTitlebar.text=@"My Applicants";
     cell.btnAddCell.hidden=true;
-    
+    cell.lblEmployerFirstName.text=modelLogInEmployer.strFirst_Name;
+    cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
+    cell.imgEmployer.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInEmployer.strPicture]]];
+    cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
     
     return cell;
     
