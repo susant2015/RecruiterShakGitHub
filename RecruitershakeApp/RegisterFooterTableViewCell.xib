@@ -28,12 +28,6 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1c-tv-MZv">
-                        <rect key="frame" x="130" y="115" width="340" height="38"/>
-                        <state key="normal" title="SIGN IN" backgroundImage="button-3.png">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_round.png" translatesAutoresizingMaskIntoConstraints="NO" id="WoT-Vb-aFJ" userLabel="imgor">
                         <rect key="frame" x="283" y="85" width="35" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -54,6 +48,12 @@
                         <rect key="frame" x="130" y="42" width="340" height="38"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <state key="normal" title="GET STARTED" backgroundImage="button-3.png">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1c-tv-MZv">
+                        <rect key="frame" x="130" y="115" width="340" height="38"/>
+                        <state key="normal" title="SIGN IN" backgroundImage="button-3.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -93,6 +93,8 @@
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="btnAction" destination="dBi-Gn-z1C" id="eJb-jf-maQ"/>
+                <outlet property="btnSignIn" destination="N1c-tv-MZv" id="gJw-lJ-2uh"/>
+                <outlet property="btnSignUpWithLinkedIn" destination="8tu-zg-F3j" id="Lge-2w-iO3"/>
             </connections>
             <point key="canvasLocation" x="503" y="167"/>
         </tableViewCell>

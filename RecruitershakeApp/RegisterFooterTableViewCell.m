@@ -11,7 +11,8 @@
 
 @implementation RegisterFooterTableViewCell
 @synthesize btnAction=_btnAction;
-
+@synthesize btnSignIn;
+@synthesize btnSignUpWithLinkedIn;
 - (void)awakeFromNib {
     // Initialization code
     

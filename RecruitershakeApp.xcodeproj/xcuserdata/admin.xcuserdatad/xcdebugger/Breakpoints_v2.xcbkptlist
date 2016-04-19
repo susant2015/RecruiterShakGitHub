@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/RegisterViewController.m"
-            timestampString = "482222156.109856"
+            timestampString = "482762380.426136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "413"
-            endingLineNumber = "413"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
             landmarkName = "-btnActionSubmit"
             landmarkType = "5">
          </BreakpointContent>
@@ -272,22 +272,6 @@
             startingLineNumber = "842"
             endingLineNumber = "842"
             landmarkName = "-btnActionRecruiter:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecruitershakeApp/BaseViewController.m"
-            timestampString = "482670229.214158"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-getSuperviewOfType:fromView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,6 +12,7 @@
 #import "RegisterFooterTableViewCell.h"
 #import "RegisterService.h"
 #import "DashBoardEmployerViewController.h"
+#import "LogInViewController.h"
 typedef NS_ENUM(NSInteger, CellContent) {
     FirstName,
     LastName,
@@ -277,6 +278,7 @@ NSString static *strPlaceholders[]={
         cell = [nib objectAtIndex:0];
     }
      [cell.btnAction addTarget:self action:@selector(btnActionSubmit) forControlEvents:UIControlEventTouchUpInside];
+     [cell.btnSignIn addTarget:self action:@selector(btnSingInGo) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -408,6 +410,15 @@ NSString static *strPlaceholders[]={
         
     
 }
+}
+-(void)btnSingInGo{
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LogInViewController *Apvc = [sb instantiateViewControllerWithIdentifier:@"LogInViewController"];
+    
+    
+    [self presentViewController:Apvc animated:YES completion:nil];
+    
 }
 
 -(void)btnActionSubmit{

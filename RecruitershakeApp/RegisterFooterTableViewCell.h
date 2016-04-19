@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *btnAction;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnSignIn;
+@property (weak, nonatomic) IBOutlet UIButton *btnSignUpWithLinkedIn;
 @end
