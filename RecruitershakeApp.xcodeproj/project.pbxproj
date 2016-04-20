@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8411E57D1CB7E3EC00AF29E3 /* ModelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411E57C1CB7E3EC00AF29E3 /* ModelRegister.m */; };
+		84131D0C1CC7657C004B98A1 /* CustomSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84131D0B1CC7657C004B98A1 /* CustomSectionViewController.m */; };
 		841959811C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841959801C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.m */; };
 		841959851C8EB5C000E8CA79 /* ApplicantHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841959831C8EB5C000E8CA79 /* ApplicantHeaderCell.m */; };
 		841959861C8EB5C000E8CA79 /* ApplicantHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841959841C8EB5C000E8CA79 /* ApplicantHeaderCell.xib */; };
@@ -202,6 +203,8 @@
 /* Begin PBXFileReference section */
 		8411E57B1CB7E3EC00AF29E3 /* ModelRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelRegister.h; sourceTree = "<group>"; };
 		8411E57C1CB7E3EC00AF29E3 /* ModelRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelRegister.m; sourceTree = "<group>"; };
+		84131D0A1CC7657C004B98A1 /* CustomSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSectionViewController.h; sourceTree = "<group>"; };
+		84131D0B1CC7657C004B98A1 /* CustomSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSectionViewController.m; sourceTree = "<group>"; };
 		8419597F1C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardApplicantProfileViewController.h; sourceTree = "<group>"; };
 		841959801C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardApplicantProfileViewController.m; sourceTree = "<group>"; };
 		841959821C8EB5C000E8CA79 /* ApplicantHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicantHeaderCell.h; sourceTree = "<group>"; };
@@ -588,6 +591,8 @@
 				847F316D1CC64F7F00E648D5 /* RecruiterTwitterViewController.m */,
 				847F316F1CC6589300E648D5 /* RecruiterGooglePlusViewController.h */,
 				847F31701CC6589300E648D5 /* RecruiterGooglePlusViewController.m */,
+				84131D0A1CC7657C004B98A1 /* CustomSectionViewController.h */,
+				84131D0B1CC7657C004B98A1 /* CustomSectionViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1244,6 +1249,7 @@
 				8448FE731CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.m in Sources */,
 				8491165A1C91786800CF1967 /* LoadMoreCell.m in Sources */,
 				84F3250B1CB544BE00CCFE97 /* ModelEmployerJobList.m in Sources */,
+				84131D0C1CC7657C004B98A1 /* CustomSectionViewController.m in Sources */,
 				84C8334F1C8457AA009AD74F /* DashBoardEmployerViewController.m in Sources */,
 				84C8333F1C8429E7009AD74F /* HomePageViewController.m in Sources */,
 				8448FE691CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.m in Sources */,
