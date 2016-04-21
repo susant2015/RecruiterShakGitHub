@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [[ApplicantWorkingExprienceService  sharedInstance] applicantUserId:modelLogInApplicant.strRecruiter_Id  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
+  [[ApplicantWorkingExprienceService  sharedInstance] applicantUserId:modelLogInApplicant.strRecruiter_Id  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         if(isError){
             [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
@@ -47,9 +47,9 @@
             [mutableArray addObject:result];
              NSLog(@"The result is:%@",mutableArray);
             [[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-            
+           
         }
-    }];
+    }];   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,24 +69,14 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     
-    return 3;
+    return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger mySection;
-    if (section==0) {
-        return mySection=1;
+    if(tableView == modelLogInApplicant.strRecruiter_Id){
+        return([mutableArray count]);
     }
-    else if (section==1){
-        return mySection=1;
-    }
-    else if (section==2){
-        return mySection=1;
-    }
-    else if (section==3){
-        return mySection=1;
-    }
-    return mySection;
+    return 0;
 }
 
 
@@ -96,84 +86,26 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *myCell=nil;
-     static NSString *HeaderIdentifier=@"ApplicantHeaderCell";
+   
     
-    if (indexPath.section == 0) {
-        
-        ApplicantHeaderCell *cell = (ApplicantHeaderCell *)[tableView dequeueReusableCellWithIdentifier:HeaderIdentifier];
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ApplicantHeaderCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        myCell=cell;
-        // Assign your data
-    } else if (indexPath.section == 1) {
-        // Assign your data
-        
-        static NSString *applicantIndexCellIdentifier=@"ApplicantDetailsCell";
-        ApplicantIndexCell *cell=(ApplicantIndexCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"ApplicantDetailsCell" owner:self options:nil]objectAtIndex:0];
-        }
-        myCell=cell;
-    }
-    else if (indexPath.section==2){
-        static NSString *applicantIndexCellIdentifier2=@"ApplicantIndexCell";
-        ApplicantIndexCell *cell=(ApplicantIndexCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier2];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"ApplicantIndexCell" owner:self options:nil]objectAtIndex:0];
-        }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        myCell=cell;
-    }
-    else if (indexPath.section==3){
+   
         static NSString *applicantIndexCellIdentifier2=@"WorkExprienceDegreeCell";
         WorkExprienceDegreeCell *cell=(WorkExprienceDegreeCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier2];
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"WorkExprienceDegreeCell" owner:self options:nil]objectAtIndex:0];
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        myCell=cell;
-        [tableView reloadData];
-    }
-    return myCell;
-}
-- (NSString *)tableView:(UITableView *)tblView titleForHeaderInSection:(NSInteger)section {
-    
-    NSString *sectionHeader = nil;
-    
-    
-    //SET TITLE FOR EACH SECTION:
-    if(section == 2) {
-        sectionHeader = @"";
-    }
-    
-    //RETURN THE SECTION HEADER FOR EACH SECTION:
-    return sectionHeader;
+      //  cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSLog(@"%@",[mutableArray objectAtIndex:0]);
+    [tableView reloadData];
    
+    return cell;
 }
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
-    CGFloat height=0.0f;
-    if (indexPath.section==0) {
-        height=200.0f;
-    }
-    else if (indexPath.section==1)
-    {
-        height=70.0f;
-    }
-    else if (indexPath.section==2)
-    {
-        height=110.0f;
-    }
-    else if (indexPath.section==3)
-    {
-        height=110.0f;
-    }
+    CGFloat height=110.0f;
     return height;
 }
 @end
