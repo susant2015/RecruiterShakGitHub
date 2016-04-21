@@ -9,6 +9,8 @@
 #import "CustomSectionViewController.h"
 #import "ApplicantHeaderCell.h"
 #import "ApplicantIndexCell.h"
+#import "ModelLogInApplicant.h"
+#import "Constants.h"
 
 @interface CustomSectionViewController ()
 
@@ -96,7 +98,7 @@
     
     //SET TITLE FOR EACH SECTION:
     if(section == 2) {
-        sectionHeader = @"Hello    World";
+        sectionHeader = @"";
     }
     
     //RETURN THE SECTION HEADER FOR EACH SECTION:
@@ -117,7 +119,7 @@
     }
     else if (indexPath.section==2)
     {
-        height=130.0f;
+        height=110.0f;
     }
     return height;
 }

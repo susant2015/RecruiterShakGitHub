@@ -665,19 +665,19 @@ NSString static *strPlaceholders[]={
     NSIndexPath *indexPath=[editTableViewRecruiter indexPathForCell:cell1];
     
     NSLog(@"indexPath:%ld",(long)indexPath.row);
-    if (indexPath.row==4)
+    if (indexPath.row==0)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strOldPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strOldPassword atIndex:indexPath.row];
+        strFisrst_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strFisrst_Name atIndex:indexPath.row];
         
         
     }
-    if (indexPath.row==5)
+    if (indexPath.row==1)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strNewPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strNewPassword atIndex:indexPath.row];
+        strLast_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strLast_Name atIndex:indexPath.row];
         
         
     }
