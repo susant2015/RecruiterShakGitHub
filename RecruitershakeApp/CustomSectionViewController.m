@@ -11,21 +11,57 @@
 #import "ApplicantIndexCell.h"
 #import "ModelLogInApplicant.h"
 #import "Constants.h"
+#import "WorkExprienceDegreeCell.h"
+#import "ApplicantWorkingExprienceService.h"
 
 @interface CustomSectionViewController ()
 
 @end
 
-@implementation CustomSectionViewController
+@implementation CustomSectionViewController{
+    
+    NSMutableArray *mutableArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [[ApplicantWorkingExprienceService  sharedInstance] applicantUserId:modelLogInApplicant.strRecruiter_Id  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
+        if(isError){
+            [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            
+            if(strMsg.length>0){
+                [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                
+                
+            }
+            else{
+                //[self alertStatus:SomethingWrong :nil];
+                
+            }
+            
+        }
+        else{
+            mutableArray=[[NSMutableArray alloc] init];
+            [mutableArray addObject:result];
+             NSLog(@"The result is:%@",mutableArray);
+            [[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+   
 }
 
 #pragma Table
@@ -45,6 +81,9 @@
         return mySection=1;
     }
     else if (section==2){
+        return mySection=1;
+    }
+    else if (section==3){
         return mySection=1;
     }
     return mySection;
@@ -89,6 +128,16 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
     }
+    else if (indexPath.section==3){
+        static NSString *applicantIndexCellIdentifier2=@"WorkExprienceDegreeCell";
+        WorkExprienceDegreeCell *cell=(WorkExprienceDegreeCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier2];
+        if (!cell) {
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"WorkExprienceDegreeCell" owner:self options:nil]objectAtIndex:0];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        myCell=cell;
+        [tableView reloadData];
+    }
     return myCell;
 }
 - (NSString *)tableView:(UITableView *)tblView titleForHeaderInSection:(NSInteger)section {
@@ -118,6 +167,10 @@
         height=70.0f;
     }
     else if (indexPath.section==2)
+    {
+        height=110.0f;
+    }
+    else if (indexPath.section==3)
     {
         height=110.0f;
     }

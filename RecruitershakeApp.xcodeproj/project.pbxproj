@@ -138,6 +138,7 @@
 		84B0ABCD1C80843E0083B773 /* forget_email_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B0ABCC1C80843E0083B773 /* forget_email_bg.png */; };
 		84B0ABCF1C808A070083B773 /* button-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B0ABCE1C808A070083B773 /* button-3.png */; };
 		84B0ABD11C808FD10083B773 /* register_round.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B0ABD01C808FD10083B773 /* register_round.png */; };
+		84B9DCCF1CC8FF24005AA767 /* ApplicantWorkingExprienceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9DCCE1CC8FF24005AA767 /* ApplicantWorkingExprienceService.m */; };
 		84C2F3D11C900755001D775B /* chat (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 84C2F3D01C900755001D775B /* chat (2).png */; };
 		84C2F3D51C9036CC001D775B /* EducationBackgroundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C2F3D31C9036CC001D775B /* EducationBackgroundCell.m */; };
 		84C2F3D61C9036CC001D775B /* EducationBackgroundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C2F3D41C9036CC001D775B /* EducationBackgroundCell.xib */; };
@@ -388,6 +389,8 @@
 		84B0ABCC1C80843E0083B773 /* forget_email_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forget_email_bg.png; path = ../../../../../wireframe/forget_email_bg.png; sourceTree = "<group>"; };
 		84B0ABCE1C808A070083B773 /* button-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-3.png"; path = "../../../../../../Downloads/button-3.png"; sourceTree = "<group>"; };
 		84B0ABD01C808FD10083B773 /* register_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = register_round.png; path = ../../../../../../Downloads/register_round.png; sourceTree = "<group>"; };
+		84B9DCCD1CC8FF24005AA767 /* ApplicantWorkingExprienceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicantWorkingExprienceService.h; sourceTree = "<group>"; };
+		84B9DCCE1CC8FF24005AA767 /* ApplicantWorkingExprienceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicantWorkingExprienceService.m; sourceTree = "<group>"; };
 		84C2F3D01C900755001D775B /* chat (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chat (2).png"; path = "../../../Image Set Date wise/AllImages/chat (2).png"; sourceTree = "<group>"; };
 		84C2F3D21C9036CC001D775B /* EducationBackgroundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationBackgroundCell.h; sourceTree = "<group>"; };
 		84C2F3D31C9036CC001D775B /* EducationBackgroundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationBackgroundCell.m; sourceTree = "<group>"; };
@@ -749,6 +752,8 @@
 				84EE1AFE1CB6595A00BF0C6E /* AddJobEmployerService.m */,
 				8425364C1CC4C095003A962C /* EditProfileRecruiterService.h */,
 				8425364D1CC4C095003A962C /* EditProfileRecruiterService.m */,
+				84B9DCCD1CC8FF24005AA767 /* ApplicantWorkingExprienceService.h */,
+				84B9DCCE1CC8FF24005AA767 /* ApplicantWorkingExprienceService.m */,
 			);
 			name = WebService;
 			sourceTree = "<group>";
@@ -1218,6 +1223,7 @@
 				842C7B571C96C6E5009B18C5 /* EmployerApplicantListViewController.m in Sources */,
 				846A7D6E1C96E13E0058D33B /* AboutApplicantsViewController.m in Sources */,
 				8448FE651CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.m in Sources */,
+				84B9DCCF1CC8FF24005AA767 /* ApplicantWorkingExprienceService.m in Sources */,
 				849116691C9182F100CF1967 /* EditProfileViewControllerEditLabelcell.m in Sources */,
 				849116641C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.m in Sources */,
 				847F316E1CC64F7F00E648D5 /* RecruiterTwitterViewController.m in Sources */,

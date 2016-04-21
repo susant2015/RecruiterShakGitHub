@@ -15,6 +15,7 @@
 #import "ModelLogInRecruiter.h"
 #import "ModelLogInApplicant.h"
 #import "Constants.h"
+#import "CustomSectionViewController.h"
 @interface LogInViewController ()<UITextFieldDelegate>
 
 -(void)txtUserNameField;
@@ -141,7 +142,7 @@
                  if([self.btnApplicant isSelected])
                 {
                     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    DashBoardApplicantProfileViewController *Apvc = [sb instantiateViewControllerWithIdentifier:@"ApplicantProfileViewController"];
+                    CustomSectionViewController *Apvc = [sb instantiateViewControllerWithIdentifier:@"CustomSectionViewController"];
                     modelLogInApplicant=[[ModelLogInApplicant alloc]initWithDictionary:result];
                     
                     [self presentViewController:Apvc animated:YES completion:nil];

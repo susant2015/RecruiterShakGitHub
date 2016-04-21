@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ffT-hX-L8D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -133,7 +133,7 @@
         <!--Custom Section View Controller-->
         <scene sceneID="y1z-eV-FFw">
             <objects>
-                <viewController id="ffT-hX-L8D" customClass="CustomSectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomSectionViewController" id="ffT-hX-L8D" customClass="CustomSectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Utl-pD-68P"/>
                         <viewControllerLayoutGuide type="bottom" id="doc-mx-j42"/>
