@@ -56,6 +56,10 @@
             NSLog(@"THe result is %@",result);
             
             //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            NSMutableArray *arr=[[NSMutableArray alloc] init];
+            [result objectForKey:@"leads"];
+            [arr addObjectsFromArray:result];
+            NSLog(@"The json arra is :%@",result);
             
         }
     }];
