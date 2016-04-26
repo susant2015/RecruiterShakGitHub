@@ -163,6 +163,13 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="lblEdu_Qulf" destination="lUt-W5-Hdd" id="gIP-uk-XIk"/>
+                <outlet property="lblEmail" destination="vhg-BU-WEE" id="E4u-oU-n94"/>
+                <outlet property="lblName" destination="YNf-NI-vAg" id="3AF-Xp-xWm"/>
+                <outlet property="lblOccupation" destination="agb-oM-PiT" id="gRz-Qw-8L5"/>
+                <outlet property="lblPhoneNumber" destination="XGq-cJ-rwT" id="Pif-Ja-rs5"/>
+            </connections>
             <point key="canvasLocation" x="542" y="164.5"/>
         </tableViewCell>
     </objects>

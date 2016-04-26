@@ -10,4 +10,6 @@
 
 @interface RecruiterMyLeadsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
+
+@property(strong,nonatomic) NSMutableArray *myLeadsData;
 @end

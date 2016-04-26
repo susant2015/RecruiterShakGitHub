@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface RecruiterMyLeadsViewContollerCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
+@property (weak, nonatomic) IBOutlet UILabel *lblOccupation;
+@property (weak, nonatomic) IBOutlet UILabel *lblEdu_Qulf;
+@property (weak, nonatomic) IBOutlet UILabel *lblEmail;
+@property (weak, nonatomic) IBOutlet UILabel *lblPhoneNumber;
 
 @end

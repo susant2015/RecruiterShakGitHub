@@ -21,6 +21,8 @@
 
 @implementation RecruiterMyLeadsViewController
 
+@synthesize myLeadsData;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -56,9 +58,9 @@
             NSLog(@"THe result is %@",result);
             
             //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-            NSMutableArray *arr=[[NSMutableArray alloc] init];
+            myLeadsData=[[NSMutableArray alloc] init];
             [result objectForKey:@"leads"];
-            [arr addObjectsFromArray:result];
+            [myLeadsData addObjectsFromArray:result];
             NSLog(@"The json arra is :%@",result);
             
         }
@@ -71,21 +73,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     CGFloat height=0.0f;
-    if (indexPath.row==0) {
+    if (indexPath.row==[myLeadsData count]) {
         height=131.0f;
     }
     
     
     return height;
-}
+}   */
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return 1;
+     return [self.myLeadsData count];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -117,7 +119,7 @@
 {
     UITableViewCell *myCell=nil;
     
-    if (indexPath.row==0) {
+    if (indexPath.row==[myLeadsData count]) {
         
         static NSString *applicantIndexCellIdentifier=@"RecruiterMyLeadsViewContollerCell";
         RecruiterMyLeadsViewContollerCell *cell=(RecruiterMyLeadsViewContollerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -128,6 +130,8 @@
         myCell=cell;
         
     }
+    [tableView reloadData];
+    
     return myCell;
 }
 
