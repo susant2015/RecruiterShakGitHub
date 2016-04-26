@@ -64,12 +64,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bachroler Degree" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUt-W5-Hdd">
-                        <rect key="frame" x="270" y="52" width="300" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxD-Zd-JmJ">
                         <rect key="frame" x="30" y="72" width="70" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -97,10 +91,21 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spP-qy-gPN" userLabel="Button-chart">
+                        <rect key="frame" x="530" y="23" width="40" height="25"/>
+                        <state key="normal" backgroundImage="chat.png"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bachroler Degree" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUt-W5-Hdd">
+                        <rect key="frame" x="270" y="52" width="300" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="width" secondItem="41G-hB-Kgd" secondAttribute="width" multiplier="540/120" id="0iQ-xA-wEH"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="bottom" secondItem="KxD-Zd-JmJ" secondAttribute="bottom" multiplier="1.25" id="1sw-wf-EI0"/>
+                    <constraint firstItem="zWP-Nf-XlW" firstAttribute="trailing" secondItem="spP-qy-gPN" secondAttribute="trailing" id="3oY-1I-s9B"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="bottom" secondItem="agb-oM-PiT" secondAttribute="bottom" multiplier="2.2" id="4Zr-T0-JwF"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="height" secondItem="vhg-BU-WEE" secondAttribute="height" multiplier="100/20" id="4uz-8s-XIv"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="leading" secondItem="41G-hB-Kgd" secondAttribute="leading" id="5hP-5r-jGF"/>
@@ -129,8 +134,11 @@
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="top" secondItem="YNf-NI-vAg" secondAttribute="top" id="Uh7-SM-z69"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="trailing" secondItem="YNf-NI-vAg" secondAttribute="trailing" id="V1k-Bi-mx3"/>
                     <constraint firstItem="QWm-gg-VS9" firstAttribute="centerX" secondItem="GRZ-X5-maa" secondAttribute="centerX" id="W1F-ml-tBZ"/>
+                    <constraint firstItem="zWP-Nf-XlW" firstAttribute="height" secondItem="spP-qy-gPN" secondAttribute="height" multiplier="100/25" id="WvW-Wl-WCb"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="leading" secondItem="KxD-Zd-JmJ" secondAttribute="leading" id="X7G-Vo-UFe"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="bottom" secondItem="41G-hB-Kgd" secondAttribute="bottom" multiplier="3.4" id="X7U-TE-bDa"/>
+                    <constraint firstItem="zWP-Nf-XlW" firstAttribute="bottom" secondItem="spP-qy-gPN" secondAttribute="bottom" multiplier="2.4" id="Y6j-kZ-H2N"/>
+                    <constraint firstItem="zWP-Nf-XlW" firstAttribute="width" secondItem="spP-qy-gPN" secondAttribute="width" multiplier="540/40" id="Y7n-XW-jTH"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="leading" secondItem="RPp-d4-MkX" secondAttribute="leading" id="Yub-t6-eEn"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="bottom" secondItem="vhg-BU-WEE" secondAttribute="bottom" multiplier="1.25" id="ZQO-vc-Ron"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="width" secondItem="KZO-9Z-xNs" secondAttribute="width" multiplier="540/120" id="ZgW-bj-mV7"/>
@@ -160,5 +168,6 @@
     </objects>
     <resources>
         <image name="back_bg2.png" width="854" height="324"/>
+        <image name="chat.png" width="68" height="54"/>
     </resources>
 </document>

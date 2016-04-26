@@ -1,32 +1,33 @@
 //
-//  ApplicantWorkingExprienceService.m
+//  RecruiterMyLeadsList.m
 //  RecruitershakeApp
 //
-//  Created by admin on 21/04/16.
+//  Created by admin on 26/04/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
-#import "ApplicantWorkingExprienceService.h"
+#import "RecruiterMyLeadService.h"
 
-@implementation ApplicantWorkingExprienceService{
-    
-    NSMutableArray *arr;
-}
+@implementation RecruiterMyLeadService
 
-+(ApplicantWorkingExprienceService*)sharedInstance{
+
+
++(RecruiterMyLeadService*)sharedInstance{
     
-    static ApplicantWorkingExprienceService *applicantWorkExp=nil;
+    static RecruiterMyLeadService *recruiterMyLeadslist=nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        applicantWorkExp=[[ApplicantWorkingExprienceService alloc] initWithService:Employer_UserId];
+        recruiterMyLeadslist=[[RecruiterMyLeadService alloc] initWithService:Employer_UserId];
     });
-    return applicantWorkExp;
+    return recruiterMyLeadslist;
     
 }
 
--(void) applicantUserId:(NSString *)strUserId withCompletionHandler:(CompletionHandler)handler{
+
+-(void)recruiterMyLeadsId:(NSString *)strUserId   withCompletionHandler:(CompletionHandler)handler{
     
-    NSString *post = [[NSString alloc] initWithFormat:@"action=%@&u_id=%@",@"education_listing",strUserId];
+    NSString *post = [[NSString alloc] initWithFormat:@"action=%@&rec_id=%@",@"get_leads",strUserId];
+    
     NSLog(@"post data:%@",post);
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
@@ -58,7 +59,6 @@
                 NSLog(@"Login Response :%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
                 NSDictionary *jsonResponeDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                 NSLog(@"THE JSONDIST%@",jsonResponeDict);
-                
                 
                 //handler(nil,YES,@"Sucess message");
                 if ([[jsonResponeDict objectForKey:@"status"]isEqualToString:@"1"])

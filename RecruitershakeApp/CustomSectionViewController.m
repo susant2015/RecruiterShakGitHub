@@ -18,10 +18,10 @@
 
 @end
 
-@implementation CustomSectionViewController{
+@implementation CustomSectionViewController
     
-    NSMutableArray *mutableArray;
-}
+   
+@synthesize mutableArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,7 +43,7 @@
             
         }
         else{
-            mutableArray=[[NSMutableArray alloc] init];
+           
             [mutableArray addObject:result];
              NSLog(@"The result is:%@",mutableArray);
             [[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -73,10 +73,8 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(tableView == modelLogInApplicant.strRecruiter_Id){
-        return([mutableArray count]);
-    }
-    return 0;
+           return[self.mutableArray count];
+    
 }
 
 
@@ -94,18 +92,21 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"WorkExprienceDegreeCell" owner:self options:nil]objectAtIndex:0];
         }
-      //  cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    NSLog(@"%@",[mutableArray objectAtIndex:0]);
-    [tableView reloadData];
+       cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    
+    cell.lblDegree.text= self.mutableArray[indexPath.row];
+  
+   [tableView reloadData];
    
     return cell;
 }
 
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+/*-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
     CGFloat height=110.0f;
     return height;
-}
+}  */
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WorkExprienceDegreeCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblDegree;
 
 @end

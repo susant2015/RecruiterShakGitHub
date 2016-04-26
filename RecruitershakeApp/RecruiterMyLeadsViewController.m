@@ -12,6 +12,9 @@
 #import "ModelLogInRecruiter.h"
 #import "Constants.h"
 #import "EditProfileRecruiter.h"
+#import "RecruiterMyLeadService.h"
+#import "ModelLogInRecruiter.h"
+#import "Constants.h"
 @interface RecruiterMyLeadsViewController ()
 
 @end
@@ -21,6 +24,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    [[RecruiterMyLeadService sharedInstance] recruiterMyLeadsId: modelLogInRecruiter.strRecruiter_Id withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
+        
+        /*           for (NSDictionary* restaurantParameters in result) {
+            modelLogInEmployer = [[ModelLogInEmployer alloc] initWithDictionary:restaurantParameters];
+            [mutableArrayJsonData addObject:modelLogInEmployer];
+        }
+        */
+        
+        if(isError){
+            [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            
+            if(strMsg.length>0){
+                [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                
+                
+            }
+            else{
+                // [self alertStatus:SomethingWrong :nil];
+                
+            }
+            
+        }
+        else{
+            NSLog(@"THe result is %@",result);
+            
+            //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            
+        }
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -139,6 +139,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="lblDegree" destination="8K1-jt-pGG" id="6dG-aZ-KDa"/>
+            </connections>
             <point key="canvasLocation" x="395" y="137"/>
         </tableViewCell>
     </objects>

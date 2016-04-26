@@ -10,6 +10,8 @@
 
 @implementation WorkExprienceDegreeCell
 
+@synthesize lblDegree;
+
 - (void)awakeFromNib {
     // Initialization code
 }

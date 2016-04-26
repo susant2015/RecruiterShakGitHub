@@ -10,4 +10,6 @@
 
 @interface CustomSectionViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
+
+@property(strong,nonatomic)  NSMutableArray *mutableArray;
 @end
