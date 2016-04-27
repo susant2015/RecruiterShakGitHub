@@ -29,7 +29,7 @@
     
   [[ApplicantWorkingExprienceService  sharedInstance] applicantUserId:modelLogInApplicant.strRecruiter_Id  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         if(isError){
-            [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:nil message:@"Error" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
             if(strMsg.length>0){
                 [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];

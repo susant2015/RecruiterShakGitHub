@@ -15,6 +15,7 @@
 #import "RecruiterMyLeadService.h"
 #import "ModelLogInRecruiter.h"
 #import "Constants.h"
+#import "ModelRecruiterMyLeads.h"
 @interface RecruiterMyLeadsViewController ()
 
 @end
@@ -22,6 +23,7 @@
 @implementation RecruiterMyLeadsViewController
 
 @synthesize myLeadsData;
+@synthesize tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,7 +43,8 @@
         */
         
         if(isError){
-            [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+           
+            [[[UIAlertView alloc] initWithTitle:nil message:@"Error" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
             if(strMsg.length>0){
                 [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -58,11 +61,13 @@
             NSLog(@"THe result is %@",result);
             
             //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            modelRecruiterMyLeads=[[ModelRecruiterMyLeads alloc] initWithDictionary:result];
             myLeadsData=[[NSMutableArray alloc] init];
-            [result objectForKey:@"leads"];
+            NSDictionary *dic=[result objectForKey:@"leads"];
             [myLeadsData addObjectsFromArray:result];
-            NSLog(@"The json arra is :%@",result);
-            
+            NSLog(@"The json arra is :%@",dic);
+           
+            [tableView reloadData];
         }
     }];
     
@@ -73,7 +78,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     CGFloat height=0.0f;
@@ -83,7 +88,7 @@
     
     
     return height;
-}   */
+}   
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
@@ -122,15 +127,16 @@
     if (indexPath.row==[myLeadsData count]) {
         
         static NSString *applicantIndexCellIdentifier=@"RecruiterMyLeadsViewContollerCell";
-        RecruiterMyLeadsViewContollerCell *cell=(RecruiterMyLeadsViewContollerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
+        RecruiterMyLeadsViewContollerCell *cell=(RecruiterMyLeadsViewContollerCell *)[self.tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"RecruiterMyLeadsViewContollerCell" owner:self options:nil]objectAtIndex:0];
         }
-        
+        cell.lblEmail.text=modelRecruiterMyLeads.strEmail;
+        NSLog(@"THe email is %@",modelRecruiterMyLeads.strEmail);
         myCell=cell;
         
     }
-    [tableView reloadData];
+    //[tableView reloadData];
     
     return myCell;
 }

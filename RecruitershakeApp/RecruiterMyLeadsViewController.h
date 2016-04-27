@@ -12,4 +12,5 @@
 
 
 @property(strong,nonatomic) NSMutableArray *myLeadsData;
+@property(strong,nonatomic) UITableView *tableView;
 @end
