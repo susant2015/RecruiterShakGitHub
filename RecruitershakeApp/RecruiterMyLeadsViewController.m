@@ -61,23 +61,42 @@
         for(NSDictionary *newValu in statuses)
         {
             
-            NSString *strFirst=[newValu objectForKey:@"first_name"];
+            self.strFirstName=[newValu objectForKey:@"first_name"];
             
-            NSString *strLast=[newValu objectForKey:@"last_name"];
+            self.strEdu_qlification=[newValu objectForKey:@"last_name"];
             
-            NSString *strPhone_Numbers=[newValu objectForKey:@"phone_number"];
-            NSString *strEmailes=[newValu objectForKey:@"email"];
+            self.strPhone_Number=[newValu objectForKey:@"phone_number"];
+            self.strEmail=[newValu objectForKey:@"email"];
             
-            NSLog(@"Name :%@    Quantity :%@    MRP :%@ ",strFirst,strLast,strPhone_Numbers,strEmailes);
+            [tableView reloadData];
+            
+            NSLog(@"Name :%@    Quantity :%@    MRP :%@ ",self.strFirstName,self.strEdu_qlification,self.strPhone_Number,self.strEmail);
         }
     }
     
-    NSMutableArray *_names = [NSMutableArray array];
+    NSMutableArray *_strFirstname = [NSMutableArray array];
+    NSMutableArray *_strQualification = [NSMutableArray array];
+     NSMutableArray *_strEmail = [NSMutableArray array];
+     NSMutableArray *_strPhonenumber = [NSMutableArray array];
+    
+    for (NSDictionary *dictionary in statuses)
+    {
+        self.myLeadsData= [dictionary objectForKey:@"leads"];
+    }
+    for (NSDictionary *dic in self.myLeadsData) {
+        NSLog(@"THe first name is:%@",[dic objectForKey:@"first_name"]);
+    }
     for (id item in statuses)
-        [_names addObject:[NSString stringWithFormat:@"%@ %@ %@ %@", item[@"first_name"], item[@"last_name"],item[@"email"],item[@"phone_number"]]];
-    self.names = _names;
-    NSLog(@"The arra mutable is:%@",names);
+        [_strFirstname addObject:[NSString stringWithFormat:@"%@", item[@"first_name"]]];
+        //[_strQualification addObject:[NSString stringWithFormat:@"%@",item[@"last_name"]]];
+       // [_strQualification addObject:[NSString stringWithFormat:@"%@", item[@"last_name"]]];
+       // [_strEmail addObject:[NSString stringWithFormat:@"%@", item[@"email"]]];
+       // [_strPhonenumber addObject:[NSString stringWithFormat:@"%@", item[@"phone_number"]]];
+        
     [tableView reloadData];
+    self.names=_strFirstname;
+    
+    
     
 }
 
@@ -101,14 +120,41 @@
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"RecruiterMyLeadsViewContollerCell" owner:self options:nil]objectAtIndex:0];
         }
-        cell.lblEmail.text=self.names[indexPath.row];
-        
-        
-        NSLog(@"THe email is %@",modelRecruiterMyLeads.strEmail);
+    
+       // cell.lblEmail.text=self.names[indexPath.row];
+    
+     cell.lblName.text = [self.names objectAtIndex:indexPath.row];
+    // cell.lblEmail.text=[self.strEmail objectAtIndex:indexPath.row];
         myCell=cell;
         
     
     return myCell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    static NSString *HeaderIdentifier=@"RecruiterMyLeadsContentCell";
+    
+    
+    RecruiterMyLeadsContentCell *cell = (RecruiterMyLeadsContentCell *)[tableView dequeueReusableCellWithIdentifier:HeaderIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RecruiterMyLeadsContentCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+        
+    }
+    cell.lblRecruiterFirstName.text=modelLogInRecruiter.strFirst_Name;
+    cell.lblRecruiterLastName.text=modelLogInRecruiter.strLast_Name;
+    cell.lblRecruiterEmail.text=modelLogInRecruiter.strEmail;
+    cell.imgRecruiterPicture.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInRecruiter.strPicture]]];
+    cell.lblCompanyProfile.text=@"My Leads";
+    [cell.btnRecruiterEdit addTarget:self action:@selector(btnRecruiterEditProfile:) forControlEvents:UIControlEventTouchUpInside];
+    return cell;
+    
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 191.0f;
 }
 
 /* -(void)viewWillAppear:(BOOL)animated{
