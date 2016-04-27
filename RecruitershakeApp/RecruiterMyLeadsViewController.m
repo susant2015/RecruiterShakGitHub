@@ -5,7 +5,7 @@
 //  Created by admin on 15/04/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
-
+#define JSON_FILE_URL @"http://website-design-company.in/dev13/services.php?action=get_leads&rec_id=3"
 #import "RecruiterMyLeadsViewController.h"
 #import "RecruiterMyLeadsContentCell.h"
 #import "RecruiterMyLeadsViewContollerCell.h"
@@ -23,26 +23,107 @@
 @implementation RecruiterMyLeadsViewController
 
 @synthesize myLeadsData;
+@synthesize names;
 @synthesize tableView;
+
+@synthesize strFirstName;
+@synthesize strLastName;
+@synthesize strEmail;
+@synthesize strPhone_Number;
+@synthesize strEdu_qlification;
+@synthesize strzOccuption;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    // Download JSON
+    NSData *JSONData = [NSData dataWithContentsOfURL:[NSURL URLWithString:JSON_FILE_URL]];
+    // Parse JSON
+    NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:JSONData options:kNilOptions error:nil];
+    
+    NSLog(@"The arr is %@",jsonResult);
+    
+    NSDictionary *statuses=[jsonResult objectForKey:@"leads"];
+    
+    
+    NSLog(@"SomeStatus :%@",statuses);
+    
+    if (!statuses)
+    {
+      //  NSLog(@"Error in Json :%@",error);
+    }
+    else
+    {
+        
+        
+        for(NSDictionary *newValu in statuses)
+        {
+            
+            NSString *strFirst=[newValu objectForKey:@"first_name"];
+            
+            NSString *strLast=[newValu objectForKey:@"last_name"];
+            
+            NSString *strPhone_Numbers=[newValu objectForKey:@"phone_number"];
+            NSString *strEmailes=[newValu objectForKey:@"email"];
+            
+            NSLog(@"Name :%@    Quantity :%@    MRP :%@ ",strFirst,strLast,strPhone_Numbers,strEmailes);
+        }
+    }
+    
+    NSMutableArray *_names = [NSMutableArray array];
+    for (id item in statuses)
+        [_names addObject:[NSString stringWithFormat:@"%@ %@ %@ %@", item[@"first_name"], item[@"last_name"],item[@"email"],item[@"phone_number"]]];
+    self.names = _names;
+    NSLog(@"The arra mutable is:%@",names);
+    [tableView reloadData];
+    
 }
 
--(void)viewWillAppear:(BOOL)animated{
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+    return [self.names count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *myCell=nil;
+    
+        static NSString *applicantIndexCellIdentifier=@"RecruiterMyLeadsViewContollerCell";
+        RecruiterMyLeadsViewContollerCell *cell=(RecruiterMyLeadsViewContollerCell *)[self.tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
+        if (!cell) {
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"RecruiterMyLeadsViewContollerCell" owner:self options:nil]objectAtIndex:0];
+        }
+        cell.lblEmail.text=self.names[indexPath.row];
+        
+        
+        NSLog(@"THe email is %@",modelRecruiterMyLeads.strEmail);
+        myCell=cell;
+        
+    
+    return myCell;
+}
+
+/* -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
     
     [[RecruiterMyLeadService sharedInstance] recruiterMyLeadsId: modelLogInRecruiter.strRecruiter_Id withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         
-        /*           for (NSDictionary* restaurantParameters in result) {
+                  for (NSDictionary* restaurantParameters in result) {
             modelLogInEmployer = [[ModelLogInEmployer alloc] initWithDictionary:restaurantParameters];
             [mutableArrayJsonData addObject:modelLogInEmployer];
         }
-        */
+ 
         
-        if(isError){
+       if(isError){
            
             [[[UIAlertView alloc] initWithTitle:nil message:@"Error" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
@@ -58,23 +139,14 @@
             
         }
         else{
-            NSLog(@"THe result is %@",result);
-            
-            //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-            modelRecruiterMyLeads=[[ModelRecruiterMyLeads alloc] initWithDictionary:result];
-            myLeadsData=[[NSMutableArray alloc] init];
-            NSDictionary *dic=[result objectForKey:@"leads"];
-            [myLeadsData addObjectsFromArray:result];
-            NSLog(@"The json arra is :%@",dic);
            
-            [tableView reloadData];
         }
     }];
     
     
-}
+}  */
 
-- (void)didReceiveMemoryWarning {
+/*- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -139,7 +211,9 @@
     //[tableView reloadData];
     
     return myCell;
-}
+}  */
+
+
 
 -(IBAction)btnRecruiterEditProfile:(UIButton *)sender{
     
