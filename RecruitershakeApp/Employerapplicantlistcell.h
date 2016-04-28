@@ -10,4 +10,9 @@
 
 @interface Employerapplicantlistcell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *lblfitstname;
+@property (weak, nonatomic) IBOutlet UILabel *lblLastName;
+@property (weak, nonatomic) IBOutlet UILabel *lblJobId;
+@property (weak, nonatomic) IBOutlet UILabel *lblApplyDate;
+
 @end

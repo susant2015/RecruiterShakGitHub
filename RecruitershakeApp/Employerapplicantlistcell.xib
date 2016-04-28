@@ -68,32 +68,42 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Susanta Nahak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDh-Tu-aWk">
-                        <rect key="frame" x="170" y="6" width="400" height="15"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ws8-GK-JRt" userLabel="img-border-first and last">
+                        <rect key="frame" x="150" y="4" width="300" height="15"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BM3-Sw-LEB" userLabel="Label-firstname">
+                        <rect key="frame" x="150" y="4" width="150" height="15"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dutta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrB-kh-M4I" userLabel="Label-last-name">
+                        <rect key="frame" x="250" y="4" width="200" height="15"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="DI5-cJ-uUa" firstAttribute="trailing" secondItem="xDh-Tu-aWk" secondAttribute="trailing" id="1i0-qV-dYA"/>
                     <constraint firstItem="SQS-3G-3qB" firstAttribute="height" secondItem="utK-Cw-Rtq" secondAttribute="height" multiplier="80/70" id="3Ks-Ne-7JZ"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="height" secondItem="K0v-y2-Fis" secondAttribute="height" multiplier="60/15" id="4Jv-Ih-nOd"/>
                     <constraint firstAttribute="left" secondItem="SQS-3G-3qB" secondAttribute="left" id="5bf-2Z-Sor"/>
                     <constraint firstItem="utK-Cw-Rtq" firstAttribute="height" secondItem="DI5-cJ-uUa" secondAttribute="height" multiplier="70/60" id="7Yh-On-z3W"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="width" secondItem="zrB-kh-M4I" secondAttribute="width" multiplier="300/200" id="ADE-0l-6Fb"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="width" secondItem="BM3-Sw-LEB" secondAttribute="width" multiplier="300/150" id="AY3-6J-fJA"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="bottom" secondItem="8yK-aO-Lz8" secondAttribute="bottom" multiplier="3" id="BUx-5X-9Er"/>
                     <constraint firstAttribute="top" secondItem="SQS-3G-3qB" secondAttribute="top" id="Bmc-UN-qb7"/>
                     <constraint firstItem="utK-Cw-Rtq" firstAttribute="centerX" secondItem="DI5-cJ-uUa" secondAttribute="centerX" id="C0H-Vu-rBA"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="height" secondItem="zrB-kh-M4I" secondAttribute="height" id="CcS-cT-3xk"/>
+                    <constraint firstItem="DI5-cJ-uUa" firstAttribute="width" secondItem="Ws8-GK-JRt" secondAttribute="width" multiplier="540/300" id="DVh-Qt-tg7"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="height" secondItem="8yK-aO-Lz8" secondAttribute="height" multiplier="60/15" id="DVn-7L-rmg"/>
-                    <constraint firstItem="DI5-cJ-uUa" firstAttribute="width" secondItem="xDh-Tu-aWk" secondAttribute="width" multiplier="540/400" id="EZO-TB-xgd"/>
                     <constraint firstItem="SQS-3G-3qB" firstAttribute="width" secondItem="utK-Cw-Rtq" secondAttribute="width" multiplier="600/550" id="HRp-tj-iXb"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="bottom" secondItem="K0v-y2-Fis" secondAttribute="bottom" id="IsO-LL-HXp"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="width" secondItem="sMl-AG-ypL" secondAttribute="width" multiplier="540/440" id="It9-uC-VL6"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="bottom" secondItem="Z8N-Cn-JAQ" secondAttribute="bottom" multiplier="1.5" id="IvO-Tt-42d"/>
                     <constraint firstAttribute="bottom" secondItem="SQS-3G-3qB" secondAttribute="bottom" id="IzJ-zf-tCN"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="width" secondItem="Z8N-Cn-JAQ" secondAttribute="width" multiplier="540/100" id="K8W-7T-ErQ"/>
-                    <constraint firstItem="DI5-cJ-uUa" firstAttribute="height" secondItem="xDh-Tu-aWk" secondAttribute="height" multiplier="60/15" id="Lfu-Gr-Bsi"/>
-                    <constraint firstItem="DI5-cJ-uUa" firstAttribute="bottom" secondItem="xDh-Tu-aWk" secondAttribute="bottom" multiplier="3" id="PnC-vD-yFb"/>
+                    <constraint firstItem="DI5-cJ-uUa" firstAttribute="height" secondItem="Ws8-GK-JRt" secondAttribute="height" multiplier="60/15" id="LKg-bv-vm4"/>
                     <constraint firstAttribute="right" secondItem="SQS-3G-3qB" secondAttribute="right" id="PwE-dt-WIf"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="height" secondItem="sL9-oy-a5V" secondAttribute="height" multiplier="60/15" id="QJ2-zo-VzF"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="leading" secondItem="8yK-aO-Lz8" secondAttribute="leading" id="Qw3-aF-RvJ"/>
@@ -102,20 +112,33 @@
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="trailing" secondItem="sMl-AG-ypL" secondAttribute="trailing" id="WUb-yS-Jxf"/>
                     <constraint firstItem="SQS-3G-3qB" firstAttribute="bottom" secondItem="utK-Cw-Rtq" secondAttribute="bottom" multiplier="1.15" id="XAN-Mk-vOH"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="trailing" secondItem="K0v-y2-Fis" secondAttribute="trailing" id="XL2-XV-0cj"/>
+                    <constraint firstItem="DI5-cJ-uUa" firstAttribute="centerX" secondItem="Ws8-GK-JRt" secondAttribute="centerX" id="XOx-dQ-VFN"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="bottom" secondItem="sL9-oy-a5V" secondAttribute="bottom" id="Ybo-si-7bc"/>
                     <constraint firstItem="utK-Cw-Rtq" firstAttribute="bottom" secondItem="DI5-cJ-uUa" secondAttribute="bottom" multiplier="1.1" id="cfn-Jt-na0"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="top" secondItem="zrB-kh-M4I" secondAttribute="top" id="e8c-ui-XMF"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="leading" secondItem="BM3-Sw-LEB" secondAttribute="leading" id="egp-zP-dZq"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="height" secondItem="BM3-Sw-LEB" secondAttribute="height" id="ewk-1j-tOt"/>
+                    <constraint firstItem="DI5-cJ-uUa" firstAttribute="top" secondItem="Ws8-GK-JRt" secondAttribute="top" id="f15-FD-YPc"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="width" secondItem="K0v-y2-Fis" secondAttribute="width" multiplier="540/430" id="hPU-oa-FS4"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="bottom" secondItem="sMl-AG-ypL" secondAttribute="bottom" multiplier="1.5" id="hZj-5J-8IJ"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="width" secondItem="8yK-aO-Lz8" secondAttribute="width" multiplier="540/130" id="hsJ-eE-Zbj"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="trailing" secondItem="zrB-kh-M4I" secondAttribute="trailing" id="kJb-LF-vjy"/>
                     <constraint firstItem="SQS-3G-3qB" firstAttribute="centerX" secondItem="utK-Cw-Rtq" secondAttribute="centerX" id="nPR-lD-RRK"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="height" secondItem="Z8N-Cn-JAQ" secondAttribute="height" multiplier="60/15" id="nvA-EN-7i3"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="leading" secondItem="Z8N-Cn-JAQ" secondAttribute="leading" id="uBg-OE-jhd"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="top" secondItem="BM3-Sw-LEB" secondAttribute="top" id="uea-PG-zl1"/>
                     <constraint firstItem="utK-Cw-Rtq" firstAttribute="width" secondItem="DI5-cJ-uUa" secondAttribute="width" multiplier="550/540" id="xL4-zV-olj"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="height" secondItem="sMl-AG-ypL" secondAttribute="height" multiplier="60/15" id="yaO-Gg-V75"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="lblApplyDate" destination="K0v-y2-Fis" id="AaX-Ft-Emu"/>
+                <outlet property="lblJobId" destination="sMl-AG-ypL" id="ywh-9I-40f"/>
+                <outlet property="lblLastName" destination="zrB-kh-M4I" id="E2M-y0-Diu"/>
+                <outlet property="lblfitstname" destination="BM3-Sw-LEB" id="qq2-1l-m6w"/>
+            </connections>
             <point key="canvasLocation" x="386" y="137.5"/>
         </tableViewCell>
     </objects>

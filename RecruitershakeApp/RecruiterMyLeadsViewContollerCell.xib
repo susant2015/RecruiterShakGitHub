@@ -82,7 +82,7 @@
                         <state key="normal" backgroundImage="chat.png"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUt-W5-Hdd">
-                        <rect key="frame" x="270" y="52" width="300" height="20"/>
+                        <rect key="frame" x="220" y="52" width="350" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -97,7 +97,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nahak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFb-Wd-jjG" userLabel="Label-lastname">
-                        <rect key="frame" x="246" y="15" width="189" height="20"/>
+                        <rect key="frame" x="226" y="15" width="209" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -138,7 +138,7 @@
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="bottom" secondItem="KZO-9Z-xNs" secondAttribute="bottom" multiplier="2.2" id="PKh-eO-oo0"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="bottom" secondItem="RPp-d4-MkX" secondAttribute="bottom" multiplier="1.6" id="Q2K-ku-yAn"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="height" secondItem="RPp-d4-MkX" secondAttribute="height" multiplier="100/20" id="Qa1-0b-e5b"/>
-                    <constraint firstItem="zWP-Nf-XlW" firstAttribute="width" secondItem="lUt-W5-Hdd" secondAttribute="width" multiplier="540/300" id="RtV-QJ-4oa"/>
+                    <constraint firstItem="zWP-Nf-XlW" firstAttribute="width" secondItem="lUt-W5-Hdd" secondAttribute="width" multiplier="540/350" id="RtV-QJ-4oa"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="height" secondItem="KxD-Zd-JmJ" secondAttribute="height" multiplier="100/20" id="Sz9-0E-pFU"/>
                     <constraint firstItem="QFy-y1-dys" firstAttribute="width" secondItem="uT7-9E-gAc" secondAttribute="width" multiplier="200/100" id="TfV-0N-JwY"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="height" secondItem="KZO-9Z-xNs" secondAttribute="height" multiplier="100/20" id="UXw-gx-dEb"/>
@@ -156,7 +156,7 @@
                     <constraint firstItem="QFy-y1-dys" firstAttribute="height" secondItem="uT7-9E-gAc" secondAttribute="height" id="dAp-Gr-fpU"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="width" secondItem="RPp-d4-MkX" secondAttribute="width" multiplier="540/250" id="dCb-f7-hXD"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="trailing" secondItem="XGq-cJ-rwT" secondAttribute="trailing" id="dUW-F4-UYC"/>
-                    <constraint firstItem="QFy-y1-dys" firstAttribute="width" secondItem="PFb-Wd-jjG" secondAttribute="width" multiplier="200/140" id="dXu-Df-hNS"/>
+                    <constraint firstItem="QFy-y1-dys" firstAttribute="width" secondItem="PFb-Wd-jjG" secondAttribute="width" multiplier="200/155" id="dXu-Df-hNS"/>
                     <constraint firstAttribute="top" secondItem="QWm-gg-VS9" secondAttribute="top" id="eiO-VI-k3E"/>
                     <constraint firstItem="zWP-Nf-XlW" firstAttribute="width" secondItem="vhg-BU-WEE" secondAttribute="width" multiplier="540/460" id="f8A-R4-vZd"/>
                     <constraint firstItem="QFy-y1-dys" firstAttribute="leading" secondItem="uT7-9E-gAc" secondAttribute="leading" id="fhF-Nd-ASy"/>

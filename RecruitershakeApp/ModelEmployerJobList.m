@@ -91,5 +91,10 @@
     }
     return self;
 }
-
+-(NSArray *)initwithArray:(NSArray *)arr{
+   
+    
+    
+    return arr;
+}
 @end

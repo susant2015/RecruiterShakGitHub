@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840FFB371CD234D20041E598 /* EmployerApplicantListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 840FFB361CD234D20041E598 /* EmployerApplicantListService.m */; };
 		8411E57D1CB7E3EC00AF29E3 /* ModelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411E57C1CB7E3EC00AF29E3 /* ModelRegister.m */; };
 		84131D0C1CC7657C004B98A1 /* CustomSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84131D0B1CC7657C004B98A1 /* CustomSectionViewController.m */; };
 		841959811C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841959801C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.m */; };
@@ -204,6 +205,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840FFB351CD234D20041E598 /* EmployerApplicantListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployerApplicantListService.h; sourceTree = "<group>"; };
+		840FFB361CD234D20041E598 /* EmployerApplicantListService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployerApplicantListService.m; sourceTree = "<group>"; };
 		8411E57B1CB7E3EC00AF29E3 /* ModelRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelRegister.h; sourceTree = "<group>"; };
 		8411E57C1CB7E3EC00AF29E3 /* ModelRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelRegister.m; sourceTree = "<group>"; };
 		84131D0A1CC7657C004B98A1 /* CustomSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSectionViewController.h; sourceTree = "<group>"; };
@@ -762,6 +765,8 @@
 				84B9DCCE1CC8FF24005AA767 /* ApplicantWorkingExprienceService.m */,
 				84CC952D1CCF7D31002E6E3E /* RecruiterMyLeadService.h */,
 				84CC952E1CCF7D31002E6E3E /* RecruiterMyLeadService.m */,
+				840FFB351CD234D20041E598 /* EmployerApplicantListService.h */,
+				840FFB361CD234D20041E598 /* EmployerApplicantListService.m */,
 			);
 			name = WebService;
 			sourceTree = "<group>";
@@ -1292,6 +1297,7 @@
 				84A808F01C8591BD00043683 /* SigninService.m in Sources */,
 				84D815C41CABA70200AEF15E /* RegisterService.m in Sources */,
 				84A809001C86DE4500043683 /* AddWorkingExprinceViewController.m in Sources */,
+				840FFB371CD234D20041E598 /* EmployerApplicantListService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

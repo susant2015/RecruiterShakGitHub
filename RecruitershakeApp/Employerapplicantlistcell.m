@@ -10,6 +10,12 @@
 
 @implementation Employerapplicantlistcell
 
+@synthesize lblfitstname;
+@synthesize lblLastName;
+@synthesize lblJobId;
+@synthesize lblApplyDate;
+
+
 - (void)awakeFromNib {
     // Initialization code
 }

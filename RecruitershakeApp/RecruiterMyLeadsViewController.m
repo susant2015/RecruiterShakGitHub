@@ -82,7 +82,7 @@
             self.strPhone_Number=[newValu objectForKey:@"phone_number"];
             self.strEmail=[newValu objectForKey:@"email"];
             
-            [tableView reloadData];
+           // [tableView reloadData];
             
             NSLog(@"Name :%@    Quantity :%@    MRP :%@ ",self.strFirstName,self.strEdu_qlification,self.strPhone_Number,self.strEmail);
         }

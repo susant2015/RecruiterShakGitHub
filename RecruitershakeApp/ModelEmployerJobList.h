@@ -23,4 +23,5 @@
 @property(weak,nonatomic)NSString *strUrl_Key;
 
 -(id)initWithDictionary:(NSDictionary *)dict;
+-(NSArray *)initwithArray:(NSArray *)arr;
 @end
