@@ -11,8 +11,13 @@
 @interface RecruiterMyLeadsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 
-@property(strong,nonatomic) NSArray *myLeadsData;
-@property (strong, nonatomic) NSArray *names;
+
+@property (strong, nonatomic) NSArray *firstnames;
+@property(strong,nonatomic) NSArray *lastname;
+@property(strong,nonatomic) NSArray *email;
+@property(strong,nonatomic) NSArray *phone_number;
+@property(strong,nonatomic) NSArray *occuption;
+@property(strong,nonatomic) NSArray *qualification;
 
 @property(strong,nonatomic) UITableView *tableView;
 

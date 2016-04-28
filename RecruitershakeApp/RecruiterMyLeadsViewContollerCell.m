@@ -10,11 +10,12 @@
 
 @implementation RecruiterMyLeadsViewContollerCell
 
-@synthesize lblName;
+@synthesize lblFirstName;
 @synthesize lblOccupation;
 @synthesize lblEdu_Qulf;
 @synthesize lblEmail;
 @synthesize lblPhoneNumber;
+@synthesize lblLastName;
 
 - (void)awakeFromNib {
     // Initialization code
