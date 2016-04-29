@@ -19,79 +19,15 @@
 
 @implementation EmployerJobListViewController{
     
-    UITableView *tableView;
-     NSMutableArray *mutableArrayJsonData;
-    NSArray *tempArray;
-    UIActivityIndicatorView *myActivityIndicator;
+  
+  
    }
-@synthesize dist;
-@synthesize dists;
+
+@synthesize mutableArrJobList;
+@synthesize tableView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   
-
-    
-    
-    
-
-
-    
-    //myActivityIndicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-   // [myActivityIndicator setFrame:CGRectMake(140, 170, 40, 40)];
-    //[self.view addSubview:myActivityIndicator];
-    //[myActivityIndicator startAnimating];
-    
-    [[EmployerJobListService sharedInstance] employerJobListUserId:modelLogInEmployer.strId withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
-       
-        /*     NSLog(@"The result is:%@",result);
-         NSLog(@"Models: %@", [result allKeys]);
-         NSLog(@"The first json object is%@", [result objectForKey:@"0"]);
-         NSDictionary *addjsonlistfirst=[result objectForKey:@"0"];
-         modelEmployerJobList=[[ModelEmployerJobList alloc]initWithDictionary:addjsonlistfirst];
-         
-         mutableArrayJsonData = [[NSMutableArray alloc] init];
-         NSArray * values = [addjsonlistfirst allValues];
-         [mutableArrayJsonData addObject:values];
-         tempArray=[[NSArray alloc] initWithArray:mutableArrayJsonData copyItems:true];
-         for (int i = 0; i < [tempArray count]; i++)
-         {
-         NSLog(@"Item %d = %@", i, [tempArray objectAtIndex:i]);
-         }
-         
-        mutableArrayJsonData = [[NSMutableArray alloc] init];
-        for (NSDictionary *dicss in result) {
-            modelEmployerJobList=[[ModelEmployerJobList alloc]initWithDictionary:dicss];
-            [mutableArrayJsonData addObject:modelEmployerJobList];
-            NSLog(@"Yhe firts object is%@",[mutableArrayJsonData objectAtIndex:0]);
-                                            }  */
-        for (NSDictionary* restaurantParameters in result) {
-             modelLogInEmployer = [[ModelLogInEmployer alloc] initWithDictionary:restaurantParameters];
-            [mutableArrayJsonData addObject:modelLogInEmployer];
-        }
-        
-                                            
-                                            if(isError){
-                                                [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-                                                
-                                                if(strMsg.length>0){
-                                                    [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-                                                    
-                                                    
-                                                }
-                                                else{
-                                                    // [self alertStatus:SomethingWrong :nil];
-                                                    
-                                                }
-                                                
-                                            }
-                                            else{
-                                                NSLog(@"THe result is %@",result);
-                                                
-                                                //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-                                                
-                                            }
-                                            }];
     
 }
 
@@ -99,36 +35,57 @@
     
     
       [super viewWillAppear:animated];
-    //[self performSelector:@selector(dataLoading) withObject:nil afterDelay:0.0];
-   // [myActivityIndicator stopAnimating];
-  /*  NSString *post = [[NSString alloc] initWithFormat:@"action=%@&u_id=%@",@"job_listing",modelLogInEmployer.strId];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-    NSURL *url = [NSURL URLWithString:@"http://website-design-company.in/dev13/services.php"];
-    
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-    [theRequest setHTTPMethod:@"POST"];
-    [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [theRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [theRequest setHTTPBody:postData];
-    NSURLResponse *response;
-    NSError *error;
-    NSData *urlData = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
-    
-    NSString *str=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-    
-    arrayJobList=[[NSMutableArray alloc]init];
-    [arrayJobList addObject:str];
-    NSLog(@"The arrayJobList is :%@ ",arrayJobList);
-    if (error) {
-          
-           }
-    NSLog(@"Login response: is %@",str);
-    NSMutableArray * arr2 = [[NSMutableArray alloc] initWithArray:arrayJobList copyItems:YES];
-    
-        NSLog(@"The first index is:%@",[arr2 objectAtIndex:0]);    */
-    
-   // [myActivityIndicator stopAnimating];
+    [[EmployerJobListService sharedInstance] employerJobListUserId:modelLogInEmployer.strId withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
+        
+        
+        
+        
+        if(isError){
+            [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            
+            if(strMsg.length>0){
+                [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                
+                
+            }
+            else{
+                // [self alertStatus:SomethingWrong :nil];
+                
+            }
+            
+        }
+        else{
+            NSLog(@"THe result is %@",result);
+            
+            //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            
+            
+            self.mutableArrJobList = [[result objectForKey:@"job"] mutableCopy];
+            for (int i=0; i<self.mutableArrJobList.count; i++) {
+                
+                NSMutableDictionary *dicYour = [NSMutableDictionary dictionaryWithDictionary:[self.mutableArrJobList objectAtIndex:i]];
+                modelEmployerJobList = [[ModelEmployerJobList alloc] initWithDictionary:dicYour];
+                
+                [self.mutableArrJobList removeObjectAtIndex:i];
+               
+                [self.mutableArrJobList insertObject:modelEmployerJobList atIndex:i];
+                
+               NSLog(@"THe model arr is :%@",modelEmployerJobList.strJob_Id);
+              //  NSLog(@"==========The arr list is%@",self.mutableArrJobList);
+               
+                
+            }
+            
+            
+            
+           // NSLog(@"THe model arr is :%@",modelEmployerApplicantList.strJobId);
+            
+            [tableView  reloadData];
+            
+            
+        }
+    }];
+   
    
 }
 
@@ -137,22 +94,22 @@
    
 }
 
- /* - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+  
     CGFloat height=0.0f;
-    if (indexPath.row==0) {
+    if ([self.mutableArrJobList objectAtIndex:indexPath.row]) {
         height=120.0f;
     }
-    
+  
 
     return height;
-    
-}  */
+  
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return mutableArrayJsonData.count;
+    return [self.mutableArrJobList count];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -169,8 +126,7 @@
     cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
     cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
     [cell.btnAddCell addTarget:self action:@selector(addJobListEmployer) forControlEvents:UIControlEventTouchUpInside];
-     NSLog(@"The mutable data is:%@",mutableArrayJsonData);
-    return cell;
+        return cell;
     
 }
 
@@ -190,20 +146,23 @@
             cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil]objectAtIndex:0];
         }
    
-        cell.lblJobId.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-        cell.lblJobTitle.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-        cell.lblPosition.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-        cell.lblEduqualification.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-        cell.lblSkillRequired.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-        cell.lblPostDate.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-        NSLog(@"The post job uis:%@",modelEmployerJobList.strCreated);
+        modelEmployerJobList=[self.mutableArrJobList objectAtIndex:indexPath.row];
+    
+          cell.lblJobId.text=modelEmployerJobList.strJob_Id;
+    NSLog(@"THe jobid is%@",modelEmployerJobList.strJob_Id);
+        //cell.lblJobTitle.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+       // cell.lblPosition.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+        //cell.lblEduqualification.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+       // cell.lblSkillRequired.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+       // cell.lblPostDate.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
+       // NSLog(@"The post job uis:%@",modelEmployerJobList.strCreated);
        // NSLog(@"The mutable arra is:%@",[mutableArrayJsonData objectAtIndex:0]);
         //cell.lblJobId.text
         myCell=cell;
        
 
     
-    [tableView reloadData];
+    //[tableView reloadData];
     return myCell;
    }
 -(void)addJobListEmployer{

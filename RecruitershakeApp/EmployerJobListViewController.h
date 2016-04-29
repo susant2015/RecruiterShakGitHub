@@ -11,7 +11,6 @@
 @interface EmployerJobListViewController : UIViewController<UITextViewDelegate,UITableViewDataSource>
 
     
-@property(weak,nonatomic)NSDictionary *dist;
-@property(weak,nonatomic)NSDictionary *dists;
-
+@property(strong,nonatomic)NSMutableArray *mutableArrJobList;
+@property(weak,nonatomic)IBOutlet UITableView *tableView;
 @end

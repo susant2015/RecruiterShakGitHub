@@ -77,7 +77,7 @@
             
             
             
-            
+            NSLog(@"THe model arr is :%@",modelEmployerApplicantList.strJobId);
             
              [tableView reloadData];
             
