@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840876D01CD3351300A1546A /* ModelEmployerApplicantList.m in Sources */ = {isa = PBXBuildFile; fileRef = 840876CF1CD3351300A1546A /* ModelEmployerApplicantList.m */; };
 		840FFB371CD234D20041E598 /* EmployerApplicantListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 840FFB361CD234D20041E598 /* EmployerApplicantListService.m */; };
 		8411E57D1CB7E3EC00AF29E3 /* ModelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411E57C1CB7E3EC00AF29E3 /* ModelRegister.m */; };
 		84131D0C1CC7657C004B98A1 /* CustomSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84131D0B1CC7657C004B98A1 /* CustomSectionViewController.m */; };
@@ -205,6 +206,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840876CE1CD3351300A1546A /* ModelEmployerApplicantList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelEmployerApplicantList.h; sourceTree = "<group>"; };
+		840876CF1CD3351300A1546A /* ModelEmployerApplicantList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelEmployerApplicantList.m; sourceTree = "<group>"; };
 		840FFB351CD234D20041E598 /* EmployerApplicantListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployerApplicantListService.h; sourceTree = "<group>"; };
 		840FFB361CD234D20041E598 /* EmployerApplicantListService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployerApplicantListService.m; sourceTree = "<group>"; };
 		8411E57B1CB7E3EC00AF29E3 /* ModelRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelRegister.h; sourceTree = "<group>"; };
@@ -1004,6 +1007,8 @@
 				842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */,
 				84CC95301CCF845A002E6E3E /* ModelRecruiterMyLeads.h */,
 				84CC95311CCF845A002E6E3E /* ModelRecruiterMyLeads.m */,
+				840876CE1CD3351300A1546A /* ModelEmployerApplicantList.h */,
+				840876CF1CD3351300A1546A /* ModelEmployerApplicantList.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1292,6 +1297,7 @@
 				8458C5091CC63E6F00984844 /* RecruiterFaceBookViewController.m in Sources */,
 				842261D81CBCD04A000ED0A8 /* ModelAddEducation.m in Sources */,
 				845C0C261C89712800168F13 /* RegisterViewController.m in Sources */,
+				840876D01CD3351300A1546A /* ModelEmployerApplicantList.m in Sources */,
 				84EE1B021CB65FBB00BF0C6E /* ModelAddJobEmployer.m in Sources */,
 				8425364E1CC4C095003A962C /* EditProfileRecruiterService.m in Sources */,
 				84A808F01C8591BD00043683 /* SigninService.m in Sources */,

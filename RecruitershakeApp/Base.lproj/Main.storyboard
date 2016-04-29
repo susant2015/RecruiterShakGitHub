@@ -1852,7 +1852,7 @@
                                     <constraint firstAttribute="width" constant="600" id="rvc-ax-f8r"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2KU-tT-mRM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="2KU-tT-mRM">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -1874,6 +1874,9 @@
                             <constraint firstItem="AhW-iH-qtD" firstAttribute="bottom" secondItem="2KU-tT-mRM" secondAttribute="bottom" id="saU-Vv-GLI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="2KU-tT-mRM" id="Wc4-4V-kC0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZw-y5-PjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

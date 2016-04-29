@@ -12,6 +12,7 @@
 #import "ModelLogInEmployer.h"
 #import "Constants.h"
 #import "EmployerApplicantListService.h"
+#import "ModelEmployerApplicantList.h"
 @interface EmployerApplicantListViewController ()<UITextFieldDelegate>
 
 @end
@@ -23,66 +24,12 @@
 @synthesize job_Id;
 @synthesize apply_Date;
 
+@synthesize mutableArrJobList;
+
 @synthesize tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
-    
-    
-    NSString *post = [[NSString alloc] initWithFormat:@"action=%@&emp_id=%@",@"my_applicant",modelLogInEmployer.strId];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
-    NSURL *url = [NSURL URLWithString:@"http://website-design-company.in/dev13/services.php"];
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-    [theRequest setHTTPMethod:@"POST"];
-    [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [theRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [theRequest setHTTPBody:postData];
-    NSURLResponse *response;
-    NSError *error;
-    NSData *urlData = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
-    NSDictionary   *jsonResponeDict=[NSJSONSerialization JSONObjectWithData:urlData options:0 error:&error];
-    // NSString *str=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-    //NSLog(@"Login response: is %@",str); //getting response
-    NSLog(@"The jso data is%@",jsonResponeDict);
-    
-    NSDictionary *statuses=[jsonResponeDict objectForKey:@"myapplicant"];
-    
-    
-    NSLog(@"SomeStatus :%@",statuses);
-    
-    if (!statuses)
-    {
-        //  NSLog(@"Error in Json :%@",error);
-    }
-    
-    
-    
-    NSMutableArray *_strFirstname = [NSMutableArray array];
-    NSMutableArray *_strLastname = [NSMutableArray array];
-    NSMutableArray *_strJobId = [NSMutableArray array];
-    NSMutableArray *_strApplyDate = [NSMutableArray array];
-   
-    
-    
-    for (id item in statuses){
-        [_strFirstname addObject:[NSString stringWithFormat:@"%@", item[@"first_name"]]];
-        [_strLastname addObject:[NSString stringWithFormat:@"%@", item[@"last_name"]]];
-        [_strJobId addObject:[NSString stringWithFormat:@"%@", item[@"job_id"]]];
-        [_strApplyDate addObject:[NSString stringWithFormat:@"%@", item[@"apply_date"]]];
-        
-    }
-    
-    [tableView reloadData];
-    self.applicant_firstname=_strFirstname;
-    self.applicant_lastname=_strLastname;
-    self.job_Id=_strJobId;
-    self.apply_Date=_strApplyDate;
-    
-    // self.strLastName=_strQualification;  */
     
     
    }
@@ -92,7 +39,8 @@
     
     [super viewDidAppear:animated];
     
-/*    [[EmployerApplicantListService  sharedInstance] employerApplicantId:modelLogInEmployer.strId  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
+    
+    [[EmployerApplicantListService  sharedInstance] employerApplicantId:modelLogInEmployer.strId  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         if(isError){
             [[[UIAlertView alloc] initWithTitle:nil message:@"Error" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
@@ -110,28 +58,35 @@
         else{
             
             
-            NSLog(@"The list is:%@",result);
-            
-             NSDictionary *statuses=[result objectForKey:@"myapplicant"];
-            
-            NSMutableArray *_strApplicantName = [NSMutableArray array];
-            NSMutableArray *_strJobId = [NSMutableArray array];
-            NSMutableArray *_strAppliDate = [NSMutableArray array];
-            
-            for (id item in statuses){
-                [_strApplicantName addObject:[NSString stringWithFormat:@"%@", item[@"first_name"]]];
-                 NSLog(@"THe firts name is%@",_strApplicantName);
+          
+            self.mutableArrJobList = [[result objectForKey:@"myapplicant"] mutableCopy];
+            for (int i=0; i<self.mutableArrJobList.count; i++) {
+                
+                NSMutableDictionary *dicYour = [NSMutableDictionary dictionaryWithDictionary:[self.mutableArrJobList objectAtIndex:i]];
+                modelEmployerApplicantList = [[ModelEmployerApplicantList alloc] initWithDictionary:dicYour];
+               
+                [self.mutableArrJobList removeObjectAtIndex:i];
+                NSLog(@"The clear arr is %@",self.mutableArrJobList);
+                [self.mutableArrJobList insertObject:modelEmployerApplicantList atIndex:i];
+                
+                NSLog(@"THe model arr is :%@",modelEmployerApplicantList.strJobId);
+                NSLog(@"==========The arr list is%@",self.mutableArrJobList);
+               
                 
             }
             
-            [tableView reloadData];
-            self.applicant_Name=_strApplicantName;
-           
+            
+            
+            
+            
+             [tableView reloadData];
             
             //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
         }
-    }];   */
+    }];
+    
+
     
    
     
@@ -172,7 +127,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return [self.applicant_firstname count];
+    return [self.mutableArrJobList count];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -216,16 +171,22 @@
             cell=[[[NSBundle mainBundle] loadNibNamed:@"Employerapplicantlistcell" owner:self options:nil]objectAtIndex:0];
         }
     
-    cell.lblfitstname.text=[self.applicant_firstname objectAtIndex:indexPath.row];
-    cell.lblLastName.text=[self.applicant_lastname objectAtIndex:indexPath.row];
-    cell.lblJobId.text=[self.job_Id objectAtIndex:indexPath.row];
-    cell.lblApplyDate.text=[self.apply_Date objectAtIndex:indexPath.row];
-      
+    
+   
+    modelEmployerApplicantList=[self.mutableArrJobList objectAtIndex:indexPath.row];
+    NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strJobId);
+    cell.lblfitstname.text=modelEmployerApplicantList.strFisrst_Name;
+    cell.lblLastName.text=modelEmployerApplicantList.strLast_Name;
+    cell.lblJobId.text=modelEmployerApplicantList.strJobId;
+    cell.lblApplyDate.text=modelEmployerApplicantList.strApplyDate;
+    
+   
+    
         myCell=cell;
     
 
     return myCell;
-    
+   
 }
 
 @end

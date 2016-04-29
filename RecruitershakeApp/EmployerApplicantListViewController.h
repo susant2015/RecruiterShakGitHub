@@ -15,7 +15,8 @@
 @property(strong,nonatomic) NSArray *job_Id;
 @property(strong,nonatomic) NSArray *apply_Date;
 
-@property(weak,nonatomic) UITableView *tableView;
+@property(strong,nonatomic) NSMutableArray *mutableArrJobList;
+@property(weak,nonatomic)IBOutlet UITableView *tableView;
 
 
 @end
