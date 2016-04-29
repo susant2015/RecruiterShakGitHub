@@ -70,7 +70,7 @@
                
                 [self.mutableArrJobList insertObject:modelEmployerJobList atIndex:i];
                 
-               NSLog(@"THe model arr is :%@",modelEmployerJobList.strJob_Id);
+               NSLog(@"THe jobid is :%@",modelEmployerJobList.strJob_Id);
               //  NSLog(@"==========The arr list is%@",self.mutableArrJobList);
                
                 
@@ -78,7 +78,7 @@
             
             
             
-           // NSLog(@"THe model arr is :%@",modelEmployerApplicantList.strJobId);
+            NSLog(@"THe model arr is :%@",modelEmployerJobList.strJob_Id);
             
             [tableView  reloadData];
             
@@ -108,6 +108,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     
     return [self.mutableArrJobList count];
 }
@@ -159,10 +160,7 @@
        // NSLog(@"The mutable arra is:%@",[mutableArrayJsonData objectAtIndex:0]);
         //cell.lblJobId.text
         myCell=cell;
-       
 
-    
-    //[tableView reloadData];
     return myCell;
    }
 -(void)addJobListEmployer{

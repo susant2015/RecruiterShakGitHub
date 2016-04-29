@@ -96,38 +96,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     CGFloat height=0.0f;
-    if (indexPath.row==0) {
+    if ([self.mutableArrJobList count]) {
         height=80.0f;
     }
-    else if (indexPath.row==1)
-    {
-        height=80.0f;
-    }
-    else if (indexPath.row==2)
-    {
-        height=80.0f;
-    }
-    else if (indexPath.row==3)
-    {
-        height=80.0f;
-    }
-    else if (indexPath.row==4)
-    {
-        height=80.0f;
-    }
+ 
 
     
     return height;
     
-}   */
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return [self.mutableArrJobList count];
+    return self.mutableArrJobList.count;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -172,7 +157,7 @@
         }
     
     
-   
+    
     modelEmployerApplicantList=[self.mutableArrJobList objectAtIndex:indexPath.row];
     NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strJobId);
     cell.lblfitstname.text=modelEmployerApplicantList.strFisrst_Name;
