@@ -17,6 +17,8 @@
 @synthesize lblSkillRequired;
 @synthesize lblPostDate;
 
+@synthesize btnEmpDelete;
+
 - (void)awakeFromNib {
     // Initialization code
 }

@@ -25,6 +25,7 @@
 
 @synthesize mutableArrJobList;
 @synthesize tableView;
+@synthesize indexPath;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -127,9 +128,13 @@
     cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
     cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
     [cell.btnAddCell addTarget:self action:@selector(addJobListEmployer) forControlEvents:UIControlEventTouchUpInside];
+   
         return cell;
     
 }
+
+
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -149,20 +154,32 @@
    
         modelEmployerJobList=[self.mutableArrJobList objectAtIndex:indexPath.row];
     
-          cell.lblJobId.text=modelEmployerJobList.strJob_Id;
+          cell.lblJobId.text=@"HI";
     NSLog(@"THe jobid is%@",modelEmployerJobList.strJob_Id);
-        //cell.lblJobTitle.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-       // cell.lblPosition.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-        //cell.lblEduqualification.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-       // cell.lblSkillRequired.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-       // cell.lblPostDate.text=[mutableArrayJsonData objectAtIndex:indexPath.row];
-       // NSLog(@"The post job uis:%@",modelEmployerJobList.strCreated);
-       // NSLog(@"The mutable arra is:%@",[mutableArrayJsonData objectAtIndex:0]);
-        //cell.lblJobId.text
+    
+       cell.self.btnEmpDelete.tag=indexPath.row;
+       [cell.self.btnEmpDelete addTarget:self action:@selector(subscribe:) forControlEvents:UIControlEventTouchUpInside];
+    
+       
         myCell=cell;
 
     return myCell;
    }
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.mutableArrJobList removeObjectAtIndex:indexPath.row];
+        [self.tableView reloadData];
+    }
+}
+
+
+
+
 -(void)addJobListEmployer{
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

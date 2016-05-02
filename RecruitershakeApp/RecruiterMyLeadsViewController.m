@@ -141,7 +141,7 @@
         }
     
        // cell.lblEmail.text=self.names[indexPath.row];
-    
+         NSUInteger row = [indexPath row];
      cell.lblFirstName.text = [self.firstnames objectAtIndex:indexPath.row];
     cell.lblLastName.text=[self.lastname objectAtIndex:indexPath.row];
     cell.lblEdu_Qulf.text=[self.qualification objectAtIndex:indexPath.row];

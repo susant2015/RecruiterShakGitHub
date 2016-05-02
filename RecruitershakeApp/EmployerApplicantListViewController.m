@@ -13,6 +13,7 @@
 #import "Constants.h"
 #import "EmployerApplicantListService.h"
 #import "ModelEmployerApplicantList.h"
+
 @interface EmployerApplicantListViewController ()<UITextFieldDelegate>
 
 @end
@@ -30,6 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSArray *arr;
     
     
    }
@@ -62,14 +65,16 @@
             self.mutableArrJobList = [[result objectForKey:@"myapplicant"] mutableCopy];
             for (int i=0; i<self.mutableArrJobList.count; i++) {
                 
+                 NSLog(@"THe jobid  is :%@",modelEmployerApplicantList.strJobId);
                 NSMutableDictionary *dicYour = [NSMutableDictionary dictionaryWithDictionary:[self.mutableArrJobList objectAtIndex:i]];
                 modelEmployerApplicantList = [[ModelEmployerApplicantList alloc] initWithDictionary:dicYour];
                
                 [self.mutableArrJobList removeObjectAtIndex:i];
-                NSLog(@"The clear arr is %@",self.mutableArrJobList);
+                
+               
                 [self.mutableArrJobList insertObject:modelEmployerApplicantList atIndex:i];
                 
-                NSLog(@"THe model arr is :%@",modelEmployerApplicantList.strJobId);
+                NSLog(@"THe jobid  is :%@",modelEmployerApplicantList.strJobId);
                 NSLog(@"==========The arr list is%@",self.mutableArrJobList);
                
                 
@@ -87,7 +92,7 @@
     }];
     
 
-    
+    NSLog(@"THe model arr is :%@",modelEmployerApplicantList.strJobId);
    
     
 }
@@ -157,16 +162,21 @@
         }
     
     
-    
-    modelEmployerApplicantList=[self.mutableArrJobList objectAtIndex:indexPath.row];
+    for (int i=0; i< self.mutableArrJobList.count; i++) {
+       
+   modelEmployerApplicantList=[self.mutableArrJobList objectAtIndex:indexPath.row];
+    NSLog(@"The first row is %@",[self.mutableArrJobList objectAtIndex:indexPath.row]);
+    NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strApplyDate);
+    NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strLast_Name);
+    NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strFisrst_Name);
     NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strJobId);
     cell.lblfitstname.text=modelEmployerApplicantList.strFisrst_Name;
     cell.lblLastName.text=modelEmployerApplicantList.strLast_Name;
     cell.lblJobId.text=modelEmployerApplicantList.strJobId;
     cell.lblApplyDate.text=modelEmployerApplicantList.strApplyDate;
     
-   
-    
+    }
+    //[tableView reloadData];
         myCell=cell;
     
 

@@ -13,4 +13,5 @@
     
 @property(strong,nonatomic)NSMutableArray *mutableArrJobList;
 @property(weak,nonatomic)IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSIndexPath *indexPath;
 @end
