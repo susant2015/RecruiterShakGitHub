@@ -24,6 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnRecruiter;
 @property (weak, nonatomic) IBOutlet UIButton *btnApplicant;
 @property (weak, nonatomic) IBOutlet UIButton *btnEmployer;
-@property(strong,nonatomic)NSString *group;
+@property(strong,nonatomic) NSString *group;
 
 @end
