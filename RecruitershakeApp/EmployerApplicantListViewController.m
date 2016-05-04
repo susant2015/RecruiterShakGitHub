@@ -20,10 +20,7 @@
 
 @implementation EmployerApplicantListViewController
 
-@synthesize applicant_firstname;
-@synthesize applicant_lastname;
-@synthesize job_Id;
-@synthesize apply_Date;
+
 
 @synthesize mutableArrJobList;
 
@@ -56,7 +53,7 @@
             self.mutableArrJobList = [[result objectForKey:@"myapplicant"] mutableCopy];
             for (int i=0; i<self.mutableArrJobList.count; i++) {
                 
-                NSLog(@"THe jobid  is :%@",modelEmployerApplicantList.strJobId);
+                
                 NSMutableDictionary *dicYour = [NSMutableDictionary dictionaryWithDictionary:[self.mutableArrJobList objectAtIndex:i]];
                 modelEmployerApplicantList = [[ModelEmployerApplicantList alloc] initWithDictionary:dicYour];
                 
@@ -65,7 +62,7 @@
                 
                 [self.mutableArrJobList insertObject:modelEmployerApplicantList atIndex:i];
                 
-                NSLog(@"THe jobid  is :%@",modelEmployerApplicantList.strJobId);
+                
                 NSLog(@"==========The arr list is%@",self.mutableArrJobList);
                 
                 
@@ -79,7 +76,7 @@
     }];
     
     
-    NSLog(@"THe model arr is :%@",modelEmployerApplicantList.strJobId);
+    NSLog(@"THe jobid  is :%@",modelEmployerApplicantList.strJobId);
     
     
    }
@@ -168,23 +165,22 @@
    
     
     
-    for (int i=0; i<self.mutableArrJobList.count; i++) {
+  
        
-   modelEmployerApplicantList=[ self.mutableArrJobList objectAtIndex:indexPath.row];
-    NSLog(@"The first row is %@",[ self.mutableArrJobList objectAtIndex:indexPath.row]);
-    NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strApplyDate);
-    NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strLast_Name);
-    NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strFisrst_Name);
-    NSLog(@"THe joblist name is %@",modelEmployerApplicantList.strJobId);
+      modelEmployerApplicantList=[ self.mutableArrJobList objectAtIndex:indexPath.row];
+   
+    NSLog(@"THe apply date name is %@",modelEmployerApplicantList.strApplyDate);
+    NSLog(@"THe joblist lastname is %@",modelEmployerApplicantList.strLast_Name);
+    NSLog(@"THe joblist firstname is %@",modelEmployerApplicantList.strFisrst_Name);
+    NSLog(@"THe joblist id  is %@",modelEmployerApplicantList.strJobId);
         
-        NSString *listingKey = modelEmployerApplicantList.strFisrst_Name;
-        cell.lblfitstname.text=listingKey;
-    //cell.lblLastName.text=modelEmployerApplicantList.strLast_Name;
-    //cell.lblJobId.text=modelEmployerApplicantList.strJobId;
-    //cell.lblApplyDate.text=modelEmployerApplicantList.strApplyDate;
+    cell.lblfitstname.text=modelEmployerApplicantList.strFisrst_Name;
+    cell.lblLastName.text=modelEmployerApplicantList.strLast_Name;
+    cell.lblJobId.text=modelEmployerApplicantList.strJobId;
+    cell.lblApplyDate.text=modelEmployerApplicantList.strApplyDate;
     
-    }
-    //[tableView reloadData];
+
+   
         myCell=cell;
     
 

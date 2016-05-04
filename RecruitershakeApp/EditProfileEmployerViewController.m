@@ -142,13 +142,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    CGFloat height=0.0f;
-    if (section==1) {
-        height=56.0f;
-    }
-    else if (section==2){
-        height=22.0f;
-    }
+   
     return 25;
 }
 

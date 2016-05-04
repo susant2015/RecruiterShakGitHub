@@ -24,8 +24,8 @@
    }
 
 @synthesize mutableArrJobList;
-@synthesize tableView;
-@synthesize indexPath;
+@synthesize empJobListtableView;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,7 +65,7 @@
             for (int i=0; i<self.mutableArrJobList.count; i++) {
                 
                 NSMutableDictionary *dicYour = [NSMutableDictionary dictionaryWithDictionary:[self.mutableArrJobList objectAtIndex:i]];
-                modelEmployerJobList = [[ModelEmployerJobList alloc] initWithDictionary:dicYour];
+        modelEmployerJobList = [[ModelEmployerJobList alloc] initWithDictionary:dicYour];
                 
                 [self.mutableArrJobList removeObjectAtIndex:i];
                
@@ -79,9 +79,9 @@
             
             
             
-            NSLog(@"THe model arr is :%@",modelEmployerJobList.strJob_Id);
+           // NSLog(@"THe model arr is :%@",modelEmployerJobList.strJob_Id);
             
-            [tableView  reloadData];
+            [empJobListtableView  reloadData];
             
             
         }
@@ -152,12 +152,21 @@
             cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil]objectAtIndex:0];
         }
    
-        modelEmployerJobList=[self.mutableArrJobList objectAtIndex:indexPath.row];
+       modelEmployerJobList=[self.mutableArrJobList objectAtIndex:indexPath.row];
     
           cell.lblJobId.text=@"HI";
     NSLog(@"THe jobid is%@",modelEmployerJobList.strJob_Id);
+    //NSLog(@"THe jobid is%@",modelEmp.strCreated);
+    //NSLog(@"THe jobid is%@",modelEmp.strDescription);
+    //NSLog(@"THe jobid is%@",modelEmp.strEducational_Qualification);
+    //NSLog(@"THe jobid is%@",modelEmp.strLocation);
+    //NSLog(@"THe jobid is%@",modelEmp.strSkill_required);
+    //NSLog(@"THe jobid is%@",modelEmp.strTitle);
+    //NSLog(@"THe jobid is%@",modelEmp.strJob_Id);
     
-       cell.self.btnEmpDelete.tag=indexPath.row;
+    
+    
+    
        [cell.self.btnEmpDelete addTarget:self action:@selector(subscribe:) forControlEvents:UIControlEventTouchUpInside];
     
        
@@ -173,7 +182,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.mutableArrJobList removeObjectAtIndex:indexPath.row];
-        [self.tableView reloadData];
+        [self.empJobListtableView reloadData];
     }
 }
 

@@ -72,13 +72,13 @@
                         <rect key="frame" x="150" y="4" width="300" height="15"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BM3-Sw-LEB" userLabel="Label-firstname">
-                        <rect key="frame" x="150" y="4" width="150" height="15"/>
+                        <rect key="frame" x="150" y="8" width="150" height="15"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrB-kh-M4I" userLabel="Label-last-name">
-                        <rect key="frame" x="250" y="4" width="200" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dutta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrB-kh-M4I" userLabel="Label-last-name">
+                        <rect key="frame" x="250" y="7" width="200" height="15"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -115,7 +115,7 @@
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="centerX" secondItem="Ws8-GK-JRt" secondAttribute="centerX" id="XOx-dQ-VFN"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="bottom" secondItem="sL9-oy-a5V" secondAttribute="bottom" id="Ybo-si-7bc"/>
                     <constraint firstItem="utK-Cw-Rtq" firstAttribute="bottom" secondItem="DI5-cJ-uUa" secondAttribute="bottom" multiplier="1.1" id="cfn-Jt-na0"/>
-                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="top" secondItem="zrB-kh-M4I" secondAttribute="top" id="e8c-ui-XMF"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="top" secondItem="zrB-kh-M4I" secondAttribute="top" multiplier="0.6" id="e8c-ui-XMF"/>
                     <constraint firstItem="Ws8-GK-JRt" firstAttribute="leading" secondItem="BM3-Sw-LEB" secondAttribute="leading" id="egp-zP-dZq"/>
                     <constraint firstItem="Ws8-GK-JRt" firstAttribute="height" secondItem="BM3-Sw-LEB" secondAttribute="height" id="ewk-1j-tOt"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="top" secondItem="Ws8-GK-JRt" secondAttribute="top" id="f15-FD-YPc"/>
@@ -126,7 +126,7 @@
                     <constraint firstItem="SQS-3G-3qB" firstAttribute="centerX" secondItem="utK-Cw-Rtq" secondAttribute="centerX" id="nPR-lD-RRK"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="height" secondItem="Z8N-Cn-JAQ" secondAttribute="height" multiplier="60/15" id="nvA-EN-7i3"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="leading" secondItem="Z8N-Cn-JAQ" secondAttribute="leading" id="uBg-OE-jhd"/>
-                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="top" secondItem="BM3-Sw-LEB" secondAttribute="top" id="uea-PG-zl1"/>
+                    <constraint firstItem="Ws8-GK-JRt" firstAttribute="top" secondItem="BM3-Sw-LEB" secondAttribute="top" multiplier="0.6" id="uea-PG-zl1"/>
                     <constraint firstItem="utK-Cw-Rtq" firstAttribute="width" secondItem="DI5-cJ-uUa" secondAttribute="width" multiplier="550/540" id="xL4-zV-olj"/>
                     <constraint firstItem="DI5-cJ-uUa" firstAttribute="height" secondItem="sMl-AG-ypL" secondAttribute="height" multiplier="60/15" id="yaO-Gg-V75"/>
                 </constraints>

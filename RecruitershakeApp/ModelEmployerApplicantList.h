@@ -15,6 +15,7 @@
 @property(weak,nonatomic) NSString *strLast_Name;
 @property(weak,nonatomic)  NSString *strJobId;
 @property(weak,nonatomic) NSString *strApplyDate;
+@property(weak,nonatomic) NSString *strId;
 
 
 

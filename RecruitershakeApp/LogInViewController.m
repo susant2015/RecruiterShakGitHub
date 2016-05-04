@@ -154,6 +154,7 @@
                     //Dbapvc.distRecruiter=result;
                     
                     modelLogInRecruiter=[[ModelLogInRecruiter alloc]initWithDictionary:result];
+                   
                     [self presentViewController:Dbapvc animated:YES completion:nil];
                 }
                 
@@ -161,6 +162,8 @@
         }];
     }
 }
+
+
 -(void)showErrorAlert{
     
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Login"
@@ -206,6 +209,7 @@
     self.txtUserName.text=@"subham.dutta";
     self.txtPassword.text=@"12345";
 }
+
 
 
     @end

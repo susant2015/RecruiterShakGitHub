@@ -19,6 +19,7 @@
 #import "ModelLogInRecruiter.h"
 #import "Constants.h"
 #import "EditProfileRecruiterService.h"
+#import "BaseViewController.h"
 
 typedef NS_ENUM(NSInteger, CellContent) {
     OldPassword,
@@ -70,11 +71,12 @@ NSString static *strPlaceholders[]={
 @interface EditProfileRecruiter ()<UITextFieldDelegate>
 {
     
+    
+    NSString *strFisrst_Name;
+    NSString *strLast_Name;
     NSString  *strOldPassword;
     NSString  *strNewPassword;
     NSString  *strConPassword;
-    NSString *strFisrst_Name;
-    NSString *strLast_Name;
     NSString *strPhone_Number;
     NSString *strAddress_Line1;
     NSString *strAddress_Line2;
@@ -234,13 +236,7 @@ NSString static *strPlaceholders[]={
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    CGFloat height=0.0f;
-    if (section==1) {
-        height=56.0f;
-    }
-    else if (section==2){
-        height=22.0f;
-    }
+    
     return 25;
 }
 
@@ -599,7 +595,7 @@ NSString static *strPlaceholders[]={
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *FACEBOOK LINK" attributes:@{NSForegroundColorAttributeName: color}];
         
         
-        cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+       // cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
     }
@@ -616,7 +612,7 @@ NSString static *strPlaceholders[]={
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *TWITTER LINK" attributes:@{NSForegroundColorAttributeName: color}];
         
-        cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+       // cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
     else if(indexPath.row==23) {
@@ -632,7 +628,7 @@ NSString static *strPlaceholders[]={
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *GOOGLE PLUS LINK" attributes:@{NSForegroundColorAttributeName: color}];
         
-        cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+       // cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
     }
@@ -689,19 +685,19 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==1)
+    if (indexPath.row==4)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strFisrst_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strFisrst_Name atIndex:indexPath.row];
+        strOldPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strOldPassword atIndex:indexPath.row];
         
         
     }
-    if (indexPath.row==2)
+    if (indexPath.row==5)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strLast_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strLast_Name atIndex:indexPath.row];
+        strNewPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strNewPassword atIndex:indexPath.row];
         
         
     }
@@ -856,25 +852,25 @@ NSString static *strPlaceholders[]={
 }
 -(IBAction)btnActionRecruiter:(id)sender{
     
-    strOldPassword=[arrtxtFieldValue objectAtIndex:0];
-    strNewPassword=[arrtxtFieldValue objectAtIndex:1];
-    strConPassword=[arrtxtFieldValue objectAtIndex:2];
-    strFisrst_Name=[arrtxtFieldValue objectAtIndex:3];
-    strFisrst_Name=[arrtxtFieldValue objectAtIndex:4];
-    strPhone_Number=[arrtxtFieldValue objectAtIndex:5];
-    strAddress_Line1=[arrtxtFieldValue objectAtIndex:6];
-    strAddress_Line2=[arrtxtFieldValue objectAtIndex:7];
-    strCity=[arrtxtFieldValue objectAtIndex:8];
-    strState=[arrtxtFieldValue objectAtIndex:9];
-    strCountry=[arrtxtFieldValue objectAtIndex:10];
-    strZip_Code=[arrtxtFieldValue objectAtIndex:11];
-    strFbUrl=[arrtxtFieldValue objectAtIndex:12];
-    strTwUrl=[arrtxtFieldValue objectAtIndex:13];
-    strGPlusUrl=[arrtxtFieldValue objectAtIndex:14];
-    strOccupation=[arrtxtFieldValue objectAtIndex:15];
-    strSkills=[arrtxtFieldValue objectAtIndex:16];
-    strAbout=[arrtxtFieldValue objectAtIndex:17];
-    strQuotes=[arrtxtFieldValue objectAtIndex:18];
+    strOldPassword=[arrtxtFieldValue objectAtIndex:4];
+    strNewPassword=[arrtxtFieldValue objectAtIndex:5];
+    strConPassword=[arrtxtFieldValue objectAtIndex:6];
+    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
+    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
+    strPhone_Number=[arrtxtFieldValue objectAtIndex:7];
+    strAddress_Line1=[arrtxtFieldValue objectAtIndex:9];
+    strAddress_Line2=[arrtxtFieldValue objectAtIndex:10];
+    strCity=[arrtxtFieldValue objectAtIndex:11];
+    strState=[arrtxtFieldValue objectAtIndex:12];
+    strCountry=[arrtxtFieldValue objectAtIndex:13];
+    strZip_Code=[arrtxtFieldValue objectAtIndex:14];
+    strFbUrl=[arrtxtFieldValue objectAtIndex:21];
+    strTwUrl=[arrtxtFieldValue objectAtIndex:22];
+    strGPlusUrl=[arrtxtFieldValue objectAtIndex:23];
+    strOccupation=[arrtxtFieldValue objectAtIndex:8];
+    strSkills=[arrtxtFieldValue objectAtIndex:15];
+    strAbout=[arrtxtFieldValue objectAtIndex:16];
+    strQuotes=[arrtxtFieldValue objectAtIndex:17];
     
     NSLog(@"The arr value is%@",arrtxtFieldValue);
     
