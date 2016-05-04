@@ -31,6 +31,16 @@
     
   //  NSMutableArray *arr;
     
+    
+    
+    
+   }
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
     [[EmployerApplicantListService  sharedInstance] employerApplicantId:modelLogInEmployer.strId  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         if(isError){
             [[[UIAlertView alloc] initWithTitle:nil message:@"Error" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -67,7 +77,7 @@
                 
                 
             }
-           
+            
             [empApplicantListTableView reloadData];
             
             //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -77,23 +87,6 @@
     
     
     NSLog(@"THe jobid  is :%@",modelEmployerApplicantList.strJobId);
-    
-    
-   }
-
-
--(void)viewDidAppear:(BOOL)animated{
-    
-    [super viewDidAppear:animated];
-    
-    
-   
-    
-    
-    
-    
-    
-  
    
     
 }
@@ -152,7 +145,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+    UITableViewCell *myCell=nil;
     
   
         
@@ -164,13 +157,12 @@
     
    
     
-    ModelEmployerApplicantList   *modelEmp=[[ModelEmployerApplicantList alloc] init];
+    
   
        
-               modelEmp=[ self.mutableArrJobList objectAtIndex:indexPath.row];
+   ModelEmployerApplicantList   *modelEmp=[ self.mutableArrJobList objectAtIndex:indexPath.row];
     
-    NSLog(@"THe apply date name is %@",[self.mutableArrJobList objectAtIndex:indexPath.row]);
-   
+       
     NSLog(@"THe apply date name is %@",modelEmp.strApplyDate);
     NSLog(@"THe joblist lastname is %@",modelEmp.strLast_Name);
     NSLog(@"THe joblist firstname is %@",modelEmp.strFisrst_Name);
@@ -183,10 +175,10 @@
     
 
    
-    
+        myCell=cell;
     
 
-    return cell;
+    return myCell;
    
 }
 

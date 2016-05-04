@@ -7,7 +7,7 @@
 //
 @class ModelLogInEmployer;
 @class ModelLogInRecruiter;
-@class ModelEmployerJobList;
+
 @class ModelAddJobEmployer;
 @class ModelLogInApplicant;
 @class ModelRecruiterMyLeads;
@@ -19,7 +19,7 @@
 #endif /* Constants_h */
 ModelLogInEmployer *modelLogInEmployer;
 ModelLogInRecruiter *modelLogInRecruiter;
-ModelEmployerJobList *modelEmployerJobList;
+
 ModelAddJobEmployer *modelAddJobEmployer;
 ModelLogInApplicant *modelLogInApplicant;
 ModelRecruiterMyLeads *modelRecruiterMyLeads;
