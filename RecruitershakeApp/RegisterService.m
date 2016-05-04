@@ -23,7 +23,9 @@
 }
 -(void)callRegisterServiceForUserName:(NSString *)strUserName password:(NSString *)strPassword group:(NSString *)strGroup strEmail:(NSString*)email FirstName:(NSString*)strFirstname lastName:(NSString*)strLastname phoneNumber:(NSString*)strPhoneNumber address1:(NSString*)strAddress1 address2:(NSString*)strAddress2  city:(NSString*)strcity country:(NSString*)strcountry state:(NSString*)strState zipcode:(NSString*)strZipCode occupation:(NSString*)strOccupation withCompletionHandler:(CompletionHandler)handler{
     
-    NSString *post = [[NSString alloc] initWithFormat:@"action=%@&group=%@&username=%@&password=%@&email=%@&first_name=%@&last_name=%@&phone_number=%@&address1=%@&address2=%@&city=%@&country=%@&state=%@&zip_code=%@&zip_code=%@",@"signup",strGroup,strFirstname,strUserName,strPassword,email,strLastname,strPhoneNumber,strAddress1,strAddress2,strcity,strcountry,strState,strZipCode,strOccupation];
+   // NSString *post = [[NSString alloc] initWithFormat:@"action=%@&group=%@&username=%@&password=%@&email=%@&first_name=%@&last_name=%@&phone_number=%@&address1=%@&address2=%@&city=%@&country=%@&state=%@&zip_code=%@&zip_code=%@",@"signup",strGroup,strFirstname,strUserName,strPassword,email,strLastname,strPhoneNumber,strAddress1,strAddress2,strcity,strcountry,strState,strZipCode,strOccupation];
+    
+     NSString *post = [[NSString alloc] initWithFormat:@"action=%@&group=%@&first_name=%@&last_name=%@&email=%@&username=%@&password=%@&phone_number=%@&address1=%@&address2=%@&city=%@&state=%@&country=%@&zip_code=%@&occupation=%@",@"signup",strGroup,strFirstname,strLastname,email,strUserName,strPassword,strPhoneNumber,strAddress1,strAddress2,strcity,strState,strcountry,strZipCode,strOccupation];
     
     NSLog(@"post data:%@",post);
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];

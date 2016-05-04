@@ -1878,7 +1878,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="2KU-tT-mRM" id="Wc4-4V-kC0"/>
+                        <outlet property="empApplicantListTableView" destination="2KU-tT-mRM" id="djo-A7-qFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZw-y5-PjT" userLabel="First Responder" sceneMemberID="firstResponder"/>

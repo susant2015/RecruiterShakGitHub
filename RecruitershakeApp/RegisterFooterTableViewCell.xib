@@ -95,6 +95,7 @@
                 <outlet property="btnAction" destination="dBi-Gn-z1C" id="eJb-jf-maQ"/>
                 <outlet property="btnSignIn" destination="N1c-tv-MZv" id="gJw-lJ-2uh"/>
                 <outlet property="btnSignUpWithLinkedIn" destination="8tu-zg-F3j" id="Lge-2w-iO3"/>
+                <outlet property="btnTerm_And_Condition" destination="emo-8Z-bPW" id="bVR-5G-TZE"/>
             </connections>
             <point key="canvasLocation" x="503" y="167"/>
         </tableViewCell>

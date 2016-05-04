@@ -154,7 +154,7 @@
    
        modelEmployerJobList=[self.mutableArrJobList objectAtIndex:indexPath.row];
     
-          cell.lblJobId.text=@"HI";
+          cell.lblJobId.text=modelEmployerJobList.strJob_Id;
     NSLog(@"THe jobid is%@",modelEmployerJobList.strJob_Id);
     //NSLog(@"THe jobid is%@",modelEmp.strCreated);
     //NSLog(@"THe jobid is%@",modelEmp.strDescription);

@@ -113,6 +113,7 @@
            
             if(isError){
                 
+                 [[[UIAlertView alloc] initWithTitle:nil message:@"LogIn failed" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
                 
                 if(strMsg.length>0){
                     [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -128,6 +129,8 @@
             else{
                 if ([self.btnEmployer isSelected]) {
                 UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    
+                    [[[UIAlertView alloc] initWithTitle:nil message:@"LogIn Success" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
                 DashBoardEmployerViewController *Dbpvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardPageViewController"];
                    
                     modelLogInEmployer=[[ModelLogInEmployer alloc]initWithDictionary:result];
@@ -141,6 +144,10 @@
                 }
                  if([self.btnApplicant isSelected])
                 {
+                    [[[UIAlertView alloc] initWithTitle:nil message:@"LogIn Success" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                    
+                   
+                    
                     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     CustomSectionViewController *Apvc = [sb instantiateViewControllerWithIdentifier:@"CustomSectionViewController"];
                     modelLogInApplicant=[[ModelLogInApplicant alloc]initWithDictionary:result];
@@ -149,6 +156,17 @@
                     
                 }
                 if ([self.btnRecruiter isSelected]) {
+                    [[[UIAlertView alloc] initWithTitle:nil message:@"LogIn Success" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                    
+                    
+                    
+                    NSString *strEquals=[result objectForKey:@"membership_type"];
+                    
+                    
+                    NSLog(@"THe str is %@",strEquals);
+                    if ([strEquals isEqualToString:@"0"]) {
+                        
+                   
                     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     DashBoardRecruiterViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantViewController"];
                     //Dbapvc.distRecruiter=result;
@@ -156,6 +174,9 @@
                     modelLogInRecruiter=[[ModelLogInRecruiter alloc]initWithDictionary:result];
                    
                     [self presentViewController:Dbapvc animated:YES completion:nil];
+                        
+                    }
+                    
                 }
                 
             }

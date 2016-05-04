@@ -24,7 +24,7 @@
 
 @synthesize mutableArrJobList;
 
-@synthesize tableView;
+@synthesize empApplicantListTableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,7 +68,7 @@
                 
             }
            
-            [tableView reloadData];
+            [empApplicantListTableView reloadData];
             
             //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
@@ -167,17 +167,19 @@
     
   
        
-      modelEmployerApplicantList=[ self.mutableArrJobList objectAtIndex:indexPath.row];
+   ModelEmployerApplicantList   *modelEmp=[ self.mutableArrJobList objectAtIndex:indexPath.row];
+    
+    NSLog(@"THe apply date name is %@",[self.mutableArrJobList objectAtIndex:indexPath.row]);
    
-    NSLog(@"THe apply date name is %@",modelEmployerApplicantList.strApplyDate);
-    NSLog(@"THe joblist lastname is %@",modelEmployerApplicantList.strLast_Name);
-    NSLog(@"THe joblist firstname is %@",modelEmployerApplicantList.strFisrst_Name);
-    NSLog(@"THe joblist id  is %@",modelEmployerApplicantList.strJobId);
+    NSLog(@"THe apply date name is %@",modelEmp.strApplyDate);
+    NSLog(@"THe joblist lastname is %@",modelEmp.strLast_Name);
+    NSLog(@"THe joblist firstname is %@",modelEmp.strFisrst_Name);
+    NSLog(@"THe joblist id  is %@",modelEmp.strJobId);
         
-    cell.lblfitstname.text=modelEmployerApplicantList.strFisrst_Name;
-    cell.lblLastName.text=modelEmployerApplicantList.strLast_Name;
-    cell.lblJobId.text=modelEmployerApplicantList.strJobId;
-    cell.lblApplyDate.text=modelEmployerApplicantList.strApplyDate;
+    cell.lblfitstname.text=modelEmp.strFisrst_Name;
+    cell.lblLastName.text=modelEmp.strLast_Name;
+    cell.lblJobId.text=modelEmp.strJobId;
+    cell.lblApplyDate.text=modelEmp.strApplyDate;
     
 
    

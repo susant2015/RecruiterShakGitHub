@@ -13,7 +13,7 @@
 
 
 @property(strong,nonatomic) NSMutableArray *mutableArrJobList;
-@property(weak,nonatomic)IBOutlet UITableView *tableView;
+@property(weak,nonatomic)IBOutlet UITableView *empApplicantListTableView;
 
 
 @end

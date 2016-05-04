@@ -13,6 +13,7 @@
 @synthesize btnAction=_btnAction;
 @synthesize btnSignIn;
 @synthesize btnSignUpWithLinkedIn;
+@synthesize btnTerm_And_Condition;
 - (void)awakeFromNib {
     // Initialization code
     

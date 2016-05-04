@@ -15,4 +15,5 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnSignIn;
 @property (weak, nonatomic) IBOutlet UIButton *btnSignUpWithLinkedIn;
+@property (weak, nonatomic) IBOutlet UIButton *btnTerm_And_Condition;
 @end

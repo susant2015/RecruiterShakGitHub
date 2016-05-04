@@ -308,8 +308,8 @@ NSString static *strPlaceholders[]={
     if (indexPath.row==0)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strUser_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strUser_Name atIndex:indexPath.row];
+        strFisrst_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strFisrst_Name atIndex:indexPath.row];
        
         
     }
@@ -324,12 +324,20 @@ NSString static *strPlaceholders[]={
     if (indexPath.row==2)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strEmail=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strEmail atIndex:indexPath.row];
+        
+        
+    }
+    if (indexPath.row==3)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strUser_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [arrtxtFieldValue insertObject:strUser_Name atIndex:indexPath.row];
         
         
     }
-    if (indexPath.row==3)
+    if (indexPath.row==4)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -337,7 +345,7 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==4)
+    if (indexPath.row==5)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strPhone_Number=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -345,7 +353,7 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==5)
+    if (indexPath.row==6)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAddress_Line1=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -353,7 +361,7 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==6)
+    if (indexPath.row==7)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAddress_Line2=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -361,7 +369,7 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==7)
+    if (indexPath.row==8)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strCity=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -369,7 +377,7 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==8)
+    if (indexPath.row==9)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strState=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -377,7 +385,7 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==9)
+    if (indexPath.row==10)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strCountry=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -385,14 +393,7 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==10)
-    {
-        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strUser_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strUser_Name atIndex:indexPath.row];
-        
-        
-    }
+    
     if (indexPath.row==11)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
@@ -401,7 +402,7 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==13)
+    if (indexPath.row==12)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strOccupation=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -459,10 +460,18 @@ NSString static *strPlaceholders[]={
             
         }
         else{
+            NSString *strEquals=[result objectForKey:@"membership_type"];
             
+            
+            NSLog(@"THe str is %@",strEquals);
+            if ([strEquals isEqualToString:@"0"]){
+            NSLog(@"The register data is:%@",result);
             UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             DashBoardEmployerViewController *Dbpvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardPageViewController"];
            [self presentViewController:Dbpvc animated:YES completion:nil];
+                
+                
+            }
         }
     }];
     
