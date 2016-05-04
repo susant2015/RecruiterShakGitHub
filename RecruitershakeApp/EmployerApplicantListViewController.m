@@ -152,7 +152,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *myCell=nil;
+   
     
   
         
@@ -164,10 +164,10 @@
     
    
     
-    
+    ModelEmployerApplicantList   *modelEmp=[[ModelEmployerApplicantList alloc] init];
   
        
-   ModelEmployerApplicantList   *modelEmp=[ self.mutableArrJobList objectAtIndex:indexPath.row];
+               modelEmp=[ self.mutableArrJobList objectAtIndex:indexPath.row];
     
     NSLog(@"THe apply date name is %@",[self.mutableArrJobList objectAtIndex:indexPath.row]);
    
@@ -183,10 +183,10 @@
     
 
    
-        myCell=cell;
+    
     
 
-    return myCell;
+    return cell;
    
 }
 

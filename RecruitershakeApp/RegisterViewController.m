@@ -225,6 +225,7 @@ NSString static *strPlaceholders[]={
         [cell.btnApplicant addTarget:self action:@selector(btnActionApplicant:) forControlEvents:UIControlEventTouchUpInside];
         [cell.btnEmployer addTarget:self action:@selector(btnActionEmployer:) forControlEvents:UIControlEventTouchUpInside];
         [cell.btnRecruiter addTarget:self action:@selector(btnActionRecruiter:) forControlEvents:UIControlEventTouchUpInside];
+       
       
     }
     
@@ -279,6 +280,7 @@ NSString static *strPlaceholders[]={
     }
      [cell.btnAction addTarget:self action:@selector(btnActionSubmit) forControlEvents:UIControlEventTouchUpInside];
      [cell.btnSignIn addTarget:self action:@selector(btnSingInGo) forControlEvents:UIControlEventTouchUpInside];
+    
     
     return cell;
 }
