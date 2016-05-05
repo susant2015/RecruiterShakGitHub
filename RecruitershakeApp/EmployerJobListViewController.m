@@ -15,24 +15,87 @@
 #import "Constants.h"
 #import "AddJobEmployerViewController.h"
 #import "BaseViewController.h"
-@interface EmployerJobListViewController ()
+@interface EmployerJobListViewController (){
+    
+    NSMutableArray *mutableArrJobList;
+    NSDictionary *dicEmp;
+    NSString *strid;
+    NSString *strUserid;
+    NSString *created;
+    NSString *educational_qualifiaction;
+    NSString *job_id;
+    NSString *location;
+    NSString *urlkey;
+    NSString *designation;
+    NSString *title;
+    NSDictionary *dicApplist;
+}
 @end
 
 @implementation EmployerJobListViewController{
     
     IBOutlet UITableView *tblEmpJobList;
-    NSMutableArray *mutableArrJobList;
+   
   
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+     mutableArrJobList = [[NSMutableArray alloc] init];
+   strid = @"id";
+    strUserid = @"u_id";
+    created = @"created";
+    educational_qualifiaction=@"educational_qualifiaction";
+    job_id=@"job_id";
+    location=@"location";
+    urlkey=@"url_key";
+    designation=@"designation";
+    title=@"title";
+    
+     mutableArrJobList = [[NSMutableArray alloc] init];
+    NSString *post = [[NSString alloc] initWithFormat:@"action=%@&u_id=%@",@"job_listing",modelLogInEmployer.strId];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSURL *url = [NSURL URLWithString:@"http://website-design-company.in/dev13/services.php"];
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [theRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPBody:postData];
+    NSURLResponse *response;
+    NSError *error;
+    NSData *urlData = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
+    NSDictionary   *jsonResponeDict=[NSJSONSerialization JSONObjectWithData:urlData options:0 error:&error];
+    NSLog(@"The jso data is%@",jsonResponeDict);
+    for (NSDictionary *dataDict in jsonResponeDict) {
+        NSString *id_data = [dataDict objectForKey:@"id"];
+        NSString *strUserid_data=[dataDict objectForKey:@"u_id"];
+        NSString *created_data=[dataDict objectForKey:@"created"];
+        NSString *educational_qualifiaction_data=[dataDict objectForKey:@"educational_qualifiaction"];
+        NSString *job_id_data=[dataDict objectForKey:@"job_id"];
+        NSString *location_data=[dataDict objectForKey:@"location"];
+        NSString *urlkey_data=[dataDict objectForKey:@"url_key"];
+        NSString *designation_data=[dataDict objectForKey:@"designation"];
+        NSString *title_data=[dataDict objectForKey:@"title"];
+        
+        
+        NSLog(@"id: %@",id_data);
+        NSLog(@"firstname: %@",strUserid_data);
+        NSLog(@"lastname: %@",created_data);
+        
+        dicApplist = [NSDictionary dictionaryWithObjectsAndKeys:
+                      id_data, strid,strUserid_data,strUserid,created_data,created,educational_qualifiaction_data,educational_qualifiaction,job_id_data,job_id,location_data,location,urlkey_data,urlkey,designation_data,designation,title_data,title,nil];
+        [mutableArrJobList addObject:dicApplist];
+    }
+    
+    [tblEmpJobList  reloadData];
+   
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [[EmployerJobListService sharedInstance] employerJobListUserId:modelLogInEmployer.strId withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
+ /*   [[EmployerJobListService sharedInstance] employerJobListUserId:modelLogInEmployer.strId withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         
         if(isError){
             
@@ -69,22 +132,26 @@
             
             
         }
-    }];
+    }];  */
+    
+   
    
    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-   
-}
+
 
 #pragma tableview
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
  - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   
     CGFloat height=0.0f;
-    if ([mutableArrJobList objectAtIndex:indexPath.row]) {
+    if ([mutableArrJobList count]) {
         height=120.0f;
     }
   
@@ -96,7 +163,7 @@
 {
     
     
-    return [mutableArrJobList count];
+    return mutableArrJobList.count;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -126,11 +193,47 @@
         static NSString *applicantIndexCellIdentifier=@"EmployerJobListViewControllerCell";
         EmployerJobListViewControllerCell *cell=(EmployerJobListViewControllerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
         if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil]objectAtIndex:0];
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil] objectAtIndex:0];
         }
-        ModelEmployerJobList  *model=[mutableArrJobList objectAtIndex:indexPath.row];
-        cell.lblJobId.text=model.strJob_Id;
-        NSLog(@"THe jobid  %@",model.strJob_Id);
+    NSDictionary *tmpDict = [mutableArrJobList objectAtIndex:indexPath.row];
+    NSLog(@"The temp is%@",tmpDict);
+    NSMutableString *idtext;
+    idtext = [NSMutableString stringWithFormat:@"%@",
+              [tmpDict objectForKeyedSubscript:strid]];
+    
+    NSMutableString *idusertext;
+    idusertext = [NSMutableString stringWithFormat:@"%@ ",
+             [tmpDict objectForKey:strUserid]];
+    NSMutableString *createdtext;
+    createdtext = [NSMutableString stringWithFormat:@"%@",
+            [tmpDict objectForKeyedSubscript:created]];
+    NSMutableString *edutext;
+    edutext = [NSMutableString stringWithFormat:@"%@",
+           [tmpDict objectForKeyedSubscript:educational_qualifiaction]];
+    NSMutableString *jobidtext;
+    jobidtext = [NSMutableString stringWithFormat:@"%@",
+            [tmpDict objectForKeyedSubscript:job_id]];
+    NSMutableString *locationtext;
+    locationtext = [NSMutableString stringWithFormat:@"%@",
+                 [tmpDict objectForKeyedSubscript:location]];
+    NSMutableString *urlkeytext;
+    urlkeytext = [NSMutableString stringWithFormat:@"%@",
+                    [tmpDict objectForKeyedSubscript:urlkey]];
+    NSMutableString  *designationtext;
+    designationtext = [NSMutableString stringWithFormat:@"%@",
+                  [tmpDict objectForKeyedSubscript:designation]];
+    
+    NSMutableString  *titletext;
+    titletext = [NSMutableString stringWithFormat:@"%@",
+                       [tmpDict objectForKeyedSubscript:title]];
+    
+    cell.lblJobId.text=jobidtext;
+    cell.lblEduqualification.text=edutext;
+    cell.lblJobTitle.text=titletext;
+    cell.lblPosition.text=designationtext;
+    cell.lblPostDate.text=createdtext;
+    // cell.lblSkillRequired.text=
+    
     
     return cell;
     

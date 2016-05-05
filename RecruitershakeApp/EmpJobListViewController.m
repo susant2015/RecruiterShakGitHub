@@ -53,13 +53,23 @@
     
     myObject = [[NSMutableArray alloc] init];
     
-    NSData *jsonSource = [NSData dataWithContentsOfURL:
-                          [NSURL URLWithString:@"http://website-design-company.in/dev13/services.php?action=my_applicant&emp_id=2"]];
-    
-    id jsonObjects = [NSJSONSerialization JSONObjectWithData:
-                      jsonSource options:NSJSONReadingMutableContainers error:nil];
-    
-    for (NSDictionary *dataDict in jsonObjects) {
+    NSString *post = [[NSString alloc] initWithFormat:@"action=%@&emp_id=%@",@"my_applicant",modelLogInEmployer.strId];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSURL *url = [NSURL URLWithString:@"http://website-design-company.in/dev13/services.php"];
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [theRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPBody:postData];
+    NSURLResponse *response;
+    NSError *error;
+    NSData *urlData = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
+    NSDictionary   *jsonResponeDict=[NSJSONSerialization JSONObjectWithData:urlData options:0 error:&error];
+    // NSString *str=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+    //NSLog(@"Login response: is %@",str); //getting response
+    NSLog(@"The jso data is%@",jsonResponeDict);
+    for (NSDictionary *dataDict in jsonResponeDict) {
         NSString *id_data = [dataDict objectForKey:@"id"];
         NSString *strfirstname_data = [dataDict objectForKey:@"first_name"];
         NSString *last_name_data = [dataDict objectForKey:@"last_name"];
@@ -77,6 +87,7 @@
                       nil];
         [myObject addObject:dictionary];
     }
+    [yListApplicant reloadData];
     
 }
 

@@ -2104,14 +2104,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" backgroundImage="arrow (2).png"/>
                                 <connections>
-                                    <segue destination="EN5-Ms-LBD" kind="show" id="hoA-xl-ier"/>
+                                    <segue destination="EN5-Ms-LBD" kind="show" id="klC-D2-Fuj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9g-mm-5mV" userLabel="Button-arrow-myapplicants">
                                 <rect key="frame" x="544" y="387" width="16" height="13"/>
                                 <state key="normal" title="Button" backgroundImage="arrow (2).png"/>
                                 <connections>
-                                    <segue destination="r9g-o8-AGu" kind="show" id="Fj2-gX-qyE"/>
+                                    <segue destination="r9g-o8-AGu" kind="show" id="oTE-MT-6oI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-MD-vxI" userLabel="Button-arrow-msg">

@@ -44,11 +44,7 @@
     strlastname = @"last_name";
     strjobid=@"job_id";
     strapplydate=@"apply_date";
-   }
-
-
--(void)viewDidAppear:(BOOL)animated{
-    
+    myObject=[[NSMutableArray alloc] init];
     
     
     [[EmployerApplicantListService  sharedInstance] employerApplicantId:modelLogInEmployer.strId  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
@@ -89,6 +85,14 @@
             [empApplicantListTableView reloadData];
         }
     }];
+   }
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    
+    
+   
     [super viewDidAppear:animated];
     
 }
