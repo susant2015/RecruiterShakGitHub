@@ -14,35 +14,28 @@
 #import "ModelEmployerJobList.h"
 #import "Constants.h"
 #import "AddJobEmployerViewController.h"
+#import "BaseViewController.h"
 @interface EmployerJobListViewController ()
 @end
 
 @implementation EmployerJobListViewController{
     
+    IBOutlet UITableView *tblEmpJobList;
+    NSMutableArray *mutableArrJobList;
   
-  
-   }
-
-@synthesize mutableArrJobList;
-@synthesize empJobListtableView;
-
-
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
-    
-      [super viewWillAppear:animated];
     [[EmployerJobListService sharedInstance] employerJobListUserId:modelLogInEmployer.strId withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         
-        
-        
-        
         if(isError){
-            [[[UIAlertView alloc] initWithTitle:nil message:@"mismatched email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            
             
             if(strMsg.length>0){
                 [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -51,37 +44,28 @@
             }
             else{
                 // [self alertStatus:SomethingWrong :nil];
+               
                 
             }
             
         }
         else{
             NSLog(@"THe result is %@",result);
-            
-            //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-            
-            
-            self.mutableArrJobList = [[result objectForKey:@"job"] mutableCopy];
-            for (int i=0; i<self.mutableArrJobList.count; i++) {
+            mutableArrJobList = [[result objectForKey:@"job"] mutableCopy];
+            for (int i=0; i<mutableArrJobList.count; i++) {
                 
-                NSMutableDictionary *dicYour = [NSMutableDictionary dictionaryWithDictionary:[self.mutableArrJobList objectAtIndex:i]];
-        ModelEmployerJobList  *model = [[ModelEmployerJobList alloc] initWithDictionary:dicYour];
+                NSMutableDictionary *dicEmpJobList = [NSMutableDictionary dictionaryWithDictionary:[mutableArrJobList objectAtIndex:i]];
+                 ModelEmployerJobList  *model = [[ModelEmployerJobList alloc] initWithDictionary:dicEmpJobList];
                 
-                [self.mutableArrJobList removeObjectAtIndex:i];
+                [mutableArrJobList removeObjectAtIndex:i];
                
-                [self.mutableArrJobList insertObject:model atIndex:i];
+                [mutableArrJobList insertObject:model atIndex:i];
                 
                NSLog(@"THe jobid is :%@",model.strJob_Id);
-              //  NSLog(@"==========The arr list is%@",self.mutableArrJobList);
-               
-                
+
             }
             
-            
-            
-           // NSLog(@"THe model arr is :%@",modelEmployerJobList.strJob_Id);
-            
-            [empJobListtableView  reloadData];
+            [tblEmpJobList  reloadData];
             
             
         }
@@ -95,11 +79,12 @@
    
 }
 
+#pragma tableview
  - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   
     CGFloat height=0.0f;
-    if ([self.mutableArrJobList objectAtIndex:indexPath.row]) {
+    if ([mutableArrJobList objectAtIndex:indexPath.row]) {
         height=120.0f;
     }
   
@@ -111,7 +96,7 @@
 {
     
     
-    return [self.mutableArrJobList count];
+    return [mutableArrJobList count];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -119,10 +104,8 @@
     
     
     Employerjoblistheadercell *cell = (Employerjoblistheadercell *)[tableView dequeueReusableCellWithIdentifier:HeaderIdentifier];
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"Employerjoblistheadercell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+    if (!cell) {
+        cell=[[[NSBundle mainBundle] loadNibNamed:@"Employerjoblistheadercell" owner:self options:nil]objectAtIndex:0];
     }
     cell.lblEmployerFirstName.text=modelLogInEmployer.strFirst_Name;
     cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
@@ -132,10 +115,6 @@
         return cell;
     
 }
-
-
-
-
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 235.0f;
@@ -143,38 +122,21 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
-   
-         
+
         static NSString *applicantIndexCellIdentifier=@"EmployerJobListViewControllerCell";
         EmployerJobListViewControllerCell *cell=(EmployerJobListViewControllerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil]objectAtIndex:0];
         }
-   
-       ModelEmployerJobList  *model=[self.mutableArrJobList objectAtIndex:indexPath.row];
-    
-          cell.lblJobId.text=model.strJob_Id;
+        ModelEmployerJobList  *model=[mutableArrJobList objectAtIndex:indexPath.row];
+        cell.lblJobId.text=model.strJob_Id;
         NSLog(@"THe jobid  %@",model.strJob_Id);
-       
-
+    
     return cell;
-   }
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return YES if you want the specified item to be editable.
-    return YES;
+    
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.mutableArrJobList removeObjectAtIndex:indexPath.row];
-        [self.empJobListtableView reloadData];
-    }
-}
-
-
-
-
+#pragma addJobList
 -(void)addJobListEmployer{
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

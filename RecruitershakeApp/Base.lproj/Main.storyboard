@@ -1569,7 +1569,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="empJobListtableView" destination="Cdo-lX-L1C" id="qx3-rt-DYc"/>
+                        <outlet property="tblEmpJobList" destination="Cdo-lX-L1C" id="UVW-eD-Ncs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPI-A6-Xtp" userLabel="First Responder" sceneMemberID="firstResponder"/>

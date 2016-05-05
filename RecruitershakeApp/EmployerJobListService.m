@@ -40,7 +40,6 @@
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Current-Type"];
     
     [request setHTTPBody:postData];
-    //  NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
     
     NSURLSessionConfiguration *sessionConfig=[NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session=[NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
@@ -49,17 +48,13 @@
         NSLog(@"The dataTask is :%@",dataTask);
         if (error) {
             handler(nil,YES,SomethingWrong);
-            handler(nil,YES,@"Error message");
         }else{
             if (data.length >0) {
-                NSLog(@"The data is:%@",data);
                 NSError *error;
-                // NSLog(@"Login Response : %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+                
                 NSLog(@"Login Response :%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
                 NSDictionary *jsonResponeDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                 NSLog(@"THE JSONDIST%@",jsonResponeDict);
-                
-                //handler(nil,YES,@"Sucess message");
                 if ([[jsonResponeDict objectForKey:@"status"]isEqualToString:@"1"])
                 {
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogin"];

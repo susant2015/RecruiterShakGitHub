@@ -43,7 +43,6 @@
     
     [[EmployerApplicantListService  sharedInstance] employerApplicantId:modelLogInEmployer.strId  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         if(isError){
-            [[[UIAlertView alloc] initWithTitle:nil message:@"Error" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
             if(strMsg.length>0){
                 [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -65,29 +64,15 @@
                 
                 
                 NSMutableDictionary *dicYour = [NSMutableDictionary dictionaryWithDictionary:[self.mutableArrJobList objectAtIndex:i]];
-                modelEmployerApplicantList = [[ModelEmployerApplicantList alloc] initWithDictionary:dicYour];
+                ModelEmployerApplicantList       *modelEmployerApplicantList = [[ModelEmployerApplicantList alloc] initWithDictionary:dicYour];
                 
                 [self.mutableArrJobList removeObjectAtIndex:i];
-                
-                
                 [self.mutableArrJobList insertObject:modelEmployerApplicantList atIndex:i];
-                
-                
-                NSLog(@"==========The arr list is%@",self.mutableArrJobList);
-                
-                
             }
             
             [empApplicantListTableView reloadData];
-            
-            //[[[UIAlertView alloc] initWithTitle:nil message:@"Check your mail" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-            
         }
     }];
-    
-    
-    NSLog(@"THe jobid  is :%@",modelEmployerApplicantList.strJobId);
-   
     
 }
 - (void)didReceiveMemoryWarning {
@@ -108,6 +93,11 @@
     return height;
     
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
@@ -121,10 +111,8 @@
     
     
     Employerjoblistheadercell *cell = (Employerjoblistheadercell *)[tableView dequeueReusableCellWithIdentifier:HeaderIdentifier];
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"Employerjoblistheadercell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+    if (!cell) {
+        cell=[[[NSBundle mainBundle] loadNibNamed:@"Employerjoblistheadercell" owner:self options:nil]objectAtIndex:0];
     }
     //cell.BtnAddjobListCell.hidden=YES;
     cell.LblTitlebar.text=@"My Applicants";
@@ -145,24 +133,13 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *myCell=nil;
-    
-  
-        
         static NSString *applicantIndexCellIdentifier=@"Employerapplicantlistcell";
         Employerapplicantlistcell *cell=(Employerapplicantlistcell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"Employerapplicantlistcell" owner:self options:nil]objectAtIndex:0];
         }
+    ModelEmployerApplicantList   *modelEmp=[ self.mutableArrJobList objectAtIndex:indexPath.row];
     
-   
-    
-    
-  
-       
-   ModelEmployerApplicantList   *modelEmp=[ self.mutableArrJobList objectAtIndex:indexPath.row];
-    
-       
     NSLog(@"THe apply date name is %@",modelEmp.strApplyDate);
     NSLog(@"THe joblist lastname is %@",modelEmp.strLast_Name);
     NSLog(@"THe joblist firstname is %@",modelEmp.strFisrst_Name);
@@ -173,12 +150,7 @@
     cell.lblJobId.text=modelEmp.strJobId;
     cell.lblApplyDate.text=modelEmp.strApplyDate;
     
-
-   
-        myCell=cell;
-    
-
-    return myCell;
+  return cell;
    
 }
 
