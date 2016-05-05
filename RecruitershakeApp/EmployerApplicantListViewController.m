@@ -14,7 +14,18 @@
 #import "EmployerApplicantListService.h"
 #import "ModelEmployerApplicantList.h"
 
-@interface EmployerApplicantListViewController ()<UITextFieldDelegate>
+@interface EmployerApplicantListViewController ()<UITextFieldDelegate>{
+    
+    NSMutableArray *myObject;
+    // A dictionary object
+    NSDictionary *dictionary;
+    // Define keys
+    NSString *strid;
+    NSString *strfirstname;
+    NSString *strlastname;
+    NSString *strjobid;
+    NSString *strapplydate;
+}
 
 @end
 
@@ -28,18 +39,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-  //  NSMutableArray *arr;
-    
-    
-    
-    
+    strid = @"id";
+    strfirstname = @"first_name";
+    strlastname = @"last_name";
+    strjobid=@"job_id";
+    strapplydate=@"apply_date";
    }
 
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    [super viewDidAppear:animated];
+    
     
     [[EmployerApplicantListService  sharedInstance] employerApplicantId:modelLogInEmployer.strId  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         if(isError){
@@ -57,22 +67,29 @@
         }
         else{
             
-            
-            
-            self.mutableArrJobList = [[result objectForKey:@"myapplicant"] mutableCopy];
-            for (int i=0; i<self.mutableArrJobList.count; i++) {
+            for (NSDictionary *dataDict in result) {
+                NSString *id_data = [dataDict objectForKey:@"id"];
+                NSString *strfirstname_data = [dataDict objectForKey:@"first_name"];
+                NSString *last_name_data = [dataDict objectForKey:@"last_name"];
+                NSString *strjobid_data = [dataDict objectForKey:@"job_id"];
+                NSString *strapplydate_data = [dataDict objectForKey:@"apply_date"];
                 
+                NSLog(@"id: %@",id_data);
+                NSLog(@"firstname: %@",strfirstname_data);
+                NSLog(@"lastname: %@",last_name_data);
                 
-                NSMutableDictionary *dicYour = [NSMutableDictionary dictionaryWithDictionary:[self.mutableArrJobList objectAtIndex:i]];
-                ModelEmployerApplicantList       *modelEmployerApplicantList = [[ModelEmployerApplicantList alloc] initWithDictionary:dicYour];
-                
-                [self.mutableArrJobList removeObjectAtIndex:i];
-                [self.mutableArrJobList insertObject:modelEmployerApplicantList atIndex:i];
+                dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                              id_data, strid,
+                              strfirstname_data, strfirstname,
+                              last_name_data,strlastname,strjobid_data,strjobid,strapplydate_data,strapplydate,
+                              nil];
+                [myObject addObject:dictionary];
             }
             
             [empApplicantListTableView reloadData];
         }
     }];
+    [super viewDidAppear:animated];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -101,7 +118,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return self.mutableArrJobList.count;
+    return myObject.count;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -133,25 +150,39 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        static NSString *applicantIndexCellIdentifier=@"Employerapplicantlistcell";
-        Employerapplicantlistcell *cell=(Employerapplicantlistcell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"Employerapplicantlistcell" owner:self options:nil]objectAtIndex:0];
-        }
-    ModelEmployerApplicantList   *modelEmp=[ self.mutableArrJobList objectAtIndex:indexPath.row];
+    static NSString *applicantIndexCellIdentifier=@"Employerapplicantlistcell";
+    Employerapplicantlistcell *cell=(Employerapplicantlistcell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
+    if (!cell) {
+        cell=[[[NSBundle mainBundle] loadNibNamed:@"Employerapplicantlistcell" owner:self options:nil]objectAtIndex:0];
+    }
+    NSDictionary *tmpDict = [myObject objectAtIndex:indexPath.row];
     
-    NSLog(@"THe apply date name is %@",modelEmp.strApplyDate);
-    NSLog(@"THe joblist lastname is %@",modelEmp.strLast_Name);
-    NSLog(@"THe joblist firstname is %@",modelEmp.strFisrst_Name);
-    NSLog(@"THe joblist id  is %@",modelEmp.strJobId);
-        
-    cell.lblfitstname.text=modelEmp.strFisrst_Name;
-    cell.lblLastName.text=modelEmp.strLast_Name;
-    cell.lblJobId.text=modelEmp.strJobId;
-    cell.lblApplyDate.text=modelEmp.strApplyDate;
+    NSMutableString *idtext;
+    idtext = [NSMutableString stringWithFormat:@"%@",
+              [tmpDict objectForKeyedSubscript:strid]];
     
-  return cell;
-   
+    NSMutableString *first;
+    first = [NSMutableString stringWithFormat:@"%@ ",
+             [tmpDict objectForKey:strfirstname]];
+    NSMutableString *last;
+    last = [NSMutableString stringWithFormat:@"%@",
+            [tmpDict objectForKeyedSubscript:strlastname]];
+    NSMutableString *job;
+    job = [NSMutableString stringWithFormat:@"%@",
+           [tmpDict objectForKeyedSubscript:strjobid]];
+    NSMutableString *date;
+    date = [NSMutableString stringWithFormat:@"%@",
+            [tmpDict objectForKeyedSubscript:strapplydate]];
+    
+    NSLog(@"The first name is %@",idtext);
+    
+    cell.lblfitstname.text=first;
+    cell.lblLastName.text=last;
+    cell.lblJobId.text=job;
+    cell.lblApplyDate.text=date;
+    
+    return cell;
+    
 }
 
 @end

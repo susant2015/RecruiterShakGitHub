@@ -11,7 +11,7 @@
 @implementation ModelEmployerApplicantList
 
 
--(id)initWithDictionary:(NSDictionary *)dict
+  /*-(id)initWithDictionary:(NSDictionary *)dict
 {
    
     if (self = [super init]) {
@@ -38,6 +38,23 @@
      NSLog(@"The self is is%@",self.strJobId);
      NSLog(@"The self is is%@",self.strApplyDate);
     return self;
+}  */
+
+-(instancetype)initWithId:(NSString *)Id firstName:(NSString *)firstname lastName:(NSString*)lastname jobId:(NSString *)jobid applyDate:(NSString *)applydate{
+    self = [super init];
+    if(self){
+        self.strId = Id;
+        self.strFisrst_Name = firstname;
+        self.strLast_Name = lastname;
+        self.strJobId = jobid;
+        self.strApplyDate=applydate;
+    }
+    return self;
 }
+
+
+
+
+
     
 @end

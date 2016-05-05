@@ -31,6 +31,7 @@
 		841959A61C8EC62C00E8CA79 /* ApplicantIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841959A41C8EC62C00E8CA79 /* ApplicantIndexCell.xib */; };
 		842261D81CBCD04A000ED0A8 /* ModelAddEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = 842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */; };
 		8425364E1CC4C095003A962C /* EditProfileRecruiterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425364D1CC4C095003A962C /* EditProfileRecruiterService.m */; };
+		8429F4C71CDB3ED7006471AD /* EmpJobListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429F4C61CDB3ED7006471AD /* EmpJobListViewController.m */; };
 		842ADE451C998A3D00C9CC49 /* AboutContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ADE431C998A3D00C9CC49 /* AboutContentCell.m */; };
 		842ADE461C998A3D00C9CC49 /* AboutContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842ADE441C998A3D00C9CC49 /* AboutContentCell.xib */; };
 		842C7B4B1C9684FA009B18C5 /* EmployerJobListViewControllerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7B491C9684FA009B18C5 /* EmployerJobListViewControllerCell.m */; };
@@ -239,6 +240,8 @@
 		842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelAddEducation.m; sourceTree = "<group>"; };
 		8425364C1CC4C095003A962C /* EditProfileRecruiterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileRecruiterService.h; sourceTree = "<group>"; };
 		8425364D1CC4C095003A962C /* EditProfileRecruiterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileRecruiterService.m; sourceTree = "<group>"; };
+		8429F4C51CDB3ED7006471AD /* EmpJobListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmpJobListViewController.h; sourceTree = "<group>"; };
+		8429F4C61CDB3ED7006471AD /* EmpJobListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmpJobListViewController.m; sourceTree = "<group>"; };
 		842ADE421C998A3D00C9CC49 /* AboutContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutContentCell.h; sourceTree = "<group>"; };
 		842ADE431C998A3D00C9CC49 /* AboutContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutContentCell.m; sourceTree = "<group>"; };
 		842ADE441C998A3D00C9CC49 /* AboutContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutContentCell.xib; sourceTree = "<group>"; };
@@ -608,6 +611,8 @@
 				847F31701CC6589300E648D5 /* RecruiterGooglePlusViewController.m */,
 				84131D0A1CC7657C004B98A1 /* CustomSectionViewController.h */,
 				84131D0B1CC7657C004B98A1 /* CustomSectionViewController.m */,
+				8429F4C51CDB3ED7006471AD /* EmpJobListViewController.h */,
+				8429F4C61CDB3ED7006471AD /* EmpJobListViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1288,6 +1293,7 @@
 				849116741C9197AA00CF1967 /* TextFieldCellName.m in Sources */,
 				84C8332D1C840F29009AD74F /* ForgotPasswordViewController.m in Sources */,
 				8448FE581CC0C74C00FA9AF1 /* EditProfileEmployerViewController.m in Sources */,
+				8429F4C71CDB3ED7006471AD /* EmpJobListViewController.m in Sources */,
 				842ADE451C998A3D00C9CC49 /* AboutContentCell.m in Sources */,
 				849591251CBE836C00A7A6E0 /* ModelLogInApplicant.m in Sources */,
 				843B3DA81C92CA020014D05A /* Employerjoblistheadercell.m in Sources */,

@@ -605,6 +605,53 @@
             </objects>
             <point key="canvasLocation" x="-3690" y="2068"/>
         </scene>
+        <!--Emp Job List View Controller-->
+        <scene sceneID="lMR-4T-rDf">
+            <objects>
+                <viewController storyboardIdentifier="EmpJobListViewController" id="r9g-o8-AGu" customClass="EmpJobListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nzp-Ma-grb"/>
+                        <viewControllerLayoutGuide type="bottom" id="M21-M0-exA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Em-Mf-ONN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="db_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="aRG-Qi-ELp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OX0-sg-ErD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="r9g-o8-AGu" id="bnS-ni-NWQ"/>
+                                    <outlet property="delegate" destination="r9g-o8-AGu" id="iD6-tn-G2N"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="top" secondItem="aRG-Qi-ELp" secondAttribute="top" id="GqJ-fq-nyh"/>
+                            <constraint firstItem="aRG-Qi-ELp" firstAttribute="trailing" secondItem="OX0-sg-ErD" secondAttribute="trailing" id="Lfj-Sa-7wj"/>
+                            <constraint firstItem="aRG-Qi-ELp" firstAttribute="top" secondItem="OX0-sg-ErD" secondAttribute="top" id="ZI0-xe-3p2"/>
+                            <constraint firstAttribute="leading" secondItem="aRG-Qi-ELp" secondAttribute="leading" id="ddh-64-Ry2"/>
+                            <constraint firstItem="aRG-Qi-ELp" firstAttribute="bottom" secondItem="OX0-sg-ErD" secondAttribute="bottom" id="inX-rf-Q1b"/>
+                            <constraint firstAttribute="trailing" secondItem="aRG-Qi-ELp" secondAttribute="trailing" id="sm7-5X-wZV"/>
+                            <constraint firstItem="M21-M0-exA" firstAttribute="top" secondItem="aRG-Qi-ELp" secondAttribute="bottom" id="uub-3A-w6j"/>
+                            <constraint firstItem="aRG-Qi-ELp" firstAttribute="leading" secondItem="OX0-sg-ErD" secondAttribute="leading" id="vx2-uP-tMr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="yListApplicant" destination="OX0-sg-ErD" id="zFJ-jH-IOt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FtA-E9-Wf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3091" y="2943"/>
+        </scene>
         <!--Register View Controller-->
         <scene sceneID="0Cy-Xf-wCd">
             <objects>
@@ -2064,7 +2111,7 @@
                                 <rect key="frame" x="544" y="387" width="16" height="13"/>
                                 <state key="normal" title="Button" backgroundImage="arrow (2).png"/>
                                 <connections>
-                                    <segue destination="Yr9-p5-mn3" kind="show" id="9zj-7t-QYT"/>
+                                    <segue destination="r9g-o8-AGu" kind="show" id="Fj2-gX-qyE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-MD-vxI" userLabel="Button-arrow-msg">
