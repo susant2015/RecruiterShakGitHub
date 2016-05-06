@@ -210,7 +210,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="btnEmpDelete" destination="I6i-vt-JDa" id="Qvb-7r-vBW"/>
+                <outlet property="btnEmpDelete" destination="I6i-vt-JDa" id="DUa-Ax-cRi"/>
                 <outlet property="lblEduqualification" destination="RI8-B2-Jf8" id="NUg-UB-xUY"/>
                 <outlet property="lblJobId" destination="WBm-gn-aor" id="n9Q-N1-Vzb"/>
                 <outlet property="lblJobTitle" destination="MVA-Pu-Q50" id="hCf-YB-nKl"/>

@@ -29,6 +29,7 @@
 		841959A11C8EB71300E8CA79 /* white-notify.png in Resources */ = {isa = PBXBuildFile; fileRef = 841959941C8EB71300E8CA79 /* white-notify.png */; };
 		841959A51C8EC62C00E8CA79 /* ApplicantIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841959A31C8EC62C00E8CA79 /* ApplicantIndexCell.m */; };
 		841959A61C8EC62C00E8CA79 /* ApplicantIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841959A41C8EC62C00E8CA79 /* ApplicantIndexCell.xib */; };
+		841FE33A1CDC8DEC00B0AC01 /* EmployerDeleteService.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FE3391CDC8DEC00B0AC01 /* EmployerDeleteService.m */; };
 		842261D81CBCD04A000ED0A8 /* ModelAddEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = 842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */; };
 		8425364E1CC4C095003A962C /* EditProfileRecruiterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425364D1CC4C095003A962C /* EditProfileRecruiterService.m */; };
 		8429F4C71CDB3ED7006471AD /* EmpJobListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429F4C61CDB3ED7006471AD /* EmpJobListViewController.m */; };
@@ -236,6 +237,8 @@
 		841959A21C8EC62C00E8CA79 /* ApplicantIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicantIndexCell.h; sourceTree = "<group>"; };
 		841959A31C8EC62C00E8CA79 /* ApplicantIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicantIndexCell.m; sourceTree = "<group>"; };
 		841959A41C8EC62C00E8CA79 /* ApplicantIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicantIndexCell.xib; sourceTree = "<group>"; };
+		841FE3381CDC8DEC00B0AC01 /* EmployerDeleteService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployerDeleteService.h; sourceTree = "<group>"; };
+		841FE3391CDC8DEC00B0AC01 /* EmployerDeleteService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployerDeleteService.m; sourceTree = "<group>"; };
 		842261D61CBCD04A000ED0A8 /* ModelAddEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelAddEducation.h; sourceTree = "<group>"; };
 		842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelAddEducation.m; sourceTree = "<group>"; };
 		8425364C1CC4C095003A962C /* EditProfileRecruiterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileRecruiterService.h; sourceTree = "<group>"; };
@@ -775,6 +778,8 @@
 				84CC952E1CCF7D31002E6E3E /* RecruiterMyLeadService.m */,
 				840FFB351CD234D20041E598 /* EmployerApplicantListService.h */,
 				840FFB361CD234D20041E598 /* EmployerApplicantListService.m */,
+				841FE3381CDC8DEC00B0AC01 /* EmployerDeleteService.h */,
+				841FE3391CDC8DEC00B0AC01 /* EmployerDeleteService.m */,
 			);
 			name = WebService;
 			sourceTree = "<group>";
@@ -1259,6 +1264,7 @@
 				8448FE5E1CC0E31C00FA9AF1 /* AboutRecruiterViewController.m in Sources */,
 				8448FE5B1CC0D0BF00FA9AF1 /* EditProfileApplicantViewController.m in Sources */,
 				84D815C71CABE7CF00AEF15E /* ForgotPasswordService.m in Sources */,
+				841FE33A1CDC8DEC00B0AC01 /* EmployerDeleteService.m in Sources */,
 				847F31711CC6589300E648D5 /* RecruiterGooglePlusViewController.m in Sources */,
 				849116501C9168B800CF1967 /* WorkExprienceDegreeSchoolCell.m in Sources */,
 				84EE1AFC1CB624A200BF0C6E /* EmployerJobListService.m in Sources */,

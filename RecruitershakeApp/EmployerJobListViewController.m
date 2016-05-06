@@ -29,6 +29,7 @@
     NSString *designation;
     NSString *title;
     NSDictionary *dicApplist;
+    NSMutableArray *arrDelete;
 }
 @end
 
@@ -50,7 +51,7 @@
     urlkey=@"url_key";
     designation=@"designation";
     title=@"title";
-    
+   arrDelete =[[NSMutableArray alloc] init];
      mutableArrJobList = [[NSMutableArray alloc] init];
     NSString *post = [[NSString alloc] initWithFormat:@"action=%@&u_id=%@",@"job_listing",modelLogInEmployer.strId];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -234,8 +235,18 @@
     cell.lblPostDate.text=createdtext;
     // cell.lblSkillRequired.text=
     
-    
+    [cell.btnEmpDelete addTarget:self action:@selector(btnEmpJobDelete:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btnEmpDelete.tag=indexPath.row;
     return cell;
+    
+    
+}
+
+- (void)btnEmpJobDelete:(UIButton *)sender{
+   
+    NSDictionary *dic;
+    dic=[mutableArrJobList objectAtIndex:sender.tag];
+    NSLog(@"The delete btn data is%@",dic);
     
 }
 

@@ -15,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblEduqualification;
 @property (weak, nonatomic) IBOutlet UILabel *lblSkillRequired;
 @property (weak, nonatomic) IBOutlet UILabel *lblPostDate;
-@property (weak, nonatomic) IBOutlet UIButton *btnEmpDelete;
+@property (strong, nonatomic) IBOutlet UIButton *btnEmpDelete;
 
 @end
