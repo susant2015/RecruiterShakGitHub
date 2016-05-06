@@ -30,6 +30,9 @@
 		841959A51C8EC62C00E8CA79 /* ApplicantIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841959A31C8EC62C00E8CA79 /* ApplicantIndexCell.m */; };
 		841959A61C8EC62C00E8CA79 /* ApplicantIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841959A41C8EC62C00E8CA79 /* ApplicantIndexCell.xib */; };
 		841FE33A1CDC8DEC00B0AC01 /* EmployerDeleteService.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FE3391CDC8DEC00B0AC01 /* EmployerDeleteService.m */; };
+		841FE33D1CDC9C3A00B0AC01 /* EmploerEditJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FE33C1CDC9C3A00B0AC01 /* EmploerEditJobViewController.m */; };
+		841FE3401CDCB56E00B0AC01 /* EmployerEditService.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FE33F1CDCB56E00B0AC01 /* EmployerEditService.m */; };
+		841FE3431CDCDEC500B0AC01 /* ModelEmploerEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FE3421CDCDEC500B0AC01 /* ModelEmploerEdit.m */; };
 		842261D81CBCD04A000ED0A8 /* ModelAddEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = 842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */; };
 		8425364E1CC4C095003A962C /* EditProfileRecruiterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425364D1CC4C095003A962C /* EditProfileRecruiterService.m */; };
 		8429F4C71CDB3ED7006471AD /* EmpJobListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429F4C61CDB3ED7006471AD /* EmpJobListViewController.m */; };
@@ -239,6 +242,12 @@
 		841959A41C8EC62C00E8CA79 /* ApplicantIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicantIndexCell.xib; sourceTree = "<group>"; };
 		841FE3381CDC8DEC00B0AC01 /* EmployerDeleteService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployerDeleteService.h; sourceTree = "<group>"; };
 		841FE3391CDC8DEC00B0AC01 /* EmployerDeleteService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployerDeleteService.m; sourceTree = "<group>"; };
+		841FE33B1CDC9C3A00B0AC01 /* EmploerEditJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmploerEditJobViewController.h; sourceTree = "<group>"; };
+		841FE33C1CDC9C3A00B0AC01 /* EmploerEditJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmploerEditJobViewController.m; sourceTree = "<group>"; };
+		841FE33E1CDCB56E00B0AC01 /* EmployerEditService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployerEditService.h; sourceTree = "<group>"; };
+		841FE33F1CDCB56E00B0AC01 /* EmployerEditService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployerEditService.m; sourceTree = "<group>"; };
+		841FE3411CDCDEC500B0AC01 /* ModelEmploerEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelEmploerEdit.h; sourceTree = "<group>"; };
+		841FE3421CDCDEC500B0AC01 /* ModelEmploerEdit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelEmploerEdit.m; sourceTree = "<group>"; };
 		842261D61CBCD04A000ED0A8 /* ModelAddEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelAddEducation.h; sourceTree = "<group>"; };
 		842261D71CBCD04A000ED0A8 /* ModelAddEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelAddEducation.m; sourceTree = "<group>"; };
 		8425364C1CC4C095003A962C /* EditProfileRecruiterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileRecruiterService.h; sourceTree = "<group>"; };
@@ -616,6 +625,8 @@
 				84131D0B1CC7657C004B98A1 /* CustomSectionViewController.m */,
 				8429F4C51CDB3ED7006471AD /* EmpJobListViewController.h */,
 				8429F4C61CDB3ED7006471AD /* EmpJobListViewController.m */,
+				841FE33B1CDC9C3A00B0AC01 /* EmploerEditJobViewController.h */,
+				841FE33C1CDC9C3A00B0AC01 /* EmploerEditJobViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -780,6 +791,8 @@
 				840FFB361CD234D20041E598 /* EmployerApplicantListService.m */,
 				841FE3381CDC8DEC00B0AC01 /* EmployerDeleteService.h */,
 				841FE3391CDC8DEC00B0AC01 /* EmployerDeleteService.m */,
+				841FE33E1CDCB56E00B0AC01 /* EmployerEditService.h */,
+				841FE33F1CDCB56E00B0AC01 /* EmployerEditService.m */,
 			);
 			name = WebService;
 			sourceTree = "<group>";
@@ -1019,6 +1032,8 @@
 				84CC95311CCF845A002E6E3E /* ModelRecruiterMyLeads.m */,
 				840876CE1CD3351300A1546A /* ModelEmployerApplicantList.h */,
 				840876CF1CD3351300A1546A /* ModelEmployerApplicantList.m */,
+				841FE3411CDCDEC500B0AC01 /* ModelEmploerEdit.h */,
+				841FE3421CDCDEC500B0AC01 /* ModelEmploerEdit.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1254,6 +1269,7 @@
 				846A7D6E1C96E13E0058D33B /* AboutApplicantsViewController.m in Sources */,
 				8448FE651CC0E49900FA9AF1 /* AboutRecruiterHeaderCell.m in Sources */,
 				84B9DCCF1CC8FF24005AA767 /* ApplicantWorkingExprienceService.m in Sources */,
+				841FE33D1CDC9C3A00B0AC01 /* EmploerEditJobViewController.m in Sources */,
 				849116691C9182F100CF1967 /* EditProfileViewControllerEditLabelcell.m in Sources */,
 				849116641C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.m in Sources */,
 				847F316E1CC64F7F00E648D5 /* RecruiterTwitterViewController.m in Sources */,
@@ -1270,6 +1286,7 @@
 				84EE1AFC1CB624A200BF0C6E /* EmployerJobListService.m in Sources */,
 				84C2F3D51C9036CC001D775B /* EducationBackgroundCell.m in Sources */,
 				8411E57D1CB7E3EC00AF29E3 /* ModelRegister.m in Sources */,
+				841FE3431CDCDEC500B0AC01 /* ModelEmploerEdit.m in Sources */,
 				843DD7131C8D545D00EE1D36 /* ApplicantDetailsCell.m in Sources */,
 				849116831C91A66C00CF1967 /* CameraCell.m in Sources */,
 				843DD7181C8D8BE200EE1D36 /* RegisterTextFieldTableViewCell.m in Sources */,
@@ -1314,6 +1331,7 @@
 				8425364E1CC4C095003A962C /* EditProfileRecruiterService.m in Sources */,
 				84A808F01C8591BD00043683 /* SigninService.m in Sources */,
 				84D815C41CABA70200AEF15E /* RegisterService.m in Sources */,
+				841FE3401CDCB56E00B0AC01 /* EmployerEditService.m in Sources */,
 				84A809001C86DE4500043683 /* AddWorkingExprinceViewController.m in Sources */,
 				840FFB371CD234D20041E598 /* EmployerApplicantListService.m in Sources */,
 			);

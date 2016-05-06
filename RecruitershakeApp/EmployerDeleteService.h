@@ -10,4 +10,8 @@
 
 @interface EmployerDeleteService : WebServiceClass
 
++(EmployerDeleteService*)sharedInstance;
+
+-(void)employerUrlKey:(NSString *)strUrlKey empId:(NSString *)strId  withCompletionHandler:(CompletionHandler)handler;
+
 @end

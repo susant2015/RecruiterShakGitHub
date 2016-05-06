@@ -12,6 +12,7 @@
 @class ModelLogInApplicant;
 @class ModelRecruiterMyLeads;
 @class ModelEmployerApplicantList;
+@class ModelEmploerEdit;
 #ifndef Constants_h
 #define Constants_h
 
@@ -24,3 +25,4 @@ ModelAddJobEmployer *modelAddJobEmployer;
 ModelLogInApplicant *modelLogInApplicant;
 ModelRecruiterMyLeads *modelRecruiterMyLeads;
 ModelEmployerApplicantList *modelEmployerApplicantList;
+ModelEmploerEdit  *modelEmploerEdit;

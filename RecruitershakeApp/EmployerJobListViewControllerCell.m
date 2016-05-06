@@ -18,6 +18,7 @@
 @synthesize lblPostDate;
 
 @synthesize btnEmpDelete;
+@synthesize btnEmpEdit;
 
 - (void)awakeFromNib {
     // Initialization code

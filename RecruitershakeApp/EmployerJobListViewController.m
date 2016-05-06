@@ -15,6 +15,8 @@
 #import "Constants.h"
 #import "AddJobEmployerViewController.h"
 #import "BaseViewController.h"
+#import "EmployerDeleteService.h"
+#import "EmploerEditJobViewController.h"
 @interface EmployerJobListViewController (){
     
     NSMutableArray *mutableArrJobList;
@@ -28,6 +30,7 @@
     NSString *urlkey;
     NSString *designation;
     NSString *title;
+    NSString *skillRequired;
     NSDictionary *dicApplist;
     NSMutableArray *arrDelete;
 }
@@ -51,8 +54,17 @@
     urlkey=@"url_key";
     designation=@"designation";
     title=@"title";
+    skillRequired=@"skill_required";
+    
    arrDelete =[[NSMutableArray alloc] init];
      mutableArrJobList = [[NSMutableArray alloc] init];
+    
+   
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
     NSString *post = [[NSString alloc] initWithFormat:@"action=%@&u_id=%@",@"job_listing",modelLogInEmployer.strId];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
@@ -77,67 +89,20 @@
         NSString *urlkey_data=[dataDict objectForKey:@"url_key"];
         NSString *designation_data=[dataDict objectForKey:@"designation"];
         NSString *title_data=[dataDict objectForKey:@"title"];
-        
+        NSString *skill_required_data=[dataDict objectForKey:@"skill_required"];
         
         NSLog(@"id: %@",id_data);
         NSLog(@"firstname: %@",strUserid_data);
         NSLog(@"lastname: %@",created_data);
         
         dicApplist = [NSDictionary dictionaryWithObjectsAndKeys:
-                      id_data, strid,strUserid_data,strUserid,created_data,created,educational_qualifiaction_data,educational_qualifiaction,job_id_data,job_id,location_data,location,urlkey_data,urlkey,designation_data,designation,title_data,title,nil];
+                      id_data, strid,strUserid_data,strUserid,created_data,created,educational_qualifiaction_data,educational_qualifiaction,job_id_data,job_id,location_data,location,urlkey_data,urlkey,designation_data,designation,title_data,title,skill_required_data,skillRequired ,nil];
         [mutableArrJobList addObject:dicApplist];
     }
     
-    [tblEmpJobList  reloadData];
-   
+    //[tblEmpJobList  reloadData];
     
-}
-
--(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
- /*   [[EmployerJobListService sharedInstance] employerJobListUserId:modelLogInEmployer.strId withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
-        
-        if(isError){
-            
-            
-            if(strMsg.length>0){
-                [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-                
-                
-            }
-            else{
-                // [self alertStatus:SomethingWrong :nil];
-               
-                
-            }
-            
-        }
-        else{
-            NSLog(@"THe result is %@",result);
-            mutableArrJobList = [[result objectForKey:@"job"] mutableCopy];
-            for (int i=0; i<mutableArrJobList.count; i++) {
-                
-                NSMutableDictionary *dicEmpJobList = [NSMutableDictionary dictionaryWithDictionary:[mutableArrJobList objectAtIndex:i]];
-                 ModelEmployerJobList  *model = [[ModelEmployerJobList alloc] initWithDictionary:dicEmpJobList];
-                
-                [mutableArrJobList removeObjectAtIndex:i];
-               
-                [mutableArrJobList insertObject:model atIndex:i];
-                
-               NSLog(@"THe jobid is :%@",model.strJob_Id);
-
-            }
-            
-            [tblEmpJobList  reloadData];
-            
-            
-        }
-    }];  */
-    
-   
-   
-   
 }
 
 
@@ -227,16 +192,22 @@
     NSMutableString  *titletext;
     titletext = [NSMutableString stringWithFormat:@"%@",
                        [tmpDict objectForKeyedSubscript:title]];
+    NSMutableString  *skillRequiredtext;
+    skillRequiredtext = [NSMutableString stringWithFormat:@"%@",
+                 [tmpDict objectForKeyedSubscript:skillRequired]];
     
     cell.lblJobId.text=jobidtext;
     cell.lblEduqualification.text=edutext;
     cell.lblJobTitle.text=titletext;
     cell.lblPosition.text=designationtext;
     cell.lblPostDate.text=createdtext;
-    // cell.lblSkillRequired.text=
+    cell.lblSkillRequired.text=skillRequiredtext;
     
     [cell.btnEmpDelete addTarget:self action:@selector(btnEmpJobDelete:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.btnEmpEdit addTarget:self action:@selector(btnEmpJobEdit:) forControlEvents:UIControlEventTouchUpInside];
     cell.btnEmpDelete.tag=indexPath.row;
+    cell.btnEmpEdit.tag=indexPath.row;
+    
     return cell;
     
     
@@ -244,9 +215,46 @@
 
 - (void)btnEmpJobDelete:(UIButton *)sender{
    
-    NSDictionary *dic;
-    dic=[mutableArrJobList objectAtIndex:sender.tag];
-    NSLog(@"The delete btn data is%@",dic);
+    NSDictionary *dicEmpData;
+    dicEmpData=[mutableArrJobList objectAtIndex:sender.tag];
+    NSLog(@"The delete btn data is%@",dicEmpData);
+    NSString *strEmpUrl=[dicEmpData objectForKey:@"url_key"];
+    NSString *strEmpId=[dicEmpData objectForKey:@"u_id"];
+    
+    [[EmployerDeleteService sharedInstance] employerUrlKey:strEmpUrl empId:strEmpId withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
+        
+        if(isError){
+            
+            
+            if(strMsg.length>0){
+                [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                
+                
+            }
+            else{
+                // [self alertStatus:SomethingWrong :nil];
+                [tblEmpJobList reloadData];
+                
+            }
+            
+        }
+        else{
+            NSLog(@"THe result is %@",result);
+            
+                
+            }
+        
+    }];
+
+}
+
+- (void)btnEmpJobEdit:(UIButton *)sender{
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EmploerEditJobViewController *Editpvc = [sb instantiateViewControllerWithIdentifier:@"EmploerEditJobViewController"];
+    Editpvc.dicEmpData=[mutableArrJobList objectAtIndex:sender.tag];
+    
+    [self presentViewController:Editpvc animated:YES completion:nil];
     
 }
 
@@ -255,7 +263,6 @@
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     AddJobEmployerViewController *Addjobvc = [sb instantiateViewControllerWithIdentifier:@"AddJobEmployerViewController"];
-    
     [self presentViewController:Addjobvc animated:YES completion:nil];
 }
 

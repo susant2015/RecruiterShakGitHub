@@ -1,29 +1,28 @@
 //
-//  EmployerDeleteService.m
+//  EmployerEditService.m
 //  RecruitershakeApp
 //
 //  Created by admin on 06/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
-#import "EmployerDeleteService.h"
+#import "EmployerEditService.h"
 
-@implementation EmployerDeleteService
+@implementation EmployerEditService
 
-+(EmployerDeleteService*)sharedInstance{
++(EmployerEditService*)sharedInstance{
     
-    static EmployerDeleteService *employerDelete=nil;
+    static EmployerEditService *employerEdit=nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        employerDelete=[[EmployerDeleteService alloc] initWithService:Employer_UserId];
+        employerEdit=[[EmployerEditService alloc] initWithService:Employer_UserId];
     });
-    return employerDelete;
+    return employerEdit;
     
 }
 
--(void)employerUrlKey:(NSString *)strUrlKey empId:(NSString *)strId  withCompletionHandler:(CompletionHandler)handler{
-    
-    NSString *post = [[NSString alloc] initWithFormat:@"action=%@&url_key=%@&u_id=%@",@"delete_job",strUrlKey,strId];
+-(void)employerUrlKey:(NSString *)strUrlKey empId:(NSString *)strId jobTitle:(NSString *)strJobTitle desgnation:(NSString *)strDesgn eduQualification:(NSString *)strEduQual skillRequired:(NSString *)strSkillRequired jobDesc:(NSString *)strJobDesc location:(NSString *)strLocation withCompletionHandler:(CompletionHandler)handler{
+    NSString *post = [[NSString alloc] initWithFormat:@"action=%@&url_key=%@&u_id=%@&jobtitle=%@&desgnatn=%@&eduqua=%@&skillreq=%@&jobdes=%@&location=%@",@"update_job",strUrlKey,strId,strJobTitle,strDesgn,strEduQual,strSkillRequired,strJobDesc,strLocation];
     
     NSLog(@"post data:%@",post);
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -57,7 +56,7 @@
                 NSDictionary *jsonResponeDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                 NSLog(@"THE JSONDIST%@",jsonResponeDict);
                 
-                    handler(nil,YES,@"Sucess message");
+                handler(nil,YES,@"Sucess message");
                 if ([[jsonResponeDict objectForKey:@"status"]isEqualToString:@"1"])
                 {
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogin"];
@@ -77,5 +76,6 @@
     }];
     
     [dataTask resume];
+    
 }
 @end
