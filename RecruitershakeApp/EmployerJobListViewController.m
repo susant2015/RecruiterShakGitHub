@@ -233,16 +233,17 @@
             }
             else{
                 // [self alertStatus:SomethingWrong :nil];
-                [tblEmpJobList reloadData];
+                
                 
             }
             
         }
         else{
-            NSLog(@"THe result is %@",result);
-            
+           
+            [mutableArrJobList removeObjectAtIndex:sender.tag];
                 
             }
+          [tblEmpJobList reloadData];
         
     }];
 

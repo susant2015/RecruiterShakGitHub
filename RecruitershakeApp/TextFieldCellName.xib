@@ -45,7 +45,7 @@
             <connections>
                 <outlet property="txtFielfPlaceHolderName" destination="bTy-bu-Sus" id="aht-1Z-pJe"/>
             </connections>
-            <point key="canvasLocation" x="728" y="141.5"/>
+            <point key="canvasLocation" x="346" y="141.5"/>
         </tableViewCell>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RdE-Zn-B1D">
             <rect key="frame" x="0.0" y="0.0" width="343" height="143"/>

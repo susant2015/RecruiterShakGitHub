@@ -38,7 +38,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     TwUrl,
     GPlusUrl,
     Occupation,
-    Skills,
+    Url,
     About,
     Quotes,
     
@@ -63,7 +63,7 @@ NSString static *strPlaceholders[]={
     [TwUrl]=@" *TWITTER URL",
     [GPlusUrl]=@" *GOOGLE PLUS URL",
     [Occupation]=@" *OCCUPTION",
-    [Skills]=@" *SKILLS",
+    [Url]=@" *URL",
     [About]=@" *ABOUT",
     [Quotes]=@" *QUOTES"
 };
@@ -88,7 +88,7 @@ NSString static *strPlaceholders[]={
     NSString  *strTwUrl;
     NSString  *strGPlusUrl;
     NSString *strOccupation;
-    NSString  *strSkills;
+    NSString  *strUrl;
     NSString  *strAbout;
     NSString  *strQuotes;
     NSMutableArray *arrtxtFieldValue;
@@ -311,6 +311,7 @@ NSString static *strPlaceholders[]={
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strEmail attributes:@{NSForegroundColorAttributeName: color}];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        cell.txtFielfPlaceHolderName.highlighted=YES;
         myCell=cell;
     }
     else if(indexPath.row==4) {
@@ -520,7 +521,7 @@ NSString static *strPlaceholders[]={
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *SKILL" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *Url" attributes:@{NSForegroundColorAttributeName: color}];
         
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
@@ -595,9 +596,7 @@ NSString static *strPlaceholders[]={
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *FACEBOOK LINK" attributes:@{NSForegroundColorAttributeName: color}];
         
         
-       // cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
-        
-        myCell=cell;
+              myCell=cell;
     }
     else if(indexPath.row==22) {
         
@@ -612,7 +611,7 @@ NSString static *strPlaceholders[]={
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *TWITTER LINK" attributes:@{NSForegroundColorAttributeName: color}];
         
-       // cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+      
         myCell=cell;
     }
     else if(indexPath.row==23) {
@@ -628,7 +627,7 @@ NSString static *strPlaceholders[]={
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *GOOGLE PLUS LINK" attributes:@{NSForegroundColorAttributeName: color}];
         
-       // cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+       
         
         myCell=cell;
     }
@@ -799,8 +798,8 @@ NSString static *strPlaceholders[]={
     if (indexPath.row==15)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strSkills=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strSkills atIndex:indexPath.row];
+        strUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strUrl atIndex:indexPath.row];
         
         
         
@@ -868,13 +867,14 @@ NSString static *strPlaceholders[]={
     strTwUrl=[arrtxtFieldValue objectAtIndex:22];
     strGPlusUrl=[arrtxtFieldValue objectAtIndex:23];
     strOccupation=[arrtxtFieldValue objectAtIndex:8];
-    strSkills=[arrtxtFieldValue objectAtIndex:15];
+    strUrl=[arrtxtFieldValue objectAtIndex:15];
     strAbout=[arrtxtFieldValue objectAtIndex:16];
     strQuotes=[arrtxtFieldValue objectAtIndex:17];
     
+    
     NSLog(@"The arr value is%@",arrtxtFieldValue);
     
-    [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl occupation:strOccupation skills:strSkills about:strAbout quotes:strQuotes withCompletionHandler:^(id result, BOOL isError, NSString *strMsg){
+    [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl occupation:strOccupation skills:strUrl about:strAbout quotes:strQuotes withCompletionHandler:^(id result, BOOL isError, NSString *strMsg){
         if(isError){
             
             if(strMsg.length>0){
