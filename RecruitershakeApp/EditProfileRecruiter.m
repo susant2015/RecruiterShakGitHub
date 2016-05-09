@@ -37,15 +37,15 @@ typedef NS_ENUM(NSInteger, CellContent) {
     FbUrl,
     TwUrl,
     GPlusUrl,
-    Occupation,
+   AgencyName,
     Url,
     About,
-    Quotes,
+    
     
     Total,
 };
 
-NSString static *strPlaceholders[]={
+ NSString static *strPlaceholders[]={
     
     [OldPassword]=@" *OLD PASSWORD",
     [NewPassword]=@" *NEW PASSWORD",
@@ -62,10 +62,10 @@ NSString static *strPlaceholders[]={
     [FbUrl]=@" *FACEBOOK URL",
     [TwUrl]=@" *TWITTER URL",
     [GPlusUrl]=@" *GOOGLE PLUS URL",
-    [Occupation]=@" *OCCUPTION",
+    [AgencyName]=@" *AgencyName",
     [Url]=@" *URL",
     [About]=@" *ABOUT",
-    [Quotes]=@" *QUOTES"
+   
 };
 
 @interface EditProfileRecruiter ()<UITextFieldDelegate>
@@ -87,10 +87,10 @@ NSString static *strPlaceholders[]={
     NSString  *strFbUrl;
     NSString  *strTwUrl;
     NSString  *strGPlusUrl;
-    NSString *strOccupation;
+    NSString *strAgecyName;
     NSString  *strUrl;
     NSString  *strAbout;
-    NSString  *strQuotes;
+   
     NSMutableArray *arrtxtFieldValue;
     IBOutlet UITableView *editTableViewRecruiter;
 }
@@ -200,17 +200,18 @@ NSString static *strPlaceholders[]={
     {
         height=118.0f;
     }
+    
     else if (indexPath.row==18)
-    {
-        height=118.0f;
-    }
-    else if (indexPath.row==19)
     {
         height=56.0f;
     }
-    else if (indexPath.row==20)
+    else if (indexPath.row==19)
     {
         height=118.0f;
+    }
+    else if (indexPath.row==20)
+    {
+        height=56.0f;
     }
     else if (indexPath.row==21)
     {
@@ -221,10 +222,6 @@ NSString static *strPlaceholders[]={
         height=56.0f;
     }
     else if (indexPath.row==23)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==24)
     {
         height=88.0f;
     }
@@ -237,7 +234,7 @@ NSString static *strPlaceholders[]={
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return 25;
+    return 24;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -276,7 +273,7 @@ NSString static *strPlaceholders[]={
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        //cell.txtFielfPlaceHolderName.placeholder=strPlaceholders[indexPath.row];
+      
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -544,25 +541,9 @@ NSString static *strPlaceholders[]={
         
         myCell=cell;
     }
-    else if(indexPath.row==18) {
-        
-        static NSString *applicantIndexCellIdentifier=@"Aboutcell";
-        Aboutcell *cell=(Aboutcell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"Aboutcell" owner:self options:nil]objectAtIndex:0];
-        }
-        [cell.txtAboutPlaceholder setDelegate:self];
-        cell.txtAboutPlaceholder.keyboardType=UIKeyboardTypeDefault;
-        cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtAboutPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *QUOTES" attributes:@{NSForegroundColorAttributeName: color}];
-        
-        cell.txtAboutPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
-        
-        myCell=cell;
-    }
     
-    else if(indexPath.row==19) {
+    
+    else if(indexPath.row==18) {
         
         static NSString *applicantIndexCellIdentifier=@"CameraCell";
         CameraCell *cell=(CameraCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -572,7 +553,7 @@ NSString static *strPlaceholders[]={
         myCell=cell;
     }
     
-    else if(indexPath.row==20) {
+    else if(indexPath.row==19) {
         
         static NSString *applicantIndexCellIdentifier=@"ProfilePictureCell";
         ProfilePictureCell *cell=(ProfilePictureCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -582,7 +563,7 @@ NSString static *strPlaceholders[]={
         cell.imgRecruiter.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInRecruiter.strPicture]]];
         myCell=cell;
     }
-    else if(indexPath.row==21) {
+    else if(indexPath.row==20) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -598,7 +579,7 @@ NSString static *strPlaceholders[]={
         
               myCell=cell;
     }
-    else if(indexPath.row==22) {
+    else if(indexPath.row==21) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -614,7 +595,7 @@ NSString static *strPlaceholders[]={
       
         myCell=cell;
     }
-    else if(indexPath.row==23) {
+    else if(indexPath.row==22) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -631,7 +612,7 @@ NSString static *strPlaceholders[]={
         
         myCell=cell;
     }
-    else if(indexPath.row==24) {
+    else if(indexPath.row==23) {
         
         static NSString *applicantIndexCellIdentifier=@"BtnUpdateProfile";
         BtnUpdateProfile *cell=(BtnUpdateProfile *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -676,14 +657,6 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==6)
-    {
-        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strConPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strConPassword atIndex:indexPath.row];
-        
-        
-    }
     if (indexPath.row==4)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
@@ -700,11 +673,30 @@ NSString static *strPlaceholders[]={
         
         
     }
+    if (indexPath.row==6)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strConPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strConPassword atIndex:indexPath.row];
+        
+        
+    }
+    
+    
     if (indexPath.row==7)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strPhone_Number=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [arrtxtFieldValue insertObject:strPhone_Number atIndex:indexPath.row];
+        
+        
+    }
+    if (indexPath.row==8)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strAgecyName=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strAgecyName atIndex:indexPath.row];
+        
         
         
     }
@@ -765,36 +757,6 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==21)
-    {
-        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strFbUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strFbUrl atIndex:indexPath.row];
-        
-        
-        
-    }
-    
-    if (indexPath.row==22)
-    {
-        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strTwUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strTwUrl atIndex:indexPath.row];
-        
-        
-        
-    }
-    
-    if (indexPath.row==8)
-    {
-        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strOccupation=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strOccupation atIndex:indexPath.row];
-        
-        
-        
-    }
-    
     if (indexPath.row==15)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
@@ -818,12 +780,35 @@ NSString static *strPlaceholders[]={
     if (indexPath.row==17)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strQuotes=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strQuotes atIndex:indexPath.row];
+        strUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strUrl atIndex:indexPath.row];
         
         
         
     }
+    if (indexPath.row==21)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strFbUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strFbUrl atIndex:indexPath.row];
+        
+        
+        
+    }
+    
+    if (indexPath.row==22)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strTwUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strTwUrl atIndex:indexPath.row];
+        
+        
+        
+    }
+    
+    
+    
+    
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
@@ -851,30 +836,28 @@ NSString static *strPlaceholders[]={
 }
 -(IBAction)btnActionRecruiter:(id)sender{
     
-    strOldPassword=[arrtxtFieldValue objectAtIndex:4];
-    strNewPassword=[arrtxtFieldValue objectAtIndex:5];
-    strConPassword=[arrtxtFieldValue objectAtIndex:6];
-    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
-    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
-    strPhone_Number=[arrtxtFieldValue objectAtIndex:7];
-    strAddress_Line1=[arrtxtFieldValue objectAtIndex:9];
-    strAddress_Line2=[arrtxtFieldValue objectAtIndex:10];
-    strCity=[arrtxtFieldValue objectAtIndex:11];
-    strState=[arrtxtFieldValue objectAtIndex:12];
-    strCountry=[arrtxtFieldValue objectAtIndex:13];
-    strZip_Code=[arrtxtFieldValue objectAtIndex:14];
-    strFbUrl=[arrtxtFieldValue objectAtIndex:21];
-    strTwUrl=[arrtxtFieldValue objectAtIndex:22];
-    strGPlusUrl=[arrtxtFieldValue objectAtIndex:23];
-    strOccupation=[arrtxtFieldValue objectAtIndex:8];
-    strUrl=[arrtxtFieldValue objectAtIndex:15];
-    strAbout=[arrtxtFieldValue objectAtIndex:16];
-    strQuotes=[arrtxtFieldValue objectAtIndex:17];
-    
+    strOldPassword=[arrtxtFieldValue objectAtIndex:0];
+    strNewPassword=[arrtxtFieldValue objectAtIndex:1];
+    strConPassword=[arrtxtFieldValue objectAtIndex:2];
+    strFisrst_Name=[arrtxtFieldValue objectAtIndex:3];
+    strLast_Name=[arrtxtFieldValue objectAtIndex:4];
+    strPhone_Number=[arrtxtFieldValue objectAtIndex:5];
+    strAddress_Line1=[arrtxtFieldValue objectAtIndex:6];
+    strAddress_Line2=[arrtxtFieldValue objectAtIndex:7];
+    strCity=[arrtxtFieldValue objectAtIndex:8];
+    strState=[arrtxtFieldValue objectAtIndex:9];
+    strCountry=[arrtxtFieldValue objectAtIndex:10];
+    strZip_Code=[arrtxtFieldValue objectAtIndex:11];
+    strFbUrl=[arrtxtFieldValue objectAtIndex:12];
+    strTwUrl=[arrtxtFieldValue objectAtIndex:13];
+    strGPlusUrl=[arrtxtFieldValue objectAtIndex:14];
+    strAgecyName=[arrtxtFieldValue objectAtIndex:15];
+    strUrl=[arrtxtFieldValue objectAtIndex:16];
+    strAbout=[arrtxtFieldValue objectAtIndex:17];
     
     NSLog(@"The arr value is%@",arrtxtFieldValue);
     
-    [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl occupation:strOccupation skills:strUrl about:strAbout quotes:strQuotes withCompletionHandler:^(id result, BOOL isError, NSString *strMsg){
+    [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl occupation:strAgecyName skills:strUrl about:strAbout  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg){
         if(isError){
             
             if(strMsg.length>0){
