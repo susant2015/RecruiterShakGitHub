@@ -43,6 +43,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="btnEditUpdate" destination="ttH-Ai-RZC" id="srd-dc-ofd"/>
+            </connections>
             <point key="canvasLocation" x="458" y="105.5"/>
         </tableViewCell>
     </objects>

@@ -157,6 +157,11 @@
         }else{
             self.strZip_Code =@"";
         }
+        if ([dict objectForKey:@"password"]&&![[dict objectForKey:@"password"] isKindOfClass:[NSNull class]]) {
+            self.strPassword =[dict objectForKey:@"password"];
+        }else{
+            self.strPassword =@"";
+        }
     }
     return self;
 }

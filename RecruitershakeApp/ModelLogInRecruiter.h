@@ -33,6 +33,7 @@
 @property(weak,nonatomic)NSString *strUrl;
 @property(weak,nonatomic)NSString *strUser_Name;
 @property(weak,nonatomic)NSString *strZip_Code;
+@property(weak,nonatomic)NSString *strPassword;
 
 
 -(id)initWithDictionary:(NSDictionary *)dict;

@@ -90,7 +90,6 @@ typedef NS_ENUM(NSInteger, CellContent) {
     NSString *strAgecyName;
     NSString  *strUrl;
     NSString  *strAbout;
-   
     NSMutableArray *arrtxtFieldValue;
     IBOutlet UITableView *editTableViewRecruiter;
 }
@@ -110,122 +109,25 @@ typedef NS_ENUM(NSInteger, CellContent) {
         NSLog(@"The space:%@",arrtxtFieldValue);
 }
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat height=0.0f;
-    if (indexPath.row==0) {
-        height=56.0f;
-    }
-    else if (indexPath.row==1)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==2)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==3)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==4)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==5)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==6)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==7)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==8)
-    {
-        height=56.0f;
-    }
-    
-    else if (indexPath.row==9)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==10)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==11)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==12)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==13)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==14)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==15)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==16)
-    {
-        height=56.0f;
-    }
-    
-    else if (indexPath.row==17)
+   
+    CGFloat height=56.0f;
+    if (indexPath.row==17 || indexPath.row == 19)
     {
         height=118.0f;
-    }
-    
-    else if (indexPath.row==18)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==19)
-    {
-        height=118.0f;
-    }
-    else if (indexPath.row==20)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==21)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==22)
-    {
-        height=56.0f;
     }
     else if (indexPath.row==23)
     {
         height=88.0f;
     }
-    
     
     return height;
 }
@@ -286,7 +188,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"TextFieldCellName" owner:self options:nil]objectAtIndex:0];
         }
-        [cell.txtFielfPlaceHolderName setDelegate:self];
+        //[cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
@@ -338,7 +240,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.txtPasswordPlaceholder.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtPasswordPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *OLD PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtPasswordPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strPassword attributes:@{NSForegroundColorAttributeName: color}];
         cell.txtPasswordPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -403,7 +305,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strOccuption attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Agency Name" attributes:@{NSForegroundColorAttributeName: color}];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -575,7 +477,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *FACEBOOK LINK" attributes:@{NSForegroundColorAttributeName: color}];
-        
+         //cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
               myCell=cell;
     }
@@ -591,7 +493,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *TWITTER LINK" attributes:@{NSForegroundColorAttributeName: color}];
-        
+        // cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
       
         myCell=cell;
     }
@@ -602,13 +504,13 @@ typedef NS_ENUM(NSInteger, CellContent) {
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"TextFieldCellName" owner:self options:nil]objectAtIndex:0];
         }
-        [cell.txtFielfPlaceHolderName setDelegate:self];
+       [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *GOOGLE PLUS LINK" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strGplus_Url attributes:@{NSForegroundColorAttributeName: color}];
         
-       
+        //cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
     }
@@ -619,7 +521,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"BtnUpdateProfile" owner:self options:nil]objectAtIndex:0];
         }
-        [cell.btnEditUpdate addTarget:self action:@selector(btnActionRecruiter:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnEditUpdate addTarget:self action:@selector(btnActionRecruiter) forControlEvents:UIControlEventTouchUpInside];
         myCell=cell;
     }
     
@@ -627,11 +529,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     
     return myCell;
 }
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
+
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
@@ -641,7 +539,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     NSIndexPath *indexPath=[editTableViewRecruiter indexPathForCell:cell1];
     
     NSLog(@"indexPath:%ld",(long)indexPath.row);
-    if (indexPath.row==0)
+    if (indexPath.row==1)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strFisrst_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -649,7 +547,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==1)
+    if (indexPath.row==2)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strLast_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -657,7 +555,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==4)
+    if (indexPath.row==5)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strOldPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -665,7 +563,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==5)
+    if (indexPath.row==6)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strNewPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -673,7 +571,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==6)
+    if (indexPath.row==7)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strConPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -683,7 +581,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     }
     
     
-    if (indexPath.row==7)
+    if (indexPath.row==8)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strPhone_Number=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -691,7 +589,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==8)
+    if (indexPath.row==9)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAgecyName=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -700,7 +598,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==9)
+    if (indexPath.row==10)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAddress_Line1=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -708,7 +606,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==10)
+    if (indexPath.row==11)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAddress_Line2=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -716,7 +614,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==11)
+    if (indexPath.row==12)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strCity=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -724,7 +622,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==12)
+    if (indexPath.row==13)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strState=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -732,7 +630,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==13)
+    if (indexPath.row==14)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strCountry=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -740,7 +638,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==14)
+    if (indexPath.row==15)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strZip_Code=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -748,16 +646,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==23)
-    {
-        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strGPlusUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strGPlusUrl atIndex:indexPath.row];
-        
-        
-        
-    }
-    if (indexPath.row==15)
+    if (indexPath.row==16)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -766,8 +655,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    
-    if (indexPath.row==16)
+    if (indexPath.row==17)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAbout=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -776,17 +664,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    
-    if (indexPath.row==17)
-    {
-        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strUrl atIndex:indexPath.row];
-        
-        
-        
-    }
-    if (indexPath.row==21)
+    if (indexPath.row==20)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strFbUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -796,7 +674,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
     }
     
-    if (indexPath.row==22)
+    if (indexPath.row==21)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strTwUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -805,9 +683,12 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    
-    
-    
+    if (indexPath.row==22)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strGPlusUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strGPlusUrl atIndex:indexPath.row];
+    }
     
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -834,7 +715,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
 {
     return 38.0f;
 }
--(IBAction)btnActionRecruiter:(id)sender{
+-(IBAction)btnActionRecruiter{
     
     strOldPassword=[arrtxtFieldValue objectAtIndex:0];
     strNewPassword=[arrtxtFieldValue objectAtIndex:1];
@@ -854,6 +735,8 @@ typedef NS_ENUM(NSInteger, CellContent) {
     strAgecyName=[arrtxtFieldValue objectAtIndex:15];
     strUrl=[arrtxtFieldValue objectAtIndex:16];
     strAbout=[arrtxtFieldValue objectAtIndex:17];
+    
+   
     
     NSLog(@"The arr value is%@",arrtxtFieldValue);
     
