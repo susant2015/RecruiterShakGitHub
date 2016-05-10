@@ -10,6 +10,7 @@
 
 @implementation CameraCell
 
+@synthesize lblCamera;
 - (void)awakeFromNib {
     // Initialization code
 }

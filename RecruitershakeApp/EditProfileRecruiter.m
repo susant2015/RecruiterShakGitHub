@@ -22,11 +22,15 @@
 #import "BaseViewController.h"
 
 typedef NS_ENUM(NSInteger, CellContent) {
+    EditLabel,
+    FirstName,
+    LastName,
+    Email,
+    UserName,
     OldPassword,
     NewPassword,
     ConPassword,
-    FirstName,
-    LastName,
+    AgencyName,
     PhoneNumber,
     AddrssLine1,
     AddrssLine2,
@@ -34,12 +38,14 @@ typedef NS_ENUM(NSInteger, CellContent) {
     State,
     Country,
     ZipCode,
+    Url,
+    About,
+    Camera,
+    ProfilePicture,
     FbUrl,
     TwUrl,
     GPlusUrl,
-   AgencyName,
-    Url,
-    About,
+    BtnEdit,
     
     
     Total,
@@ -47,11 +53,15 @@ typedef NS_ENUM(NSInteger, CellContent) {
 
  NSString static *strPlaceholders[]={
     
+    [EditLabel]=@"",
+    [FirstName]=@" *FIRSTNAME",
+    [LastName]=@" *LASTNAME",
+    [Email]=@"",
+    [UserName]=@"",
     [OldPassword]=@" *OLD PASSWORD",
     [NewPassword]=@" *NEW PASSWORD",
     [ConPassword]=@" *CONFORM PASSWORD",
-    [FirstName]=@" *FIRSTNAME",
-    [LastName]=@" *LASTNAME",
+    [AgencyName]=@" *AgencyName",
     [PhoneNumber]=@" *PHONENUMBER",
     [AddrssLine1]=@" *ADDRESSLINE1",
     [AddrssLine2]=@" *ADDRESSLINE2",
@@ -59,19 +69,21 @@ typedef NS_ENUM(NSInteger, CellContent) {
     [State]=@" *STATE",
     [Country]=@" *COUNTRY",
     [ZipCode]=@" *ZIPCODE",
+    [Url]=@" *URL",
+    [About]=@" *ABOUT",
+    [Camera]=@"",
+    [ProfilePicture]=@"",
     [FbUrl]=@" *FACEBOOK URL",
     [TwUrl]=@" *TWITTER URL",
     [GPlusUrl]=@" *GOOGLE PLUS URL",
-    [AgencyName]=@" *AgencyName",
-    [Url]=@" *URL",
-    [About]=@" *ABOUT",
+    [BtnEdit]=@"",
    
 };
 
 @interface EditProfileRecruiter ()<UITextFieldDelegate>
 {
     
-    
+    NSString *strProfilePicture;
     NSString *strFisrst_Name;
     NSString *strLast_Name;
     NSString  *strOldPassword;
@@ -90,6 +102,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     NSString *strAgecyName;
     NSString  *strUrl;
     NSString  *strAbout;
+    NSString *strBtnEdit;
     NSMutableArray *arrtxtFieldValue;
     IBOutlet UITableView *editTableViewRecruiter;
 }
@@ -106,7 +119,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     
     for (int i=0; i<Total; i++) {
         [arrtxtFieldValue addObject:@""];
-        NSLog(@"The space:%@",arrtxtFieldValue);
+        NSLog(@"The space:%ld",[arrtxtFieldValue count]);
 }
 }
 
@@ -152,7 +165,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"EditProfileViewControllerEditLabelcell" owner:self options:nil]objectAtIndex:0];
         }
         
-        
+        cell.lblEditProfile.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
         
@@ -452,6 +465,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"CameraCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.lblCamera.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
     
@@ -463,6 +477,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"ProfilePictureCell" owner:self options:nil]objectAtIndex:0];
         }
         cell.imgRecruiter.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInRecruiter.strPicture]]];
+        strProfilePicture=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
     else if(indexPath.row==20) {
@@ -477,7 +492,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *FACEBOOK LINK" attributes:@{NSForegroundColorAttributeName: color}];
-         //cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
               myCell=cell;
     }
@@ -493,7 +508,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *TWITTER LINK" attributes:@{NSForegroundColorAttributeName: color}];
-        // cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
       
         myCell=cell;
     }
@@ -510,7 +525,8 @@ typedef NS_ENUM(NSInteger, CellContent) {
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strGplus_Url attributes:@{NSForegroundColorAttributeName: color}];
         
-        //cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        // strGPlusUrl=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
     }
@@ -522,6 +538,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"BtnUpdateProfile" owner:self options:nil]objectAtIndex:0];
         }
         [cell.btnEditUpdate addTarget:self action:@selector(btnActionRecruiter) forControlEvents:UIControlEventTouchUpInside];
+        strBtnEdit=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
     
@@ -717,30 +734,41 @@ typedef NS_ENUM(NSInteger, CellContent) {
 }
 -(IBAction)btnActionRecruiter{
     
-    strOldPassword=[arrtxtFieldValue objectAtIndex:0];
-    strNewPassword=[arrtxtFieldValue objectAtIndex:1];
-    strConPassword=[arrtxtFieldValue objectAtIndex:2];
-    strFisrst_Name=[arrtxtFieldValue objectAtIndex:3];
-    strLast_Name=[arrtxtFieldValue objectAtIndex:4];
-    strPhone_Number=[arrtxtFieldValue objectAtIndex:5];
-    strAddress_Line1=[arrtxtFieldValue objectAtIndex:6];
-    strAddress_Line2=[arrtxtFieldValue objectAtIndex:7];
-    strCity=[arrtxtFieldValue objectAtIndex:8];
-    strState=[arrtxtFieldValue objectAtIndex:9];
-    strCountry=[arrtxtFieldValue objectAtIndex:10];
-    strZip_Code=[arrtxtFieldValue objectAtIndex:11];
-    strFbUrl=[arrtxtFieldValue objectAtIndex:12];
-    strTwUrl=[arrtxtFieldValue objectAtIndex:13];
-    strGPlusUrl=[arrtxtFieldValue objectAtIndex:14];
-    strAgecyName=[arrtxtFieldValue objectAtIndex:15];
+    strOldPassword=[arrtxtFieldValue objectAtIndex:5];
+    strNewPassword=[arrtxtFieldValue objectAtIndex:6];
+    strConPassword=[arrtxtFieldValue objectAtIndex:7];
+    strFisrst_Name=[arrtxtFieldValue objectAtIndex:1];
+    strLast_Name=[arrtxtFieldValue objectAtIndex:2];
+    strPhone_Number=[arrtxtFieldValue objectAtIndex:9];
+    strAddress_Line1=[arrtxtFieldValue objectAtIndex:10];
+    strAddress_Line2=[arrtxtFieldValue objectAtIndex:11];
+    strCity=[arrtxtFieldValue objectAtIndex:12];
+    strState=[arrtxtFieldValue objectAtIndex:13];
+    strCountry=[arrtxtFieldValue objectAtIndex:14];
+    strZip_Code=[arrtxtFieldValue objectAtIndex:15];
+    strFbUrl=[arrtxtFieldValue objectAtIndex:20];
+    strTwUrl=[arrtxtFieldValue objectAtIndex:21];
+    strGPlusUrl=[arrtxtFieldValue objectAtIndex:22];
+    strAgecyName=[arrtxtFieldValue objectAtIndex:8];
     strUrl=[arrtxtFieldValue objectAtIndex:16];
     strAbout=[arrtxtFieldValue objectAtIndex:17];
     
-   
+    if (strNewPassword==strConPassword) {
+        
+    }
+    else{
+        
+       [[[UIAlertView alloc] initWithTitle:nil message:@"Password mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    }
     
+    
+    if ([modelLogInRecruiter.strPassword isEqualToString:strOldPassword]) {
+        
     NSLog(@"The arr value is%@",arrtxtFieldValue);
     
-    [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl occupation:strAgecyName skills:strUrl about:strAbout  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg){
+    [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl agencyName:strAgecyName url:strUrl about:strAbout withCompletionHandler:^(id result, BOOL isError, NSString *strMsg)
+     
+     {
         if(isError){
             
             if(strMsg.length>0){
@@ -758,7 +786,12 @@ typedef NS_ENUM(NSInteger, CellContent) {
             
             
         }
-    }];
+     }]; }
+    
+    else{
+        
+        [[[UIAlertView alloc] initWithTitle:nil message:@"password mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    }
     
 }
 @end

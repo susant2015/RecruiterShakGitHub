@@ -74,6 +74,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="lblCamera" destination="2hW-vP-AMY" id="fYP-xR-5Pw"/>
+            </connections>
             <point key="canvasLocation" x="428" y="148.5"/>
         </tableViewCell>
     </objects>

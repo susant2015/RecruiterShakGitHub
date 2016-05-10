@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface EditProfileViewControllerEditLabelcell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblEditProfile;
 
 @end

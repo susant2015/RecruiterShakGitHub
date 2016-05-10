@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/EditProfileRecruiter.m"
-            timestampString = "484561208.992808"
+            timestampString = "484575885.57734"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/EditProfileRecruiter.m"
-            timestampString = "484564080.154329"
+            timestampString = "484580022.947848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "741"
-            endingLineNumber = "741"
+            startingLineNumber = "767"
+            endingLineNumber = "767"
             landmarkName = "-btnActionRecruiter"
             landmarkType = "5">
          </BreakpointContent>
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/EditProfileRecruiter.m"
-            timestampString = "484563267.477371"
+            timestampString = "484575885.57734"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "718"
-            endingLineNumber = "718"
+            startingLineNumber = "735"
+            endingLineNumber = "735"
             landmarkName = "-btnActionRecruiter"
             landmarkType = "5">
          </BreakpointContent>

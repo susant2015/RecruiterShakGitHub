@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CameraCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblCamera;
+
 
 @end

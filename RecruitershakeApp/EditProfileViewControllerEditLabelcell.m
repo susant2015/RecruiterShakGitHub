@@ -10,6 +10,8 @@
 
 @implementation EditProfileViewControllerEditLabelcell
 
+@synthesize lblEditProfile;
+
 - (void)awakeFromNib {
     // Initialization code
 }
