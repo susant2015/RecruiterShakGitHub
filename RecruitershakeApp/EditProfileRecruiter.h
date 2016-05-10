@@ -10,4 +10,5 @@
 
 @interface EditProfileRecruiter : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 
+-(BOOL)alertCheck;
 @end

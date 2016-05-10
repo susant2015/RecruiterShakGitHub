@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="EditOrganationTypeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="56"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SYF-x4-zZh" userLabel="img-back">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="56"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Un5-ra-Qel" userLabel="img-border">
+                        <rect key="frame" x="50" y="0.0" width="500" height="38"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jTF-k6-Np4" userLabel="img-border-label">
+                        <rect key="frame" x="65" y="0.0" width="470" height="38"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07b-Mp-QvW" userLabel="Label-orgtype">
+                        <rect key="frame" x="65" y="8" width="170" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SYF-x4-zZh" firstAttribute="height" secondItem="Un5-ra-Qel" secondAttribute="height" multiplier="56/38" id="0aq-Jm-XfK"/>
+                    <constraint firstAttribute="bottom" secondItem="SYF-x4-zZh" secondAttribute="bottom" id="8Ig-X5-zSt"/>
+                    <constraint firstAttribute="right" secondItem="SYF-x4-zZh" secondAttribute="right" id="8Jw-A5-W5A"/>
+                    <constraint firstItem="jTF-k6-Np4" firstAttribute="width" secondItem="07b-Mp-QvW" secondAttribute="width" multiplier="470/170" id="8pP-uw-K4S"/>
+                    <constraint firstItem="SYF-x4-zZh" firstAttribute="width" secondItem="Un5-ra-Qel" secondAttribute="width" multiplier="600/500" id="M4t-ul-gr3"/>
+                    <constraint firstItem="SYF-x4-zZh" firstAttribute="top" secondItem="jTF-k6-Np4" secondAttribute="top" id="Tpt-W3-z0T"/>
+                    <constraint firstItem="jTF-k6-Np4" firstAttribute="height" secondItem="07b-Mp-QvW" secondAttribute="height" multiplier="38/30" id="Vlm-Jb-4Ko"/>
+                    <constraint firstItem="SYF-x4-zZh" firstAttribute="centerX" secondItem="Un5-ra-Qel" secondAttribute="centerX" id="cA7-Mh-rye"/>
+                    <constraint firstItem="jTF-k6-Np4" firstAttribute="leading" secondItem="07b-Mp-QvW" secondAttribute="leading" id="ce9-ZZ-KPy"/>
+                    <constraint firstAttribute="top" secondItem="SYF-x4-zZh" secondAttribute="top" id="gsx-JY-8bo"/>
+                    <constraint firstItem="SYF-x4-zZh" firstAttribute="height" secondItem="jTF-k6-Np4" secondAttribute="height" multiplier="56/38" id="hmD-bR-bIx"/>
+                    <constraint firstItem="SYF-x4-zZh" firstAttribute="top" secondItem="Un5-ra-Qel" secondAttribute="top" id="laE-fm-HZk"/>
+                    <constraint firstAttribute="leading" secondItem="SYF-x4-zZh" secondAttribute="leading" id="oA2-hO-bFI"/>
+                    <constraint firstItem="SYF-x4-zZh" firstAttribute="centerX" secondItem="jTF-k6-Np4" secondAttribute="centerX" id="pno-jG-80M"/>
+                    <constraint firstItem="SYF-x4-zZh" firstAttribute="width" secondItem="jTF-k6-Np4" secondAttribute="width" multiplier="600/470" id="q8M-Jr-8bj"/>
+                    <constraint firstItem="jTF-k6-Np4" firstAttribute="bottom" secondItem="07b-Mp-QvW" secondAttribute="bottom" id="xV7-3z-JsY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="457" y="107.5"/>
+        </tableViewCell>
+    </objects>
+</document>

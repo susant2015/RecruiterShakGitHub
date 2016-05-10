@@ -73,6 +73,8 @@
 		8448FE6F1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448FE6D1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib */; };
 		8448FE731CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE711CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.m */; };
 		8448FE741CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448FE721CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.xib */; };
+		84567E0F1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84567E0D1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.m */; };
+		84567E101CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84567E0E1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.xib */; };
 		8458C4C71CC5FB2200984844 /* EditProfileRecruiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458C4C61CC5FB2200984844 /* EditProfileRecruiter.m */; };
 		8458C5091CC63E6F00984844 /* RecruiterFaceBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458C5081CC63E6F00984844 /* RecruiterFaceBookViewController.m */; };
 		8459C6461C8714A700EF5079 /* register_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8459C6451C8714A700EF5079 /* register_bg.jpg */; };
@@ -307,6 +309,9 @@
 		8448FE701CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecruiterMyLeadsViewContollerCell.h; sourceTree = "<group>"; };
 		8448FE711CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecruiterMyLeadsViewContollerCell.m; sourceTree = "<group>"; };
 		8448FE721CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecruiterMyLeadsViewContollerCell.xib; sourceTree = "<group>"; };
+		84567E0C1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditOrganationTypeTableViewCell.h; sourceTree = "<group>"; };
+		84567E0D1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditOrganationTypeTableViewCell.m; sourceTree = "<group>"; };
+		84567E0E1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditOrganationTypeTableViewCell.xib; sourceTree = "<group>"; };
 		8458C4C51CC5FB2200984844 /* EditProfileRecruiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileRecruiter.h; sourceTree = "<group>"; };
 		8458C4C61CC5FB2200984844 /* EditProfileRecruiter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileRecruiter.m; sourceTree = "<group>"; };
 		8458C5071CC63E6F00984844 /* RecruiterFaceBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecruiterFaceBookViewController.h; sourceTree = "<group>"; };
@@ -754,6 +759,9 @@
 				8491168A1C91B35600CF1967 /* BtnUpdateProfile.h */,
 				8491168B1C91B35600CF1967 /* BtnUpdateProfile.m */,
 				8491168C1C91B35600CF1967 /* BtnUpdateProfile.xib */,
+				84567E0C1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.h */,
+				84567E0D1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.m */,
+				84567E0E1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.xib */,
 			);
 			name = EditProfileCell;
 			sourceTree = "<group>";
@@ -1172,6 +1180,7 @@
 				843B3DB11C92EC4B0014D05A /* back_bg2.png in Resources */,
 				841959A11C8EB71300E8CA79 /* white-notify.png in Resources */,
 				84C833641C84587E009AD74F /* google.png in Resources */,
+				84567E101CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.xib in Resources */,
 				84FFD8C11CA9166100D6F1DA /* employer-hover.png in Resources */,
 				8491166E1C9185DF00CF1967 /* edit_cam.png in Resources */,
 				84B0ABC51C805B1E0083B773 /* employ_btn.png in Resources */,
@@ -1317,6 +1326,7 @@
 				84C8332D1C840F29009AD74F /* ForgotPasswordViewController.m in Sources */,
 				8448FE581CC0C74C00FA9AF1 /* EditProfileEmployerViewController.m in Sources */,
 				8429F4C71CDB3ED7006471AD /* EmpJobListViewController.m in Sources */,
+				84567E0F1CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.m in Sources */,
 				842ADE451C998A3D00C9CC49 /* AboutContentCell.m in Sources */,
 				849591251CBE836C00A7A6E0 /* ModelLogInApplicant.m in Sources */,
 				843B3DA81C92CA020014D05A /* Employerjoblistheadercell.m in Sources */,

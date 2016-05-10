@@ -253,7 +253,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.txtPasswordPlaceholder.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
-        cell.txtPasswordPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strPassword attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtPasswordPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *OLD PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
         cell.txtPasswordPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -753,16 +753,20 @@ typedef NS_ENUM(NSInteger, CellContent) {
     strUrl=[arrtxtFieldValue objectAtIndex:16];
     strAbout=[arrtxtFieldValue objectAtIndex:17];
     
-    if (strNewPassword==strConPassword) {
-        
-    }
-    else{
-        
-       [[[UIAlertView alloc] initWithTitle:nil message:@"Password mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-    }
+     //[self alertCheck];
+    
+    
     
     
     if ([modelLogInRecruiter.strPassword isEqualToString:strOldPassword]) {
+        
+        if (strNewPassword==strConPassword) {
+            
+        }
+        else{
+            
+            [[[UIAlertView alloc] initWithTitle:nil message:@"NewPassword & ConformPassword  mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        }
         
     NSLog(@"The arr value is%@",arrtxtFieldValue);
     
@@ -790,8 +794,16 @@ typedef NS_ENUM(NSInteger, CellContent) {
     
     else{
         
-        [[[UIAlertView alloc] initWithTitle:nil message:@"password mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        [[[UIAlertView alloc] initWithTitle:nil message:@"OldPassword mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
     }
     
+}
+-(BOOL)alertCheck{
+
+        if ([strNewPassword length]==0 ||[strConPassword length]==0 ) {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter newpassword and conformpassword." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            return NO;
+        }
+    return YES;
 }
 @end
