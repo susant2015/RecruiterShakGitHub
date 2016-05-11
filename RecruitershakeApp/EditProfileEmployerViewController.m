@@ -18,6 +18,7 @@
 #import "TextFieldCellName.h"
 #import "ModelLogInEmployer.h"
 #import "Constants.h"
+#import "EditOrganationTypeTableViewCell.h"
 
 @interface EditProfileEmployerViewController ()<UITextFieldDelegate>
 
@@ -106,31 +107,25 @@
     {
         height=118.0f;
     }
+    
     else if (indexPath.row==18)
     {
-        height=118.0f;
+        height=56.0f;
     }
+    
     else if (indexPath.row==19)
     {
         height=56.0f;
     }
     else if (indexPath.row==20)
     {
-        height=118.0f;
+        height=56.0f;
     }
     else if (indexPath.row==21)
     {
         height=56.0f;
     }
     else if (indexPath.row==22)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==23)
-    {
-        height=56.0f;
-    }
-    else if (indexPath.row==24)
     {
         height=88.0f;
     }
@@ -143,7 +138,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
    
-    return 25;
+    return 23;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -284,21 +279,8 @@
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInEmployer.strPhone_Number attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
+    
     else if(indexPath.row==9) {
-        
-        static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
-        TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"TextFieldCellName" owner:self options:nil]objectAtIndex:0];
-        }
-        [cell.txtFielfPlaceHolderName setDelegate:self];
-        cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
-        cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@" *Occuption" attributes:@{NSForegroundColorAttributeName: color}];
-        myCell=cell;
-    }
-    else if(indexPath.row==10) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -312,7 +294,7 @@
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ADDRESS LINE1" attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==11) {
+    else if(indexPath.row==10) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -326,7 +308,7 @@
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ADDRESS LINE2" attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==12) {
+    else if(indexPath.row==11) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -340,7 +322,7 @@
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInEmployer.strCity attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==13) {
+    else if(indexPath.row==12) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -354,7 +336,7 @@
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInEmployer.strState attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==14) {
+    else if(indexPath.row==13) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -368,7 +350,7 @@
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInEmployer.strCountry attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==15) {
+    else if(indexPath.row==14) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -382,21 +364,21 @@
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInEmployer.strZip_Code attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==16) {
+    else if(indexPath.row==15) {
         
-        static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
-        TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
+        static NSString *applicantIndexCellIdentifier=@"EditOrganationTypeTableViewCell";
+        EditOrganationTypeTableViewCell *cell=(EditOrganationTypeTableViewCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
         if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"TextFieldCellName" owner:self options:nil]objectAtIndex:0];
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"EditOrganationTypeTableViewCell" owner:self options:nil]objectAtIndex:0];
         }
-        [cell.txtFielfPlaceHolderName setDelegate:self];
-        cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
-        cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *SKILL" attributes:@{NSForegroundColorAttributeName: color}];
+       //[cell.txtFielfPlaceHolderName setDelegate:self];
+        //cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
+        //cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
+        //UIColor *color = [UIColor whiteColor];
+        //cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *SKILL" attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==17) {
+    else if(indexPath.row==16) {
         
         static NSString *applicantIndexCellIdentifier=@"Aboutcell";
         Aboutcell *cell=(Aboutcell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -410,22 +392,9 @@
         cell.txtAboutPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInEmployer.strAbout attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==18) {
-        
-        static NSString *applicantIndexCellIdentifier=@"Aboutcell";
-        Aboutcell *cell=(Aboutcell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"Aboutcell" owner:self options:nil]objectAtIndex:0];
-        }
-        [cell.txtAboutPlaceholder setDelegate:self];
-        cell.txtAboutPlaceholder.keyboardType=UIKeyboardTypeDefault;
-        cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtAboutPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *QUOTES" attributes:@{NSForegroundColorAttributeName: color}];
-        myCell=cell;
-    }
     
-    else if(indexPath.row==19) {
+    
+    else if(indexPath.row==17) {
         
         static NSString *applicantIndexCellIdentifier=@"CameraCell";
         CameraCell *cell=(CameraCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -435,7 +404,7 @@
         myCell=cell;
     }
     
-    else if(indexPath.row==20) {
+    else if(indexPath.row==18) {
         
         static NSString *applicantIndexCellIdentifier=@"ProfilePictureCell";
         ProfilePictureCell *cell=(ProfilePictureCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -445,7 +414,7 @@
         cell.imgRecruiter.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInEmployer.strPicture]]];
         myCell=cell;
     }
-    else if(indexPath.row==21) {
+    else if(indexPath.row==19) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -459,7 +428,7 @@
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *FACEBOOK LINK" attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==22) {
+    else if(indexPath.row==20) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -473,7 +442,7 @@
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *TWITTER LINK" attributes:@{NSForegroundColorAttributeName: color}];
         myCell=cell;
     }
-    else if(indexPath.row==23) {
+    else if(indexPath.row==21) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -488,7 +457,7 @@
         
         myCell=cell;
     }
-    else if(indexPath.row==24) {
+    else if(indexPath.row==22) {
         
         static NSString *applicantIndexCellIdentifier=@"BtnUpdateProfile";
         BtnUpdateProfile *cell=(BtnUpdateProfile *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];

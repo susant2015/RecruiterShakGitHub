@@ -22,7 +22,7 @@
 #import "BaseViewController.h"
 
 typedef NS_ENUM(NSInteger, CellContent) {
-    EditLabel,
+    
     FirstName,
     LastName,
     Email,
@@ -53,11 +53,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
 
  NSString static *strPlaceholders[]={
     
-    [EditLabel]=@"",
+    
     [FirstName]=@" *FIRSTNAME",
     [LastName]=@" *LASTNAME",
-    [Email]=@"",
-    [UserName]=@"",
+    [Email]=@"  *Email",
+    [UserName]=@"  *UserName",
     [OldPassword]=@" *OLD PASSWORD",
     [NewPassword]=@" *NEW PASSWORD",
     [ConPassword]=@" *CONFORM PASSWORD",
@@ -72,7 +72,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     [Url]=@" *URL",
     [About]=@" *ABOUT",
     [Camera]=@"",
-    [ProfilePicture]=@"",
+    [ProfilePicture]=@"ProfilePicture",
     [FbUrl]=@" *FACEBOOK URL",
     [TwUrl]=@" *TWITTER URL",
     [GPlusUrl]=@" *GOOGLE PLUS URL",
@@ -118,9 +118,96 @@ typedef NS_ENUM(NSInteger, CellContent) {
     arrtxtFieldValue=[NSMutableArray arrayWithCapacity:Total];
     
     for (int i=0; i<Total; i++) {
-        [arrtxtFieldValue addObject:@""];
-        NSLog(@"The space:%ld",[arrtxtFieldValue count]);
-}
+        //[arrtxtFieldValue addObject:@""];
+        if (i ==0){
+             [arrtxtFieldValue addObject:modelLogInRecruiter.strFirst_Name];
+            }
+        else if (i==1){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strLast_Name];
+        }
+        else if (i==2){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strEmail];
+            
+        }
+        else if (i==3){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strUser_Name];
+            
+        }
+        else if (i==4){
+            [arrtxtFieldValue addObject:@""];
+            
+        }
+        else if (i==5){
+            [arrtxtFieldValue addObject:@""];
+            
+        }
+        else if (i==6){
+            [arrtxtFieldValue addObject:@""];
+            
+        }
+        
+        else if (i==7){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strAgency_Name];
+            
+        }
+        else if (i==8){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strPhone_Number];
+            
+        }
+        else if (i==9){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strAddress];
+            
+        }
+        else if (i==11){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strCity];
+            
+        }
+        else if (i==12){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strState];
+            
+        }
+        else if (i==13){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strCountry];
+            
+        }
+        else if (i==14){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strZip_Code];
+            
+        }
+        else if (i==15){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strUrl];
+            
+        }
+        else if (i==16){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strAbout];
+            
+        }
+        else if (i==17){
+            [arrtxtFieldValue addObject:@""];
+            
+        }
+        else if (i==18){
+            [arrtxtFieldValue addObject:@""];
+            
+        }
+        else if (i==19){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strFaceBook_Url];
+            
+        }
+        else if (i==20){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strTwitter_Url];
+            
+        }
+        else if (i==21){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strGplus_Url];
+            
+        }
+        else if (i==22){
+            [arrtxtFieldValue addObject:@""];
+            
+        }
+        NSLog(@"The space:%@",arrtxtFieldValue);
+        }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -133,11 +220,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
 {
    
     CGFloat height=56.0f;
-    if (indexPath.row==17 || indexPath.row == 19)
+    if (indexPath.row==16)
     {
         height=118.0f;
     }
-    else if (indexPath.row==23)
+    else if (indexPath.row==22)
     {
         height=88.0f;
     }
@@ -149,29 +236,16 @@ typedef NS_ENUM(NSInteger, CellContent) {
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return 24;
+    return 23;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *myCell=nil;
     
-    if (indexPath.row==0) {
-        
-        static NSString *applicantIndexCellIdentifier=@"EditProfileViewControllerEditLabelcell";
-        EditProfileViewControllerEditLabelcell *cell=(EditProfileViewControllerEditLabelcell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"EditProfileViewControllerEditLabelcell" owner:self options:nil]objectAtIndex:0];
-        }
-        
-        cell.lblEditProfile.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
-        
-        myCell=cell;
-        
-    }
     
-    else if(indexPath.row==1) {
+    
+     if(indexPath.row==0) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -194,7 +268,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         myCell=cell;
         
     }
-    else if(indexPath.row==2) {
+    else if(indexPath.row==1) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -210,7 +284,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
-    else if(indexPath.row==3) {
+    else if(indexPath.row==2) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -226,7 +300,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.txtFielfPlaceHolderName.highlighted=YES;
         myCell=cell;
     }
-    else if(indexPath.row==4) {
+    else if(indexPath.row==3) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -242,7 +316,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
-    else if(indexPath.row==5) {
+    else if(indexPath.row==4) {
         
         static NSString *applicantIndexCellIdentifier=@"OldPasswordCell";
         OldPasswordCell  *cell=(OldPasswordCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -254,11 +328,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
         cell.txtPasswordPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *OLD PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
-        cell.txtPasswordPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        //cell.txtPasswordPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
     }
-    else if(indexPath.row==6) {
+    else if(indexPath.row==5) {
         
         static NSString *applicantIndexCellIdentifier=@"OldPasswordCell";
         OldPasswordCell  *cell=(OldPasswordCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -274,7 +348,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.txtPasswordPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
-    else if(indexPath.row==7) {
+    else if(indexPath.row==6) {
         
         static NSString *applicantIndexCellIdentifier=@"OldPasswordCell";
         OldPasswordCell  *cell=(OldPasswordCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -291,7 +365,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         myCell=cell;
     }
     
-    else if(indexPath.row==8) {
+    else if(indexPath.row==7) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -307,7 +381,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
-    else if(indexPath.row==9) {
+    else if(indexPath.row==8) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -323,7 +397,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         myCell=cell;
     }
-    else if(indexPath.row==10) {
+    else if(indexPath.row==9) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -339,7 +413,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         myCell=cell;
     }
-    else if(indexPath.row==11) {
+    else if(indexPath.row==10) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -351,11 +425,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ADDRESS LINE2" attributes:@{NSForegroundColorAttributeName: color}];
-        cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        //cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
     }
-    else if(indexPath.row==12) {
+    else if(indexPath.row==11) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -371,7 +445,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         myCell=cell;
     }
-    else if(indexPath.row==13) {
+    else if(indexPath.row==12) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -388,7 +462,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         myCell=cell;
     }
-    else if(indexPath.row==14) {
+    else if(indexPath.row==13) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -405,7 +479,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         myCell=cell;
     }
-    else if(indexPath.row==15) {
+    else if(indexPath.row==14) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -422,7 +496,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         myCell=cell;
     }
-    else if(indexPath.row==16) {
+    else if(indexPath.row==15) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -439,7 +513,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         myCell=cell;
     }
-    else if(indexPath.row==17) {
+    else if(indexPath.row==16) {
         
         static NSString *applicantIndexCellIdentifier=@"Aboutcell";
         Aboutcell *cell=(Aboutcell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -458,7 +532,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     }
     
     
-    else if(indexPath.row==18) {
+    else if(indexPath.row==17) {
         
         static NSString *applicantIndexCellIdentifier=@"CameraCell";
         CameraCell *cell=(CameraCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -469,7 +543,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         myCell=cell;
     }
     
-    else if(indexPath.row==19) {
+    else if(indexPath.row==18) {
         
         static NSString *applicantIndexCellIdentifier=@"ProfilePictureCell";
         ProfilePictureCell *cell=(ProfilePictureCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -480,7 +554,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         strProfilePicture=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
-    else if(indexPath.row==20) {
+    else if(indexPath.row==19) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -496,7 +570,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
               myCell=cell;
     }
-    else if(indexPath.row==21) {
+    else if(indexPath.row==20) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -512,7 +586,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
       
         myCell=cell;
     }
-    else if(indexPath.row==22) {
+    else if(indexPath.row==21) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -530,7 +604,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         myCell=cell;
     }
-    else if(indexPath.row==23) {
+    else if(indexPath.row==22) {
         
         static NSString *applicantIndexCellIdentifier=@"BtnUpdateProfile";
         BtnUpdateProfile *cell=(BtnUpdateProfile *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -538,7 +612,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"BtnUpdateProfile" owner:self options:nil]objectAtIndex:0];
         }
         [cell.btnEditUpdate addTarget:self action:@selector(btnActionRecruiter) forControlEvents:UIControlEventTouchUpInside];
-        strBtnEdit=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        //strBtnEdit=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
     
@@ -556,7 +630,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     NSIndexPath *indexPath=[editTableViewRecruiter indexPathForCell:cell1];
     
     NSLog(@"indexPath:%ld",(long)indexPath.row);
-    if (indexPath.row==1)
+    if (indexPath.row==0)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strFisrst_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -564,7 +638,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==2)
+    if (indexPath.row==1)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strLast_Name=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -572,7 +646,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==5)
+    if (indexPath.row==4)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strOldPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -580,7 +654,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==6)
+    if (indexPath.row==5)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strNewPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -588,7 +662,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==7)
+    if (indexPath.row==6)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strConPassword=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -598,7 +672,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     }
     
     
-    if (indexPath.row==8)
+    if (indexPath.row==7)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strPhone_Number=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -606,7 +680,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==9)
+    if (indexPath.row==8)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAgecyName=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -615,7 +689,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==10)
+    if (indexPath.row==9)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAddress_Line1=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -623,7 +697,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==11)
+    if (indexPath.row==10)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAddress_Line2=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -631,7 +705,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==12)
+    if (indexPath.row==11)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strCity=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -639,7 +713,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==13)
+    if (indexPath.row==12)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strState=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -647,7 +721,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==14)
+    if (indexPath.row==13)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strCountry=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -655,7 +729,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==15)
+    if (indexPath.row==14)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strZip_Code=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -663,7 +737,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==16)
+    if (indexPath.row==15)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -672,7 +746,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==17)
+    if (indexPath.row==16)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strAbout=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -681,7 +755,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==20)
+    if (indexPath.row==19)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strFbUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -691,7 +765,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
     }
     
-    if (indexPath.row==21)
+    if (indexPath.row==20)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strTwUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -700,7 +774,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
     }
-    if (indexPath.row==22)
+    if (indexPath.row==21)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strGPlusUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -730,43 +804,39 @@ typedef NS_ENUM(NSInteger, CellContent) {
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 38.0f;
+    return 86.0f;
 }
 -(IBAction)btnActionRecruiter{
     
-    strOldPassword=[arrtxtFieldValue objectAtIndex:5];
-    strNewPassword=[arrtxtFieldValue objectAtIndex:6];
-    strConPassword=[arrtxtFieldValue objectAtIndex:7];
-    strFisrst_Name=[arrtxtFieldValue objectAtIndex:1];
-    strLast_Name=[arrtxtFieldValue objectAtIndex:2];
-    strPhone_Number=[arrtxtFieldValue objectAtIndex:9];
-    strAddress_Line1=[arrtxtFieldValue objectAtIndex:10];
-    strAddress_Line2=[arrtxtFieldValue objectAtIndex:11];
-    strCity=[arrtxtFieldValue objectAtIndex:12];
-    strState=[arrtxtFieldValue objectAtIndex:13];
-    strCountry=[arrtxtFieldValue objectAtIndex:14];
-    strZip_Code=[arrtxtFieldValue objectAtIndex:15];
-    strFbUrl=[arrtxtFieldValue objectAtIndex:20];
-    strTwUrl=[arrtxtFieldValue objectAtIndex:21];
-    strGPlusUrl=[arrtxtFieldValue objectAtIndex:22];
+    strOldPassword=[arrtxtFieldValue objectAtIndex:4];
+    strNewPassword=[arrtxtFieldValue objectAtIndex:5];
+    strConPassword=[arrtxtFieldValue objectAtIndex:6];
+    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
+    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
+    strPhone_Number=[arrtxtFieldValue objectAtIndex:7];
+    strAddress_Line1=[arrtxtFieldValue objectAtIndex:9];
+    strAddress_Line2=[arrtxtFieldValue objectAtIndex:10];
+    strCity=[arrtxtFieldValue objectAtIndex:11];
+    strState=[arrtxtFieldValue objectAtIndex:12];
+    strCountry=[arrtxtFieldValue objectAtIndex:13];
+    strZip_Code=[arrtxtFieldValue objectAtIndex:14];
+    strFbUrl=[arrtxtFieldValue objectAtIndex:19];
+    strTwUrl=[arrtxtFieldValue objectAtIndex:20];
+    strGPlusUrl=[arrtxtFieldValue objectAtIndex:21];
     strAgecyName=[arrtxtFieldValue objectAtIndex:8];
-    strUrl=[arrtxtFieldValue objectAtIndex:16];
-    strAbout=[arrtxtFieldValue objectAtIndex:17];
+    strUrl=[arrtxtFieldValue objectAtIndex:15];
+    strAbout=[arrtxtFieldValue objectAtIndex:16];
     
      //[self alertCheck];
     
     
-    
-    
     if ([modelLogInRecruiter.strPassword isEqualToString:strOldPassword]) {
+    
+   
+    
+    if (strNewPassword==strConPassword) {
         
-        if (strNewPassword==strConPassword) {
-            
-        }
-        else{
-            
-            [[[UIAlertView alloc] initWithTitle:nil message:@"NewPassword & ConformPassword  mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-        }
+        
         
     NSLog(@"The arr value is%@",arrtxtFieldValue);
     
@@ -794,7 +864,12 @@ typedef NS_ENUM(NSInteger, CellContent) {
     
     else{
         
+        [[[UIAlertView alloc] initWithTitle:nil message:@"Password mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    }
+    }
+    else{
         [[[UIAlertView alloc] initWithTitle:nil message:@"OldPassword mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        
     }
     
 }

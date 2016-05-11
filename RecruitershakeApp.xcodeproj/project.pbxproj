@@ -63,6 +63,7 @@
 		843DD7241C8DACC400EE1D36 /* register_round.png in Resources */ = {isa = PBXBuildFile; fileRef = 843DD7201C8DACC400EE1D36 /* register_round.png */; };
 		843DD7251C8DACC400EE1D36 /* registerLIMKEDIN-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 843DD7211C8DACC400EE1D36 /* registerLIMKEDIN-btn.png */; };
 		843DD7261C8DACC400EE1D36 /* uncheck-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 843DD7221C8DACC400EE1D36 /* uncheck-btn.png */; };
+		843FB2E01CE3265E008B8374 /* EditProfileEmployerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 843FB2DF1CE3265E008B8374 /* EditProfileEmployerService.m */; };
 		8448FE581CC0C74C00FA9AF1 /* EditProfileEmployerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE571CC0C74C00FA9AF1 /* EditProfileEmployerViewController.m */; };
 		8448FE5B1CC0D0BF00FA9AF1 /* EditProfileApplicantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE5A1CC0D0BF00FA9AF1 /* EditProfileApplicantViewController.m */; };
 		8448FE5E1CC0E31C00FA9AF1 /* AboutRecruiterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448FE5D1CC0E31C00FA9AF1 /* AboutRecruiterViewController.m */; };
@@ -292,6 +293,8 @@
 		843DD7201C8DACC400EE1D36 /* register_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = register_round.png; path = "../../../Image Set Date wise/register/register_round.png"; sourceTree = "<group>"; };
 		843DD7211C8DACC400EE1D36 /* registerLIMKEDIN-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "registerLIMKEDIN-btn.png"; path = "../../../Image Set Date wise/register/registerLIMKEDIN-btn.png"; sourceTree = "<group>"; };
 		843DD7221C8DACC400EE1D36 /* uncheck-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "uncheck-btn.png"; path = "../../../Image Set Date wise/register/uncheck-btn.png"; sourceTree = "<group>"; };
+		843FB2DE1CE3265E008B8374 /* EditProfileEmployerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileEmployerService.h; sourceTree = "<group>"; };
+		843FB2DF1CE3265E008B8374 /* EditProfileEmployerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileEmployerService.m; sourceTree = "<group>"; };
 		8448FE561CC0C74C00FA9AF1 /* EditProfileEmployerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileEmployerViewController.h; sourceTree = "<group>"; };
 		8448FE571CC0C74C00FA9AF1 /* EditProfileEmployerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileEmployerViewController.m; sourceTree = "<group>"; };
 		8448FE591CC0D0BF00FA9AF1 /* EditProfileApplicantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileApplicantViewController.h; sourceTree = "<group>"; };
@@ -697,6 +700,7 @@
 				8448FE721CC1238D00FA9AF1 /* RecruiterMyLeadsViewContollerCell.xib */,
 			);
 			name = RecruiterCell;
+			path = RecruitershakeApp;
 			sourceTree = "<group>";
 		};
 		8459C6441C87141400EF5079 /* register */ = {
@@ -801,6 +805,8 @@
 				841FE3391CDC8DEC00B0AC01 /* EmployerDeleteService.m */,
 				841FE33E1CDCB56E00B0AC01 /* EmployerEditService.h */,
 				841FE33F1CDCB56E00B0AC01 /* EmployerEditService.m */,
+				843FB2DE1CE3265E008B8374 /* EditProfileEmployerService.h */,
+				843FB2DF1CE3265E008B8374 /* EditProfileEmployerService.m */,
 			);
 			name = WebService;
 			sourceTree = "<group>";
@@ -841,6 +847,7 @@
 		84B0AB7C1C8013190083B773 = {
 			isa = PBXGroup;
 			children = (
+				8448FE6A1CC0F22E00FA9AF1 /* RecruiterCell */,
 				84B0AB871C8013190083B773 /* RecruitershakeApp */,
 				84B0ABA11C8013190083B773 /* RecruitershakeAppTests */,
 				84B0AB861C8013190083B773 /* Products */,
@@ -859,7 +866,6 @@
 		84B0AB871C8013190083B773 /* RecruitershakeApp */ = {
 			isa = PBXGroup;
 			children = (
-				8448FE6A1CC0F22E00FA9AF1 /* RecruiterCell */,
 				84EF420F1CB38ACD0033B614 /* Model */,
 				84EF420E1CB38AB30033B614 /* Constants */,
 				84D815C81CABF04400AEF15E /* Main.storyboard */,
@@ -1341,6 +1347,7 @@
 				8425364E1CC4C095003A962C /* EditProfileRecruiterService.m in Sources */,
 				84A808F01C8591BD00043683 /* SigninService.m in Sources */,
 				84D815C41CABA70200AEF15E /* RegisterService.m in Sources */,
+				843FB2E01CE3265E008B8374 /* EditProfileEmployerService.m in Sources */,
 				841FE3401CDCB56E00B0AC01 /* EmployerEditService.m in Sources */,
 				84A809001C86DE4500043683 /* AddWorkingExprinceViewController.m in Sources */,
 				840FFB371CD234D20041E598 /* EmployerApplicantListService.m in Sources */,

@@ -80,6 +80,7 @@
         UIColor *colorWhite=[UIColor whiteColor];
     [self.txtJobTitle setDelegate:self];
     self.txtJobTitle.attributedPlaceholder =[[NSAttributedString alloc] initWithString:modelEmploerEdit.strTitleEmpJob attributes:@{NSForegroundColorAttributeName: colorWhite}];
+    self.txtJobTitle.text=modelEmploerEdit.strTitleEmpJob;
 
     
 }
@@ -91,6 +92,7 @@
     
     UIColor *color = [UIColor whiteColor];
     self.txtPosition.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelEmploerEdit.strEmpPosition attributes:@{NSForegroundColorAttributeName: color}];
+    self.txtPosition.text=modelEmploerEdit.strEmpPosition;
     
 }
 -(void)txtFieldEducation{
@@ -99,6 +101,7 @@
     self.txtQualification.keyboardType=UIKeyboardTypeDefault;
     UIColor *color=[UIColor whiteColor];
     self.txtQualification.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelEmploerEdit.strEmpEduQual attributes:@{NSForegroundColorAttributeName: color}];
+    self.txtQualification.text=modelEmploerEdit.strEmpEduQual;
 }
 -(void)txtFieldLocations{
     
@@ -107,6 +110,7 @@
     self.txtLocation.keyboardType=UIKeyboardTypeDefault;
     UIColor *color=[UIColor whiteColor];
     self.txtLocation.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelEmploerEdit.strEmpLocation attributes:@{NSForegroundColorAttributeName: color}];
+    self.txtLocation.text=modelEmploerEdit.strEmpLocation;
 }
 -(void)txtFieldSkill{
     
@@ -114,6 +118,7 @@
     self.txtSkillRequired.keyboardType=UIKeyboardTypeDefault;
     UIColor *color=[UIColor whiteColor];
     self.txtSkillRequired.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelEmploerEdit.strEmpSkillRequired attributes:@{NSForegroundColorAttributeName: color}];
+    self.txtSkillRequired.text=modelEmploerEdit.strEmpSkillRequired;
 }
 -(void)txtFieldJobDesc{
     
@@ -121,6 +126,7 @@
     self.txtDescription.keyboardType=UIKeyboardTypeDefault;
     UIColor *color=[UIColor whiteColor];
     self.txtDescription.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelEmploerEdit.strEmpDesc attributes:@{NSForegroundColorAttributeName: color}];
+    self.txtDescription.text=modelEmploerEdit.strEmpDesc;
     self.txtDescription.textAlignment=NSTextAlignmentJustified;
 }
 
