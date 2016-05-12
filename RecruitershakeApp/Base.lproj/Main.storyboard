@@ -1479,6 +1479,9 @@
                             <constraint firstAttribute="top" secondItem="uLO-WT-4PD" secondAttribute="top" id="rs2-sd-Sm2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tblEditEmployer" destination="uLO-WT-4PD" id="3CN-v6-diZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="siN-Yi-Ia0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2361,6 +2364,7 @@
                     </view>
                     <connections>
                         <outlet property="editTableViewRecruiter" destination="q6M-rB-Yib" id="EZf-pc-Xt7"/>
+                        <outlet property="tblEditRecruiter" destination="q6M-rB-Yib" id="mlC-cv-v45"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsd-Zu-b2M" userLabel="First Responder" sceneMemberID="firstResponder"/>

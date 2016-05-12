@@ -11,5 +11,7 @@
 @interface EditProfileViewControllerHeaderButtonCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblRecruiterFirstName;
 @property (weak, nonatomic) IBOutlet UILabel *lblRecruiterLastName;
+@property (weak, nonatomic) IBOutlet UIButton *btnBackRecruiter;
+
 
 @end

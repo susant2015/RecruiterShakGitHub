@@ -28,6 +28,7 @@
 @property(strong,nonatomic) NSString *strTwitter_Url;
 @property(strong,nonatomic) NSString *strUser_Name;
 @property(strong,nonatomic) NSString *strZip_Code;
+@property(strong,nonatomic) NSString *strPassword;
 
 
 -(id)initWithDictionary:(NSDictionary *)dict;

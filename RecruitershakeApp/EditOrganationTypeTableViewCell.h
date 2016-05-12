@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface EditOrganationTypeTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *btnRadioYes;
+@property (weak, nonatomic) IBOutlet UIButton *btnRadioNo;
+@property (weak, nonatomic) IBOutlet UIButton *btnRadioSureNot;
 
 @end

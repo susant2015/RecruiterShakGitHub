@@ -10,6 +10,9 @@
 
 @implementation EditOrganationTypeTableViewCell
 
+@synthesize btnRadioYes;
+@synthesize  btnRadioNo;
+@synthesize btnRadioSureNot;
 - (void)awakeFromNib {
     // Initialization code
 }

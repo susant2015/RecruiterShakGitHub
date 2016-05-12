@@ -63,6 +63,13 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xQ-sn-Sff">
+                        <rect key="frame" x="100" y="45" width="400" height="40"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Krd-IA-NIa" firstAttribute="bottom" secondItem="EKz-87-fd3" secondAttribute="bottom" id="0NV-sz-sDd"/>
@@ -79,15 +86,18 @@
                     <constraint firstItem="Krd-IA-NIa" firstAttribute="centerX" secondItem="8UF-gL-ySZ" secondAttribute="centerX" id="FFC-dW-j5Q"/>
                     <constraint firstItem="8UF-gL-ySZ" firstAttribute="bottom" secondItem="H1K-wN-QZk" secondAttribute="bottom" id="Fn9-5z-Dcq"/>
                     <constraint firstItem="8UF-gL-ySZ" firstAttribute="bottom" secondItem="BZ4-OH-GbU" secondAttribute="bottom" multiplier="1.2" id="FpP-34-gWt"/>
+                    <constraint firstItem="OJA-3q-c30" firstAttribute="bottom" secondItem="8xQ-sn-Sff" secondAttribute="bottom" id="JrR-00-Ami"/>
                     <constraint firstItem="Krd-IA-NIa" firstAttribute="leading" secondItem="XDi-uG-E4N" secondAttribute="leading" id="Kww-cO-e4e"/>
                     <constraint firstItem="Krd-IA-NIa" firstAttribute="width" secondItem="8UF-gL-ySZ" secondAttribute="width" multiplier="585/520" id="MIQ-1p-ddy"/>
                     <constraint firstItem="UE4-dw-JwV" firstAttribute="width" secondItem="Krd-IA-NIa" secondAttribute="width" multiplier="600/585" id="O4C-zt-Bez"/>
                     <constraint firstAttribute="bottom" secondItem="OJA-3q-c30" secondAttribute="bottom" id="Poa-Rr-blc"/>
                     <constraint firstItem="8UF-gL-ySZ" firstAttribute="width" secondItem="ys7-jI-2OF" secondAttribute="width" multiplier="520/20" id="Q7o-tn-8jh"/>
+                    <constraint firstItem="OJA-3q-c30" firstAttribute="height" secondItem="8xQ-sn-Sff" secondAttribute="height" multiplier="85/40" id="QC5-tk-JwM"/>
                     <constraint firstItem="8UF-gL-ySZ" firstAttribute="width" secondItem="H1K-wN-QZk" secondAttribute="width" multiplier="520/370" id="Qea-tU-Xlw"/>
                     <constraint firstItem="8UF-gL-ySZ" firstAttribute="height" secondItem="ys7-jI-2OF" secondAttribute="height" multiplier="38/28" id="QvA-o9-iIr"/>
                     <constraint firstItem="H1K-wN-QZk" firstAttribute="bottom" secondItem="w5P-eC-7ut" secondAttribute="bottom" multiplier="1.2" id="RT3-nb-f4g"/>
                     <constraint firstItem="Krd-IA-NIa" firstAttribute="bottom" secondItem="XDi-uG-E4N" secondAttribute="bottom" multiplier="1.2" id="Sox-6j-Bk9"/>
+                    <constraint firstItem="OJA-3q-c30" firstAttribute="centerX" secondItem="8xQ-sn-Sff" secondAttribute="centerX" id="TLS-Y6-4lW"/>
                     <constraint firstItem="Krd-IA-NIa" firstAttribute="height" secondItem="8UF-gL-ySZ" secondAttribute="height" id="Y0f-Tj-qhV"/>
                     <constraint firstItem="Krd-IA-NIa" firstAttribute="height" secondItem="XDi-uG-E4N" secondAttribute="height" multiplier="38/28" id="Yqu-ON-Iik"/>
                     <constraint firstItem="Krd-IA-NIa" firstAttribute="width" secondItem="XDi-uG-E4N" secondAttribute="width" multiplier="585/20" id="axJ-wm-ZuZ"/>
@@ -97,6 +107,7 @@
                     <constraint firstItem="H1K-wN-QZk" firstAttribute="width" secondItem="w5P-eC-7ut" secondAttribute="width" multiplier="370/150" id="iFT-4Z-tDV"/>
                     <constraint firstItem="8UF-gL-ySZ" firstAttribute="bottom" secondItem="ys7-jI-2OF" secondAttribute="bottom" id="k23-Dq-gFw"/>
                     <constraint firstItem="Krd-IA-NIa" firstAttribute="height" secondItem="EKz-87-fd3" secondAttribute="height" multiplier="38/28" id="ooF-R0-cuG"/>
+                    <constraint firstItem="OJA-3q-c30" firstAttribute="width" secondItem="8xQ-sn-Sff" secondAttribute="width" multiplier="600/400" id="p98-SN-Av4"/>
                     <constraint firstAttribute="right" secondItem="OJA-3q-c30" secondAttribute="right" id="qzs-WY-jjh"/>
                     <constraint firstItem="8UF-gL-ySZ" firstAttribute="trailing" secondItem="ys7-jI-2OF" secondAttribute="trailing" id="reS-hM-Ndh"/>
                     <constraint firstItem="UE4-dw-JwV" firstAttribute="height" secondItem="Krd-IA-NIa" secondAttribute="height" id="stc-Pp-CkS"/>
@@ -110,6 +121,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="btnBackRecruiter" destination="XDi-uG-E4N" id="jMf-ep-7Xh"/>
                 <outlet property="lblRecruiterFirstName" destination="BZ4-OH-GbU" id="IaD-3N-4iN"/>
                 <outlet property="lblRecruiterLastName" destination="w5P-eC-7ut" id="S2E-5q-MXs"/>
             </connections>

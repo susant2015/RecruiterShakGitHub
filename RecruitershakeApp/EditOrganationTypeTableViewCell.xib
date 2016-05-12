@@ -150,6 +150,11 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="btnRadioNo" destination="1tj-q2-XUg" id="Zak-FA-0xA"/>
+                <outlet property="btnRadioSureNot" destination="4qM-ue-NrV" id="Hlq-KC-IwB"/>
+                <outlet property="btnRadioYes" destination="djH-DJ-aoi" id="Dfr-WM-cKD"/>
+            </connections>
             <point key="canvasLocation" x="457" y="107.5"/>
         </tableViewCell>
     </objects>

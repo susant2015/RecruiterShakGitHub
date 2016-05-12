@@ -20,6 +20,8 @@
 #import "Constants.h"
 #import "EditProfileRecruiterService.h"
 #import "BaseViewController.h"
+#import "DashBoardRecruiterViewController.h"
+#import "RecruiterEmailTableViewCell.h"
 
 typedef NS_ENUM(NSInteger, CellContent) {
     
@@ -71,7 +73,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     [ZipCode]=@" *ZIPCODE",
     [Url]=@" *URL",
     [About]=@" *ABOUT",
-    [Camera]=@"",
+    [Camera]=@"  *Camera",
     [ProfilePicture]=@"ProfilePicture",
     [FbUrl]=@" *FACEBOOK URL",
     [TwUrl]=@" *TWITTER URL",
@@ -109,15 +111,20 @@ typedef NS_ENUM(NSInteger, CellContent) {
 
 @end
 
-@implementation EditProfileRecruiter
+@implementation EditProfileRecruiter{
+    
+    IBOutlet UITableView *tblEditRecruiter;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [editTableViewRecruiter reloadData];
     arrtxtFieldValue=[NSMutableArray arrayWithCapacity:Total];
     
     for (int i=0; i<Total; i++) {
+        
+        
         //[arrtxtFieldValue addObject:@""];
         if (i ==0){
              [arrtxtFieldValue addObject:modelLogInRecruiter.strFirst_Name];
@@ -257,8 +264,9 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strFirst_Name attributes:@{NSForegroundColorAttributeName: color}];
+        //UIColor *color = [UIColor whiteColor];
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
+         //[[NSAttributedString alloc] initWithString:modelLogInRecruiter.strFirst_Name attributes:@{NSForegroundColorAttributeName: color}];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -275,29 +283,30 @@ typedef NS_ENUM(NSInteger, CellContent) {
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"TextFieldCellName" owner:self options:nil]objectAtIndex:0];
         }
-        //[cell.txtFielfPlaceHolderName setDelegate:self];
+        [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strLast_Name attributes:@{NSForegroundColorAttributeName: color}];
-        
+       // UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strLast_Name attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
     else if(indexPath.row==2) {
         
-        static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
-        TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
+        static NSString *applicantIndexCellIdentifier=@"RecruiterEmailTableViewCell";
+        RecruiterEmailTableViewCell *cell=(RecruiterEmailTableViewCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
         if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"TextFieldCellName" owner:self options:nil]objectAtIndex:0];
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"RecruiterEmailTableViewCell" owner:self options:nil]objectAtIndex:0];
         }
-        [cell.txtFielfPlaceHolderName setDelegate:self];
-        cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
+        //[cell.lblRecruiter setDelegate:self];
+        //cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strEmail attributes:@{NSForegroundColorAttributeName: color}];
-        cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
-        cell.txtFielfPlaceHolderName.highlighted=YES;
+        //UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strEmail attributes:@{NSForegroundColorAttributeName: color}];
+        cell.lblRecruiter.text =strPlaceholders[indexPath.row];
+        cell.lblRecruiter.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        
         myCell=cell;
     }
     else if(indexPath.row==3) {
@@ -375,9 +384,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strPhone_Number attributes:@{NSForegroundColorAttributeName: color}];
+        //UIColor *color = [UIColor whiteColor];
+        //cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strPhone_Number attributes:@{NSForegroundColorAttributeName: color}];
         
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
@@ -391,8 +401,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Agency Name" attributes:@{NSForegroundColorAttributeName: color}];
+       // UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Agency Name" attributes:@{NSForegroundColorAttributeName: color}];
+        
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -407,8 +419,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ADDRESS LINE1" attributes:@{NSForegroundColorAttributeName: color}];
+        //UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ADDRESS LINE1" attributes:@{NSForegroundColorAttributeName: color}];
+        
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -423,9 +437,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ADDRESS LINE2" attributes:@{NSForegroundColorAttributeName: color}];
-        //cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+       // UIColor *color = [UIColor whiteColor];
+        //cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ADDRESS LINE2" attributes:@{NSForegroundColorAttributeName: color}];
+        
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
+        cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
     }
@@ -439,8 +455,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strCity attributes:@{NSForegroundColorAttributeName: color}];
+        //UIColor *color = [UIColor whiteColor];
+        //cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strCity attributes:@{NSForegroundColorAttributeName: color}];
+        
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -455,8 +473,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strState attributes:@{NSForegroundColorAttributeName: color}];
+        //UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strState attributes:@{NSForegroundColorAttributeName: color}];
+        
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
@@ -472,9 +492,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strCountry attributes:@{NSForegroundColorAttributeName: color}];
+       // UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strCountry attributes:@{NSForegroundColorAttributeName: color}];
         
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -489,9 +510,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strZip_Code attributes:@{NSForegroundColorAttributeName: color}];
+      //  UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strZip_Code attributes:@{NSForegroundColorAttributeName: color}];
         
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -506,9 +528,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *Url" attributes:@{NSForegroundColorAttributeName: color}];
+        //UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *Url" attributes:@{NSForegroundColorAttributeName: color}];
         
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -523,9 +546,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtAboutPlaceholder setDelegate:self];
         cell.txtAboutPlaceholder.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtAboutPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strAbout attributes:@{NSForegroundColorAttributeName: color}];
+       // UIColor *color = [UIColor whiteColor];
+      //  cell.txtAboutPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strAbout attributes:@{NSForegroundColorAttributeName: color}];
         
+        cell.txtAboutPlaceholder.placeholder =strPlaceholders[indexPath.row];
         cell.txtAboutPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -539,7 +563,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"CameraCell" owner:self options:nil]objectAtIndex:0];
         }
-        cell.lblCamera.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        cell.lblCamera.text=strPlaceholders[indexPath.row];
         myCell=cell;
     }
     
@@ -564,8 +588,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *FACEBOOK LINK" attributes:@{NSForegroundColorAttributeName: color}];
+       // UIColor *color = [UIColor whiteColor];
+        //cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *FACEBOOK LINK" attributes:@{NSForegroundColorAttributeName: color}];
+        
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
          cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
               myCell=cell;
@@ -580,8 +606,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *TWITTER LINK" attributes:@{NSForegroundColorAttributeName: color}];
+        //UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *TWITTER LINK" attributes:@{NSForegroundColorAttributeName: color}];
+        
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
+
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
       
         myCell=cell;
@@ -596,11 +625,12 @@ typedef NS_ENUM(NSInteger, CellContent) {
        [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strGplus_Url attributes:@{NSForegroundColorAttributeName: color}];
+        //UIColor *color = [UIColor whiteColor];
+       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strGplus_Url attributes:@{NSForegroundColorAttributeName: color}];
         
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
-        // strGPlusUrl=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        
         
         myCell=cell;
     }
@@ -797,6 +827,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     
     [cell.lblRecruiterFirstName setText:modelLogInRecruiter.strFirst_Name];
     [cell.lblRecruiterLastName setText:modelLogInRecruiter.strLast_Name];
+    [cell.btnBackRecruiter addTarget:self action:@selector(btnRecruiterBack) forControlEvents:UIControlEventTouchUpInside];
     return cell;
     
 }
@@ -805,6 +836,13 @@ typedef NS_ENUM(NSInteger, CellContent) {
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 86.0f;
+}
+
+-(IBAction)btnRecruiterBack{
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DashBoardRecruiterViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantViewController"];
+    [self presentViewController:Dbapvc animated:YES completion:nil];
 }
 -(IBAction)btnActionRecruiter{
     
@@ -830,11 +868,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
      //[self alertCheck];
     
     
-    if ([modelLogInRecruiter.strPassword isEqualToString:strOldPassword]) {
+    if ([modelLogInRecruiter.strPassword isEqualToString:strOldPassword] || strOldPassword.length==0) {
     
    
     
-    if (strNewPassword==strConPassword) {
+    if ([strNewPassword isEqualToString:strConPassword] ||(strNewPassword.length==0 && strConPassword.length==0)) {
         
         
         
@@ -858,7 +896,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
         }
         else{
             
-            
+          [[[UIAlertView alloc] initWithTitle:nil message:@"Edit Successfully!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            DashBoardRecruiterViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantViewController"];
+            [self presentViewController:Dbapvc animated:YES completion:nil];
+           
         }
      }]; }
     

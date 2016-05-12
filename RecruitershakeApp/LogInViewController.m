@@ -205,8 +205,8 @@
     [self.btnApplicant setSelected:NO];
     [self.btnEmployer setSelected:YES];
      self.lblDynamicallyChange.text=@"As Employer";
-    self.txtUserName.text=@"avinash.pandey";
-    self.txtPassword.text=@"12345";
+    self.txtUserName.text=@"susanta123";
+    self.txtPassword.text=@"123";
 }
 
 - (IBAction)btnRecruiterImgChange {

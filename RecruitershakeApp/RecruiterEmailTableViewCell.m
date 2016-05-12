@@ -1,18 +1,16 @@
 //
-//  HeaderButtonCell.m
+//  RecruiterEmailTableViewCell.m
 //  RecruitershakeApp
 //
-//  Created by admin on 10/03/16.
+//  Created by admin on 12/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
-#import "EditProfileViewControllerHeaderButtonCell.h"
+#import "RecruiterEmailTableViewCell.h"
 
-@implementation EditProfileViewControllerHeaderButtonCell
+@implementation RecruiterEmailTableViewCell
 
-@synthesize lblRecruiterFirstName;
-@synthesize lblRecruiterLastName;
-@synthesize btnBackRecruiter;
+@synthesize lblRecruiter;
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -22,6 +20,5 @@
 
     // Configure the view for the selected state
 }
-
 
 @end
