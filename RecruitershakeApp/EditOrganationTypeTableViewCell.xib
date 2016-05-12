@@ -45,7 +45,8 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djH-DJ-aoi" userLabel="Button-radio-yes">
                         <rect key="frame" x="230" y="14" width="15" height="15"/>
-                        <state key="normal" backgroundImage="check_button.png"/>
+                        <state key="normal" backgroundImage="uncheck-btn.png"/>
+                        <state key="selected" backgroundImage="check_button.png"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sure Not" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOI-cg-QhV">
                         <rect key="frame" x="470" y="10" width="80" height="25"/>
@@ -161,5 +162,6 @@
     <resources>
         <image name="button-1.png" width="345" height="104"/>
         <image name="check_button.png" width="40" height="40"/>
+        <image name="uncheck-btn.png" width="40" height="40"/>
     </resources>
 </document>

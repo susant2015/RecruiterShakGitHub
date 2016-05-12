@@ -110,6 +110,7 @@ NSString static *strPlaceholders[]={
     NSString  *strOrgType;
     NSMutableArray *arrtxtFieldValue;
     IBOutlet UITableView *tblEditEmployer;
+    BOOL btnYes;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -121,6 +122,7 @@ NSString static *strPlaceholders[]={
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+   
     
     arrtxtFieldValue=[NSMutableArray arrayWithCapacity:Total];
     
@@ -405,6 +407,16 @@ NSString static *strPlaceholders[]={
         
         //cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         //cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        [cell.btnRadioYes addTarget:self action:@selector(btnEmployerYes:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnRadioYes addTarget:self action:@selector(btnEmployerNot:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnRadioYes addTarget:self action:@selector(btnEmployerSurNot:) forControlEvents:UIControlEventTouchUpInside];
+        if (btnYes) {
+            cell.btnRadioYes.selected = YES;
+        }else{
+            cell.btnRadioYes.selected = NO;
+        
+        }
+        
         myCell=cell;
     }
     else if(indexPath.row==9) {
@@ -913,5 +925,17 @@ NSString static *strPlaceholders[]={
     
     [self presentViewController:Dbpvc animated:YES completion:nil];
     
+}
+
+-(IBAction)btnEmployerYes:(UIButton *)sender{
+    EditOrganationTypeTableViewCell *cell=(EditOrganationTypeTableViewCell*)[self getSuperviewOfType:[UITableViewCell class] fromView:sender];
+    if ([cell.btnRadioYes isSelected]) {
+        cell.btnRadioYes.selected= NO;
+        btnYes = NO;
+    }else{
+        cell.btnRadioYes.selected = YES;
+        btnYes = YES;
+        [cell.btnRadioYes setSelected:YES];
+    }
 }
 @end

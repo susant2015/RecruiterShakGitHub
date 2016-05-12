@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/EditProfileEmployerViewController.m"
-            timestampString = "484755449.208451"
+            timestampString = "484756906.063022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "833"
-            endingLineNumber = "833"
+            startingLineNumber = "845"
+            endingLineNumber = "845"
             landmarkName = "-btnActionEmployer"
             landmarkType = "5">
          </BreakpointContent>
@@ -538,7 +538,7 @@
                   moduleName = "RecruitershakeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Susant/proj%20struc/Source%20Day%20By%20Day/RecruitershakeApp%2008-04-16%20/RecruitershakeApp/EditProfileEmployerService.m"
-                  timestampString = "484755619.421287"
+                  timestampString = "484756907.122548"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -553,7 +553,7 @@
                   moduleName = "RecruitershakeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Susant/proj%20struc/Source%20Day%20By%20Day/RecruitershakeApp%2008-04-16%20/RecruitershakeApp/EditProfileEmployerService.m"
-                  timestampString = "484755619.421434"
+                  timestampString = "484756907.122713"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -608,6 +608,22 @@
             startingLineNumber = "52"
             endingLineNumber = "52"
             landmarkName = "-editProfileEmployerUserId:oldPassword:newPassword:conformPassword:firstName:lastName:phoneNumber:addressOne:addressTwo:city:state:country:zipCode:fbUrl:twUrl:gPlus:companyName:orgType:about:withCompletionHandler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecruitershakeApp/EditProfileEmployerViewController.m"
+            timestampString = "484756906.063022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "930"
+            endingLineNumber = "930"
+            landmarkName = "-btnEmployerYes:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
