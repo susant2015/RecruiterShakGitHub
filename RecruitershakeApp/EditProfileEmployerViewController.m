@@ -961,7 +961,7 @@ NSString static *strPlaceholders[]={
     [cell.btnRadioSureNot setSelected:NO];
     [sender setSelected:YES];
     
-    strOrgType=@"n";
+    strOrgType=@"sn";
     [tblEditEmployer reloadData];
 
 }

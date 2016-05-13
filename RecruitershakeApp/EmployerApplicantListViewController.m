@@ -14,6 +14,7 @@
 #import "EmployerApplicantListService.h"
 #import "ModelEmployerApplicantList.h"
 #import "EditProfileEmployerViewController.h"
+#import "RecruiterMyLeadsContentCell.h"
 
 @interface EmployerApplicantListViewController ()<UITextFieldDelegate>{
     
@@ -148,6 +149,8 @@
     return cell;
     
 }
+
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

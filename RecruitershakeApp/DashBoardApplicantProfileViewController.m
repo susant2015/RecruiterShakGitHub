@@ -40,7 +40,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -54,7 +54,7 @@
     if (indexPath.row==0) {
         height=75.0f;
     }
-    else if (indexPath.row==1)
+   /* else if (indexPath.row==1)
     {
         height=97.0f;
     }
@@ -77,7 +77,7 @@
     else if (indexPath.row==6)
     {
         height=82.0f;
-    }
+    }  */
        return height;
 }
 
@@ -92,16 +92,16 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ApplicantHeaderCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    //cell.imgApplicantHeader.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInApplicant.strPicture]]];
+    cell.imgApplicantHeader.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInApplicant.strPicture]]];
     cell.lblApplicantFirstName.text=modelLogInApplicant.strFirst_Name;
     cell.lblApplicantLastName.text=modelLogInApplicant.strLast_Name;
     cell.lblApplicantOccupation.text=modelLogInApplicant.strOccuption;
     cell.lblApplicantQuates.text=modelLogInApplicant.strQuotes;
-    [cell.btnEditApplicant addTarget:self action:@selector(addJobListApplicant:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.btnEditApplicant addTarget:self action:@selector(btnEditApplicants:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
     
 }
--(IBAction)addJobListApplicant:(UIButton *)sender{
+-(IBAction)btnEditApplicants:(UIButton *)sender{
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     EditProfileApplicantViewController *editpapplicantvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileApplicantViewController"];
@@ -123,7 +123,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
     }
-    else if (indexPath.row==1)
+ /*   else if (indexPath.row==1)
     {
         static NSString *applicantIndexCellIdentifier2=@"ApplicantIndexCell";
         ApplicantIndexCell *cell=(ApplicantIndexCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier2];
@@ -188,7 +188,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
         
-    }
+    }   */
     
 
 

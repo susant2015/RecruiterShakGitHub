@@ -1879,6 +1879,9 @@
                             <constraint firstAttribute="trailing" secondItem="WhX-73-ctV" secondAttribute="trailing" id="yHK-aw-Gpo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editTableViewEmployer" destination="WhX-73-ctV" id="Oax-Mg-Bhg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8W-sx-buq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2266,7 +2269,7 @@
         <!--Dash Board Applicant Profile View Controller-->
         <scene sceneID="ZwW-gb-TCf">
             <objects>
-                <viewController storyboardIdentifier="ApplicantProfileViewController" id="fCP-c6-haX" customClass="DashBoardApplicantProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashBoardApplicantProfileViewController" id="fCP-c6-haX" customClass="DashBoardApplicantProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dr0-q2-GfV"/>
                         <viewControllerLayoutGuide type="bottom" id="cnd-2a-QTq"/>

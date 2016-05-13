@@ -149,7 +149,7 @@
                    
                     
                     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    CustomSectionViewController *Apvc = [sb instantiateViewControllerWithIdentifier:@"CustomSectionViewController"];
+                    DashBoardApplicantProfileViewController *Apvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantProfileViewController"];
                     modelLogInApplicant=[[ModelLogInApplicant alloc]initWithDictionary:result];
                     
                     [self presentViewController:Apvc animated:YES completion:nil];

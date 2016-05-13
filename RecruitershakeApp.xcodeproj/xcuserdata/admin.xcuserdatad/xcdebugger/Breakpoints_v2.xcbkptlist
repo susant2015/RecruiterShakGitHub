@@ -153,22 +153,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecruitershakeApp/DashBoardApplicantProfileViewController.m"
-            timestampString = "482400338.112084"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-tableView:viewForHeaderInSection:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/EditProfileRecruiterViewController.m"
             timestampString = "482668861.245857"
             startingColumnNumber = "9223372036854775807"
@@ -346,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/EmployerApplicantListViewController.m"
-            timestampString = "484825023.290721"
+            timestampString = "484829932.363307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -522,7 +506,7 @@
                   moduleName = "RecruitershakeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Susant/proj%20struc/Source%20Day%20By%20Day/RecruitershakeApp%2008-04-16%20/RecruitershakeApp/EditProfileEmployerService.m"
-                  timestampString = "484828186.074376"
+                  timestampString = "484844357.737903"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -537,7 +521,7 @@
                   moduleName = "RecruitershakeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Susant/proj%20struc/Source%20Day%20By%20Day/RecruitershakeApp%2008-04-16%20/RecruitershakeApp/EditProfileEmployerService.m"
-                  timestampString = "484828186.074544"
+                  timestampString = "484844357.738066"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -618,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/EmployerApplicantListViewController.m"
-            timestampString = "484825723.773866"
+            timestampString = "484829823.257068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-tableView:viewForHeaderInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -634,11 +618,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/EmployerApplicantListViewController.m"
-            timestampString = "484825731.166292"
+            timestampString = "484829932.363307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "-btnEmployerEditProfile:"
             landmarkType = "5">
          </BreakpointContent>
