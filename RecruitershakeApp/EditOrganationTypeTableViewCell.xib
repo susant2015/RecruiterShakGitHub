@@ -78,7 +78,8 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qM-ue-NrV" userLabel="Button-radio-surenot">
                         <rect key="frame" x="445" y="14" width="15" height="15"/>
-                        <state key="normal" backgroundImage="check_button.png"/>
+                        <state key="normal" backgroundImage="uncheck-btn.png"/>
+                        <state key="selected" backgroundImage="check_button.png"/>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4YF-CM-MeA" userLabel="img-radio-no">
                         <rect key="frame" x="250" y="0.0" width="115" height="38"/>
@@ -87,7 +88,8 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tj-q2-XUg" userLabel="Button-radio-no">
                         <rect key="frame" x="350" y="14" width="15" height="15"/>
-                        <state key="normal" backgroundImage="check_button.png"/>
+                        <state key="normal" backgroundImage="uncheck-btn.png"/>
+                        <state key="selected" backgroundImage="check_button.png"/>
                     </button>
                 </subviews>
                 <constraints>

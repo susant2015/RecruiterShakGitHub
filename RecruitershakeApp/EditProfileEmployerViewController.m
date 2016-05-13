@@ -110,7 +110,7 @@ NSString static *strPlaceholders[]={
     NSString  *strOrgType;
     NSMutableArray *arrtxtFieldValue;
     IBOutlet UITableView *tblEditEmployer;
-    BOOL btnYes;
+    BOOL isOrgType;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -122,7 +122,7 @@ NSString static *strPlaceholders[]={
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   
+    isOrgType=NO;
     
     arrtxtFieldValue=[NSMutableArray arrayWithCapacity:Total];
     
@@ -408,14 +408,18 @@ NSString static *strPlaceholders[]={
         //cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         //cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         [cell.btnRadioYes addTarget:self action:@selector(btnEmployerYes:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.btnRadioYes addTarget:self action:@selector(btnEmployerNot:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.btnRadioYes addTarget:self action:@selector(btnEmployerSurNot:) forControlEvents:UIControlEventTouchUpInside];
-        if (btnYes) {
-            cell.btnRadioYes.selected = YES;
-        }else{
-            cell.btnRadioYes.selected = NO;
+        [cell.btnRadioNo addTarget:self action:@selector(btnEmployerNot:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnRadioSureNot addTarget:self action:@selector(btnEmployerSureNot:) forControlEvents:UIControlEventTouchUpInside];
         
-        }
+        
+       // if (isOrgType) {
+            //cell.btnRadioYes.selected = YES;
+           
+        //}else{
+            //cell.btnRadioYes.selected = NO;
+            
+        
+        //}
         
         myCell=cell;
     }
@@ -929,13 +933,36 @@ NSString static *strPlaceholders[]={
 
 -(IBAction)btnEmployerYes:(UIButton *)sender{
     EditOrganationTypeTableViewCell *cell=(EditOrganationTypeTableViewCell*)[self getSuperviewOfType:[UITableViewCell class] fromView:sender];
-    if ([cell.btnRadioYes isSelected]) {
-        cell.btnRadioYes.selected= NO;
-        btnYes = NO;
-    }else{
-        cell.btnRadioYes.selected = YES;
-        btnYes = YES;
-        [cell.btnRadioYes setSelected:YES];
-    }
+    [cell.btnRadioYes setSelected:NO];
+    [cell.btnRadioNo setSelected:NO];
+    [cell.btnRadioSureNot setSelected:NO];
+    [sender setSelected:YES];
+    strOrgType=@"y";
+    
+    [tblEditEmployer reloadData];
+}
+
+
+-(IBAction)btnEmployerNot:(UIButton*)sender{
+    EditOrganationTypeTableViewCell *cell=(EditOrganationTypeTableViewCell*)[self getSuperviewOfType:[UITableViewCell class] fromView:sender];
+    [cell.btnRadioYes setSelected:NO];
+    [cell.btnRadioNo setSelected:NO];
+    [cell.btnRadioSureNot setSelected:NO];
+    [sender setSelected:YES];
+    
+    strOrgType=@"n";
+    [tblEditEmployer reloadData];
+}
+
+-(IBAction)btnEmployerSureNot:(UIButton*)sender{
+    EditOrganationTypeTableViewCell *cell=(EditOrganationTypeTableViewCell*)[self getSuperviewOfType:[UITableViewCell class] fromView:sender];
+    [cell.btnRadioYes setSelected:NO];
+    [cell.btnRadioNo setSelected:NO];
+    [cell.btnRadioSureNot setSelected:NO];
+    [sender setSelected:YES];
+    
+    strOrgType=@"n";
+    [tblEditEmployer reloadData];
+
 }
 @end

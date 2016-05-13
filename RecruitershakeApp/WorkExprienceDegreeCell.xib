@@ -73,7 +73,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </label>
@@ -142,7 +142,7 @@
             <connections>
                 <outlet property="lblDegree" destination="8K1-jt-pGG" id="6dG-aZ-KDa"/>
             </connections>
-            <point key="canvasLocation" x="395" y="137"/>
+            <point key="canvasLocation" x="128" y="66"/>
         </tableViewCell>
     </objects>
     <resources>

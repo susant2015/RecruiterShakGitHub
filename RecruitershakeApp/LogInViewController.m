@@ -159,14 +159,6 @@
                     [[[UIAlertView alloc] initWithTitle:nil message:@"LogIn Success" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
                     
                     
-                    
-                    NSString *strEquals=[result objectForKey:@"membership_type"];
-                    
-                    
-                    NSLog(@"THe str is %@",strEquals);
-                    if ([strEquals isEqualToString:@"0"]) {
-                        
-                   
                     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     DashBoardRecruiterViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantViewController"];
                     //Dbapvc.distRecruiter=result;
@@ -175,7 +167,7 @@
                    
                     [self presentViewController:Dbapvc animated:YES completion:nil];
                         
-                    }
+                    
                     
                 }
                 
@@ -205,8 +197,8 @@
     [self.btnApplicant setSelected:NO];
     [self.btnEmployer setSelected:YES];
      self.lblDynamicallyChange.text=@"As Employer";
-    self.txtUserName.text=@"susanta123";
-    self.txtPassword.text=@"123";
+    self.txtUserName.text=@"avinash.pandey";
+    self.txtPassword.text=@"12345";
 }
 
 - (IBAction)btnRecruiterImgChange {
@@ -215,7 +207,7 @@
     [self.btnApplicant setSelected:NO];
     [self.btnEmployer setSelected:NO];
      self.lblDynamicallyChange.text=@"As Recruiter";
-    self.txtUserName.text=@"susa123";
+    self.txtUserName.text=@"souvik.das";
     self.txtPassword.text=@"12345";
     
     }

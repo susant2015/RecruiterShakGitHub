@@ -13,6 +13,7 @@
 #import "Constants.h"
 #import "EmployerApplicantListService.h"
 #import "ModelEmployerApplicantList.h"
+#import "EditProfileEmployerViewController.h"
 
 @interface EmployerApplicantListViewController ()<UITextFieldDelegate>{
     
@@ -142,6 +143,7 @@
     cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
     cell.imgEmployer.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:modelLogInEmployer.strPicture]]];
     cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
+     [cell.btnEditEmployer addTarget:self action:@selector(btnEmployerEditProfile:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
     
@@ -189,4 +191,10 @@
     
 }
 
+-(IBAction)btnEmployerEditProfile:(UIButton *)sender{
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditProfileEmployerViewController *Edit_P_Empvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileEmployerViewController"];
+    [self presentViewController:Edit_P_Empvc animated:YES completion:nil];
+}
 @end

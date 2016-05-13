@@ -10,6 +10,7 @@
 #import "EmployerEditService.h"
 #import "Constants.h"
 #import "ModelEmploerEdit.h"
+#import "EmployerJobListViewController.h"
 
 @interface EmploerEditJobViewController ()<UITextFieldDelegate>
 
@@ -184,6 +185,10 @@
             
             
             [[[UIAlertView alloc] initWithTitle:nil message:@"inserted your job Succesfully" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            EmployerJobListViewController *Apvc = [sb instantiateViewControllerWithIdentifier:@"EmployerJobListViewController"];
+            
+            [self presentViewController:Apvc animated:YES completion:nil];
             
         }
     }];

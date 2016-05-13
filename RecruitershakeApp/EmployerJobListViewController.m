@@ -17,6 +17,7 @@
 #import "BaseViewController.h"
 #import "EmployerDeleteService.h"
 #import "EmploerEditJobViewController.h"
+#import "EditProfileEmployerViewController.h"
 @interface EmployerJobListViewController (){
     
     NSMutableArray *mutableArrJobList;
@@ -144,6 +145,7 @@
     cell.lblEmployerLastName.text=modelLogInEmployer.strLast_Name;
     cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
     [cell.btnAddCell addTarget:self action:@selector(addJobListEmployer) forControlEvents:UIControlEventTouchUpInside];
+    [cell.btnEditEmployer addTarget:self action:@selector(btnEditEmployers) forControlEvents:UIControlEventTouchUpInside];
    
         return cell;
     
@@ -267,5 +269,11 @@
     [self presentViewController:Addjobvc animated:YES completion:nil];
 }
 
+#pragma editemployer
 
+-(void)btnEditEmployers{
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditProfileEmployerViewController *Addjobvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileEmployerViewController"];
+    [self presentViewController:Addjobvc animated:YES completion:nil];
+}
 @end
