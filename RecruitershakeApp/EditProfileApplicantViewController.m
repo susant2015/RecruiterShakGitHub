@@ -793,7 +793,7 @@ NSString static *strPlaceholders[]={
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strProfilePicture=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strCamera atIndex:indexPath.row];
+        [arrtxtFieldValue insertObject:strProfilePicture atIndex:indexPath.row];
         
         
         
@@ -812,6 +812,79 @@ NSString static *strPlaceholders[]={
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strGPlusUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [arrtxtFieldValue insertObject:strGPlusUrl atIndex:indexPath.row];
+    }
+    
+}
+
+-(IBAction)btnActionRecruiter{
+    
+    strOldPassword=[arrtxtFieldValue objectAtIndex:4];
+    strNewPassword=[arrtxtFieldValue objectAtIndex:5];
+    strConPassword=[arrtxtFieldValue objectAtIndex:6];
+    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
+    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
+    strPhone_Number=[arrtxtFieldValue objectAtIndex:7];
+    strAddress_Line1=[arrtxtFieldValue objectAtIndex:9];
+    strAddress_Line2=[arrtxtFieldValue objectAtIndex:10];
+    strCity=[arrtxtFieldValue objectAtIndex:11];
+    strState=[arrtxtFieldValue objectAtIndex:12];
+    strCountry=[arrtxtFieldValue objectAtIndex:13];
+    strZip_Code=[arrtxtFieldValue objectAtIndex:14];
+    strFbUrl=[arrtxtFieldValue objectAtIndex:19];
+    strTwUrl=[arrtxtFieldValue objectAtIndex:20];
+    strGPlusUrl=[arrtxtFieldValue objectAtIndex:21];
+    strOccupation=[arrtxtFieldValue objectAtIndex:8];
+    strSkill=[arrtxtFieldValue objectAtIndex:15];
+    strAbout=[arrtxtFieldValue objectAtIndex:16];
+    strQutes=[arrtxtFieldValue objectAtIndex:17];
+    
+    //[self alertCheck];
+    
+    
+    if ([modelLogInRecruiter.strPassword isEqualToString:strOldPassword] || strOldPassword.length==0) {
+        
+        
+        
+        if ([strNewPassword isEqualToString:strConPassword] ||(strNewPassword.length==0 && strConPassword.length==0)) {
+            
+            
+            
+            NSLog(@"The arr value is%@",arrtxtFieldValue);
+            
+            [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl agencyName:strAgecyName url:strUrl about:strAbout withCompletionHandler:^(id result, BOOL isError, NSString *strMsg)
+             
+             {
+                 if(isError){
+                     
+                     if(strMsg.length>0){
+                         [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                         
+                         
+                     }
+                     else{
+                         //[self alertStatus:SomethingWrong :nil];
+                         
+                     }
+                     
+                 }
+                 else{
+                     
+                     [[[UIAlertView alloc] initWithTitle:nil message:@"Edit Successfully!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                     DashBoardRecruiterViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantViewController"];
+                     [self presentViewController:Dbapvc animated:YES completion:nil];
+                     
+                 }
+             }]; }
+        
+        else{
+            
+            [[[UIAlertView alloc] initWithTitle:nil message:@"Password mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        }
+    }
+    else{
+        [[[UIAlertView alloc] initWithTitle:nil message:@"OldPassword mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        
     }
     
 }
