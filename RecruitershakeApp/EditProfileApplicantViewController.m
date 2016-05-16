@@ -19,7 +19,7 @@
 #import "ModelLogInApplicant.h"
 #import "Constants.h"
 #import "EditProfileApplicantService.h"
-
+#import "DashBoardApplicantProfileViewController.h"
 typedef NS_ENUM(NSInteger, CellContent) {
     
     FirstName,
@@ -106,6 +106,7 @@ NSString static *strPlaceholders[]={
     NSString  *strAbout;
     NSString *strCamera;
     NSString *strBtnEdit;
+    NSString *strUserName;
     NSMutableArray *arrtxtFieldValue;
     IBOutlet UITableView *editTableViewEmployer;
 }
@@ -115,7 +116,7 @@ NSString static *strPlaceholders[]={
     [super viewDidLoad];
     arrtxtFieldValue=[NSMutableArray arrayWithCapacity:Total];
     
-    for (int i=0; i<Total; i++) {
+    for (int i=0; i<Total; ++i) {
         
         
         //[arrtxtFieldValue addObject:@""];
@@ -155,11 +156,11 @@ NSString static *strPlaceholders[]={
             
         }
         else if (i==9){
-            [arrtxtFieldValue addObject:modelLogInApplicant.strAddress];
+            [arrtxtFieldValue addObject:modelLogInApplicant.strAddress1];
             
         }
         else if (i==10){
-            [arrtxtFieldValue addObject:@""];
+            [arrtxtFieldValue addObject:modelLogInApplicant.strAddress2];
             
         }
         else if (i==11){
@@ -179,21 +180,18 @@ NSString static *strPlaceholders[]={
             
         }
         else if (i==15){
-            [arrtxtFieldValue addObject:@""];
+            [arrtxtFieldValue addObject:modelLogInApplicant.strSkill];
             
         }
         else if (i==16){
             [arrtxtFieldValue addObject:modelLogInApplicant.strAbout];
             
         }
-        else if (i==16){
+        else if (i==17){
             [arrtxtFieldValue addObject:modelLogInApplicant.strQuotes];
             
         }
-        else if (i==17){
-            [arrtxtFieldValue addObject:@""];
-            
-        }
+       
         else if (i==18){
             [arrtxtFieldValue addObject:@""];
             
@@ -202,27 +200,24 @@ NSString static *strPlaceholders[]={
             [arrtxtFieldValue addObject:@""];
             
         }
+        
         else if (i==20){
-            [arrtxtFieldValue addObject:@""];
-            
-        }
-        else if (i==21){
             [arrtxtFieldValue addObject:modelLogInApplicant.strFaceBook_Url];
             
         }
-        else if (i==22){
+        else if (i==21){
             [arrtxtFieldValue addObject:modelLogInApplicant.strTwitter_Url];
             
         }
-        else if (i==23){
+        else if (i==22){
             [arrtxtFieldValue addObject:modelLogInApplicant.strGplus_Url];
             
         }
-        else if (i==24){
+        else if (i==23){
             [arrtxtFieldValue addObject:@""];
             
         }
-        NSLog(@"The space:%@",arrtxtFieldValue);
+       
     }
 }
 
@@ -249,13 +244,7 @@ NSString static *strPlaceholders[]={
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    CGFloat height=0.0f;
-    if (section==1) {
-        height=56.0f;
-    }
-    else if (section==2){
-        height=22.0f;
-    }
+    
     return 24;
 }
 
@@ -598,7 +587,7 @@ NSString static *strPlaceholders[]={
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"BtnUpdateProfile" owner:self options:nil]objectAtIndex:0];
         }
-        
+        [cell.btnEditUpdate addTarget:self action:@selector(btnActionApplicant) forControlEvents:UIControlEventTouchUpInside];
         myCell=cell;
     }
     
@@ -826,27 +815,30 @@ NSString static *strPlaceholders[]={
     
 }
 
--(IBAction)btnActionRecruiter{
+-(IBAction)btnActionApplicant{
     
+    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
+    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
     strOldPassword=[arrtxtFieldValue objectAtIndex:4];
     strNewPassword=[arrtxtFieldValue objectAtIndex:5];
     strConPassword=[arrtxtFieldValue objectAtIndex:6];
-    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
-    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
+    
     strPhone_Number=[arrtxtFieldValue objectAtIndex:7];
+    strOccupation=[arrtxtFieldValue objectAtIndex:8];
     strAddress_Line1=[arrtxtFieldValue objectAtIndex:9];
     strAddress_Line2=[arrtxtFieldValue objectAtIndex:10];
     strCity=[arrtxtFieldValue objectAtIndex:11];
     strState=[arrtxtFieldValue objectAtIndex:12];
     strCountry=[arrtxtFieldValue objectAtIndex:13];
     strZip_Code=[arrtxtFieldValue objectAtIndex:14];
-    strFbUrl=[arrtxtFieldValue objectAtIndex:20];
-    strTwUrl=[arrtxtFieldValue objectAtIndex:21];
-    strGPlusUrl=[arrtxtFieldValue objectAtIndex:21];
-    strOccupation=[arrtxtFieldValue objectAtIndex:8];
     strSkill=[arrtxtFieldValue objectAtIndex:15];
     strAbout=[arrtxtFieldValue objectAtIndex:16];
     strQutes=[arrtxtFieldValue objectAtIndex:17];
+    strFbUrl=[arrtxtFieldValue objectAtIndex:20];
+    strTwUrl=[arrtxtFieldValue objectAtIndex:21];
+    strGPlusUrl=[arrtxtFieldValue objectAtIndex:22];
+    
+    
     
     //[self alertCheck];
     
@@ -868,8 +860,8 @@ NSString static *strPlaceholders[]={
                  if(isError){
                      
                      if(strMsg.length>0){
-                         [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-                         
+                        
+                         [self showAlertWithTitle:nil andMessage:strMsg];
                          
                      }
                      else{
@@ -880,21 +872,25 @@ NSString static *strPlaceholders[]={
                  }
                  else{
                      
-                     [[[UIAlertView alloc] initWithTitle:nil message:@"Edit Successfully!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                    
+                     [self showAlertWithTitle:nil andMessage:@"Edit Successfully!"];
                      UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                     EditProfileApplicantViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileApplicantViewController"];
+                     DashBoardApplicantProfileViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantProfileViewController"];
                      [self presentViewController:Dbapvc animated:YES completion:nil];
                      
                  }
-             }]; }
+             }];
+        }
         
         else{
             
-            [[[UIAlertView alloc] initWithTitle:nil message:@"Password mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+          
+             [self showAlertWithTitle:nil andMessage:@"Password mismatched"];
         }
     }
     else{
-        [[[UIAlertView alloc] initWithTitle:nil message:@"OldPassword mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+       
+         [self showAlertWithTitle:nil andMessage:@"OldPassword mismatched"];
         
     }
     

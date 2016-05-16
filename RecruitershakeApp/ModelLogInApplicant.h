@@ -12,7 +12,8 @@
 
 @property(weak,nonatomic)NSString *strApplicant_Id;
 @property(weak,nonatomic)NSString *strAbout;
-@property(weak,nonatomic)NSString *strAddress;
+@property(weak,nonatomic)NSString *strAddress1;
+@property(weak,nonatomic)NSString *strAddress2;
 @property(weak,nonatomic)NSString *strAgency_Name;
 @property(weak,nonatomic)NSString *strCity;
 @property(weak,nonatomic)NSString *strCountry;
@@ -27,6 +28,7 @@
 @property(weak,nonatomic)NSString *strPhone_Number;
 @property(weak,nonatomic)NSString *strPicture;
 @property(weak,nonatomic)NSString *strQuotes;
+@property(weak,nonatomic)NSString *strSkill;
 @property(weak,nonatomic)NSString *strState;
 @property(weak,nonatomic)NSString *strSubscription_Date;
 @property(weak,nonatomic)NSString *strTwitter_Url;

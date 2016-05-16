@@ -29,11 +29,17 @@
         }
         
         
-        if ([dict objectForKey:@"address"]&&![[dict objectForKey:@"address"] isKindOfClass:[NSNull class]]) {
-            self.strAddress =[dict objectForKey:@"address"];
-            NSLog(@"The address is%@",self.strAddress);
+        if ([dict objectForKey:@"address2"]&&![[dict objectForKey:@"address2"] isKindOfClass:[NSNull class]]) {
+            self.strAddress2 =[dict objectForKey:@"address2"];
+            
         }else{
-            self.strAddress =@"";
+            self.strAddress2 =@"";
+        }
+        if ([dict objectForKey:@"address1"]&&![[dict objectForKey:@"address1"] isKindOfClass:[NSNull class]]) {
+            self.strAddress1 =[dict objectForKey:@"address1"];
+           
+        }else{
+            self.strAddress1 =@"";
         }
         if ([dict objectForKey:@"city"]&&![[dict objectForKey:@"city"] isKindOfClass:[NSNull class]]) {
             self.strCity =[dict objectForKey:@"city"];
@@ -158,16 +164,12 @@
 }
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
-        self.strAddress = [decoder decodeObjectForKey:@"address"];
-        NSLog(@"The decider address is:%@",self.strAddress);
+        self.strAddress1 = [decoder decodeObjectForKey:@"address1"];
+        NSLog(@"The decider address is:%@",self.strAddress1);
     }
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:_strAddress forKey:@"address"];
-     NSLog(@"The ecoder address is:%@",self.strAddress);
-}
 
 
 @end

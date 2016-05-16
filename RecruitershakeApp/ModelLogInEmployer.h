@@ -11,7 +11,9 @@
 @interface ModelLogInEmployer : ModelBaseClass<NSCoding>
 
 @property(strong,nonatomic) NSString *strAbout;
-@property(strong,nonatomic) NSString *strAddress;
+@property(strong,nonatomic) NSString *strAddress1;
+@property(strong,nonatomic) NSString *strAddress2;
+
 @property(strong,nonatomic) NSString *strPhone_Number;
 @property(strong,nonatomic) NSString *strCity;
 @property(strong,nonatomic) NSString *strCompany_Name;

@@ -119,10 +119,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [editTableViewRecruiter reloadData];
+    //[editTableViewRecruiter reloadData];
     arrtxtFieldValue=[NSMutableArray arrayWithCapacity:Total];
     
-    for (int i=0; i<Total; i++) {
+    for (int i=0; i<Total; ++i) {
         
         
         //[arrtxtFieldValue addObject:@""];
@@ -162,7 +162,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
             
         }
         else if (i==9){
-            [arrtxtFieldValue addObject:modelLogInRecruiter.strAddress];
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strAddress1];
+            
+        }
+        else if (i==10){
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strAddress2];
             
         }
         else if (i==11){
@@ -269,7 +273,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
          //[[NSAttributedString alloc] initWithString:modelLogInRecruiter.strFirst_Name attributes:@{NSForegroundColorAttributeName: color}];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
       
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
@@ -319,8 +323,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strUser_Name attributes:@{NSForegroundColorAttributeName: color}];
+       cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
@@ -335,9 +338,8 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtPasswordPlaceholder setDelegate:self];
         cell.txtPasswordPlaceholder.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtPasswordPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *OLD PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
-        //cell.txtPasswordPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        cell.txtPasswordPlaceholder.placeholder =strPlaceholders[indexPath.row];
+        cell.txtPasswordPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
     }
@@ -352,8 +354,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtPasswordPlaceholder setDelegate:self];
         cell.txtPasswordPlaceholder.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtPasswordPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *NEW PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtPasswordPlaceholder.placeholder =strPlaceholders[indexPath.row];
         cell.txtPasswordPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
     }
@@ -367,8 +368,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtPasswordPlaceholder setDelegate:self];
         cell.txtPasswordPlaceholder.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        UIColor *color = [UIColor whiteColor];
-        cell.txtPasswordPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *CONFIRM PASSWORD" attributes:@{NSForegroundColorAttributeName: color}];
+        cell.txtPasswordPlaceholder.placeholder =strPlaceholders[indexPath.row];
         
         cell.txtPasswordPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
@@ -383,9 +383,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         }
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
-        cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        //UIColor *color = [UIColor whiteColor];
-        //cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strPhone_Number attributes:@{NSForegroundColorAttributeName: color}];
+        
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -401,8 +399,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       // UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Agency Name" attributes:@{NSForegroundColorAttributeName: color}];
+       
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -419,8 +416,6 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        //UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ADDRESS LINE1" attributes:@{NSForegroundColorAttributeName: color}];
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -437,8 +432,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       // UIColor *color = [UIColor whiteColor];
-        //cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *ADDRESS LINE2" attributes:@{NSForegroundColorAttributeName: color}];
+      
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -455,8 +449,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        //UIColor *color = [UIColor whiteColor];
-        //cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strCity attributes:@{NSForegroundColorAttributeName: color}];
+        
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -473,8 +466,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        //UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strState attributes:@{NSForegroundColorAttributeName: color}];
+        
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         
@@ -492,8 +484,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       // UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strCountry attributes:@{NSForegroundColorAttributeName: color}];
+       
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -563,6 +554,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"CameraCell" owner:self options:nil]objectAtIndex:0];
         }
+        cell.lblCamera.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         cell.lblCamera.text=strPlaceholders[indexPath.row];
         myCell=cell;
     }
@@ -588,8 +580,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       // UIColor *color = [UIColor whiteColor];
-        //cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *FACEBOOK LINK" attributes:@{NSForegroundColorAttributeName: color}];
+       
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
          cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -606,8 +597,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        //UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *TWITTER LINK" attributes:@{NSForegroundColorAttributeName: color}];
+        
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
 
@@ -625,8 +615,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
        [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        //UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strGplus_Url attributes:@{NSForegroundColorAttributeName: color}];
+       
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -846,24 +835,27 @@ typedef NS_ENUM(NSInteger, CellContent) {
 }
 -(IBAction)btnActionRecruiter{
     
+    
+    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
+    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
     strOldPassword=[arrtxtFieldValue objectAtIndex:4];
     strNewPassword=[arrtxtFieldValue objectAtIndex:5];
     strConPassword=[arrtxtFieldValue objectAtIndex:6];
-    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
-    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
     strPhone_Number=[arrtxtFieldValue objectAtIndex:7];
+     strAgecyName=[arrtxtFieldValue objectAtIndex:8];
     strAddress_Line1=[arrtxtFieldValue objectAtIndex:9];
     strAddress_Line2=[arrtxtFieldValue objectAtIndex:10];
     strCity=[arrtxtFieldValue objectAtIndex:11];
     strState=[arrtxtFieldValue objectAtIndex:12];
     strCountry=[arrtxtFieldValue objectAtIndex:13];
     strZip_Code=[arrtxtFieldValue objectAtIndex:14];
+    strUrl=[arrtxtFieldValue objectAtIndex:15];
+    strAbout=[arrtxtFieldValue objectAtIndex:16];
     strFbUrl=[arrtxtFieldValue objectAtIndex:19];
     strTwUrl=[arrtxtFieldValue objectAtIndex:20];
     strGPlusUrl=[arrtxtFieldValue objectAtIndex:21];
-    strAgecyName=[arrtxtFieldValue objectAtIndex:8];
-    strUrl=[arrtxtFieldValue objectAtIndex:15];
-    strAbout=[arrtxtFieldValue objectAtIndex:16];
+   
+    
     
      //[self alertCheck];
     

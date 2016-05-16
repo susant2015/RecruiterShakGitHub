@@ -32,11 +32,21 @@
         }else{
             self.strAbout =@"";
         }
-        
-        if ([dict objectForKey:@"address"]&&![[dict objectForKey:@"address"] isKindOfClass:[NSNull class]]) {
-            self.strAddress =[dict objectForKey:@"address"];
+        if ([dict objectForKey:@"skills"]&&![[dict objectForKey:@"skills"] isKindOfClass:[NSNull class]]) {
+            self.strSkill =[dict objectForKey:@"skills"];
         }else{
-            self.strAbout =@"";
+            self.strSkill =@"";
+        }
+        
+        if ([dict objectForKey:@"address1"]&&![[dict objectForKey:@"address1"] isKindOfClass:[NSNull class]]) {
+            self.strAddress1 =[dict objectForKey:@"address1"];
+        }else{
+            self.strAddress1 =@"";
+        }
+        if ([dict objectForKey:@"address2"]&&![[dict objectForKey:@"address2"] isKindOfClass:[NSNull class]]) {
+            self.strAddress2 =[dict objectForKey:@"address2"];
+        }else{
+            self.strAddress2 =@"";
         }
         
         if ([dict objectForKey:@"agency_name"]&&![[dict objectForKey:@"agency_name"] isKindOfClass:[NSNull class]]) {

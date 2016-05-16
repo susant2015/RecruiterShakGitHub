@@ -135,7 +135,7 @@
                    
                     modelLogInEmployer=[[ModelLogInEmployer alloc]initWithDictionary:result];
                    
-                        NSLog(@"THe model dict is: %@",modelLogInEmployer.strAddress);
+                        NSLog(@"THe model dict is: %@",modelLogInEmployer.strAddress1);
                    
                    
                       [self presentViewController:Dbpvc animated:YES completion:nil];
@@ -219,8 +219,8 @@
     [self.btnApplicant setSelected:YES];
     [self.btnEmployer setSelected:NO];
      self.lblDynamicallyChange.text=@"As Applicant";
-    self.txtUserName.text=@"subham.dutta";
-    self.txtPassword.text=@"12345";
+    self.txtUserName.text=@"raj.das";
+    self.txtPassword.text=@"1234";
 }
 
 

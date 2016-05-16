@@ -12,7 +12,8 @@
 
 @property(weak,nonatomic)NSString *strRecruiter_Id;
 @property(weak,nonatomic)NSString *strAbout;
-@property(weak,nonatomic)NSString *strAddress;
+@property(weak,nonatomic)NSString *strAddress1;
+@property(weak,nonatomic)NSString *strAddress2;
 @property(weak,nonatomic)NSString *strAgency_Name;
 @property(weak,nonatomic)NSString *strCity;
 @property(weak,nonatomic)NSString *strCountry;

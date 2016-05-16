@@ -170,7 +170,7 @@ NSString static *strPlaceholders[]={
             
         }
         else if (i==10){
-            [arrtxtFieldValue addObject:modelLogInEmployer.strAddress];
+            [arrtxtFieldValue addObject:modelLogInEmployer.strAddress1];
             
         }
         else if (i==11){
