@@ -804,7 +804,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YtT-HI-uAg" kind="show" id="rbi-Ve-69x"/>
+                                    <segue destination="pZo-eX-z85" kind="show" id="NXK-2c-Mk4"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="forget_email_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="OqH-1A-flV" userLabel="txtpassword">
@@ -2373,6 +2373,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsd-Zu-b2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5" y="2006"/>
+        </scene>
+        <!--Register Slider View Controller-->
+        <scene sceneID="5D1-w4-Q3o">
+            <objects>
+                <viewController storyboardIdentifier="RegisterSliderViewController" id="pZo-eX-z85" customClass="RegisterSliderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QSz-jb-aPN"/>
+                        <viewControllerLayoutGuide type="bottom" id="UNu-r0-g8Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CtQ-ea-oXf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xfy-vY-zaQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leading" secondItem="Xfy-vY-zaQ" secondAttribute="leading" id="Njh-1R-yGF"/>
+                            <constraint firstAttribute="trailing" secondItem="Xfy-vY-zaQ" secondAttribute="trailing" id="RQW-BN-P7U"/>
+                            <constraint firstAttribute="top" secondItem="Xfy-vY-zaQ" secondAttribute="top" id="gXG-2n-kop"/>
+                            <constraint firstItem="UNu-r0-g8Q" firstAttribute="top" secondItem="Xfy-vY-zaQ" secondAttribute="bottom" id="jx4-6P-qNJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8X-iB-sn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1252" y="1207"/>
         </scene>
         <!--About Applicants View Controller-->
         <scene sceneID="58V-vA-Nbr">

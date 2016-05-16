@@ -44,6 +44,9 @@
 		842C7B521C96C381009B18C5 /* Employerapplicantlistcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7B501C96C381009B18C5 /* Employerapplicantlistcell.m */; };
 		842C7B531C96C381009B18C5 /* Employerapplicantlistcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C7B511C96C381009B18C5 /* Employerapplicantlistcell.xib */; };
 		842C7B571C96C6E5009B18C5 /* EmployerApplicantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C7B561C96C6E5009B18C5 /* EmployerApplicantListViewController.m */; };
+		84383B9D1CEA07F400789AE6 /* RegisterSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84383B9C1CEA07F400789AE6 /* RegisterSliderViewController.m */; };
+		84383BA11CEA0B3600789AE6 /* SliderContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84383BA01CEA0B3600789AE6 /* SliderContainerViewController.m */; };
+		84383BA41CEA0BF400789AE6 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84383BA31CEA0BF400789AE6 /* YSLScrollMenuView.m */; };
 		843B3DA21C92C5550014D05A /* EmployerJobListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B3DA11C92C5550014D05A /* EmployerJobListViewController.m */; };
 		843B3DA81C92CA020014D05A /* Employerjoblistheadercell.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B3DA61C92CA020014D05A /* Employerjoblistheadercell.m */; };
 		843B3DA91C92CA020014D05A /* Employerjoblistheadercell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B3DA71C92CA020014D05A /* Employerjoblistheadercell.xib */; };
@@ -272,6 +275,12 @@
 		842C7B511C96C381009B18C5 /* Employerapplicantlistcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Employerapplicantlistcell.xib; sourceTree = "<group>"; };
 		842C7B551C96C6E5009B18C5 /* EmployerApplicantListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployerApplicantListViewController.h; sourceTree = "<group>"; };
 		842C7B561C96C6E5009B18C5 /* EmployerApplicantListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployerApplicantListViewController.m; sourceTree = "<group>"; };
+		84383B9B1CEA07F400789AE6 /* RegisterSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterSliderViewController.h; sourceTree = "<group>"; };
+		84383B9C1CEA07F400789AE6 /* RegisterSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterSliderViewController.m; sourceTree = "<group>"; };
+		84383B9F1CEA0B3600789AE6 /* SliderContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderContainerViewController.h; sourceTree = "<group>"; };
+		84383BA01CEA0B3600789AE6 /* SliderContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderContainerViewController.m; sourceTree = "<group>"; };
+		84383BA21CEA0BF400789AE6 /* YSLScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLScrollMenuView.h; sourceTree = "<group>"; };
+		84383BA31CEA0BF400789AE6 /* YSLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLScrollMenuView.m; sourceTree = "<group>"; };
 		843B3DA01C92C5550014D05A /* EmployerJobListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployerJobListViewController.h; sourceTree = "<group>"; };
 		843B3DA11C92C5550014D05A /* EmployerJobListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployerJobListViewController.m; sourceTree = "<group>"; };
 		843B3DA51C92CA020014D05A /* Employerjoblistheadercell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employerjoblistheadercell.h; sourceTree = "<group>"; };
@@ -592,6 +601,7 @@
 		841959A91C8EE92C00E8CA79 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84383B9E1CEA0AE500789AE6 /* SliderContainerViewController */,
 				84A808E11C8559DB00043683 /* BaseViewController */,
 				84B0AB8F1C8013190083B773 /* WelComeViewController.h */,
 				84B0AB901C8013190083B773 /* WelComeViewController.m */,
@@ -643,6 +653,8 @@
 				8460540E1CE49A7700B9DC92 /* EditProfileEmployerViewController.m */,
 				84C0C3761CE61F9600087315 /* EditProfileApplicantViewController.h */,
 				84C0C3771CE61F9600087315 /* EditProfileApplicantViewController.m */,
+				84383B9B1CEA07F400789AE6 /* RegisterSliderViewController.h */,
+				84383B9C1CEA07F400789AE6 /* RegisterSliderViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -668,6 +680,17 @@
 				842C7B511C96C381009B18C5 /* Employerapplicantlistcell.xib */,
 			);
 			name = EmoliyerApplicantCell;
+			sourceTree = "<group>";
+		};
+		84383B9E1CEA0AE500789AE6 /* SliderContainerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84383B9F1CEA0B3600789AE6 /* SliderContainerViewController.h */,
+				84383BA01CEA0B3600789AE6 /* SliderContainerViewController.m */,
+				84383BA21CEA0BF400789AE6 /* YSLScrollMenuView.h */,
+				84383BA31CEA0BF400789AE6 /* YSLScrollMenuView.m */,
+			);
+			name = SliderContainerViewController;
 			sourceTree = "<group>";
 		};
 		843B3DA31C92C57A0014D05A /* EmployerJobList */ = {
@@ -1320,6 +1343,7 @@
 				843DD7181C8D8BE200EE1D36 /* RegisterTextFieldTableViewCell.m in Sources */,
 				84C0C3781CE61F9600087315 /* EditProfileApplicantViewController.m in Sources */,
 				84A808E41C855A1600043683 /* BaseViewController.m in Sources */,
+				84383BA11CEA0B3600789AE6 /* SliderContainerViewController.m in Sources */,
 				84B0AB911C8013190083B773 /* WelComeViewController.m in Sources */,
 				84B0AB8E1C8013190083B773 /* AppDelegate.m in Sources */,
 				84EF42131CB38BDC0033B614 /* ModelBaseClass.m in Sources */,
@@ -1338,6 +1362,7 @@
 				84C8334F1C8457AA009AD74F /* DashBoardEmployerViewController.m in Sources */,
 				84C8333F1C8429E7009AD74F /* HomePageViewController.m in Sources */,
 				84C0C3751CE61B7A00087315 /* EditProfileApplicantService.m in Sources */,
+				84383B9D1CEA07F400789AE6 /* RegisterSliderViewController.m in Sources */,
 				8448FE691CC0EBEE00FA9AF1 /* RecruiterMyLeadsViewController.m in Sources */,
 				843DD71D1C8DA91500EE1D36 /* RegisterFooterTableViewCell.m in Sources */,
 				8491164B1C914EC000CF1967 /* WorkExprienceDegreeCell.m in Sources */,
@@ -1352,6 +1377,7 @@
 				842ADE451C998A3D00C9CC49 /* AboutContentCell.m in Sources */,
 				849591251CBE836C00A7A6E0 /* ModelLogInApplicant.m in Sources */,
 				843B3DA81C92CA020014D05A /* Employerjoblistheadercell.m in Sources */,
+				84383BA41CEA0BF400789AE6 /* YSLScrollMenuView.m in Sources */,
 				841959811C8EB25100E8CA79 /* DashBoardApplicantProfileViewController.m in Sources */,
 				849116551C9172E300CF1967 /* DescriptionCell.m in Sources */,
 				84B0AB8B1C8013190083B773 /* main.m in Sources */,
