@@ -16,13 +16,13 @@
     if (self = [super init]) {
         
         if ([dict objectForKey:@"id"]&&![[dict objectForKey:@"id"] isKindOfClass:[NSNull class]]) {
-            self.strRecruiter_Id =[dict objectForKey:@"id"];
-            NSLog(@"The id is:%@",self.strRecruiter_Id);
+            self.strApplicant_Id =[dict objectForKey:@"id"];
+            NSLog(@"The id is:%@",self.strApplicant_Id);
         }else{
             if ([dict objectForKey:@"id"]&&![[dict objectForKey:@"id"] isKindOfClass:[NSNull class]]) {
-                self.strRecruiter_Id =[dict objectForKey:@"id"];
+                self.strApplicant_Id =[dict objectForKey:@"id"];
             }else{
-                self.strRecruiter_Id =@"";
+                self.strApplicant_Id =@"";
             }
         }
         
@@ -155,6 +155,11 @@
             self.strZip_Code =[dict objectForKey:@"zip_code"];
         }else{
             self.strZip_Code =@"";
+        }
+        if ([dict objectForKey:@"password"]&&![[dict objectForKey:@"password"] isKindOfClass:[NSNull class]]) {
+            self.strPassword =[dict objectForKey:@"password"];
+        }else{
+            self.strPassword =@"";
         }
     }
     return self;

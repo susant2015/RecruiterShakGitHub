@@ -18,6 +18,7 @@
 #import "TextFieldCellName.h"
 #import "ModelLogInApplicant.h"
 #import "Constants.h"
+#import "EditProfileApplicantService.h"
 
 typedef NS_ENUM(NSInteger, CellContent) {
     
@@ -801,13 +802,22 @@ NSString static *strPlaceholders[]={
     if (indexPath.row==20)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strFbUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strFbUrl atIndex:indexPath.row];
+        
+        
+        
+    }
+    if (indexPath.row==21)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strTwUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [arrtxtFieldValue insertObject:strTwUrl atIndex:indexPath.row];
         
         
         
     }
-    if (indexPath.row==21)
+    if (indexPath.row==22)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strGPlusUrl=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -830,8 +840,8 @@ NSString static *strPlaceholders[]={
     strState=[arrtxtFieldValue objectAtIndex:12];
     strCountry=[arrtxtFieldValue objectAtIndex:13];
     strZip_Code=[arrtxtFieldValue objectAtIndex:14];
-    strFbUrl=[arrtxtFieldValue objectAtIndex:19];
-    strTwUrl=[arrtxtFieldValue objectAtIndex:20];
+    strFbUrl=[arrtxtFieldValue objectAtIndex:20];
+    strTwUrl=[arrtxtFieldValue objectAtIndex:21];
     strGPlusUrl=[arrtxtFieldValue objectAtIndex:21];
     strOccupation=[arrtxtFieldValue objectAtIndex:8];
     strSkill=[arrtxtFieldValue objectAtIndex:15];
@@ -841,7 +851,7 @@ NSString static *strPlaceholders[]={
     //[self alertCheck];
     
     
-    if ([modelLogInRecruiter.strPassword isEqualToString:strOldPassword] || strOldPassword.length==0) {
+    if ([modelLogInApplicant.strPassword isEqualToString:strOldPassword] || strOldPassword.length==0) {
         
         
         
@@ -851,7 +861,8 @@ NSString static *strPlaceholders[]={
             
             NSLog(@"The arr value is%@",arrtxtFieldValue);
             
-            [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl agencyName:strAgecyName url:strUrl about:strAbout withCompletionHandler:^(id result, BOOL isError, NSString *strMsg)
+            [[EditProfileApplicantService sharedInstance]editProfileApplicantUserId:modelLogInApplicant.strApplicant_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl occupation:strOccupation skill:strSkill about:strAbout quotes:strQutes withCompletionHandler:^(id result, BOOL isError, NSString *strMsg)
+             
              
              {
                  if(isError){
@@ -871,7 +882,7 @@ NSString static *strPlaceholders[]={
                      
                      [[[UIAlertView alloc] initWithTitle:nil message:@"Edit Successfully!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
                      UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                     DashBoardRecruiterViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantViewController"];
+                     EditProfileApplicantViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"EditProfileApplicantViewController"];
                      [self presentViewController:Dbapvc animated:YES completion:nil];
                      
                  }

@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-  [[ApplicantWorkingExprienceService  sharedInstance] applicantUserId:modelLogInApplicant.strRecruiter_Id  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
+  [[ApplicantWorkingExprienceService  sharedInstance] applicantUserId:modelLogInApplicant.strApplicant_Id  withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
         if(isError){
             [[[UIAlertView alloc] initWithTitle:nil message:@"Error" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             

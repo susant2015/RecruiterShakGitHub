@@ -10,7 +10,7 @@
 
 @interface ModelLogInApplicant : ModelBaseClass
 
-@property(weak,nonatomic)NSString *strRecruiter_Id;
+@property(weak,nonatomic)NSString *strApplicant_Id;
 @property(weak,nonatomic)NSString *strAbout;
 @property(weak,nonatomic)NSString *strAddress;
 @property(weak,nonatomic)NSString *strAgency_Name;
@@ -33,7 +33,7 @@
 @property(weak,nonatomic)NSString *strUrl;
 @property(weak,nonatomic)NSString *strUser_Name;
 @property(weak,nonatomic)NSString *strZip_Code;
-
+@property(weak,nonatomic)NSString *strPassword;
 
 -(id)initWithDictionary:(NSDictionary *)dict;
 @end
