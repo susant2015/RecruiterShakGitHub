@@ -9,6 +9,7 @@
 #import "RegisterSliderViewController.h"
 #import "RegisterViewController.h"
 #import "SliderContainerViewController.h"
+#import "CustomSectionViewController.h"
 
 @interface RegisterSliderViewController () <YSLContainerViewControllerDelegate>
 
@@ -20,6 +21,8 @@
     [super viewDidLoad];
     RegisterSliderViewController *playListVC = [[RegisterSliderViewController alloc]initWithNibName:@"RegisterSliderViewController" bundle:nil];
     playListVC.title = @"PlayList";
+    CustomSectionViewController *playList = [[CustomSectionViewController alloc]initWithNibName:@"CustomSectionViewController" bundle:nil];
+    playListVC.title = @"List";
     
    
     
@@ -27,7 +30,7 @@
     float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     float navigationHeight = self.navigationController.navigationBar.frame.size.height;
     
-    SliderContainerViewController *containerVC = [[SliderContainerViewController alloc]initWithControllers:@[playListVC]
+    SliderContainerViewController *containerVC = [[SliderContainerViewController alloc]initWithControllers:@[playListVC,playList]
                                                                                         topBarHeight:statusHeight + navigationHeight
                                                                                 parentViewController:self];
     containerVC.delegate = self;

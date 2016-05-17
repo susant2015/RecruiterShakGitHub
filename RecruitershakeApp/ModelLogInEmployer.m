@@ -159,6 +159,12 @@
         }else{
             self.strPassword =@"";
         }
+        if ([dict objectForKey:@"org_type"]&&![[dict objectForKey:@"org_type"] isKindOfClass:[NSNull class]]) {
+            self.strORGType =[dict objectForKey:@"org_type"];
+            
+        }else{
+            self.strORGType =@"";
+        }
     }
     return self;
 }

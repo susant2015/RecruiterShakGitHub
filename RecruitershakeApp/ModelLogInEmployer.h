@@ -31,6 +31,7 @@
 @property(strong,nonatomic) NSString *strUser_Name;
 @property(strong,nonatomic) NSString *strZip_Code;
 @property(strong,nonatomic) NSString *strPassword;
+@property(strong,nonatomic) NSString *strORGType;
 
 
 -(id)initWithDictionary:(NSDictionary *)dict;

@@ -162,7 +162,7 @@ NSString static *strPlaceholders[]={
             
         }
         else if (i==8){
-            [arrtxtFieldValue addObject:@""];
+            [arrtxtFieldValue addObject:modelLogInEmployer.strORGType];
             
         }
         else if (i==9){
@@ -174,7 +174,7 @@ NSString static *strPlaceholders[]={
             
         }
         else if (i==11){
-            [arrtxtFieldValue addObject:@""];
+            [arrtxtFieldValue addObject:modelLogInEmployer.strAddress2];
             
         }
         else if (i==12){
@@ -269,14 +269,15 @@ NSString static *strPlaceholders[]={
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-        //UIColor *color = [UIColor whiteColor];
+        
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
-        //[[NSAttributedString alloc] initWithString:modelLogInRecruiter.strFirst_Name attributes:@{NSForegroundColorAttributeName: color}];
+       
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        
         
         myCell=cell;
         
@@ -715,9 +716,25 @@ NSString static *strPlaceholders[]={
         
         
     }
-    
-    
     if (indexPath.row==7)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strCompanyName=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strCompanyName atIndex:indexPath.row];
+        
+        
+    }
+    if (indexPath.row==8)
+    {
+        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
+        strOrgType=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [arrtxtFieldValue insertObject:strOrgType atIndex:indexPath.row];
+        
+        
+        
+    }
+    
+    if (indexPath.row==9)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
         strPhone_Number=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -725,15 +742,8 @@ NSString static *strPlaceholders[]={
         
         
     }
-    if (indexPath.row==8)
-    {
-        [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
-        strCompanyName=[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [arrtxtFieldValue insertObject:strCompanyName atIndex:indexPath.row];
-        
-        
-        
-    }
+    
+   
     if (indexPath.row==10)
     {
         [arrtxtFieldValue removeObjectAtIndex:indexPath.row];
@@ -848,24 +858,28 @@ NSString static *strPlaceholders[]={
 
 -(void)btnActionEmployer{
     
+    
+    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
+    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
     strOldPassword=[arrtxtFieldValue objectAtIndex:4];
     strNewPassword=[arrtxtFieldValue objectAtIndex:5];
     strConPassword=[arrtxtFieldValue objectAtIndex:6];
-    strFisrst_Name=[arrtxtFieldValue objectAtIndex:0];
-    strLast_Name=[arrtxtFieldValue objectAtIndex:1];
-    strPhone_Number=[arrtxtFieldValue objectAtIndex:8];
+    strCompanyName=[arrtxtFieldValue objectAtIndex:7];
+   // strOrgType=[arrtxtFieldValue objectAtIndex:8];
+    strPhone_Number=[arrtxtFieldValue objectAtIndex:9];
     strAddress_Line1=[arrtxtFieldValue objectAtIndex:10];
     strAddress_Line2=[arrtxtFieldValue objectAtIndex:11];
     strCity=[arrtxtFieldValue objectAtIndex:12];
     strState=[arrtxtFieldValue objectAtIndex:13];
     strCountry=[arrtxtFieldValue objectAtIndex:14];
     strZip_Code=[arrtxtFieldValue objectAtIndex:15];
+    strAbout=[arrtxtFieldValue objectAtIndex:16];
     strFbUrl=[arrtxtFieldValue objectAtIndex:19];
     strTwUrl=[arrtxtFieldValue objectAtIndex:20];
     strGPlusUrl=[arrtxtFieldValue objectAtIndex:21];
-    strCompanyName=[arrtxtFieldValue objectAtIndex:7];
-    strOrgType=[arrtxtFieldValue objectAtIndex:15];
-    strAbout=[arrtxtFieldValue objectAtIndex:16];
+    
+    
+   
     
     //[self alertCheck];
     
@@ -874,13 +888,13 @@ NSString static *strPlaceholders[]={
         
         
         
-        if ([strNewPassword isEqualToString:strConPassword] ||(strNewPassword.length==0 && strConPassword.length==0)) {
+        if ([strNewPassword isEqualToString:strConPassword] ||(strNewPassword.length==0 && strConPassword.length==0) || strOrgType.length==0) {
             
             
             
             NSLog(@"The arr value is%@",arrtxtFieldValue);
             
-            [[EditProfileEmployerService sharedInstance] editProfileEmployerUserId:modelLogInEmployer.strId oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl companyName:strCompanyName orgType:@"y" about:strAbout withCompletionHandler:^(id result, BOOL isError, NSString *strMsg)
+            [[EditProfileEmployerService sharedInstance] editProfileEmployerUserId:modelLogInEmployer.strId oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl companyName:strCompanyName orgType:strOrgType about:strAbout withCompletionHandler:^(id result, BOOL isError, NSString *strMsg)
              
              {
                  if(isError){
@@ -961,7 +975,7 @@ NSString static *strPlaceholders[]={
     [cell.btnRadioSureNot setSelected:NO];
     [sender setSelected:YES];
     
-    strOrgType=@"sn";
+    strOrgType=@"ns";
     [tblEditEmployer reloadData];
 
 }
