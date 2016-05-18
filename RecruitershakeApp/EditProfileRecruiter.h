@@ -2,7 +2,7 @@
 //  EditProfileRecruiter.h
 //  RecruitershakeApp
 //
-//  Created by admin on 19/04/16.
+//  Created by admin on 18/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
@@ -10,5 +10,4 @@
 
 @interface EditProfileRecruiter : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 
--(BOOL)alertCheck;
 @end

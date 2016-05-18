@@ -2,7 +2,7 @@
 //  RecruiterMyLeadsViewController.m
 //  RecruitershakeApp
 //
-//  Created by admin on 15/04/16.
+//  Created by admin on 18/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
@@ -55,7 +55,7 @@
     NSError *error;
     NSData *urlData = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
     NSDictionary   *jsonResponeDict=[NSJSONSerialization JSONObjectWithData:urlData options:0 error:&error];
-   // NSString *str=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+    // NSString *str=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
     //NSLog(@"Login response: is %@",str); //getting response
     NSLog(@"The jso data is%@",jsonResponeDict);
     
@@ -66,7 +66,7 @@
     
     if (!statuses)
     {
-      //  NSLog(@"Error in Json :%@",error);
+        //  NSLog(@"Error in Json :%@",error);
     }
     else
     {
@@ -82,7 +82,7 @@
             self.strPhone_Number=[newValu objectForKey:@"phone_number"];
             self.strEmail=[newValu objectForKey:@"email"];
             
-           // [tableView reloadData];
+            // [tableView reloadData];
             
             NSLog(@"Name :%@    Quantity :%@    MRP :%@ ",self.strFirstName,self.strEdu_qlification,self.strPhone_Number,self.strEmail);
         }
@@ -90,18 +90,18 @@
     
     NSMutableArray *_strFirstname = [NSMutableArray array];
     NSMutableArray *_strLastname = [NSMutableArray array];
-     NSMutableArray *_strEmail = [NSMutableArray array];
-     NSMutableArray *_strQualification = [NSMutableArray array];
-     NSMutableArray *_strPhonenumber = [NSMutableArray array];
-     NSMutableArray *_strOccuption = [NSMutableArray array];
+    NSMutableArray *_strEmail = [NSMutableArray array];
+    NSMutableArray *_strQualification = [NSMutableArray array];
+    NSMutableArray *_strPhonenumber = [NSMutableArray array];
+    NSMutableArray *_strOccuption = [NSMutableArray array];
     
-   
+    
     for (id item in statuses){
-          [_strFirstname addObject:[NSString stringWithFormat:@"%@", item[@"first_name"]]];
+        [_strFirstname addObject:[NSString stringWithFormat:@"%@", item[@"first_name"]]];
         [_strLastname addObject:[NSString stringWithFormat:@"%@",item[@"last_name"]]];
         [_strQualification addObject:[NSString stringWithFormat:@"%@", item[@"education"]]];
         [_strEmail addObject:[NSString stringWithFormat:@"%@", item[@"email"]]];
-       [_strPhonenumber addObject:[NSString stringWithFormat:@"%@", item[@"phone_number"]]];
+        [_strPhonenumber addObject:[NSString stringWithFormat:@"%@", item[@"phone_number"]]];
         [_strOccuption addObject:[NSString stringWithFormat:@"%@", item[@"occupation"]]];
     }
     
@@ -112,7 +112,7 @@
     self.email=_strEmail;
     self.phone_number=_strPhonenumber;
     self.occuption=_strOccuption;
-   // self.strLastName=_strQualification;
+    // self.strLastName=_strQualification;
     
     
     
@@ -134,23 +134,23 @@
 {
     UITableViewCell *myCell=nil;
     
-        static NSString *applicantIndexCellIdentifier=@"RecruiterMyLeadsViewContollerCell";
-        RecruiterMyLeadsViewContollerCell *cell=(RecruiterMyLeadsViewContollerCell *)[self.tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"RecruiterMyLeadsViewContollerCell" owner:self options:nil]objectAtIndex:0];
-        }
+    static NSString *applicantIndexCellIdentifier=@"RecruiterMyLeadsViewContollerCell";
+    RecruiterMyLeadsViewContollerCell *cell=(RecruiterMyLeadsViewContollerCell *)[self.tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
+    if (!cell) {
+        cell=[[[NSBundle mainBundle] loadNibNamed:@"RecruiterMyLeadsViewContollerCell" owner:self options:nil]objectAtIndex:0];
+    }
     
-       // cell.lblEmail.text=self.names[indexPath.row];
-         NSUInteger row = [indexPath row];
-     cell.lblFirstName.text = [self.firstnames objectAtIndex:indexPath.row];
+    // cell.lblEmail.text=self.names[indexPath.row];
+    NSUInteger row = [indexPath row];
+    cell.lblFirstName.text = [self.firstnames objectAtIndex:indexPath.row];
     cell.lblLastName.text=[self.lastname objectAtIndex:indexPath.row];
     cell.lblEdu_Qulf.text=[self.qualification objectAtIndex:indexPath.row];
     cell.lblEmail.text=[self.email objectAtIndex:indexPath.row];
     cell.lblOccupation.text=[self.occuption objectAtIndex:indexPath.row];
     cell.lblPhoneNumber.text=[self.phone_number objectAtIndex:indexPath.row];
-   
-        myCell=cell;
-        
+    
+    myCell=cell;
+    
     
     return myCell;
 }

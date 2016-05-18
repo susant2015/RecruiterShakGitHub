@@ -1,8 +1,8 @@
 //
-//  FaceBookViewController.m
+//  RecruiterFaceBookViewController.m
 //  RecruitershakeApp
 //
-//  Created by admin on 19/04/16.
+//  Created by admin on 18/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
@@ -15,23 +15,23 @@
 @end
 
 @implementation RecruiterFaceBookViewController
-    
+
 
 
 @synthesize web;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-  
-   
-   
-        NSURL *url = [NSURL URLWithString:modelLogInRecruiter.strFaceBook_Url];
+    
+    
+    
+    NSURL *url = [NSURL URLWithString:modelLogInRecruiter.strFaceBook_Url];
     
     NSLog(@"The fb url is :%@",modelLogInRecruiter.strFaceBook_Url);
-        NSMutableURLRequest *requestObj = [NSMutableURLRequest requestWithURL:url];
-        [requestObj setValue:@"Safari/537.1" forHTTPHeaderField:@"User_Agent"];
-        [self.web setDelegate:nil];
-        [self.web loadRequest:requestObj];
+    NSMutableURLRequest *requestObj = [NSMutableURLRequest requestWithURL:url];
+    [requestObj setValue:@"Safari/537.1" forHTTPHeaderField:@"User_Agent"];
+    [self.web setDelegate:nil];
+    [self.web loadRequest:requestObj];
     
 }
 

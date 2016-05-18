@@ -1,15 +1,14 @@
 //
-//  DashBoardApplicantViewController.h
+//  DashBoardRecruiterViewController.h
 //  RecruitershakeApp
 //
-//  Created by admin on 01/04/16.
+//  Created by admin on 17/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface DashBoardRecruiterViewController : UIViewController
-
+@interface DashBoardRecruiterViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *lblRecruiterAgencyInfo;
 @property (weak, nonatomic) IBOutlet UILabel *lblUrl;
 @property (weak, nonatomic) IBOutlet UIImageView *imgRecruiter;
@@ -20,7 +19,4 @@
 - (IBAction)btnFacebook;
 - (IBAction)btnTwitter;
 - (IBAction)btnGooglePlus;
-
-
-
 @end

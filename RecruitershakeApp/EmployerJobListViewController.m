@@ -2,7 +2,7 @@
 //  EmployerJobListViewController.m
 //  RecruitershakeApp
 //
-//  Created by admin on 11/03/16.
+//  Created by admin on 17/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
@@ -40,13 +40,13 @@
 @implementation EmployerJobListViewController{
     
     IBOutlet UITableView *tblEmpJobList;
-   
-  
+    
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-     mutableArrJobList = [[NSMutableArray alloc] init];
-   strid = @"id";
+    mutableArrJobList = [[NSMutableArray alloc] init];
+    strid = @"id";
     strUserid = @"u_id";
     created = @"created";
     educational_qualifiaction=@"educational_qualifiaction";
@@ -57,11 +57,23 @@
     title=@"title";
     skillRequired=@"skill_required";
     
-   arrDelete =[[NSMutableArray alloc] init];
-     mutableArrJobList = [[NSMutableArray alloc] init];
+    arrDelete =[[NSMutableArray alloc] init];
+    mutableArrJobList = [[NSMutableArray alloc] init];
     
+    
+    
+}
+-(void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller {
+    EmployerJobListViewController *cell=(EmployerJobListViewController*)[self getSuperviewOfType:[UITableViewCell class] fromView:controller];
+    UISearchBar *temp = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 320, 45)];
+    temp.barStyle=UIBarStyleBlackTranslucent;
+    temp.showsCancelButton=NO;
+    temp.autocorrectionType=UITextAutocorrectionTypeNo;
+    temp.autocapitalizationType=UITextAutocapitalizationTypeNone;
    
+    tblEmpJobList.tableHeaderView=temp;
     
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -114,17 +126,17 @@
 {
     return 1;
 }
- - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  
+    
     CGFloat height=0.0f;
     if ([mutableArrJobList count]) {
         height=120.0f;
     }
-  
-
+    
+    
     return height;
-  
+    
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -146,8 +158,8 @@
     cell.lblEmployerEmailId.text=modelLogInEmployer.strEmail;
     [cell.btnAddCell addTarget:self action:@selector(addJobListEmployer) forControlEvents:UIControlEventTouchUpInside];
     [cell.btnEditEmployer addTarget:self action:@selector(btnEditEmployers) forControlEvents:UIControlEventTouchUpInside];
-   
-        return cell;
+    
+    return cell;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -157,12 +169,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-        static NSString *applicantIndexCellIdentifier=@"EmployerJobListViewControllerCell";
-        EmployerJobListViewControllerCell *cell=(EmployerJobListViewControllerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
-        if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil] objectAtIndex:0];
-        }
+    
+    static NSString *applicantIndexCellIdentifier=@"EmployerJobListViewControllerCell";
+    EmployerJobListViewControllerCell *cell=(EmployerJobListViewControllerCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
+    if (!cell) {
+        cell=[[[NSBundle mainBundle] loadNibNamed:@"EmployerJobListViewControllerCell" owner:self options:nil] objectAtIndex:0];
+    }
     NSDictionary *tmpDict = [mutableArrJobList objectAtIndex:indexPath.row];
     NSLog(@"The temp is%@",tmpDict);
     NSMutableString *idtext;
@@ -171,32 +183,32 @@
     
     NSMutableString *idusertext;
     idusertext = [NSMutableString stringWithFormat:@"%@ ",
-             [tmpDict objectForKey:strUserid]];
+                  [tmpDict objectForKey:strUserid]];
     NSMutableString *createdtext;
     createdtext = [NSMutableString stringWithFormat:@"%@",
-            [tmpDict objectForKeyedSubscript:created]];
+                   [tmpDict objectForKeyedSubscript:created]];
     NSMutableString *edutext;
     edutext = [NSMutableString stringWithFormat:@"%@",
-           [tmpDict objectForKeyedSubscript:educational_qualifiaction]];
+               [tmpDict objectForKeyedSubscript:educational_qualifiaction]];
     NSMutableString *jobidtext;
     jobidtext = [NSMutableString stringWithFormat:@"%@",
-            [tmpDict objectForKeyedSubscript:job_id]];
+                 [tmpDict objectForKeyedSubscript:job_id]];
     NSMutableString *locationtext;
     locationtext = [NSMutableString stringWithFormat:@"%@",
-                 [tmpDict objectForKeyedSubscript:location]];
+                    [tmpDict objectForKeyedSubscript:location]];
     NSMutableString *urlkeytext;
     urlkeytext = [NSMutableString stringWithFormat:@"%@",
-                    [tmpDict objectForKeyedSubscript:urlkey]];
+                  [tmpDict objectForKeyedSubscript:urlkey]];
     NSMutableString  *designationtext;
     designationtext = [NSMutableString stringWithFormat:@"%@",
-                  [tmpDict objectForKeyedSubscript:designation]];
+                       [tmpDict objectForKeyedSubscript:designation]];
     
     NSMutableString  *titletext;
     titletext = [NSMutableString stringWithFormat:@"%@",
-                       [tmpDict objectForKeyedSubscript:title]];
+                 [tmpDict objectForKeyedSubscript:title]];
     NSMutableString  *skillRequiredtext;
     skillRequiredtext = [NSMutableString stringWithFormat:@"%@",
-                 [tmpDict objectForKeyedSubscript:skillRequired]];
+                         [tmpDict objectForKeyedSubscript:skillRequired]];
     
     cell.lblJobId.text=jobidtext;
     cell.lblEduqualification.text=edutext;
@@ -216,7 +228,7 @@
 }
 
 - (void)btnEmpJobDelete:(UIButton *)sender{
-   
+    
     NSDictionary *dicEmpData;
     dicEmpData=[mutableArrJobList objectAtIndex:sender.tag];
     NSLog(@"The delete btn data is%@",dicEmpData);
@@ -241,14 +253,14 @@
             
         }
         else{
-           
+            
             [mutableArrJobList removeObjectAtIndex:sender.tag];
-                
-            }
-          [tblEmpJobList reloadData];
+            
+        }
+        [tblEmpJobList reloadData];
         
     }];
-
+    
 }
 
 - (void)btnEmpJobEdit:(UIButton *)sender{

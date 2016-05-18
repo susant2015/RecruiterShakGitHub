@@ -2,13 +2,12 @@
 //  RecruiterGooglePlusViewController.h
 //  RecruitershakeApp
 //
-//  Created by admin on 19/04/16.
+//  Created by admin on 18/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface RecruiterGooglePlusViewController : UIViewController
+@interface RecruiterGooglePlusViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UIWebView *web;
-
 @end

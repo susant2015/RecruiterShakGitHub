@@ -1,8 +1,8 @@
 //
-//  DashBoardApplicantViewController.m
+//  DashBoardRecruiterViewController.m
 //  RecruitershakeApp
 //
-//  Created by admin on 01/04/16.
+//  Created by admin on 17/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-      
+    
     
     self.lblRecruiterAgencyInfo.text=modelLogInRecruiter.strAgency_Name;
     self.lblUrl.text=modelLogInRecruiter.strUrl;

@@ -2,7 +2,7 @@
 //  EditProfileRecruiter.m
 //  RecruitershakeApp
 //
-//  Created by admin on 19/04/16.
+//  Created by admin on 18/05/16.
 //  Copyright © 2016 Xigmapro. All rights reserved.
 //
 
@@ -53,7 +53,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     Total,
 };
 
- NSString static *strPlaceholders[]={
+NSString static *strPlaceholders[]={
     
     
     [FirstName]=@" *FIRSTNAME",
@@ -79,7 +79,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     [TwUrl]=@" *TWITTER URL",
     [GPlusUrl]=@" *GOOGLE PLUS URL",
     [BtnEdit]=@"",
-   
+    
 };
 
 @interface EditProfileRecruiter ()<UITextFieldDelegate>
@@ -127,8 +127,8 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         //[arrtxtFieldValue addObject:@""];
         if (i ==0){
-             [arrtxtFieldValue addObject:modelLogInRecruiter.strFirst_Name];
-            }
+            [arrtxtFieldValue addObject:modelLogInRecruiter.strFirst_Name];
+        }
         else if (i==1){
             [arrtxtFieldValue addObject:modelLogInRecruiter.strLast_Name];
         }
@@ -218,7 +218,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
             
         }
         NSLog(@"The space:%@",arrtxtFieldValue);
-        }
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -229,7 +229,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+    
     CGFloat height=56.0f;
     if (indexPath.row==16)
     {
@@ -256,7 +256,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     
     
     
-     if(indexPath.row==0) {
+    if(indexPath.row==0) {
         
         static NSString *applicantIndexCellIdentifier=@"TextFieldCellName";
         TextFieldCellName *cell=(TextFieldCellName *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -270,11 +270,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         //UIColor *color = [UIColor whiteColor];
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
-         //[[NSAttributedString alloc] initWithString:modelLogInRecruiter.strFirst_Name attributes:@{NSForegroundColorAttributeName: color}];
+        //[[NSAttributedString alloc] initWithString:modelLogInRecruiter.strFirst_Name attributes:@{NSForegroundColorAttributeName: color}];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
-      
+        
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
         myCell=cell;
@@ -290,8 +290,8 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       // UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strLast_Name attributes:@{NSForegroundColorAttributeName: color}];
+        // UIColor *color = [UIColor whiteColor];
+        // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strLast_Name attributes:@{NSForegroundColorAttributeName: color}];
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
@@ -307,7 +307,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         //cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         //UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strEmail attributes:@{NSForegroundColorAttributeName: color}];
+        // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strEmail attributes:@{NSForegroundColorAttributeName: color}];
         cell.lblRecruiter.text =strPlaceholders[indexPath.row];
         cell.lblRecruiter.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
@@ -323,7 +323,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
+        cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         myCell=cell;
@@ -399,7 +399,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       
+        
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -432,7 +432,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-      
+        
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -484,7 +484,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       
+        
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -501,8 +501,8 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-      //  UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strZip_Code attributes:@{NSForegroundColorAttributeName: color}];
+        //  UIColor *color = [UIColor whiteColor];
+        // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strZip_Code attributes:@{NSForegroundColorAttributeName: color}];
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -520,7 +520,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
         //UIColor *color = [UIColor whiteColor];
-       // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *Url" attributes:@{NSForegroundColorAttributeName: color}];
+        // cell.txtFielfPlaceHolderName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"  *Url" attributes:@{NSForegroundColorAttributeName: color}];
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -537,8 +537,8 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtAboutPlaceholder setDelegate:self];
         cell.txtAboutPlaceholder.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       // UIColor *color = [UIColor whiteColor];
-      //  cell.txtAboutPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strAbout attributes:@{NSForegroundColorAttributeName: color}];
+        // UIColor *color = [UIColor whiteColor];
+        //  cell.txtAboutPlaceholder.attributedPlaceholder = [[NSAttributedString alloc] initWithString:modelLogInRecruiter.strAbout attributes:@{NSForegroundColorAttributeName: color}];
         
         cell.txtAboutPlaceholder.placeholder =strPlaceholders[indexPath.row];
         cell.txtAboutPlaceholder.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -580,12 +580,12 @@ typedef NS_ENUM(NSInteger, CellContent) {
         [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       
+        
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
-         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
+        cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
         
-              myCell=cell;
+        myCell=cell;
     }
     else if(indexPath.row==20) {
         
@@ -600,9 +600,9 @@ typedef NS_ENUM(NSInteger, CellContent) {
         
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
-
+        
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
-      
+        
         myCell=cell;
     }
     else if(indexPath.row==21) {
@@ -612,10 +612,10 @@ typedef NS_ENUM(NSInteger, CellContent) {
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"TextFieldCellName" owner:self options:nil]objectAtIndex:0];
         }
-       [cell.txtFielfPlaceHolderName setDelegate:self];
+        [cell.txtFielfPlaceHolderName setDelegate:self];
         cell.txtFielfPlaceHolderName.keyboardType=UIKeyboardTypeDefault;
         cell.backgroundColor=cell.contentView.backgroundColor=[UIColor clearColor];
-       
+        
         
         cell.txtFielfPlaceHolderName.placeholder =strPlaceholders[indexPath.row];
         cell.txtFielfPlaceHolderName.text=[arrtxtFieldValue objectAtIndex:indexPath.row];
@@ -842,7 +842,7 @@ typedef NS_ENUM(NSInteger, CellContent) {
     strNewPassword=[arrtxtFieldValue objectAtIndex:5];
     strConPassword=[arrtxtFieldValue objectAtIndex:6];
     strPhone_Number=[arrtxtFieldValue objectAtIndex:7];
-     strAgecyName=[arrtxtFieldValue objectAtIndex:8];
+    strAgecyName=[arrtxtFieldValue objectAtIndex:8];
     strAddress_Line1=[arrtxtFieldValue objectAtIndex:9];
     strAddress_Line2=[arrtxtFieldValue objectAtIndex:10];
     strCity=[arrtxtFieldValue objectAtIndex:11];
@@ -854,52 +854,52 @@ typedef NS_ENUM(NSInteger, CellContent) {
     strFbUrl=[arrtxtFieldValue objectAtIndex:19];
     strTwUrl=[arrtxtFieldValue objectAtIndex:20];
     strGPlusUrl=[arrtxtFieldValue objectAtIndex:21];
-   
     
     
-     //[self alertCheck];
+    
+    //[self alertCheck];
     
     
     if ([modelLogInRecruiter.strPassword isEqualToString:strOldPassword] || strOldPassword.length==0) {
-    
-   
-    
-    if ([strNewPassword isEqualToString:strConPassword] ||(strNewPassword.length==0 && strConPassword.length==0)) {
         
         
         
-    NSLog(@"The arr value is%@",arrtxtFieldValue);
-    
-    [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl agencyName:strAgecyName url:strUrl about:strAbout withCompletionHandler:^(id result, BOOL isError, NSString *strMsg)
-     
-     {
-        if(isError){
+        if ([strNewPassword isEqualToString:strConPassword] ||(strNewPassword.length==0 && strConPassword.length==0)) {
             
-            if(strMsg.length>0){
-                [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-                
-                
-            }
-            else{
-                //[self alertStatus:SomethingWrong :nil];
-                
-            }
             
-        }
+            
+            NSLog(@"The arr value is%@",arrtxtFieldValue);
+            
+            [[EditProfileRecruiterService sharedInstance] editProfileRecruiterUserId:modelLogInRecruiter.strRecruiter_Id oldPassword:strOldPassword newPassword:strNewPassword conformPassword:strConPassword firstName:strFisrst_Name lastName:strLast_Name phoneNumber:strPhone_Number addressOne:strAddress_Line1 addressTwo:strAddress_Line2 city:strCity state:strState country:strCountry zipCode:strZip_Code fbUrl:strFbUrl twUrl:strTwUrl gPlus:strGPlusUrl agencyName:strAgecyName url:strUrl about:strAbout withCompletionHandler:^(id result, BOOL isError, NSString *strMsg)
+             
+             {
+                 if(isError){
+                     
+                     if(strMsg.length>0){
+                         [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                         
+                         
+                     }
+                     else{
+                         //[self alertStatus:SomethingWrong :nil];
+                         
+                     }
+                     
+                 }
+                 else{
+                     
+                     [[[UIAlertView alloc] initWithTitle:nil message:@"Edit Successfully!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                     DashBoardRecruiterViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantViewController"];
+                     [self presentViewController:Dbapvc animated:YES completion:nil];
+                     
+                 }
+             }]; }
+        
         else{
             
-          [[[UIAlertView alloc] initWithTitle:nil message:@"Edit Successfully!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-            UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            DashBoardRecruiterViewController *Dbapvc = [sb instantiateViewControllerWithIdentifier:@"DashBoardApplicantViewController"];
-            [self presentViewController:Dbapvc animated:YES completion:nil];
-           
+            [[[UIAlertView alloc] initWithTitle:nil message:@"Password mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
         }
-     }]; }
-    
-    else{
-        
-        [[[UIAlertView alloc] initWithTitle:nil message:@"Password mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-    }
     }
     else{
         [[[UIAlertView alloc] initWithTitle:nil message:@"OldPassword mismatched" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -908,11 +908,11 @@ typedef NS_ENUM(NSInteger, CellContent) {
     
 }
 -(BOOL)alertCheck{
-
-        if ([strNewPassword length]==0 ||[strConPassword length]==0 ) {
-            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter newpassword and conformpassword." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            return NO;
-        }
+    
+    if ([strNewPassword length]==0 ||[strConPassword length]==0 ) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter newpassword and conformpassword." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        return NO;
+    }
     return YES;
 }
 @end
