@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface EmployerJobListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
-
+@property(weak,nonatomic) NSMutableArray *serchResult;
 @end

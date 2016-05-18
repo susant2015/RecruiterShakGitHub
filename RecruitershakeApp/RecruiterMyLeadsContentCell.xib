@@ -49,7 +49,7 @@
                         <rect key="frame" x="533" y="10" width="22" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <state key="normal" backgroundImage="white-notify.png"/>
+                        <state key="normal" backgroundImage="notify-white.png"/>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w2o-iq-8ed" userLabel="img-profile-border">
                         <rect key="frame" x="25" y="37" width="550" height="121"/>
@@ -247,9 +247,9 @@
         <image name="edit.png" width="80" height="80"/>
         <image name="facebook.png" width="80" height="80"/>
         <image name="google.png" width="80" height="80"/>
+        <image name="notify-white.png" width="68" height="54"/>
         <image name="title_bg.png" width="960" height="106"/>
         <image name="twitter.png" width="80" height="80"/>
-        <image name="white-notify.png" width="68" height="54"/>
         <image name="white_burger.png" width="56" height="54"/>
     </resources>
 </document>

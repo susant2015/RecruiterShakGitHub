@@ -324,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecruitershakeApp/EmploerEditJobViewController.m"
-            timestampString = "484823986.830538"
+            timestampString = "485253312.581717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "-btnEditSave"
             landmarkType = "5">
          </BreakpointContent>
@@ -446,7 +446,7 @@
                   moduleName = "RecruitershakeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Susant/proj%20struc/Source%20Day%20By%20Day/RecruitershakeApp%2008-04-16%20/RecruitershakeApp/EditProfileEmployerService.m"
-                  timestampString = "485246828.519125"
+                  timestampString = "485263454.264772"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -461,7 +461,7 @@
                   moduleName = "RecruitershakeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Susant/proj%20struc/Source%20Day%20By%20Day/RecruitershakeApp%2008-04-16%20/RecruitershakeApp/EditProfileEmployerService.m"
-                  timestampString = "485246828.519286"
+                  timestampString = "485263454.264935"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -639,6 +639,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecruitershakeApp/EmpJobListViewController.m"
+            timestampString = "485261921.324149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>

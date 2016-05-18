@@ -180,6 +180,10 @@
 		84F4AE791CEC424D00ED37EE /* RecruiterGooglePlusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4AE781CEC424D00ED37EE /* RecruiterGooglePlusViewController.m */; };
 		84F4AE7C1CEC42E600ED37EE /* RecruiterMyLeadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4AE7B1CEC42E600ED37EE /* RecruiterMyLeadsViewController.m */; };
 		84F4AEAA1CEC45E400ED37EE /* logo (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 84F4AEA91CEC45E400ED37EE /* logo (2).png */; };
+		84F4AEAC1CEC491900ED37EE /* notify-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F4AEAB1CEC491900ED37EE /* notify-white.png */; };
+		84F4AEAE1CEC4E5000ED37EE /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F4AEAD1CEC4E5000ED37EE /* edit.png */; };
+		84F4AEB01CEC4EFB00ED37EE /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F4AEAF1CEC4EFB00ED37EE /* delete.png */; };
+		84F4AEB21CEC512900ED37EE /* edit (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 84F4AEB11CEC512900ED37EE /* edit (1).png */; };
 		84FAEF791CEB3092003E17AD /* ApplicantEduBackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAEF771CEB3092003E17AD /* ApplicantEduBackTableViewCell.m */; };
 		84FAEF7A1CEB3092003E17AD /* ApplicantEduBackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FAEF781CEB3092003E17AD /* ApplicantEduBackTableViewCell.xib */; };
 		84FAEF7E1CEB3A48003E17AD /* ApplicantContentEdueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAEF7C1CEB3A48003E17AD /* ApplicantContentEdueTableViewCell.m */; };
@@ -468,6 +472,10 @@
 		84F4AE7A1CEC42E600ED37EE /* RecruiterMyLeadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecruiterMyLeadsViewController.h; sourceTree = "<group>"; };
 		84F4AE7B1CEC42E600ED37EE /* RecruiterMyLeadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecruiterMyLeadsViewController.m; sourceTree = "<group>"; };
 		84F4AEA91CEC45E400ED37EE /* logo (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo (2).png"; path = "../../../../../../Downloads/Image Set Date wise/forgotpassword/logo (2).png"; sourceTree = "<group>"; };
+		84F4AEAB1CEC491900ED37EE /* notify-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notify-white.png"; path = "../../../../../../Downloads/Image Set Date wise/AllImages/notify-white.png"; sourceTree = "<group>"; };
+		84F4AEAD1CEC4E5000ED37EE /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = "../../../Image Set Date wise/AllImages/edit.png"; sourceTree = "<group>"; };
+		84F4AEAF1CEC4EFB00ED37EE /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = "../../../Image Set Date wise/AllImages/delete.png"; sourceTree = "<group>"; };
+		84F4AEB11CEC512900ED37EE /* edit (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit (1).png"; path = "../../../Image Set Date wise/AllImages/edit (1).png"; sourceTree = "<group>"; };
 		84FAEF761CEB3092003E17AD /* ApplicantEduBackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicantEduBackTableViewCell.h; sourceTree = "<group>"; };
 		84FAEF771CEB3092003E17AD /* ApplicantEduBackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicantEduBackTableViewCell.m; sourceTree = "<group>"; };
 		84FAEF781CEB3092003E17AD /* ApplicantEduBackTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicantEduBackTableViewCell.xib; sourceTree = "<group>"; };
@@ -654,6 +662,9 @@
 		843B3DA31C92C57A0014D05A /* EmployerJobList */ = {
 			isa = PBXGroup;
 			children = (
+				84F4AEAF1CEC4EFB00ED37EE /* delete.png */,
+				84F4AEAD1CEC4E5000ED37EE /* edit.png */,
+				84F4AEAB1CEC491900ED37EE /* notify-white.png */,
 				842C7B4D1C9689F3009B18C5 /* plus.png */,
 				843B3DAA1C92EC4B0014D05A /* back_bg.png */,
 				843B3DAB1C92EC4B0014D05A /* back_bg2.png */,
@@ -718,6 +729,7 @@
 		8491165F1C917C7700CF1967 /* editprofile */ = {
 			isa = PBXGroup;
 			children = (
+				84F4AEB11CEC512900ED37EE /* edit (1).png */,
 				8491166F1C9186F700CF1967 /* edit_head.png */,
 				8491166B1C9185DF00CF1967 /* edit_bg.png */,
 				8491166C1C9185DF00CF1967 /* edit_cam.png */,
@@ -1161,6 +1173,7 @@
 				8491168E1C91B35600CF1967 /* BtnUpdateProfile.xib in Resources */,
 				843B3DB11C92EC4B0014D05A /* back_bg2.png in Resources */,
 				84C833641C84587E009AD74F /* google.png in Resources */,
+				84F4AEAC1CEC491900ED37EE /* notify-white.png in Resources */,
 				84567E101CE2200F00BCB0DA /* EditOrganationTypeTableViewCell.xib in Resources */,
 				84FFD8C11CA9166100D6F1DA /* employer-hover.png in Resources */,
 				8491166E1C9185DF00CF1967 /* edit_cam.png in Resources */,
@@ -1170,6 +1183,7 @@
 				84B0ABCF1C808A070083B773 /* button-3.png in Resources */,
 				8491167A1C919A8000CF1967 /* OldPasswordCell.xib in Resources */,
 				849116841C91A66C00CF1967 /* CameraCell.xib in Resources */,
+				84F4AEAE1CEC4E5000ED37EE /* edit.png in Resources */,
 				84C8334A1C842A39009AD74F /* home_location (1).png in Resources */,
 				843B3DB41C92EC4B0014D05A /* search.png in Resources */,
 				8491165B1C91786800CF1967 /* LoadMoreCell.xib in Resources */,
@@ -1213,11 +1227,13 @@
 				843DD7191C8D8BE200EE1D36 /* RegisterTextFieldTableViewCell.xib in Resources */,
 				8460540C1CE4793800B9DC92 /* RecruiterEmailTableViewCell.xib in Resources */,
 				846A7D741C96E1780058D33B /* AboutApplicantsTableViewCell.xib in Resources */,
+				84F4AEB01CEC4EFB00ED37EE /* delete.png in Resources */,
 				84FFD8C31CA9166100D6F1DA /* recruiter-hover.png in Resources */,
 				843B3DA91C92CA020014D05A /* Employerjoblistheadercell.xib in Resources */,
 				84FFD8B61CA90E4C00D6F1DA /* button-1 (1).png in Resources */,
 				84C8335F1C84587E009AD74F /* db_bg.png in Resources */,
 				84C833321C8410A0009AD74F /* forget_bg.png in Resources */,
+				84F4AEB21CEC512900ED37EE /* edit (1).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

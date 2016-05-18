@@ -18,7 +18,7 @@
 #import "EmployerDeleteService.h"
 #import "EmploerEditJobViewController.h"
 #import "EditProfileEmployerViewController.h"
-@interface EmployerJobListViewController (){
+@interface EmployerJobListViewController ()<UISearchDisplayDelegate>{
     
     NSMutableArray *mutableArrJobList;
     NSDictionary *dicEmp;
@@ -42,7 +42,9 @@
     IBOutlet UITableView *tblEmpJobList;
     
     
+    
 }
+@synthesize serchResult;
 - (void)viewDidLoad {
     [super viewDidLoad];
     mutableArrJobList = [[NSMutableArray alloc] init];
@@ -111,6 +113,8 @@
         dicApplist = [NSDictionary dictionaryWithObjectsAndKeys:
                       id_data, strid,strUserid_data,strUserid,created_data,created,educational_qualifiaction_data,educational_qualifiaction,job_id_data,job_id,location_data,location,urlkey_data,urlkey,designation_data,designation,title_data,title,skill_required_data,skillRequired ,nil];
         [mutableArrJobList addObject:dicApplist];
+        
+        self.serchResult = [NSMutableArray arrayWithCapacity:[mutableArrJobList count]];
     }
     
     //[tblEmpJobList  reloadData];
@@ -118,8 +122,20 @@
     [super viewWillAppear:animated];
 }
 
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    [self.serchResult removeAllObjects];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
+    
+    self.serchResult = [NSMutableArray arrayWithArray: [mutableArrJobList filteredArrayUsingPredicate:resultPredicate]];
+}
 
-
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    return YES;
+}
 #pragma tableview
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -145,7 +161,7 @@
     return mutableArrJobList.count;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+/*- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     static NSString *HeaderIdentifier=@"Employerjoblistheadercell";
     
     
@@ -165,7 +181,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 235.0f;
-}
+}  */
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -211,6 +227,7 @@
                          [tmpDict objectForKeyedSubscript:skillRequired]];
     
     cell.lblJobId.text=jobidtext;
+    //cell.lblJobId.text=[mutableArrJobList objectAtIndex:indexPath.row];
     cell.lblEduqualification.text=edutext;
     cell.lblJobTitle.text=titletext;
     cell.lblPosition.text=designationtext;

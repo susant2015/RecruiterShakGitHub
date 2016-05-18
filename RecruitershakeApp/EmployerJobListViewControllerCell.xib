@@ -115,7 +115,7 @@
                         <rect key="frame" x="550" y="11" width="20" height="18"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <state key="normal" title="Button" backgroundImage="edit (2).png">
+                        <state key="normal" title="Button" backgroundImage="edit.png">
                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </state>
@@ -225,6 +225,6 @@
     <resources>
         <image name="back_bg2.png" width="854" height="324"/>
         <image name="delete.png" width="42" height="48"/>
-        <image name="edit (2).png" width="42" height="48"/>
+        <image name="edit.png" width="42" height="48"/>
     </resources>
 </document>

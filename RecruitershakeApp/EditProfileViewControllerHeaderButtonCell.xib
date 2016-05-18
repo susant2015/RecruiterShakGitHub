@@ -32,7 +32,7 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDi-uG-E4N" userLabel="Button-back">
                         <rect key="frame" x="8" y="4" width="20" height="28"/>
-                        <state key="normal" backgroundImage="back-arrow (2).png"/>
+                        <state key="normal" backgroundImage="back-arrow.png"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKz-87-fd3" userLabel="Button-chart">
                         <rect key="frame" x="573" y="10" width="20" height="28"/>
@@ -129,7 +129,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="back-arrow (2).png" width="34" height="54"/>
+        <image name="back-arrow.png" width="45" height="70"/>
         <image name="chat (2).png" width="70" height="54"/>
         <image name="edit_head.png" width="960" height="106"/>
         <image name="notify-white.png" width="68" height="54"/>
