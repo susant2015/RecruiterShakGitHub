@@ -10,4 +10,5 @@
 
 @interface EmployerJobListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property(weak,nonatomic) NSMutableArray *serchResult;
+@property(weak,nonatomic) NSMutableArray *strjob;
 @end

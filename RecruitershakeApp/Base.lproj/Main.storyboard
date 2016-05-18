@@ -1823,6 +1823,9 @@
                             <constraint firstItem="lue-rw-PK8" firstAttribute="bottom" secondItem="0fu-xD-afO" secondAttribute="bottom" id="zgz-Yd-ynO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tblEmpJobList" destination="gIV-VH-au7" id="7Mi-pp-0VF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPI-A6-Xtp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

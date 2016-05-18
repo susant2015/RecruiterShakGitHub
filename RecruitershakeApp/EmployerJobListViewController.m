@@ -44,6 +44,7 @@
     
     
 }
+@synthesize strjob=_strjob;
 @synthesize serchResult;
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,18 +66,7 @@
     
     
 }
--(void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller {
-    EmployerJobListViewController *cell=(EmployerJobListViewController*)[self getSuperviewOfType:[UITableViewCell class] fromView:controller];
-    UISearchBar *temp = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 320, 45)];
-    temp.barStyle=UIBarStyleBlackTranslucent;
-    temp.showsCancelButton=NO;
-    temp.autocorrectionType=UITextAutocorrectionTypeNo;
-    temp.autocapitalizationType=UITextAutocapitalizationTypeNone;
-   
-    tblEmpJobList.tableHeaderView=temp;
-    
 
-}
 
 -(void)viewWillAppear:(BOOL)animated{
     
@@ -121,6 +111,8 @@
     
     [super viewWillAppear:animated];
 }
+
+
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
@@ -181,7 +173,8 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 235.0f;
-}  */
+}
+   */
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
