@@ -34,7 +34,7 @@
                         <rect key="frame" x="10" y="13" width="25" height="12"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <state key="normal" backgroundImage="white_burger.png">
+                        <state key="normal" backgroundImage="burger.png">
                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </state>
@@ -57,7 +57,7 @@
                         <rect key="frame" x="533" y="10" width="22" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <state key="normal" title="Button" backgroundImage="white-notify.png">
+                        <state key="normal" title="Button" backgroundImage="notify-white.png">
                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </state>
@@ -131,7 +131,7 @@
                         <rect key="frame" x="135" y="66" width="31" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <state key="normal" title="Button" backgroundImage="edit.png">
+                        <state key="normal" title="Button" backgroundImage="edit (1).png">
                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </state>
@@ -272,20 +272,20 @@
                 <outlet property="lblEmployerFirstName" destination="Phi-qL-U91" id="MSn-BK-ML9"/>
                 <outlet property="lblEmployerLastName" destination="23f-5n-nTa" id="daF-y5-OH6"/>
             </connections>
-            <point key="canvasLocation" x="-225" y="204"/>
+            <point key="canvasLocation" x="-146" y="200"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="add_bar.png" width="960" height="106"/>
+        <image name="burger.png" width="56" height="54"/>
         <image name="chat (2).png" width="70" height="54"/>
-        <image name="edit.png" width="42" height="48"/>
+        <image name="edit (1).png" width="81" height="81"/>
         <image name="facebook.png" width="80" height="80"/>
         <image name="google.png" width="80" height="80"/>
+        <image name="notify-white.png" width="68" height="54"/>
         <image name="pic.png" width="238" height="238"/>
         <image name="plus.png" width="40" height="40"/>
         <image name="title_bg.png" width="960" height="106"/>
         <image name="twitter.png" width="80" height="80"/>
-        <image name="white-notify.png" width="68" height="54"/>
-        <image name="white_burger.png" width="56" height="54"/>
     </resources>
 </document>

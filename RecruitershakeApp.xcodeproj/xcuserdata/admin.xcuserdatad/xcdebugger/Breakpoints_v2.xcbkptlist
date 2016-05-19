@@ -437,38 +437,6 @@
             endingLineNumber = "45"
             landmarkName = "-editProfileEmployerUserId:oldPassword:newPassword:conformPassword:firstName:lastName:phoneNumber:addressOne:addressTwo:city:state:country:zipCode:fbUrl:twUrl:gPlus:companyName:orgType:about:withCompletionHandler:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[EditProfileEmployerService editProfileEmployerUserId:oldPassword:newPassword:conformPassword:firstName:lastName:phoneNumber:addressOne:addressTwo:city:state:country:zipCode:fbUrl:twUrl:gPlus:companyName:orgType:about:withCompletionHandler:]"
-                  moduleName = "RecruitershakeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Susant/proj%20struc/Source%20Day%20By%20Day/RecruitershakeApp%2008-04-16%20/RecruitershakeApp/EditProfileEmployerService.m"
-                  timestampString = "485271253.710909"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "2025">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__242-[EditProfileEmployerService editProfileEmployerUserId:oldPassword:newPassword:conformPassword:firstName:lastName:phoneNumber:addressOne:addressTwo:city:state:country:zipCode:fbUrl:twUrl:gPlus:companyName:orgType:about:withCompletionHandler:]_block_invoke"
-                  moduleName = "RecruitershakeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Susant/proj%20struc/Source%20Day%20By%20Day/RecruitershakeApp%2008-04-16%20/RecruitershakeApp/EditProfileEmployerService.m"
-                  timestampString = "485271253.711062"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "108">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

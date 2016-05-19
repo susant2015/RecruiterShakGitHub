@@ -112,7 +112,7 @@
     self.email=_strEmail;
     self.phone_number=_strPhonenumber;
     self.occuption=_strOccuption;
-    // self.strLastName=_strQualification;
+    
     
     
     
@@ -121,12 +121,12 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
+   
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
+    
     return [self.firstnames count];
 }
 
@@ -140,8 +140,8 @@
         cell=[[[NSBundle mainBundle] loadNibNamed:@"RecruiterMyLeadsViewContollerCell" owner:self options:nil]objectAtIndex:0];
     }
     
-    // cell.lblEmail.text=self.names[indexPath.row];
-    NSUInteger row = [indexPath row];
+   
+   
     cell.lblFirstName.text = [self.firstnames objectAtIndex:indexPath.row];
     cell.lblLastName.text=[self.lastname objectAtIndex:indexPath.row];
     cell.lblEdu_Qulf.text=[self.qualification objectAtIndex:indexPath.row];
