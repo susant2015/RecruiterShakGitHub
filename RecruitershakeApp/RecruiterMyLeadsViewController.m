@@ -72,7 +72,7 @@
     {
         
         
-        for(NSDictionary *newValu in statuses)
+    /*    for(NSDictionary *newValu in statuses)
         {
             
             self.strFirstName=[newValu objectForKey:@"first_name"];
@@ -85,7 +85,7 @@
             // [tableView reloadData];
             
             NSLog(@"Name :%@    Quantity :%@    MRP :%@ ",self.strFirstName,self.strEdu_qlification,self.strPhone_Number,self.strEmail);
-        }
+        }  */
     }
     
     NSMutableArray *_strFirstname = [NSMutableArray array];
@@ -141,7 +141,7 @@
     }
     
     // cell.lblEmail.text=self.names[indexPath.row];
-    NSUInteger row = [indexPath row];
+   
     cell.lblFirstName.text = [self.firstnames objectAtIndex:indexPath.row];
     cell.lblLastName.text=[self.lastname objectAtIndex:indexPath.row];
     cell.lblEdu_Qulf.text=[self.qualification objectAtIndex:indexPath.row];

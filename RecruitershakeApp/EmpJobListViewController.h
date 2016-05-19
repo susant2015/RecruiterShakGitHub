@@ -11,7 +11,13 @@
 #import "ModelEmployerApplicantList.h"
 
 
-@interface EmpJobListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
-
+@interface EmpJobListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+    
+   
+}
+@property(weak,nonatomic)NSMutableArray *strFirstName;
+@property(weak,nonatomic)NSMutableArray *strLastName;
+@property(weak,nonatomic)NSMutableArray *strJobId;
+@property(weak,nonatomic)NSMutableArray *strApplyDate;
 
 @end
