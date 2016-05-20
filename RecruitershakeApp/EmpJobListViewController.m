@@ -101,8 +101,7 @@
     
      arrContents = [[NSMutableArray alloc] init];
     [arrContents addObject:obj1];
-    [arrContents addObject:obj1];
-    [arrContents addObject:obj1];
+    
   /*  NSMutableArray *strFirstname = [NSMutableArray array];
     NSMutableArray *strLastname = [NSMutableArray array];
     NSMutableArray *strJobIds = [NSMutableArray array];
@@ -135,20 +134,16 @@
         
         isFilletered=YES;
         filertingString=[[NSMutableArray alloc]  init];
-        filetringJobId=[[NSMutableArray alloc]  init];
-        for (NSString *str in arrContents) {
+        for (ModelEmployerApplicantList *obj in arrContents) {
             
-            NSRange stringRange=[str rangeOfString:searchText options:NSCaseInsensitiveSearch];
-            if (stringRange.location !=NSNotFound) {
-                [filertingString addObject:str];
+            NSRange stringNumberRange=[obj.strFisrst_Name rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (stringNumberRange.location !=NSNotFound) {
+                [filertingString addObject:obj];
             }
             
-            for (NSString *str in arrContents) {
-                
-                NSRange stringRange=[str rangeOfString:searchText options:NSCaseInsensitiveSearch];
-                if (stringRange.location !=NSNotFound) {
-                    [filetringJobId addObject:str];
-                }
+            NSRange stringWordRange=[obj.strLast_Name rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (stringWordRange.location != NSNotFound) {
+                [filertingString addObject:obj];
             }
         }
     }
@@ -235,7 +230,7 @@
     }
     cell.lblfitstname.text = obj.strFisrst_Name;
     cell.lblLastName.text = obj.strLast_Name;
-     return cell;
+    return cell;
 }
 
 
