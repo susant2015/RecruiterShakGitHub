@@ -22,10 +22,5 @@
 @property(strong,nonatomic) UITableView *tableView;
 
 
-@property(weak,nonatomic) NSMutableArray *strFirstName;
-@property(weak,nonatomic) NSMutableArray *strLastName;
-@property(weak,nonatomic) NSMutableArray *strzOccuption;
-@property(weak,nonatomic) NSMutableArray *strEmail;
-@property(weak,nonatomic) NSMutableArray *strPhone_Number;
-@property(weak,nonatomic) NSMutableArray *strEdu_qlification;
+
 @end

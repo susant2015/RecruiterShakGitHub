@@ -30,12 +30,7 @@
 @synthesize qualification;
 @synthesize tableView;
 
-@synthesize strFirstName;
-@synthesize strLastName;
-@synthesize strEmail;
-@synthesize strPhone_Number;
-@synthesize strEdu_qlification;
-@synthesize strzOccuption;
+
 
 
 - (void)viewDidLoad {
@@ -88,30 +83,30 @@
         }  */
     }
     
-    NSMutableArray *_strFirstname = [NSMutableArray array];
-    NSMutableArray *_strLastname = [NSMutableArray array];
-    NSMutableArray *_strEmail = [NSMutableArray array];
-    NSMutableArray *_strQualification = [NSMutableArray array];
-    NSMutableArray *_strPhonenumber = [NSMutableArray array];
-    NSMutableArray *_strOccuption = [NSMutableArray array];
+    NSMutableArray *strFirstname = [NSMutableArray array];
+    NSMutableArray *strLastname = [NSMutableArray array];
+    NSMutableArray *strEmail = [NSMutableArray array];
+    NSMutableArray *strQualification = [NSMutableArray array];
+    NSMutableArray *strPhonenumber = [NSMutableArray array];
+    NSMutableArray *strOccuption = [NSMutableArray array];
     
     
     for (id item in statuses){
-        [_strFirstname addObject:[NSString stringWithFormat:@"%@", item[@"first_name"]]];
-        [_strLastname addObject:[NSString stringWithFormat:@"%@",item[@"last_name"]]];
-        [_strQualification addObject:[NSString stringWithFormat:@"%@", item[@"education"]]];
-        [_strEmail addObject:[NSString stringWithFormat:@"%@", item[@"email"]]];
-        [_strPhonenumber addObject:[NSString stringWithFormat:@"%@", item[@"phone_number"]]];
-        [_strOccuption addObject:[NSString stringWithFormat:@"%@", item[@"occupation"]]];
+        [strFirstname addObject:[NSString stringWithFormat:@"%@", item[@"first_name"]]];
+        [strLastname addObject:[NSString stringWithFormat:@"%@",item[@"last_name"]]];
+        [strQualification addObject:[NSString stringWithFormat:@"%@", item[@"education"]]];
+        [strEmail addObject:[NSString stringWithFormat:@"%@", item[@"email"]]];
+        [strPhonenumber addObject:[NSString stringWithFormat:@"%@", item[@"phone_number"]]];
+        [strOccuption addObject:[NSString stringWithFormat:@"%@", item[@"occupation"]]];
     }
     
     [tableView reloadData];
-    self.firstnames=_strFirstname;
-    self.lastname=_strLastname;
-    self.qualification=_strQualification;
-    self.email=_strEmail;
-    self.phone_number=_strPhonenumber;
-    self.occuption=_strOccuption;
+    self.firstnames=strFirstname;
+    self.lastname=strLastname;
+    self.qualification=strQualification;
+    self.email=strEmail;
+    self.phone_number=strPhonenumber;
+    self.occuption=strOccuption;
     // self.strLastName=_strQualification;
     
     

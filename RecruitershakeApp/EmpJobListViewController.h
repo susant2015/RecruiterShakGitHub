@@ -15,9 +15,9 @@
     
    
 }
-@property(weak,nonatomic)NSMutableArray *strFirstName;
-@property(weak,nonatomic)NSMutableArray *strLastName;
-@property(weak,nonatomic)NSMutableArray *strJobId;
-@property(weak,nonatomic)NSMutableArray *strApplyDate;
+@property(strong,nonatomic)NSArray *strFirstName;
+@property(strong,nonatomic)NSArray *strLastName;
+@property(strong,nonatomic)NSArray *strJobId;
+@property(strong,nonatomic)NSArray *strApplyDate;
 
 @end
