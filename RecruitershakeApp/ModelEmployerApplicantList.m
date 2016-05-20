@@ -11,25 +11,28 @@
 @implementation ModelEmployerApplicantList
 
 
-  /*-(id)initWithDictionary:(NSDictionary *)dict
+  -(id)initWithDictionary:(NSMutableArray *)dict
 {
+   
+        
    
     if (self = [super init]) {
         
+            for(NSDictionary *dic in dict) {
         
+            self.strFisrst_Name =[dic objectForKey:@"first_name"];
         
-            self.strFisrst_Name =[dict objectForKey:@"first_name"];
-        
-            self.strLast_Name =[dict objectForKey:@"last_name"];
+            self.strLast_Name =[dic objectForKey:@"last_name"];
         
                 
                 
-            self.strJobId =[dict objectForKey:@"job_id"];
+            self.strJobId =[dic objectForKey:@"job_id"];
         
         
-            self.strApplyDate =[dict objectForKey:@"apply_date"];
+            self.strApplyDate =[dic objectForKey:@"apply_date"];
         
-             self.strId =[dict objectForKey:@"id"];
+             self.strId =[dic objectForKey:@"id"];
+    }
     }
     
      NSLog(@"The self is is%@",self.strId);
@@ -38,19 +41,9 @@
      NSLog(@"The self is is%@",self.strJobId);
      NSLog(@"The self is is%@",self.strApplyDate);
     return self;
-}  */
-
--(instancetype)initWithId:(NSString *)Id firstName:(NSString *)firstname lastName:(NSString*)lastname jobId:(NSString *)jobid applyDate:(NSString *)applydate{
-    self = [super init];
-    if(self){
-        self.strId = Id;
-        self.strFisrst_Name = firstname;
-        self.strLast_Name = lastname;
-        self.strJobId = jobid;
-        self.strApplyDate=applydate;
-    }
-    return self;
 }
+
+
 
 
 

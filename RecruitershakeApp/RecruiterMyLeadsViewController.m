@@ -20,7 +20,10 @@
 
 @end
 
-@implementation RecruiterMyLeadsViewController
+@implementation RecruiterMyLeadsViewController{
+    
+    NSDictionary *statuses;
+}
 
 
 @synthesize firstnames;
@@ -67,20 +70,6 @@
     {
         
         
-    /*    for(NSDictionary *newValu in statuses)
-        {
-            
-            self.strFirstName=[newValu objectForKey:@"first_name"];
-            
-            self.strEdu_qlification=[newValu objectForKey:@"last_name"];
-            
-            self.strPhone_Number=[newValu objectForKey:@"phone_number"];
-            self.strEmail=[newValu objectForKey:@"email"];
-            
-            // [tableView reloadData];
-            
-            NSLog(@"Name :%@    Quantity :%@    MRP :%@ ",self.strFirstName,self.strEdu_qlification,self.strPhone_Number,self.strEmail);
-        }  */
     }
     
     NSMutableArray *strFirstname = [NSMutableArray array];
@@ -113,7 +102,7 @@
     
     
 }
-
+ 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -149,6 +138,57 @@
     
     return myCell;
 }
+
+/*-(void)viewDidLoad{
+    
+    [super viewDidLoad];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    [[RecruiterMyLeadService  sharedInstance] recruiterMyLeadsId:modelLogInRecruiter.strRecruiter_Id
+     withCompletionHandler:^(id result, BOOL isError, NSString *strMsg) {
+        if(isError){
+            [[[UIAlertView alloc] initWithTitle:nil message:@"Error" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            
+            if(strMsg.length>0){
+                [[[UIAlertView alloc] initWithTitle:nil message:strMsg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                
+                
+            }
+            else{
+                //[self alertStatus:SomethingWrong :nil];
+                
+            }
+            
+        }
+        else{
+            
+           
+            statuses=[result objectForKey:@"leads"];
+            
+            
+            NSLog(@"SomeStatus :%@",statuses);
+            
+            if (!statuses)
+            {
+                //  NSLog(@"Error in Json :%@",error);
+            }
+            else
+            {
+                
+                
+               
+            }
+            
+        }
+        
+    }];
+    
+     NSLog(@" :%@",statuses);
+    
+} */
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     static NSString *HeaderIdentifier=@"RecruiterMyLeadsContentCell";

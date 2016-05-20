@@ -1553,8 +1553,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="YKO-YQ-Ogz" id="BBX-r8-t3T"/>
-                                    <outlet property="delegate" destination="YKO-YQ-Ogz" id="gvY-ZW-Lxd"/>
+                                    <outlet property="dataSource" destination="YKO-YQ-Ogz" id="jUP-Ab-Lbv"/>
+                                    <outlet property="delegate" destination="YKO-YQ-Ogz" id="HDS-9i-aWd"/>
                                 </connections>
                             </tableView>
                         </subviews>

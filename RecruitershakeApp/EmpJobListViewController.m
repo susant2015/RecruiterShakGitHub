@@ -37,6 +37,7 @@
     IBOutlet UISearchBar *searchMyApplicant;
     NSMutableArray *filertingString;
     NSMutableArray *filetringJobId;
+    NSMutableArray *arrContents;
      BOOL isFilletered;
 }
 
@@ -93,7 +94,16 @@
        NSLog(@"The myobject data is%@",myObject);
        
     } */
-    NSMutableArray *strFirstname = [NSMutableArray array];
+    
+    ModelEmployerApplicantList *obj1 =[[ModelEmployerApplicantList alloc] initWithDictionary:jsonResponeDict];
+     
+    
+    
+     arrContents = [[NSMutableArray alloc] init];
+    [arrContents addObject:obj1];
+    [arrContents addObject:obj1];
+    [arrContents addObject:obj1];
+  /*  NSMutableArray *strFirstname = [NSMutableArray array];
     NSMutableArray *strLastname = [NSMutableArray array];
     NSMutableArray *strJobIds = [NSMutableArray array];
     NSMutableArray *strApplyDates = [NSMutableArray array];
@@ -111,7 +121,7 @@
     self.strFirstName=strFirstname;
     self.strLastName=strLastname;
     self.strJobId=strJobIds;
-    self.strApplyDate=strApplyDates;
+    self.strApplyDate=strApplyDates;  */
     
     
    
@@ -126,14 +136,14 @@
         isFilletered=YES;
         filertingString=[[NSMutableArray alloc]  init];
         filetringJobId=[[NSMutableArray alloc]  init];
-        for (NSString *str in self.strFirstName) {
+        for (NSString *str in arrContents) {
             
             NSRange stringRange=[str rangeOfString:searchText options:NSCaseInsensitiveSearch];
             if (stringRange.location !=NSNotFound) {
                 [filertingString addObject:str];
             }
             
-            for (NSString *str in self.strLastName) {
+            for (NSString *str in arrContents) {
                 
                 NSRange stringRange=[str rangeOfString:searchText options:NSCaseInsensitiveSearch];
                 if (stringRange.location !=NSNotFound) {
@@ -148,7 +158,7 @@
 {
     
     CGFloat height=0.0f;
-    if ([self.strFirstName count]) {
+    if ([arrContents  count]) {
         height=80.0f;
     }
     
@@ -168,7 +178,7 @@
     if (isFilletered) {
         return [filertingString count];
     }
-    return [self.strFirstName count];
+    return [arrContents count];
     
 }
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
@@ -210,15 +220,22 @@
     cell.lblLastName.text=last;
     cell.lblJobId.text=job;
     cell.lblApplyDate.text=date; */
-   
-      cell.lblfitstname.text=[self.strFirstName objectAtIndex:indexPath.row];
-     
-     cell.lblJobId.text=[self.strJobId objectAtIndex:indexPath.row];
-      cell.lblLastName.text=[self.strLastName objectAtIndex:indexPath.row];
-    
-    cell.lblApplyDate.text=[self.strApplyDate objectAtIndex:indexPath.row];
-    return cell;
-    
+    ModelEmployerApplicantList *obj;
+    if (isFilletered)
+    {
+        if (filertingString != nil) {
+            obj = [filertingString objectAtIndex:indexPath.row];
+        }
+    }
+    else
+    {
+        if (arrContents != nil) {
+            obj = [arrContents objectAtIndex:indexPath.row];
+        }
+    }
+    cell.lblfitstname.text = obj.strFisrst_Name;
+    cell.lblLastName.text = obj.strLast_Name;
+     return cell;
 }
 
 

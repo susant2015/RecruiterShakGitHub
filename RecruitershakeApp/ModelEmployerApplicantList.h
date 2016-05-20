@@ -19,8 +19,8 @@
 
 
 
-//-(id)initWithDictionary:(NSDictionary *)dict;
+-(id)initWithDictionary:(NSMutableArray *)dict;
 
--(instancetype)initWithId:(NSString *)Id firstName:(NSString *)firstname lastName:(NSString*)lastname jobId:(NSString *)jobid applyDate:(NSString *)applydate;
+
 
 @end

@@ -163,6 +163,21 @@
 		84C833661C84587E009AD74F /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C8335B1C84587E009AD74F /* twitter.png */; };
 		84CC952F1CCF7D31002E6E3E /* RecruiterMyLeadService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CC952E1CCF7D31002E6E3E /* RecruiterMyLeadService.m */; };
 		84CC95321CCF845A002E6E3E /* ModelRecruiterMyLeads.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CC95311CCF845A002E6E3E /* ModelRecruiterMyLeads.m */; };
+		84D502931CEF033000EDBD3F /* aboutbg (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 84D502841CEF033000EDBD3F /* aboutbg (1).png */; };
+		84D502941CEF033000EDBD3F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D502851CEF033000EDBD3F /* add.png */; };
+		84D502951CEF033000EDBD3F /* applicant_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D502861CEF033000EDBD3F /* applicant_bg.png */; };
+		84D502961CEF033000EDBD3F /* buttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D502871CEF033000EDBD3F /* buttom.png */; };
+		84D502971CEF033000EDBD3F /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D502881CEF033000EDBD3F /* comment.png */; };
+		84D502981CEF033000EDBD3F /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D502891CEF033000EDBD3F /* delete.png */; };
+		84D502991CEF033000EDBD3F /* edit (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5028A1CEF033000EDBD3F /* edit (2).png */; };
+		84D5029A1CEF033000EDBD3F /* heading_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5028B1CEF033000EDBD3F /* heading_bar.png */; };
+		84D5029B1CEF033000EDBD3F /* profile_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5028C1CEF033000EDBD3F /* profile_pic.png */; };
+		84D5029C1CEF033000EDBD3F /* white_burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5028D1CEF033000EDBD3F /* white_burger.png */; };
+		84D5029D1CEF033000EDBD3F /* white_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5028E1CEF033000EDBD3F /* white_edit.png */; };
+		84D5029E1CEF033000EDBD3F /* white_fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5028F1CEF033000EDBD3F /* white_fb.png */; };
+		84D5029F1CEF033000EDBD3F /* white_gp.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D502901CEF033000EDBD3F /* white_gp.png */; };
+		84D502A01CEF033000EDBD3F /* white_tw.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D502911CEF033000EDBD3F /* white_tw.png */; };
+		84D502A11CEF033000EDBD3F /* white-notify.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D502921CEF033000EDBD3F /* white-notify.png */; };
 		84D815C41CABA70200AEF15E /* RegisterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D815C31CABA70200AEF15E /* RegisterService.m */; };
 		84D815C71CABE7CF00AEF15E /* ForgotPasswordService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D815C61CABE7CF00AEF15E /* ForgotPasswordService.m */; };
 		84D815CA1CABF04400AEF15E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D815C81CABF04400AEF15E /* Main.storyboard */; };
@@ -439,6 +454,21 @@
 		84CC952E1CCF7D31002E6E3E /* RecruiterMyLeadService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecruiterMyLeadService.m; sourceTree = "<group>"; };
 		84CC95301CCF845A002E6E3E /* ModelRecruiterMyLeads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelRecruiterMyLeads.h; sourceTree = "<group>"; };
 		84CC95311CCF845A002E6E3E /* ModelRecruiterMyLeads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelRecruiterMyLeads.m; sourceTree = "<group>"; };
+		84D502841CEF033000EDBD3F /* aboutbg (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "aboutbg (1).png"; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/aboutbg (1).png"; sourceTree = "<group>"; };
+		84D502851CEF033000EDBD3F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/add.png"; sourceTree = "<group>"; };
+		84D502861CEF033000EDBD3F /* applicant_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = applicant_bg.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/applicant_bg.png"; sourceTree = "<group>"; };
+		84D502871CEF033000EDBD3F /* buttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttom.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/buttom.png"; sourceTree = "<group>"; };
+		84D502881CEF033000EDBD3F /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = comment.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/comment.png"; sourceTree = "<group>"; };
+		84D502891CEF033000EDBD3F /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/delete.png"; sourceTree = "<group>"; };
+		84D5028A1CEF033000EDBD3F /* edit (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit (2).png"; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/edit (2).png"; sourceTree = "<group>"; };
+		84D5028B1CEF033000EDBD3F /* heading_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heading_bar.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/heading_bar.png"; sourceTree = "<group>"; };
+		84D5028C1CEF033000EDBD3F /* profile_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_pic.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/profile_pic.png"; sourceTree = "<group>"; };
+		84D5028D1CEF033000EDBD3F /* white_burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_burger.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/white_burger.png"; sourceTree = "<group>"; };
+		84D5028E1CEF033000EDBD3F /* white_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_edit.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/white_edit.png"; sourceTree = "<group>"; };
+		84D5028F1CEF033000EDBD3F /* white_fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_fb.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/white_fb.png"; sourceTree = "<group>"; };
+		84D502901CEF033000EDBD3F /* white_gp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_gp.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/white_gp.png"; sourceTree = "<group>"; };
+		84D502911CEF033000EDBD3F /* white_tw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_tw.png; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/white_tw.png"; sourceTree = "<group>"; };
+		84D502921CEF033000EDBD3F /* white-notify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "white-notify.png"; path = "../../../../../../Downloads/Image Set Date wise 2/applicantprofile/white-notify.png"; sourceTree = "<group>"; };
 		84D815C21CABA70200AEF15E /* RegisterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterService.h; sourceTree = "<group>"; };
 		84D815C31CABA70200AEF15E /* RegisterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterService.m; sourceTree = "<group>"; };
 		84D815C51CABE7CF00AEF15E /* ForgotPasswordService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordService.h; sourceTree = "<group>"; };
@@ -912,6 +942,7 @@
 		84B0ABBF1C8059780083B773 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				84D5027A1CEEF5CF00EDBD3F /* Applicant */,
 				843B3DA31C92C57A0014D05A /* EmployerJobList */,
 				8491165F1C917C7700CF1967 /* editprofile */,
 				8459C6441C87141400EF5079 /* register */,
@@ -1007,6 +1038,28 @@
 				84C8335B1C84587E009AD74F /* twitter.png */,
 			);
 			name = DashBoard;
+			sourceTree = "<group>";
+		};
+		84D5027A1CEEF5CF00EDBD3F /* Applicant */ = {
+			isa = PBXGroup;
+			children = (
+				84D502841CEF033000EDBD3F /* aboutbg (1).png */,
+				84D502851CEF033000EDBD3F /* add.png */,
+				84D502861CEF033000EDBD3F /* applicant_bg.png */,
+				84D502871CEF033000EDBD3F /* buttom.png */,
+				84D502881CEF033000EDBD3F /* comment.png */,
+				84D502891CEF033000EDBD3F /* delete.png */,
+				84D5028A1CEF033000EDBD3F /* edit (2).png */,
+				84D5028B1CEF033000EDBD3F /* heading_bar.png */,
+				84D5028C1CEF033000EDBD3F /* profile_pic.png */,
+				84D5028D1CEF033000EDBD3F /* white_burger.png */,
+				84D5028E1CEF033000EDBD3F /* white_edit.png */,
+				84D5028F1CEF033000EDBD3F /* white_fb.png */,
+				84D502901CEF033000EDBD3F /* white_gp.png */,
+				84D502911CEF033000EDBD3F /* white_tw.png */,
+				84D502921CEF033000EDBD3F /* white-notify.png */,
+			);
+			name = Applicant;
 			sourceTree = "<group>";
 		};
 		84EF420E1CB38AB30033B614 /* Constants */ = {
@@ -1141,6 +1194,7 @@
 				84C8335E1C84587E009AD74F /* chat.png in Resources */,
 				842C7B4E1C9689F3009B18C5 /* plus.png in Resources */,
 				845C0C2A1C899C5E00168F13 /* RegisterHeaderTableViewCell.xib in Resources */,
+				84D5029E1CEF033000EDBD3F /* white_fb.png in Resources */,
 				843DD7251C8DACC400EE1D36 /* registerLIMKEDIN-btn.png in Resources */,
 				84B0ABCB1C807E5A0083B773 /* button-2.png in Resources */,
 				843B3DB31C92EC4B0014D05A /* search_bg.png in Resources */,
@@ -1148,6 +1202,7 @@
 				84C833491C842A39009AD74F /* home_line (1).png in Resources */,
 				84A808E81C8570FD00043683 /* button-3.png in Resources */,
 				84A808F81C86C31400043683 /* addjob_bg.jpg in Resources */,
+				84D5029A1CEF033000EDBD3F /* heading_bar.png in Resources */,
 				84C833661C84587E009AD74F /* twitter.png in Resources */,
 				843DD7261C8DACC400EE1D36 /* uncheck-btn.png in Resources */,
 				84707FFA1CEB4FBC00D6AB06 /* ApplicantWorkExpTableViewCell.xib in Resources */,
@@ -1161,6 +1216,7 @@
 				842C7B4C1C9684FA009B18C5 /* EmployerJobListViewControllerCell.xib in Resources */,
 				84B0ABBC1C80582B0083B773 /* lan_btn.png in Resources */,
 				849116751C9197AA00CF1967 /* TextFieldCellName.xib in Resources */,
+				84D5029B1CEF033000EDBD3F /* profile_pic.png in Resources */,
 				84FFD8C41CA9166100D6F1DA /* recruiter.png in Resources */,
 				8491167F1C91A35C00CF1967 /* Aboutcell.xib in Resources */,
 				84C833471C842A39009AD74F /* green-btn.png in Resources */,
@@ -1184,13 +1240,17 @@
 				8491167A1C919A8000CF1967 /* OldPasswordCell.xib in Resources */,
 				849116841C91A66C00CF1967 /* CameraCell.xib in Resources */,
 				84F4AEAE1CEC4E5000ED37EE /* edit.png in Resources */,
+				84D502991CEF033000EDBD3F /* edit (2).png in Resources */,
 				84C8334A1C842A39009AD74F /* home_location (1).png in Resources */,
 				843B3DB41C92EC4B0014D05A /* search.png in Resources */,
 				8491165B1C91786800CF1967 /* LoadMoreCell.xib in Resources */,
 				843DD7231C8DACC400EE1D36 /* check_button.png in Resources */,
 				84B0ABBE1C8058BE0083B773 /* lan_logo.png in Resources */,
 				8491166A1C9182F100CF1967 /* EditProfileViewControllerEditLabelcell.xib in Resources */,
+				84D502961CEF033000EDBD3F /* buttom.png in Resources */,
 				84C833481C842A39009AD74F /* home_bg (1).png in Resources */,
+				84D502A01CEF033000EDBD3F /* white_tw.png in Resources */,
+				84D5029F1CEF033000EDBD3F /* white_gp.png in Resources */,
 				849116561C9172E300CF1967 /* DescriptionCell.xib in Resources */,
 				849116701C9186F700CF1967 /* edit_head.png in Resources */,
 				849116651C917FA100CF1967 /* EditProfileViewControllerHeaderButtonCell.xib in Resources */,
@@ -1198,8 +1258,10 @@
 				8459C6461C8714A700EF5079 /* register_bg.jpg in Resources */,
 				843B3DB01C92EC4B0014D05A /* back_bg.png in Resources */,
 				841959861C8EB5C000E8CA79 /* ApplicantHeaderCell.xib in Resources */,
+				84D502A11CEF033000EDBD3F /* white-notify.png in Resources */,
 				84C2F3D61C9036CC001D775B /* EducationBackgroundCell.xib in Resources */,
 				84B0ABCA1C807E5A0083B773 /* button-1.png in Resources */,
+				84D5029C1CEF033000EDBD3F /* white_burger.png in Resources */,
 				84D815CA1CABF04400AEF15E /* Main.storyboard in Resources */,
 				84FAEF7A1CEB3092003E17AD /* ApplicantEduBackTableViewCell.xib in Resources */,
 				84A808E71C8570FD00043683 /* button-1.png in Resources */,
@@ -1207,7 +1269,10 @@
 				843DD7241C8DACC400EE1D36 /* register_round.png in Resources */,
 				84C833651C84587E009AD74F /* notify.png in Resources */,
 				843DD7141C8D545D00EE1D36 /* ApplicantDetailsCell.xib in Resources */,
+				84D502951CEF033000EDBD3F /* applicant_bg.png in Resources */,
+				84D502931CEF033000EDBD3F /* aboutbg (1).png in Resources */,
 				84C8334C1C842A39009AD74F /* rlogo.png in Resources */,
+				84D502941CEF033000EDBD3F /* add.png in Resources */,
 				84A808FD1C86CA3A00043683 /* add_bar.png in Resources */,
 				842C7B531C96C381009B18C5 /* Employerapplicantlistcell.xib in Resources */,
 				84B0ABCD1C80843E0083B773 /* forget_email_bg.png in Resources */,
@@ -1216,6 +1281,7 @@
 				8448FE6F1CC0F2C500FA9AF1 /* RecruiterMyLeadsContentCell.xib in Resources */,
 				84FAEF7F1CEB3A48003E17AD /* ApplicantContentEdueTableViewCell.xib in Resources */,
 				84C833331C8410A0009AD74F /* forget_btn.png in Resources */,
+				84D502981CEF033000EDBD3F /* delete.png in Resources */,
 				843B3DB21C92EC4B0014D05A /* pic.png in Resources */,
 				84C833631C84587E009AD74F /* facebook.png in Resources */,
 				841959A61C8EC62C00E8CA79 /* ApplicantIndexCell.xib in Resources */,
@@ -1225,8 +1291,10 @@
 				84B0ABD11C808FD10083B773 /* register_round.png in Resources */,
 				84FFD8C21CA9166100D6F1DA /* employer.png in Resources */,
 				843DD7191C8D8BE200EE1D36 /* RegisterTextFieldTableViewCell.xib in Resources */,
+				84D5029D1CEF033000EDBD3F /* white_edit.png in Resources */,
 				8460540C1CE4793800B9DC92 /* RecruiterEmailTableViewCell.xib in Resources */,
 				846A7D741C96E1780058D33B /* AboutApplicantsTableViewCell.xib in Resources */,
+				84D502971CEF033000EDBD3F /* comment.png in Resources */,
 				84F4AEB01CEC4EFB00ED37EE /* delete.png in Resources */,
 				84FFD8C31CA9166100D6F1DA /* recruiter-hover.png in Resources */,
 				843B3DA91C92CA020014D05A /* Employerjoblistheadercell.xib in Resources */,
