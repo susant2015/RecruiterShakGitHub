@@ -37,7 +37,7 @@
     IBOutlet UISearchBar *searchMyApplicant;
     NSMutableArray *filertingString;
     NSMutableArray *filetringJobId;
-    NSMutableArray *arrContents;
+    NSMutableArray *arrJobList;
      BOOL isFilletered;
 }
 
@@ -99,16 +99,17 @@
      
     
     
-     arrContents = [[NSMutableArray alloc] init];
-    [arrContents addObject:obj1];
+     arrJobList = [[NSMutableArray alloc] init];
+    [arrJobList addObject:obj1];
     
-  /*  NSMutableArray *strFirstname = [NSMutableArray array];
+  /* NSMutableArray *strFirstname = [NSMutableArray array];
     NSMutableArray *strLastname = [NSMutableArray array];
     NSMutableArray *strJobIds = [NSMutableArray array];
     NSMutableArray *strApplyDates = [NSMutableArray array];
     
     
     for (id item in jsonResponeDict){
+   
         [strFirstname addObject:[NSString stringWithFormat:@"%@", item[@"first_name"]]];
         [strLastname addObject:[NSString stringWithFormat:@"%@",item[@"last_name"]]];
         [strJobIds addObject:[NSString stringWithFormat:@"%@", item[@"job_id"]]];
@@ -134,7 +135,7 @@
         
         isFilletered=YES;
         filertingString=[[NSMutableArray alloc]  init];
-        for (ModelEmployerApplicantList *obj in arrContents) {
+        for (ModelEmployerApplicantList *obj in arrJobList) {
             
             NSRange stringNumberRange=[obj.strFisrst_Name rangeOfString:searchText options:NSCaseInsensitiveSearch];
             if (stringNumberRange.location !=NSNotFound) {
@@ -153,7 +154,7 @@
 {
     
     CGFloat height=0.0f;
-    if ([arrContents  count]) {
+    if ([arrJobList  count]) {
         height=80.0f;
     }
     
@@ -173,7 +174,7 @@
     if (isFilletered) {
         return [filertingString count];
     }
-    return [arrContents count];
+    return [arrJobList count];
     
 }
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
@@ -224,8 +225,8 @@
     }
     else
     {
-        if (arrContents != nil) {
-            obj = [arrContents objectAtIndex:indexPath.row];
+        if (arrJobList != nil) {
+            obj = [arrJobList objectAtIndex:indexPath.row];
         }
     }
     cell.lblfitstname.text = obj.strFisrst_Name;

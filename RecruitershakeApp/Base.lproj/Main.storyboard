@@ -571,6 +571,32 @@
             </objects>
             <point key="canvasLocation" x="-4320" y="2714"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="zWa-hC-61V">
+            <objects>
+                <viewController id="hZ8-bw-5ub" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n04-hl-pft"/>
+                        <viewControllerLayoutGuide type="bottom" id="ckL-3Y-tDj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fHu-tI-8t4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhT-Xq-ep8" userLabel="img-back">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f75-pH-Y7w" userLabel="img-header">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CM8-Lf-YDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4232" y="3361"/>
+        </scene>
         <!--Recruiter Face Book View Controller-->
         <scene sceneID="dki-SC-0J6">
             <objects>

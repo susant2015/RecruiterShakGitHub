@@ -219,8 +219,8 @@
     [self.btnApplicant setSelected:YES];
     [self.btnEmployer setSelected:NO];
      self.lblDynamicallyChange.text=@"As Applicant";
-    self.txtUserName.text=@"raj.das";
-    self.txtPassword.text=@"1234";
+    self.txtUserName.text=@"subham.dutta";
+    self.txtPassword.text=@"12345";
 }
 
 
