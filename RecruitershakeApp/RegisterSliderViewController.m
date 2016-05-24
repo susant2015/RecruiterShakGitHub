@@ -22,21 +22,18 @@
     RegisterSliderViewController *playListVC = [[RegisterSliderViewController alloc]initWithNibName:@"RegisterSliderViewController" bundle:nil];
     playListVC.title = @"PlayList";
     CustomSectionViewController *playList = [[CustomSectionViewController alloc]initWithNibName:@"CustomSectionViewController" bundle:nil];
-    playListVC.title = @"List";
-    
-   
-    
+   playList.title = @"List";
     // ContainerView
     float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     float navigationHeight = self.navigationController.navigationBar.frame.size.height;
     
-    SliderContainerViewController *containerVC = [[SliderContainerViewController alloc]initWithControllers:@[playListVC,playList]
-                                                                                        topBarHeight:statusHeight + navigationHeight
-                                                                                parentViewController:self];
+    SliderContainerViewController *containerVC = [[SliderContainerViewController alloc]initWithControllers:@[playListVC,playList]topBarHeight:statusHeight + navigationHeight parentViewController:self];
     containerVC.delegate = self;
     containerVC.menuItemFont = [UIFont fontWithName:@"Futura-Medium" size:16];
     
-    [self.view addSubview:containerVC.view];
+   // [self.view addSubview:containerVC.view];
+    
+    
    
 
 }

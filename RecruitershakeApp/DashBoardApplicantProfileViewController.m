@@ -18,6 +18,9 @@
 #import "LoadMoreCell.h"
 #import "Constants.h"
 #import "ModelLogInApplicant.h"
+#import "ApplicantEduBackTableViewCell.h"
+#import "ApplicantContentEdueTableViewCell.h"
+#import "ApplicantWorkExpTableViewCell.h"
 @interface DashBoardApplicantProfileViewController ()
 
 @end
@@ -58,15 +61,12 @@
     else if (section==5) {
         return 1;
     }
-    
-        return 1;
+    else
+    return 1;
     
 }
 
-/*-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 200.0f;
-} */
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
@@ -80,24 +80,25 @@
     }
     else if (indexPath.section==2)
     {
-        height=160.0f;
+        height=30.0f;
     }
     else if (indexPath.section==3)
     {
-        height=89.0f;
-    }
-    else if (indexPath.row==4)
-    {
         height=60.0f;
+    }
+    else if (indexPath.section==4)
+    {
+        height=40.0f;
     }
     else if (indexPath.section==5)
     {
-        height=130.0f;
+        height=60.0f;
     }
     else if (indexPath.section==6)
     {
         height=82.0f;
     }
+    
        return height;
 }
 
@@ -156,10 +157,10 @@
     }
     else if (indexPath.section==2)
     {
-        static NSString *applicantIndexCellIdentifier3=@"EducationBackgroundCell";
-        ApplicantIndexCell *cell=(ApplicantIndexCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier3];
+        static NSString *applicantIndexCellIdentifier3=@"ApplicantEduBackTableViewCell";
+        ApplicantEduBackTableViewCell *cell=(ApplicantEduBackTableViewCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier3];
         if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"EducationBackgroundCell" owner:self options:nil]objectAtIndex:0];
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"ApplicantEduBackTableViewCell" owner:self options:nil]objectAtIndex:0];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
@@ -167,10 +168,10 @@
     }
     else if (indexPath.section==3)
     {
-        static NSString *applicantIndexCellIdentifier4=@"WorkExprienceDegreeCell";
-        WorkExprienceDegreeCell *cell=(WorkExprienceDegreeCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier4];
+        static NSString *applicantIndexCellIdentifier4=@"ApplicantContentEdueTableViewCell";
+        ApplicantContentEdueTableViewCell *cell=(ApplicantContentEdueTableViewCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier4];
         if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"WorkExprienceDegreeCell" owner:self options:nil]objectAtIndex:0];
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"ApplicantContentEdueTableViewCell" owner:self options:nil]objectAtIndex:0];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
@@ -178,10 +179,10 @@
     }
     else if (indexPath.section==4)
     {
-        static NSString *applicantIndexCellIdentifier5=@"WorkExprienceDegreeSchoolCell";
-        WorkExprienceDegreeCell *cell=(WorkExprienceDegreeCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier5];
+        static NSString *applicantIndexCellIdentifier5=@"ApplicantWorkExpTableViewCell";
+        ApplicantWorkExpTableViewCell *cell=(ApplicantWorkExpTableViewCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier5];
         if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"WorkExprienceDegreeSchoolCell" owner:self options:nil]objectAtIndex:0];
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"ApplicantWorkExpTableViewCell" owner:self options:nil]objectAtIndex:0];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
@@ -189,10 +190,10 @@
     }
     else if (indexPath.section==5)
     {
-        static NSString *applicantIndexCellIdentifier6=@"DescriptionCell";
-        DescriptionCell *cell=(DescriptionCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier6];
+        static NSString *applicantIndexCellIdentifier4=@"ApplicantContentEdueTableViewCell";
+        ApplicantContentEdueTableViewCell *cell=(ApplicantContentEdueTableViewCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier4];
         if (!cell) {
-            cell=[[[NSBundle mainBundle] loadNibNamed:@"DescriptionCell" owner:self options:nil]objectAtIndex:0];
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"ApplicantContentEdueTableViewCell" owner:self options:nil]objectAtIndex:0];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
@@ -200,8 +201,8 @@
     }
     else if (indexPath.section==6)
     {
-        static NSString *applicantIndexCellIdentifier7=@"LoadMoreCell";
-        LoadMoreCell *cell=(LoadMoreCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier7];
+        static NSString *applicantIndexCellIdentifier4=@"LoadMoreCell";
+        LoadMoreCell *cell=(LoadMoreCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier4];
         if (!cell) {
             cell=[[[NSBundle mainBundle] loadNibNamed:@"LoadMoreCell" owner:self options:nil]objectAtIndex:0];
         }
@@ -209,11 +210,6 @@
         myCell=cell;
         
     }
-    
-
-
-
-  
     return myCell;
 }
 

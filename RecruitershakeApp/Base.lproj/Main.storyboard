@@ -2760,7 +2760,7 @@
         <!--Register Slider View Controller-->
         <scene sceneID="5D1-w4-Q3o">
             <objects>
-                <viewController storyboardIdentifier="RegisterSliderViewController" id="pZo-eX-z85" customClass="RegisterSliderViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterSliderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pZo-eX-z85" customClass="RegisterSliderViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QSz-jb-aPN"/>
                         <viewControllerLayoutGuide type="bottom" id="UNu-r0-g8Q"/>
@@ -2786,7 +2786,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8X-iB-sn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1252" y="1207"/>
+            <point key="canvasLocation" x="-1487" y="1246"/>
         </scene>
         <!--About Applicants View Controller-->
         <scene sceneID="58V-vA-Nbr">
