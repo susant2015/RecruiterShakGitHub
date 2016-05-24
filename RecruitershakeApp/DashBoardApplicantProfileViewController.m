@@ -36,34 +36,53 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 7;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section==0) {
+        return 1;
+    }
+    else if (section==1) {
+        return 1;
+    }
+    else if (section==2) {
+        return 1;
+    }
+    else if (section==3) {
+        return 1;
+    }
+    else if (section==4) {
+        return 1;
+    }
+    else if (section==5) {
+        return 1;
+    }
     
-    return 1;
+        return 1;
+    
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+/*-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 250.0f;
-}
+    return 200.0f;
+} */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
     CGFloat height=0.0f;
-    if (indexPath.row==0) {
+    if (indexPath.section==0) {
         height=75.0f;
     }
-   /* else if (indexPath.row==1)
+    else  if (indexPath.section==1)
     {
         height=97.0f;
     }
-    else if (indexPath.row==2)
+    else if (indexPath.section==2)
     {
         height=160.0f;
     }
-    else if (indexPath.row==3)
+    else if (indexPath.section==3)
     {
         height=89.0f;
     }
@@ -71,19 +90,19 @@
     {
         height=60.0f;
     }
-    else if (indexPath.row==5)
+    else if (indexPath.section==5)
     {
         height=130.0f;
     }
-    else if (indexPath.row==6)
+    else if (indexPath.section==6)
     {
         height=82.0f;
-    }  */
+    }
        return height;
 }
 
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+/*- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     static NSString *HeaderIdentifier=@"ApplicantHeaderCell";
     
     
@@ -101,7 +120,7 @@
     [cell.btnEditApplicant addTarget:self action:@selector(btnEditApplicants:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
     
-}
+} */
 -(IBAction)btnEditApplicants:(UIButton *)sender{
     
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -114,7 +133,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *myCell=nil;
-    if (indexPath.row==0) {
+    if (indexPath.section==0) {
        
         static NSString *applicantIndexCellIdentifier=@"ApplicantDetailsCell";
         ApplicantIndexCell *cell=(ApplicantIndexCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier];
@@ -124,7 +143,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
     }
- /*   else if (indexPath.row==1)
+   else if (indexPath.section==1)
     {
         static NSString *applicantIndexCellIdentifier2=@"ApplicantIndexCell";
         ApplicantIndexCell *cell=(ApplicantIndexCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier2];
@@ -135,7 +154,7 @@
         myCell=cell;
         
     }
-    else if (indexPath.row==2)
+    else if (indexPath.section==2)
     {
         static NSString *applicantIndexCellIdentifier3=@"EducationBackgroundCell";
         ApplicantIndexCell *cell=(ApplicantIndexCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier3];
@@ -146,7 +165,7 @@
         myCell=cell;
         
     }
-    else if (indexPath.row==3)
+    else if (indexPath.section==3)
     {
         static NSString *applicantIndexCellIdentifier4=@"WorkExprienceDegreeCell";
         WorkExprienceDegreeCell *cell=(WorkExprienceDegreeCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier4];
@@ -157,7 +176,7 @@
         myCell=cell;
         
     }
-    else if (indexPath.row==4)
+    else if (indexPath.section==4)
     {
         static NSString *applicantIndexCellIdentifier5=@"WorkExprienceDegreeSchoolCell";
         WorkExprienceDegreeCell *cell=(WorkExprienceDegreeCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier5];
@@ -168,7 +187,7 @@
         myCell=cell;
         
     }
-    else if (indexPath.row==5)
+    else if (indexPath.section==5)
     {
         static NSString *applicantIndexCellIdentifier6=@"DescriptionCell";
         DescriptionCell *cell=(DescriptionCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier6];
@@ -179,7 +198,7 @@
         myCell=cell;
         
     }
-    else if (indexPath.row==6)
+    else if (indexPath.section==6)
     {
         static NSString *applicantIndexCellIdentifier7=@"LoadMoreCell";
         LoadMoreCell *cell=(LoadMoreCell *)[tableView dequeueReusableCellWithIdentifier:applicantIndexCellIdentifier7];
@@ -189,7 +208,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         myCell=cell;
         
-    }   */
+    }
     
 
 

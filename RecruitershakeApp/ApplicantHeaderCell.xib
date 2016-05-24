@@ -138,7 +138,15 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="764" y="114"/>
+            <connections>
+                <outlet property="btnEditApplicant" destination="EpN-hH-Cod" id="9ed-r2-Qwi"/>
+                <outlet property="imgApplicantHeader" destination="jdw-Er-etg" id="kDa-hz-AhF"/>
+                <outlet property="lblApplicantFirstName" destination="Whv-nm-eSX" id="2FW-JH-hjR"/>
+                <outlet property="lblApplicantLastName" destination="hT2-OY-1eJ" id="l1k-4q-iqA"/>
+                <outlet property="lblApplicantOccupation" destination="o32-cl-VCr" id="DId-6V-Kr5"/>
+                <outlet property="lblApplicantQuates" destination="qw9-TP-2Q0" id="KGj-hb-aQt"/>
+            </connections>
+            <point key="canvasLocation" x="457" y="158"/>
         </tableViewCell>
     </objects>
     <resources>

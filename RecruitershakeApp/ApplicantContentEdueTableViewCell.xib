@@ -92,7 +92,7 @@
                     <constraint firstItem="8cd-bd-p8o" firstAttribute="bottom" secondItem="00v-6o-wep" secondAttribute="bottom" multiplier="1.5" id="wSj-GR-tbU"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="649" y="278.5"/>
+            <point key="canvasLocation" x="477" y="310.5"/>
         </tableViewCell>
     </objects>
     <resources>
